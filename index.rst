@@ -6,7 +6,7 @@ Device Connection
    :maxdepth: 1
    :caption: Back to EnOS fundamental
 
-   EnOS fundamental <https://docs.eniot.io/docs/enos-fundamental/en/latest/>
+   EnOS fundamental <https://docs.eniot.io/docs/enos/en/latest/>
 
 .. toctree::
    :maxdepth: 2
