@@ -1,160 +1,68 @@
 # Device connection overview
 
+EnOS™ supports direct device connections through the MQTT protocol and connections through the EnOS™ Edge.
 
-## Methods to connect to EnOS
+The following figure shows the methods to connect devices into EnOS™ cloud.
 
-- If your device supports MQTT protocol, you can connect the device to the EnOS cloud directly.
-- For traditional devices that do not support MQTT protocol, you can use EnOS Edge or third-party edge products through which to connect your devices.
+Figure 1. Device Connection Methods
 
-## Supported conventions by EnOS Edge
+![](media/device_connection_methods.png)
 
-### Standard conventions
+As shown in Figure 1, EnOS™ supports the following connection methods:
 
-EnOS Edge supports the following standard conventions:
+## Method 1: Connect through EnOS™ IoT Hub via MQTT protocol (cloud service)
 
-<table border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="184"><p><strong>Standard convention</strong></p ></td>
-    <td width="184"><p><strong>Connection mode</strong></p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">ModbusTCP</p ></td>
-    <td width="184"><p align="center">Client/Server</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">ModbusRTU</p ></td>
-    <td width="184"><p align="center">Client/Server</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">IEC60870-5-104</p ></td>
-    <td width="184"><p align="center">Client/Server</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">DNP3.0</p ></td>
-    <td width="184"><p align="center">Client</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">OPC-DA</p ></td>
-    <td width="184"><p align="center">Client only</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">OPC-XML-DA</p ></td>
-    <td width="184"><p align="center">Client only</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">OPC-UA</p ></td>
-    <td width="184"><p align="center">Client only</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">HTTP(s)</p ></td>
-    <td width="184"><p align="center">Web Service</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">RPC</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">DL/T645-1997</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">DL/T645-2007</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-</table>
+This method requires the device end to support MQTT protocol and is applicable to most new IoT devices.
 
-### Private conventions
+## Method 2: Connect through on-site EnOS™ Edge
 
-Some private conventions supported are given below:
+In this case, the EnOS™ Edge is deployed on-site with the devices. This method applies to most traditional devices and systems that do not support MQTT protocol.
 
-</table>
-<table border="1" cellspacing="0" cellpadding="0" width="374">
-  <tr>
-    <td width="184"><blockquote>
-      <p><strong>Private convention</strong></p >
-    </blockquote></td>
-    <td width="184"><blockquote>
-      <p><strong>Remark</strong></p >
-    </blockquote></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Growatt</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">GoodweTcp</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">GoodweWebService</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">JinlangTCP</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">KSTAR(ksg)</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Lekong</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Omnik</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">TaiDa</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Taoke</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">SunGrow</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Apsystems</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">YunKong</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Trannergy</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Trinasolar</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">Solarman</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">aifu</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">dingyangTcp</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">dingyangTcp-jingfuyuan</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-  <tr>
-    <td width="184"><p align="center">SMA</p ></td>
-    <td width="184"><p align="center">&nbsp;</p ></td>
-  </tr>
-</table>
+## Method 3: Connect through remote EnOS™ Edge
 
-## Support device models
+In this case, the EnOS™ Edge is deployed remotely at the cloud side. This method applies to most traditional devices and systems that do not support MQTT protocol.
 
-<!--Vivian: device model will soon be renamed to thing model-->
+## Method 4: Connect through EnOS™ Cloud Edge clusters (cloud service)
+
+This requires that the device to be connected has a unique ID and can upload data through supported communication protocols. This method is frequently used for photovoltaic device connection.
+
+## Key components and concepts
+
+Some of the key components and concepts in the figure are described as follows.
+
+### IoT Hub
+
+IoT Hub is a cloud broker service that EnOS™ provides for device connection.
+
+The cloud broker provides the following functions:
+
+- Safe and reliable large-scale bi-directional message transmission from the devices to the cloud
+- Forwarding the data from the client to corresponding subscribers on EnOS™
+- Providing license authorization and creation of thing and policy themes
+- Exposing interface for connections from MQTT clients.
+
+### MQTT
+
+MQTT is a lightweight open-source protocol for Internet of Things based on TCP/IP. MQTT has several key features:
+- Support publication and subscription
+- Support data disk persistence
+- The publisher and subscriber use the client ID as a unique token. When multiple clients use the same client ID, the client that initiates the connection after is accepted and the broker disconnect the former connection.
+
+### EnOS™ Edge
+
+Edge is the front end of Envision EnOS™ IoT platform for data acquisition. It’s used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to EnOS™ cloud. Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS™ Cloud.
+
+![](media/Basic_concepts_Edge_stru.png)
+
+### API Gateway
+
+API Gateway is the central access interface of EnOS™. The API Gateway provides the following services:
+- Hosting the EnOS™ APIs.
+- Hosting user-built APIs to help developers make their services developed with EnOS™ available to partners as APIs.
+- Handling API requests, which access relevant resources (including device assets, personnel, applications, and privileges) stored in EnOS™ cloud to be added, deleted, modified, or inquired by developers.
+
+For more information about the API hosting, see [Getting started with API management](https://docs.envisioniot.com/docs/app-development/en/latest/api_hosting/gettingstarted_api_hosting.html).
+
+## Related information
+- [Direct device connection overview](direct_connection_overview)
+- [EnOS™ Edge connection overview](edge_connection_overview)

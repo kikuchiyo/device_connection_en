@@ -1,1 +1,0 @@
-# MQTT Connection Overview
