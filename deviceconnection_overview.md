@@ -61,7 +61,7 @@ API Gateway is the central access interface of EnOS™. The API Gateway provides
 - Hosting user-built APIs to help developers make their services developed with EnOS™ available to partners as APIs.
 - Handling API requests, which access relevant resources (including device assets, personnel, applications, and privileges) stored in EnOS™ cloud to be added, deleted, modified, or inquired by developers.
 
-For more information about the API hosting, see [Getting started with API management](https://docs.envisioniot.com/docs/app-development/en/latest/api_hosting/gettingstarted_api_hosting.html).
+For more information about the API hosting, see [Getting started with API management](https://docs.envisioniot.com/docs/app-development/en/latest/api_service/getting_started_api_service.html) in *Application Development*.
 
 ## Related information
 - [Direct device connection overview](direct_connection_overview)
