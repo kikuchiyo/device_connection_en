@@ -59,7 +59,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'EnOS Documentation Center'
+project = 'EnOS Device Connection'
 copyright = '2018, EnOS'
 author = 'Envision Digital'
 
@@ -168,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'EnOSDocumentationCenter.tex', 'EnOS Documentation',
+    (master_doc, 'EnOSDocumentationCenter.tex', 'EnOS Device Connection',
      'Envision Digital', 'manual'),
 ]
 
@@ -178,7 +178,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'enosdocumentationcenter', 'EnOS Documentation',
+    (master_doc, 'enosdocumentationcenter', 'EnOS Device Connection',
      [author], 1)
 ]
 
@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'EnOSDocumentationCenter', 'EnOS Documentation',
+    (master_doc, 'EnOSDocumentationCenter', 'EnOS Device Connection',
      author, 'EnOSDocumentationCenter', 'One line description of project.',
      'Miscellaneous'),
 ]

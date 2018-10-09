@@ -15,7 +15,7 @@ Device Connection
    deviceconnection_overview
    direct_connection_overview
    gettingstarted_direct_connection
-   edge_connection_overview   
+   edge_connection_overview
    gettingstarted_edge_connection
    deviceconnection_scenarios
 
@@ -43,9 +43,9 @@ Device Connection
    asset_management/asset_overview
    asset_management/creating_sites_devices
    asset_management/creating_asset_tree
-   asset_management/creating_mqtt_connection
+   asset_management/configuring_mqtt_connection
    asset_management/creating_templates
-   asset_management/creating_edge_connection
+   asset_management/configuring_edge_connection
 
 .. toctree::
   :maxdepth: 1

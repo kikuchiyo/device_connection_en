@@ -14,14 +14,14 @@ You'll receive a serial number that you'll later use for activating your edge.
 In EnOS™, the devices and the organization entity where the
 devices belongs to are managed as *assets*. You'll first need to create your devices and sites in EnOS™.
 
-Use the **Asset Management > Sites and Devices** function to create sites and associate devices into your sites. For more information, see [Creating sites and devices](creating_sites_devices.md).
+Use the **Asset Management > Sites and Devices** function to create sites and associate devices into your sites. For more information, see [Creating sites and devices](asset_management/creating_sites_devices.md).
 
 ## Step 3: Organize sites
 
 In practice, devices are typically organized hierarchically.
 The hierarchical structure is an *asset tree*. For more information about the asset management mechanism of EnOS™, see [Asset management overview](asset_management/asset_overview).
 
-Use the **Asset Management > Asset Tree** function to arrange your sites hierachically according to their organization in the real world. For more information, see [Creating asset tree](creating_asset tree.md).
+Use the **Asset Management > Asset Tree** function to arrange your sites hierachically according to their organization in the real world. For more information, see [Creating asset tree](asset_management/creating_asset tree.md).
 
 ## Step 4: Create templates that adapts device models to real devices
 Device templates, which play as the adaptor between device models and real devices, mainly define the communication protocol and mapping relationship between the data acquisition point and device model point.

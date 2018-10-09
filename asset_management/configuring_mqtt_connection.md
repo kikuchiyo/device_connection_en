@@ -16,6 +16,7 @@ To connect to the MQTT broker in the EnOS™ cloud, an MQTT client must have a l
     ![](media/mqtt.png)
 
 5. Click **Manage Policies** to enter the policy list, click **Add policy**, enter the policy name, description, and add the topics.
+
     ![](media/mqtt_policy.png)
 
 6. Click **Link test** to enter the connection test page. In the link test, your browser will play as a client to subscribe to the messages.
@@ -44,7 +45,7 @@ To connect to the MQTT broker in the EnOS™ cloud, an MQTT client must have a l
 
   Note that if you did not specify to subscribe to a topic in step 8, your published message for a topic will not be shown in the **Message** section.
 
-    ![](media/mqtt_publish.png)
+  ![](media/mqtt_publish.png)
 
    Wildcard Description:
 
