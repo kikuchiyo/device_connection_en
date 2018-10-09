@@ -130,7 +130,6 @@ It is allowed to create device models under the newly built site model. Several 
 
   Editing the basic device model is similar to the editing operation of the site model.
 
-
 ## Step 4: Create device sub-model
 
 It is possible to create the device sub-model under the newly built basic device model. This sub-model will inherit the basic model. Data tags and attributes inherited can’t be edited. New data tags and calculation scripts can be added.

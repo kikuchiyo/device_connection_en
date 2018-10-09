@@ -83,57 +83,57 @@ formula for a model point.
   </script>
   <table border="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
-      <th><p>Formula name</p ></th>
-      <th><p>Description</p ></th>
+      <th>Formula name</th>
+      <th>Description</th>
     </tr>
     <tr>
-      <td><p>NO_MAPPING</p ></td>
-      <td><p align="left">NO_MAPPING: no mapping for this model point; </p ></td>
+      <td>NO_MAPPING</td>
+      <td><p align="left">NO_MAPPING: no mapping for this model point; </td>
     </tr>
     <tr>
-      <td><p>INVALID</p ></td>
-      <td><p align="left">INVALID: No   mapping is provided for this model point (no longer used, NO_MAPPING will be   used); </p ></td>
+      <td>INVALID</td>
+      <td><p align="left">INVALID: No   mapping is provided for this model point (no longer used, NO_MAPPING will be   used); </td>
     </tr>
     <tr>
-      <td><p>EQUAL</p ></td>
-      <td><p align="left">EQUAL: The   value of this model point is equal to the mapped point, i.e. y=x; </p ></td>
+      <td>EQUAL</td>
+      <td><p align="left">EQUAL: The   value of this model point is equal to the mapped point, i.e. y=x; </td>
     </tr>
     <tr>
-      <td><p>SUM</p ></td>
-      <td><p align="left">SUM: all   collection points added to this mapping, i.e. $$y = \sum_{i = 1}^{n}x_{i}$$ ; </p ></td>
+      <td>SUM</td>
+      <td><p align="left">SUM: all   collection points added to this mapping, i.e. $$y = \sum_{i = 1}^{n}x_{i}$$ ; </td>
     </tr>
     <tr>
-      <td><p>PRODUCT</p ></td>
-      <td><p align="left">PRODUCT:   multiplication of all collection points added to this mapping, and multiplied   by a distributable coefficient a (i.e. &ldquo;operand&rdquo;), i.e. $$y = a\prod_{i = 1}^{n}x_{i}$$ ; </p ></td>
+      <td>PRODUCT</td>
+      <td><p align="left">PRODUCT:   multiplication of all collection points added to this mapping, and multiplied   by a distributable coefficient a (i.e. &ldquo;operand&rdquo;), i.e. $$y = a\prod_{i = 1}^{n}x_{i}$$ ; </td>
     </tr>
     <tr>
-      <td><p>CROSS_PRODUCT</p ></td>
-      <td><p align="left">CROSS_PRODUCT:   cross production of all collection points added to this mapping, and   multiplied by a distributable coefficient a (i.e. &ldquo;operand&rdquo; parameter). Note   that the sequence in which the collection points are added is very important. $$x_{1}$$   represents the first point added,  $$x_{2}$$ represents the second point added, and so   on, i.e. $$y = a(x_{1}*x_{2} + x_{3}*x_{4} + x_{5}*x_{6} + \ldots)$$ ; </p ></td>
+      <td>CROSS_PRODUCT</td>
+      <td><p align="left">CROSS_PRODUCT:   cross production of all collection points added to this mapping, and   multiplied by a distributable coefficient a (i.e. &ldquo;operand&rdquo; parameter). Note   that the sequence in which the collection points are added is very important. $$x_{1}$$   represents the first point added,  $$x_{2}$$ represents the second point added, and so   on, i.e. $$y = a(x_{1}*x_{2} + x_{3}*x_{4} + x_{5}*x_{6} + \ldots)$$ ; </td>
     </tr>
     <tr>
-      <td><p>RATIO</p ></td>
-      <td><p align="left">RATIO: Ratio   of the two collection points added to this mapping. Note that the sequence in   which the collection points are added is very important, i.e. $$y = x_{1}/x_{2}$$ ; </p ></td>
+      <td>RATIO</td>
+      <td><p align="left">RATIO: Ratio   of the two collection points added to this mapping. Note that the sequence in   which the collection points are added is very important, i.e. $$y = x_{1}/x_{2}$$ ; </td>
     </tr>
     <tr>
-      <td><p>LOGICAL_OR</p ></td>
-      <td><p align="left">LOGICAL_OR:   Logical OR operation for the digital input DI points added to this mapping,   i.e. $$y = {(x}_{1}\left| x_{2} \right|x_{3}\left| x_{4} \right|x_{5}\left| x_{6} \right|\ldots)$$ ;</p ></td>
+      <td>LOGICAL_OR</td>
+      <td><p align="left">LOGICAL_OR:   Logical OR operation for the digital input DI points added to this mapping,   i.e. $$y = {(x}_{1}\left| x_{2} \right|x_{3}\left| x_{4} \right|x_{5}\left| x_{6} \right|\ldots)$$ ;</td>
     </tr>
     <tr>
-      <td><p>RATIO_AGAINST_SUM</p ></td>
-      <td><p>Special formula: the following calculation is   made on the three collection points added to this mapping, i.e. $$y = x_{1}/(x_{2} + x_{3})$$ ; </p ></td>
+      <td>RATIO_AGAINST_SUM</td>
+      <td>Special formula: the following calculation is   made on the three collection points added to this mapping, i.e. $$y = x_{1}/(x_{2} + x_{3})$$ ; </td>
     </tr>
     <tr>
-      <td><p>BIT_N</p ></td>
-      <td><p>BIT_N: The specified bit of an AI point can be   taken and assigned to a new model point. It includes a parameter &ldquo;operand&rdquo;.   An operand of 0 indicates that the first bit of AI point is taken, and an   operand of 15 indicates that the 16 bit of AI point is taken.</p ></td>
+      <td>BIT_N</td>
+      <td>BIT_N: The specified bit of an AI point can be   taken and assigned to a new model point. It includes a parameter &ldquo;operand&rdquo;.   An operand of 0 indicates that the first bit of AI point is taken, and an   operand of 15 indicates that the 16 bit of AI point is taken.</td>
     </tr>
     <tr>
-      <td><p>BITS_M_TO_N</p ></td>
-      <td><p>BITS_M_TO_N: Multiple specified consecutive bits   of an AI point can be taken and assigned to a new model point. It includes   two parameters: operand 1 (M: high bit) and operand 2 (N: low bit), M&gt;N.   E.g. if M=7 and N=0, bits 8 to 1 of the collection point are taken and   assigned to the new model point.</p ></td>
+      <td>BITS_M_TO_N</td>
+      <td>BITS_M_TO_N: Multiple specified consecutive bits   of an AI point can be taken and assigned to a new model point. It includes   two parameters: operand 1 (M: high bit) and operand 2 (N: low bit), M&gt;N.   E.g. if M=7 and N=0, bits 8 to 1 of the collection point are taken and   assigned to the new model point.</td>
     </tr>
     <tr>
-      <td><p>IF_EQUAL</p ></td>
-      <td><p>Conditional assignment: It includes 3 operands.   Assume operand 1=a, operand 2=b, operand 3=c, then the pseudo code for this   formula is:<br>
-        if x1 == a, then y==b, else y==c. </p ></td>
+      <td>IF_EQUAL</td>
+      <td>Conditional assignment: It includes 3 operands.   Assume operand 1=a, operand 2=b, operand 3=c, then the pseudo code for this   formula is:<br>
+        if x1 == a, then y==b, else y==c. </td>
     </tr>
   </table>
   <div>
@@ -141,21 +141,20 @@ formula for a model point.
   </div>
   </body>
 
-
-  For array type model points, the following formulas are supported:
+    For array type model points, the following formulas are supported:
 
   <table border="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
-      <td><p>Formula name</p ></td>
-      <td><p>Description</p ></td>
+      <td>Formula name</td>
+      <td>Description</td>
     </tr>
     <tr>
-      <td><p>MULTICHANNEL </p ></td>
-      <td><p>MULTICHANNEL: Multiple collection points are   mapped to different elements of an array type model point. Note that the   sequence in which the collection points are added is very important. represents the first point added,  represents the second point added, and so   on, i.e. y is an array: y={y[1], y[2], …, y[n]}, and y[1]=x1, y[2]=x2, …,   y[n]=x[n], n&lt;=32.  </p ></td>
+      <td>MULTICHANNEL </td>
+      <td>MULTICHANNEL: Multiple collection points are   mapped to different elements of an array type model point. Note that the   sequence in which the collection points are added is very important. represents the first point added,  represents the second point added, and so   on, i.e. y is an array: y={y[1], y[2], …, y[n]}, and y[1]=x1, y[2]=x2, …,   y[n]=x[n], n&lt;=32.  </td>
     </tr>
     <tr>
-      <td><p>MULTIBIT</p ></td>
-      <td><p>MULTIBIT: Conversion of multiple DIs to AIs, i.e.   y is an int32[] type array, y={y[1], y[2], …, y[n]},<br>
+      <td>MULTIBIT</td>
+      <td>MULTIBIT: Conversion of multiple DIs to AIs, i.e.   y is an int32[] type array, y={y[1], y[2], …, y[n]},<br>
         and,<br>
         y[1].bit0=x1.bit0,<br>
         y[1].bit1=x2.bit0,<br>
@@ -170,7 +169,7 @@ formula for a model point.
         y[n].bit1=.bit0,<br>
         …,<br>
         y[n].bit31=.bit0,<br>
-        ,n&lt;=32.</p ></td>
+        ,n&lt;=32.</td>
     </tr>
   </table>
 
@@ -180,4 +179,4 @@ formula for a model point.
 
   ![](media/Basic_concepts_fx.png)
 
-  Where i represents the sequence in which the collection points are added.
+  Where `i` represents the sequence in which the data acquisition points are added.

@@ -59,7 +59,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'EnOS Device Connection'
+project = 'EnOS Documentation Center'
 copyright = '2018, EnOS'
 author = 'Envision Digital'
 
@@ -97,6 +97,22 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+#import alabaster
+
+#html_theme_path = [alabaster.get_path()]
+#extensions = ['alabaster']
+#html_theme = 'alabaster'
+#
+#html_sidebars = {
+#    '**': [
+#        'about.html',
+#        'navigation.html',
+#        'relations.html',
+#        'searchbox.html',
+#        'donate.html',
+#    ]
+#}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -152,7 +168,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'EnOSDocumentationCenter.tex', 'EnOS Device Connection',
+    (master_doc, 'EnOSDocumentationCenter.tex', 'EnOS Documentation',
      'Envision Digital', 'manual'),
 ]
 
@@ -162,7 +178,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'enosdocumentationcenter', 'EnOS Device Connection',
+    (master_doc, 'enosdocumentationcenter', 'EnOS Documentation',
      [author], 1)
 ]
 
@@ -173,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'EnOSDocumentationCenter', 'EnOS Device Connection',
+    (master_doc, 'EnOSDocumentationCenter', 'EnOS Documentation',
      author, 'EnOSDocumentationCenter', 'One line description of project.',
      'Miscellaneous'),
 ]
@@ -204,3 +220,7 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# custom css
+def setup(app):
+    app.add_stylesheet('css/custom.css')

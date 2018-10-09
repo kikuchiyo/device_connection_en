@@ -8,7 +8,7 @@ The procedure is shown as in the following figure:
 
 ![Edge connection configuration procedure](media/edge_connection_config_flow.png)
 
-Enter the **Edge Connection** menu to click the **Configeration Connection**, which is shown in the following figure:
+Enter the **Edge Connection** menu to click **Configure Connection**, which is shown in the following figure:
 
 ![](media/edge_configeration.png)
 
@@ -37,9 +37,9 @@ Generally, the edge will not be directly connected to the end server but connect
 
 ![](media/add_connection.png)
 
-According to actual demand,several connections can be added under one edge.
+According to actual demand, several connections can be added under one edge.
 
-**Note**:Select the type of connection according to the type of the protocol and the type of the edge.
+**Note**: Select the type of connection according to the type of the protocol and the type of the edge.
 
 ## Step 3: Add device
 
@@ -47,14 +47,14 @@ After adding connection, add the device, which is shown in the following figure:
 
 ![](media/add_device.png)
 
-Click **Add Device** button under the link, open the page shown in the following figure. Select the device of same type to be added and select the device template to be linked and click Save.
+Click **Add Device** under the connection, which opens the page shown in the following figure. Select the device of same type to be added and select the device template to be linked and click Save.
 
-  **Note**:select one kind of device first and select the device template for these devices.
+  **Note**: select one type of device first and select the device template for these devices.
 
 
-## Step 4: Configure the logical address or offset
+## Step 4: Configure the logical address and offset
 
-As pieces of device are connected to one link, the logical address and corresponding offset should be configured for each set of device. The configuration method depends on the adopted communication conventional procedure and setup. The device can be configured one by one or device connection information table can be exported for configuration before importing to the system to realize the batch configuration.
+As multiple devices are connected through one connection, the logical address and corresponding offset should be configured for each device. The configuration method depends on the adopted communication protocol and relevant settings. You can configure the devices one by one, or export a table of device configuration, make changes in the table, and import the configuration table to achieve batch configuration.
 
 - Configure the device one by one
 
@@ -62,15 +62,17 @@ As pieces of device are connected to one link, the logical address and correspon
 
 - Batch configuration
 
-  Click **Export** button under the link, download the connection information table for completion; click **Import** button to upload the information table, which is shown in the following figure:
+  Click **Export** under the connection, download the connection information table and complete your configuration in the table. Then click **Import** to upload the table, which is shown in the following figure:
 
   ![](media/import_export.png)
 
-  **Note**:The exported table supports the configuration of AI, DI, PI, AO, DO, PO offset. The basic configuration method is to use the short underlined connection, such as 0-50, which can be isolated from the English semicolon when there are multiple offsets, such as 0-50;1000-1000.
+  The exported table supports the configuration of AI, DI, PI, AO, DO, PO offset. The basic configuration method is to use the short dash, for example, 0-50. When multiple offsets are needed, separate each with a semicolon. For example: 0-50;1000-1050.
+
+  ![](media/batch_config.png)
 
 ## Step 5: Publish configuration
 
-After completing the above configurations, publish the configuration to the edge. Click **Publish** to publish the configuration to the corresponding edge, then you will see the status of the publish. After publishing, the configurations will take effect.
+After completing the above configurations, publish the configuration to the edge. Click **Publish** to publish the configuration to the corresponding edge, then you will see the status right beside the **Pubish** button. After publishing, the configurations will take effect.
 
 ## Step 6: Test communication
 
@@ -82,13 +84,14 @@ After publishing configuration to the edge, you can inspect whether the configur
 
 There are several reasons for communication interruption:
 - The configuration is not published.
-- The configuration is wrong or the site end communication is abnormal.
+- The configuration is wrong.
+- The site communication is abnormal.
 
-Therefore, you need to perform further debugging to figure out the problem. EnOS™ provides the communication test function to help achieving the goal.
+Therefore, you need to perform further debugging to diagnose the problem. EnOS™ provides the communication test function to help achieving the goal.
 
-### Testing in batches
+### Testing connections in batches
 
-Click **Test** under the link and enter the batch test page of the link, which is shown in the following figure:
+Click **Test** under the link and enter the batch test page of the connection, which is shown in the following figure:
 
 ![](media/step5_test_start.png)
 
@@ -96,30 +99,30 @@ Click the upper **Start/Pause** button, to start or pause the communication test
 
 ![](media/startbutton.png)
 
-Batch test: click the uppermost pull-down menu to convert the link and the connection parameters.
+You can select from the drop-down list to switch the connection to debug.
 
 Batch test provides the following tabs to help you debug the connection failor.
 
 #### Data
 
-View all device under the link or screen the device to be viewed; view the update information of collection point data in the edge.
+View all devices under the connection or filter the devices to be viewed; view the dynamics of the data acquisition points in the edge.
 
-Support the number setting function of remote measuring and remote communication point at the same time. Click**add set** to set the value and click **send** to send the set value to the cloud.Click one to send one and it will not terminate the uploading of original data,which is equivalent to insertion of a value to the cloud.
+Support setting numbers for the telemetering and remote communication points. Click **Set** to set the value and click **send** to send the set value to the cloud. Click one to send one and it will not terminate the uploading of original data. The operation is equivalent to inserting a value to the cloud.
 
-#### Original message
+#### Datagram
 
-View the original incoming and outgoing message and the message is reproducible
+View the original inbound and outbound messages. And you can duplicate the messages.
 
 #### Log
 
-In order to avoid information overflow, info-type log is hidden and only warn and error-type logs are displayed to help the user to judge the communication failure cause.
+In order to avoid information overflow, informational logs are hidden and only the warning and error types of logs are displayed to help you determine the causes of communication failure.
 
 #### Console
 
-Determine the common communication debugging orders, including basic ping test, local IP view, Telnet order and TCP connection view order.
-
-The ping test requires filling in the required ping IP address in the input edge; Telnet test requires filling in IP and port number.
+Provides access to the common communication debugging commands, including basic ping test, local IP inquiry, Telnet command and TCP connection inquiry command.
+- The ping test requires filling in the IP address to ping.
+- The Telnet command requires filling in the IP and port number to test connection to.
 
 ### Testing single device connection
 
-Click **View** for the device to carry out communication test of the single device and view the data in the corresponding edge of the device. The function is consistent with the data function in the general batch test. Only single device is tested here.
+Click **View** for the device to test connection for and view the data in the corresponding edge for the device. The function is consistent with what you can do in the **Data** tab in the batch test.

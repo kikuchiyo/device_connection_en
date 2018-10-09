@@ -2,7 +2,7 @@
 
 An edge extends the connectivity of EnOS™ to support more communication protocols and data formats. The edge can be hardware-based deployed on-site or software-based deployed in the cloud.
 
-设备数据传输的完整的链路是设备将数据发送给edge，然后edge统一汇总以后将数据上传至云端，数据传输是一个自下而上的过程。而设备接入配置，是一个自上而下的过程，先配置云端与edge的连接，然后在配置edge与设备之间的连接。
+In the device connection data link, the devices sends data to edge, and the edge aggregates the data and uploads into the EnOS cloud. The data transmission is a bottom-up process. While the device connection configuration is a top-down process, where you configure the connection between the cloud and edge first, then the connection between the edge and the devices.
 
 ![Edge connection](media/edge_connection_configuration.png)
 
