@@ -141,6 +141,8 @@ formula for a model point.
   </div>
   </body>
 
+<!-- **wwww -->
+
     For array type model points, the following formulas are supported:
 
   <table border="1" cellspacing="0" cellpadding="0" width="100%">

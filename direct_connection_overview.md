@@ -10,7 +10,7 @@ The following concepts are involved in the MQTT connection:
 
 **License**
 
-To connect to the MQTT broker in the EnOS™ cloud, an MQTT client must have a license issued by the EnOS™. The license defines the maximum connections allowed and the expiration date of the authorized connections.
+To connect to the MQTT broker in the EnOS™ Cloud, the MQTT client must have a license issued by EnOS™. The license defines the maximum connections allowed and the expiration date of the authorized connections.
 
 **Connection**
 
@@ -36,7 +36,7 @@ In a direct device connection, the data that the devices send to the IoT Hub mus
   </tr>
   <tr>
     <td>object</td>
-    <td>ID of device instance, string type</td>
+    <td>ID of the device instance, string type</td>
     <td>Required</td>
   </tr>
   <tr>
@@ -45,8 +45,8 @@ In a direct device connection, the data that the devices send to the IoT Hub mus
     <td>Required</td>
   </tr>
   <tr>
-    <td>Name of device data point (English string)</td>
-    <td>Data point value, follow the definitions in the device model.</td>
+    <td>name of device data point (English string)</td>
+    <td>Data point value, follow the definitions in the device model,English string.</td>
     <td>Optional, one message can carry multiple pairs of point values.</td>
   </tr>
   <tr>
@@ -56,14 +56,14 @@ In a direct device connection, the data that the devices send to the IoT Hub mus
   </tr>
   <tr>
     <td>DEVICE_CONN</td>
-    <td>State of device communication. Send string 0 when device is disconnected; send string 1 when device connection resumes.</td>
+    <td>State of the device communication. Send string 0 when device is disconnected; send string 1 when device connection resumes.</td>
     <td>Optional</td>
   </tr>
 </table>
 
-**Note**: Each message is used to describe the data for a device instance. In each message, the value of device data point and communication state must carry at least one.
+**Note**: Each message is used to describe the data for a device instance. In each message, the device data point and communication state must carry at least one value.
 
-Here is an example JSON message
+Here is an example JSON message:
 
 ```
 {
@@ -79,4 +79,8 @@ In this message，a device instance with ID `e61fe67eda1d447a9d11fad686754dd8` s
 
 ## Applicable scenarios of MQTT direct connection
 
-The devices to be connected should support MQTT protocol. New intelligent devices of Internet of Things are usually the targets.
+The devices to be connected must support MQTT protocol. New intelligent devices of Internet of Things are usually the targets.
+
+## Related information
+
+- [Getting started with direct device connection](direct_connection_overview)

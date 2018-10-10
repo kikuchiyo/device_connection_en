@@ -51,7 +51,7 @@ Device Connection
   :maxdepth: 1
   :caption: Tutorial
 
-  Connecting devices through cloud-based EnOS Edge <https://docs.envisioniot.com/docs/enos-tutorials/en/latest/device_connection/try/tutorial_overview.html>
+  Connecting devices through cloud-based EnOS Edge <https://docs.envisioniot.com/docs/enos-tutorials/en/latest/device_connection/try/index.html>
 
 .. toctree::
    :maxdepth: 1
@@ -60,3 +60,10 @@ Device Connection
    Event management <https://docs.envisioniot.com/docs/event-management/en/latest/>
    Real-time data processing <https://docs.envisioniot.com/docs/online-data/en/latest/>
    Batch data processing <https://docs.envisioniot.com/docs/offline-data/en/latest/>
+
+Downloads
+""""""""
+    pdf_ htmlzip_ epub_
+.. _pdf: https://docs.envisioniot.com/projects/device-connection/downloads/pdf/latest/
+.. _htmlzip: https://docs.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
+.. _epub: https://docs.envisioniot.com/projects/device-connection/downloads/epub/latest/

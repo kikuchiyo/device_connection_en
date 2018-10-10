@@ -18,9 +18,8 @@ Asset management
    creating_templates
    configuring_mqtt_connection
    configuring_edge_connection
+   simulating_device
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
-
-   
