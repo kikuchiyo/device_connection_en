@@ -59,7 +59,7 @@ Because of the presence of multiple types of third-party devices, and the fact t
 
 4. Connect devices to EnOS™ (in EnOS™ Cloud).
 
- The major procedure is as follows:
+   The major procedure is as follows:
     <ol style="list-style-type: lower-alpha;">
       <li>Create devices as cloud assets on EnOS™ (model instantiation).</li>
       <li>Create edge.</li>
@@ -68,7 +68,7 @@ Because of the presence of multiple types of third-party devices, and the fact t
 
 5. On-site wiring.
 
-  The major procedure is as follows:
+   The major procedure is as follows:
     <ol style="list-style-type: lower-alpha;">
       <li>Use a 485 bus to connect all inverters and smart meters serially in a daisy chain, and then connect the bus to a serial port server.</li>
       <li>Connect the serial port server to the edge device via wired network, and complete relevant configurations.</li>

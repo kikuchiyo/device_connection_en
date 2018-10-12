@@ -19,12 +19,9 @@ A device model consists the following elements:
 
 - **Attribute:** Attributes are static description about a model. Taking the smart meter model as an example, the typical attributes are _name_, _manufacturer_, _model_, and _logic address_ of the meter.
 
-- **Measuring point:** This is a dynamic measurement point in a model, and can be either a collection point or a calculation point. A collection point is typically a data point or control point collected via communication. A calculation point is a data point added to the model depending on business needs. Its data is derived from a certain business calculation logic rather than direct collection. However, calculation point and collection point are just a differentiation of model measurement points based on data source. They are the
-same in nature. Again, taking electric meter model as an example, voltage,
-current, and power are data points, while positive power per hour is calculation
-point.
+- **Measuring point:** This is a dynamic measurement point in a model, and can be an aquisition point or a calculation point. An aquisition point is typically a data point or control point collected directly via communication. A calculation point is a data point added to the model depending on business needs. The data of a calculation point is derived from a certain business calculation logic rather than direct aquisition. However, calculation points and aquisition points are just a differentiation of model measurement points based on data source. They are the same in nature. Again, taking electric meter model as an example, voltage, current, and power are data points, while positive power per hour is calculation point.
 
-- **Calculating point:** For measurement points, groovy script can be used to define
+- **Calculation script:** For measurement points, groovy script can be used to define
 some light-weight calculation logics and attach them to a model. This
 calculation is triggered when the data obtained meet certain conditions. Here
 also taking electric meter model as an example, for certain collection points,
