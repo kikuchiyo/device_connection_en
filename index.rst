@@ -6,7 +6,7 @@ Device connection
    :hidden:
    :caption: 返回
 
-   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/zh_CN/latest/overview/enos_introduction.html>
+   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
 
 .. toctree::
     :maxdepth: 1
