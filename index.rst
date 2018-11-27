@@ -1,69 +1,45 @@
-Device Connection
-=================
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Back to
-
-   EnOS fundamental <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
+Device connection
+--------------------------
 
 .. toctree::
    :maxdepth: 1
-   :caption: Device connection
+   :hidden:
+   :caption: 返回
 
-   deviceconnection_overview
-   direct_connection_overview
-   gettingstarted_direct_connection
-   edge_connection_overview
-   gettingstarted_edge_connection
-   deviceconnection_scenarios
+   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/zh_CN/latest/overview/enos_introduction.html>
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Learn
+
+    deviceconnection_overview
+    deviceconnection_authentication
+    secretbased_authentication
+    certificatebased_authentication
+    connection_scenarios
+    model_overview
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Get Started
+
+    gettingstarted_device_connection
+    gettingstarted_edge_connection
 
 .. toctree::
    :maxdepth: 1
-   :caption: Device modelling
+   :caption: How-to's
 
-   device_modelling/model_overview
-   device_modelling/creating_model
-   device_modelling/deviceconnection_models
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Communication protocols
-
-   protocol/protocol_overview
-   protocol/deviceconnection_protocols
-   protocol/creating_protocol
-   protocol/managing_protocol
+   cloud/index
+   edge/index
+   device/index
 
 .. toctree::
    :maxdepth: 1
-   :caption: Asset Management
+   :caption: Reference
 
-   asset_management/asset_overview
-   asset_management/creating_sites_devices
-   asset_management/creating_asset_tree
-   asset_management/configuring_mqtt_connection
-   asset_management/creating_templates
-   asset_management/configuring_edge_connection
+   device_protocol_development_reference
 
-.. toctree::
-  :maxdepth: 1
-  :caption: Tutorial
-
-  Connecting devices through cloud-based EnOS Edge <https://docs.envisioniot.com/docs/enos-tutorials/en/latest/device_connection/try/index.html>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Related services
-
-   Event management <https://docs.envisioniot.com/docs/event-management/en/latest/>
-   Real-time data processing <https://docs.envisioniot.com/docs/online-data/en/latest/>
-   Batch data processing <https://docs.envisioniot.com/docs/offline-data/en/latest/>
 
 Downloads
 """"""""
-    pdf_ htmlzip_ epub_
-.. _pdf: https://docs.envisioniot.com/projects/device-connection/downloads/pdf/latest/
-.. _htmlzip: https://docs.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
-.. _epub: https://docs.envisioniot.com/projects/device-connection/downloads/epub/latest/

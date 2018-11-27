@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# EnOS Documentation Center documentation build configuration file, created by
+# EnOS™ Documentation Center documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug 17 15:19:38 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -21,6 +21,9 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8') 
 
 # -- General configuration ------------------------------------------------
 
@@ -59,8 +62,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'EnOS Device Connection'
-copyright = '2018, EnOS'
+project = 'Device connnection 2.0'
+copyright = '2018, EnOS™'
 author = 'Envision Digital'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -141,7 +144,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'EnOSDocumentationCenterdoc'
+htmlhelp_basename = 'EnOS™DocumentationCenterdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -149,7 +152,7 @@ htmlhelp_basename = 'EnOSDocumentationCenterdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    # 'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
@@ -157,7 +160,24 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
+      'preamble': r'''
+    #     \geometry{a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm}',
+          \hypersetup{unicode=true}
+          \usepackage{CJKutf8}
+          \DeclareUnicodeCharacter{00A0}{\nobreakspace}
+          \DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
+          \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
+          \DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
+          \DeclareUnicodeCharacter{2713}{x}
+          \DeclareUnicodeCharacter{27FA}{\ensuremath{\Longleftrightarrow}}
+          \DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{}}}
+          \DeclareUnicodeCharacter{221B}{\ensuremath{\sqrt[3]{}}}
+          \DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}
+          \DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
+          \begin{CJK}{UTF8}{gbsn}
+          \AtEndDocument{\end{CJK}}
+      '''
+
 
     # Latex figure (float) alignment
     #
@@ -168,7 +188,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'EnOSDocumentationCenter.tex', 'EnOS Device Connection',
+    (master_doc, 'EnOS™DocumentationCenter.tex', 'EnOS™ Device Connection 2.0',
      'Envision Digital', 'manual'),
 ]
 
@@ -178,7 +198,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'enosdocumentationcenter', 'EnOS Device Connection',
+    (master_doc, 'EnOS™documentationcenter', 'EnOS™ Device Connection 2.0',
      [author], 1)
 ]
 
@@ -189,8 +209,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'EnOSDocumentationCenter', 'EnOS Device Connection',
-     author, 'EnOSDocumentationCenter', 'One line description of project.',
+    (master_doc, 'EnOS™DocumentationCenter', 'EnOS™ Device Connection 2.0',
+     author, 'EnOS™DocumentationCenter', 'One line description of project.',
      'Miscellaneous'),
 ]
 
