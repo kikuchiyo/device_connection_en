@@ -1,55 +1,39 @@
-# Report attributes
+# Query attributes
 
-- Request TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query
 
-- Reply TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update_reply
+- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query_reply
 
 ## Example request message
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": [
-
-"attributes": {
-
-"attr1": {
-
-"value": 1.0,
-
-"value2": "9"
-
-},
-
-"attr2": 1.02,
-
-"attr3": ["1.02", "2.02", "7.93"]
-
+ "id": "123",
+ "version": "1.0",
+ "params": {
+   "attributes": ["attr1", "attr2", "attr3"]
+ },
+ "method": "thing.attribute.query"
 }
 
-],
-
-"method": "thing.attribute.update"
-
-}
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+ "id": "123",
+ "code": 200,
+ "data": {
+   "attr1": {
+       "value": 1.0,
+       "value2": "9"
+     },
+   "attr2": 1.02,
+   "attr3": ["1.02", "2.02", "7.93"]
+ }
 }
+
 ```
 
 ## Parameter description
@@ -82,9 +66,9 @@
   <tr>
     <td>attributes </td>
     <td>Array </td>
-    <td>Optional</td>
-    <td>List of the attributes. One request can contain maximum 200   items.<br>
-       If the value of attributes is null, system   will get all the attributes.  </td>
+    <td>Mandatory</td>
+    <td>List of the   attribute. One request can contain maximum 200   items.<br>
+       If the value of attributes is null, system   will query all the attributes.  </td>
   </tr>
   <tr>
     <td>method</td>

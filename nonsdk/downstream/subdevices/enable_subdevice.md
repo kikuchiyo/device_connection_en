@@ -14,56 +14,37 @@ the enable devices message to the edge topic asynchronously.
 
 ```
 "id": "123",
-
 "version": "1.0",
-
 "params": [
-
-{
-
-"productKey": "xxx",
-
-"deviceKey": "xxx"
-
+          {
+  "productKey": "xxx",
+  "deviceKey": "xxx"
 },
-
 {
-
-"productKey": "xxx",
-
-"deviceKey": "xxx"
-
+  "productKey": "xxx",
+  "deviceKey": "xxx"
 }
-
 ]
-
 "method": "thing.combine.enable"
-
 }
 
 {
-
 "id": "123",
-
 "code": 200,
-
 "data": {}
-
 }
+
 ```
 
-## Example of the response message
+## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+	"id": "123",
+	"code": 200,
+	"data": {}
 }
+
 ```
 
 ## Parameter description​

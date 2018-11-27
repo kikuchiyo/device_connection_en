@@ -1,0 +1,69 @@
+Developing protocol based on EnOS device protocol standard
+============================================================
+
+EnOS provides device SDKs for you to configure devices. These device SDKs already encapsulate protocols for data exchange between devices and EnOS Cloud. 
+
+When the device SDKs provided by EnOS cannot meet your requirements, you can refer to this article to develop your own communication protocol based on the EnOS device protocol standard, which defines the data format of the MQTT-based transmission between devices and EnOS cloud. You can connect your devices into EnOS as long as your data format conforms to the standard.
+
+Common Parameter Description
+=============================
+
+The following table describes the common parameters used in the request and response messages.
+
+.. list-table::
+  :header-rows: 1
+
+  * - Parameter
+    - Type
+    - Occurrence
+    - Description
+  * - id
+    - String
+    - Optional
+    - Message ID. Reserved parameter for future   use.
+  * - version
+    - String
+    - Mandatory
+    - Version of the protocol.
+  * - params
+    - JSON
+    - Mandatory in request
+    - Request parameters, in JSON format, Can   either be int or dict.
+  * - method
+    - String
+    - Mandatory in request
+    - Name of the method.
+  * - code
+    - Integer
+    - Mandatory in response
+    - Response code.
+  * - data
+    - JSON
+    - Optional
+    - Detailed infomaton, in JSON format. Can be   either int or dict regarded to the returned message.  
+
+Protocol Standards
+===================
+
+From the data transmission direction perspective, the device protocol standards falls into two groups: upstream and downstream.
+
+Please refer to the following sections.
+
+.. toctree::
+  :caption: Upstream
+  :maxdepth: 1
+
+  upstream/device_registration
+  upstream/topological_mgmt/index
+  upstream/device_connection/index
+  upstream/device_tags/index
+  upstream/device_else/index
+
+
+
+.. toctree::
+  :caption: Downstream
+  :maxdepth: 1
+
+  downstream/devices/index
+  downstream/subdevices/index

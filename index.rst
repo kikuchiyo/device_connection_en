@@ -4,9 +4,9 @@ Device connection
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: 返回
+   :caption: Back to
 
-   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
+   EnOS fundamental <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
 
 .. toctree::
     :maxdepth: 1
@@ -38,7 +38,7 @@ Device connection
    :maxdepth: 1
    :caption: Reference
 
-   device_protocol_development_reference
+   nonsdk/index
 
 
 Downloads

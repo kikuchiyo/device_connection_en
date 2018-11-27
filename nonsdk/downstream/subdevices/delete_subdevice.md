@@ -1,12 +1,12 @@
-# Disable sub-devices
+# Delete sub-devices
 
 This topic notifies the edge that the specific sub-devices belong to
-this edge have been disabled from the EnOS Cloud. EnOS Cloud publishes
-the disable devices message to the edge topic asynchronously.
+this edge have been deleted from the EnOS Cloud. EnOS Cloud publishes
+the delete devices message to the edge topic asynchronously.
 
-- Topic: /ext/session/{productKey}/{deviceKey}/combine/disable
+- Topi: /ext/session/{productKey}/{deviceKey}/combine/delete
 
-- Reply topic: /ext/session/{productKey}/{deviceKey}/combine/disable_reply
+- Reply topic: /ext/session/{productKey}/{deviceKey}/combine/delete_reply
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
@@ -14,33 +14,19 @@ the disable devices message to the edge topic asynchronously.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": [
-
-{
-
-"productKey": "xxx",
-
-"deviceKey": "xxx"
-
-},
-
-{
-
-"productKey": "xxx",
-
-"deviceKey": "xxx"
-
-}
-
-]
-
-"method": "thing.combine.disable"
-
+	"id": "123",
+	"version": "1.0",
+	"params": [
+            {
+		"productKey": "xxx",
+		"deviceKey": "xxx"
+	},
+	{
+		"productKey": "xxx",
+		"deviceKey": "xxx"
+	}
+	]
+	"method": "thing.combine.delete"
 }
 ```
 
@@ -48,14 +34,11 @@ the disable devices message to the edge topic asynchronously.
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+	"id": "123",
+	"code": 200,
+	"data": {}
 }
+
 ```
 
 ## Parameter description​
@@ -63,51 +46,51 @@ the disable devices message to the edge topic asynchronously.
 <table>
   <tr>
     <td>Parameters</td>
-    <td>Type​</td>
+    <td>​Type​</td>
     <td>Occurrence </td>
     <td>Description</td>
   </tr>
   <tr>
     <td>id</td>
     <td>Long</td>
-    <td>Optional</td>
+    <td>Optional </td>
     <td>Message ID. Reserved parameter for future use.</td>
   </tr>
   <tr>
     <td>version</td>
     <td>String</td>
-    <td>Mandantory</td>
-    <td>Version of the protocol. Current version is 1.0.</td>
+    <td>Mandatory </td>
+    <td>Version of the protocol. Current version is 1.0. </td>
   </tr>
   <tr>
     <td>params</td>
     <td>Object</td>
-    <td>Mandantory</td>
+    <td>Mandatory </td>
     <td>Request parameters. </td>
   </tr>
   <tr>
     <td>productKey</td>
     <td>String</td>
-    <td>Mandantory</td>
+    <td>Mandatory</td>
     <td>ProductKey of the sub-device.</td>
   </tr>
   <tr>
     <td>deviceKey</td>
-    <td>String</td>
-    <td>Mandantory</td>
+    <td>String </td>
+    <td>Mandatory</td>
     <td>DeviceKey of the sub-device.</td>
   </tr>
   <tr>
     <td>method</td>
     <td>String</td>
-    <td>Mandantory</td>
-    <td>The method of the request.</td>
+    <td>Mandatory</td>
+    <td>The method of the request. </td>
   </tr>
   <tr>
     <td>code</td>
-    <td>Integer</td>
-    <td>Mandantory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully. </td>
+    <td>String</td>
+    <td>Mandatory </td>
+    <td>Response code. &ldquo;200&rdquo;  indicates the request is executed   successfully. </td>
   </tr>
   <tr>
     <td>data</td>

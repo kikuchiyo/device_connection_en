@@ -8,40 +8,28 @@
 
 ```
 {
-
-"id": 123,
-
-"params": {
-
-"productKey": "xxxxx",
-
-"deviceKey": "xxxxx"
-
+ "id": 123,
+ "params": {
+ "productKey": "xxxxx",
+ "deviceKey": "xxxxx"
+ }
 }
 
-}
 ```
 
 ## Example Response Message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"message": "success",
-
-"data": {
-
-"productKey": "xxxxx",
-
-"deviceKey": "xxxxx"
-
+ "id": "123",
+ "code": 200,
+ "message": "success",
+ "data": {
+      "productKey": "xxxxx",
+      "deviceKey": "xxxxx"
+  }
 }
 
-}
 ```
 
 ## Parameter Description

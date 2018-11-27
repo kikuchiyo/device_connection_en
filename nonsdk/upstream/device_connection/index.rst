@@ -8,7 +8,6 @@ to the topological relationship to identify whether the sub-device can
 use the edge connection.
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
 
    connect_subdevices

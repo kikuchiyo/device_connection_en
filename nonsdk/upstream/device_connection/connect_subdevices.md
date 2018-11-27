@@ -9,50 +9,33 @@
 
 ```
 {
-
-"id": "123",
-
-"params": {
-
-"productKey": "123",
-
-"deviceKey": "test",
-
-"clientId": "123",
-
-"timestamp": "123",
-
-"signMethod": "hmacmd5",
-
-"sign": "xxxxxx",
-
-"cleanSession": "true"
-
+ "id": "123",
+ "params": {
+ "productKey": "123",
+ "deviceKey": "test",
+ "clientId": "123",
+ "timestamp": "123",
+ "signMethod": "hmacmd5",
+ "sign": "xxxxxx",
+ "cleanSession": "true"
+ }
 }
 
-}
 ```
 
 ## Example Response Message
 
 ```
 {
-
-"id":"123",
-
-"code":200,
-
-"message":"success"
-
-"data": {
-
-"productKey": "123",
-
-"deviceKey": "test"
-
+ "id":"123",
+ "code":200,
+ "message":"success"
+ "data": {
+      "productKey": "123",
+      "deviceKey": "test"
+  }
 }
 
-}
 ```
 
 All parameters reported to EnOS Cloudwill be signed

@@ -11,54 +11,35 @@ format and then sends the data to EnOS Cloud.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": {
-
-"events": {
-
-"Power": {
-
-"value": "1.0",
-
-"quality": "9"
-
-},
-
-"temp": 1.02,
-
-"branchCurr": [
-
-"1.02", "2.02", "7.93"
-
-]
-
-},
-
-"time": 123456
-
-},
-
-"method": "thing.event.{tsl.event.identifier}.post"
-
+  "id": "123",
+  "version": "1.0",
+ "params": {
+		"events": {
+			"Power": {
+				"value": "1.0",
+				"quality": "9"
+			},
+			"temp": 1.02,
+			"branchCurr": [
+				"1.02", "2.02", "7.93"
+			]
+		},
+		"time": 123456
+	},
+  "method": "thing.event.{tsl.event.identifier}.post"
 }
+
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+  "id": "123",
+  "code": 200,
+  "data": {}
 }
+
 ```
 
 ## Parameter description

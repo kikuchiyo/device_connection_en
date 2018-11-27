@@ -8,40 +8,28 @@
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": {
-
-"tags": ["tag1", "tag2"]
-
-},
-
-"method": "thing.tag.query"
-
+ "id": "123",
+ "version": "1.0",
+ "params": {
+   "tags": ["tag1", "tag2"]
+ },
+ "method": "thing.tag.query"
 }
+
 ```
 
-## Example REsPONSE Message
+## Example Response Message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {
-
-"tag1": "value1",
-
-"tag2": "value2"
-
+ "id": "123",
+ "code": 200,
+ "data": {
+   "tag1": "value1",
+   "tag2": "value2"
+ }
 }
 
-}
 ```
 
 ## Parameter Description

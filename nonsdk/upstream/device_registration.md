@@ -10,64 +10,40 @@
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": [
-
-{
-
-"productKey": "1234556554",
-
-"deviceAttributes": {
-
-"color":"red"
-
-},
-
-"deviceKey" : "deviceKey1234",
-
-"deviceName": "deviceName1234",
-
-"deviceDesc": "deviceDesc1234"
-
+ "id": "123",
+ "version": "1.0",
+ "params": [
+ {
+ "productKey": "1234556554",
+ "deviceAttributes": {
+ "color":"red"
+ },
+ "deviceKey" : "deviceKey1234",
+ "deviceName": "deviceName1234",
+ "deviceDesc": "deviceDesc1234"
+ }
+ ],
+ "method": "thing.device.register"
 }
 
-],
-
-"method": "thing.device.register"
-
-}
 ```
 
 ### Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": [
-
-{
-
-"assetId": "12344",
-
-"productKey": "1234556554",
-
-"deviceKey": "deviceKey1234",
-
-"deviceSecret": "xxxxxx"
-
+ "id": "123",
+ "code": 200,
+ "data": [
+ {
+ "assetId": "12344",
+ "productKey": "1234556554",
+ "deviceKey": "deviceKey1234",
+ "deviceSecret": "xxxxxx"
+ }
+ ]
 }
 
-]
-
-}
 ```
 
 ### Parameter Description

@@ -1,39 +1,32 @@
-# Delete tags
+# Delete attributes
 
-- Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete
 
-- Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
+- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete_reply
 
 ## Example request message
 
 ```
 {
+ "id": "123",
+ "version": "1.0",
+ "params": {
+   "attributes": ["attr1", "attr2", "attr3"]
+ },
+ "method": "thing.attribute.delete"
+}
 
-"id": "123",
-
-"version": "1.0",
-
-"params": {
-
-"tags": ["tag1", "tag2"]
-
-},
-
-"method": "thing.tag.delete"
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+ "id": "123",
+ "code": 200,
+ "data": {}
 }
+
 ```
 
 ## Parameter description
@@ -64,11 +57,12 @@
     <td>Parameters used for deleting tags.</td>
   </tr>
   <tr>
-    <td>tags</td>
-    <td>List</td>
-    <td>Mandatory </td>
-    <td>The   unique identifier of the tags.<br>
-      The value of   the tags cannot be null. If the value is null, no tags will be deteled. </td>
+    <td>attributes </td>
+    <td>Array </td>
+    <td>Optional</td>
+    <td>List of the unique   identifier of the attribute. One request can contain maximum 200 items.<br>
+      The value of the attributes cannot be null. If the value is null,   no tags will be deteled.
+      &nbsp;</td>
   </tr>
   <tr>
     <td>method</td>
@@ -81,11 +75,5 @@
     <td>Integer</td>
     <td>Mandatory</td>
     <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON   format.</td>
   </tr>
 </table>

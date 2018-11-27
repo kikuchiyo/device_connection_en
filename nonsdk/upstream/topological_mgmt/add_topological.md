@@ -13,48 +13,32 @@ the topological relationship between the edge and a sub-device.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": [
-
-{
-
-"deviceKey": "deviceKey1234",
-
-"productKey": "1234556554",
-
-"sign": "xxxxxx",
-
-"signmethod": "hmacSha1",
-
-"timestamp": "1524448722000",
-
-"clientId": "xxxxxx"
-
+ "id": "123",
+ "version": "1.0",
+ "params": [
+ {
+ "deviceKey": "deviceKey1234",
+ "productKey": "1234556554",
+ "sign": "xxxxxx",
+ "signmethod": "hmacSha1",
+ "timestamp": "1524448722000",
+ "clientId": "xxxxxx"
+ }
+ ],
+ "method": "thing.topo.add"
 }
 
-],
-
-"method": "thing.topo.add"
-
-}
 ```
 
 ## Example Response Message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+ "id": "123",
+ "code": 200,
+ "data": {}
 }
+
 ```
 
 ## Parameter Description

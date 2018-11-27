@@ -11,35 +11,24 @@ publishes a message to the device topic to invoke the device services.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": {
-
-"Power": "on",
-
-"WindState": "2"
-
-},
-
-"method": "thing.service.{tsl.service.identifier}"
-
+	"id": "123",
+	"version": "1.0",
+	"params": {
+		"Power": "on",
+		"WindState": "2"
+	},
+	"method": "thing.service.{tsl.service.identifier}"
 }
+
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+	"id": "123",
+	"code": 200,
+	"data": {}
 }
 ```
 

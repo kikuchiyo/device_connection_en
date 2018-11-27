@@ -14,36 +14,26 @@ the information of the measure points from the the downstream.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": ["power", "temp"],
-
-"method": "thing.service.measurepoint.get"
-
+	"id": "123",
+	"version": "1.0",
+	"params": ["power", "temp"],
+	"method": "thing.service.measurepoint.get"
 }
+
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {
-
-"power": "on",
-
-"temp": "23"
-
+	"id": "123",
+	"code": 200,
+	"data": {
+		"power": "on",
+		"temp": "23"
+	}
 }
 
-}
 ```
 
 ## Parameter description

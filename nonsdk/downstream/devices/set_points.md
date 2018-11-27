@@ -13,34 +13,25 @@ the device measure points according to the request.
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": {
-
-"temperature": "30.5"
-
-},
-
-"method": "thing.service.measurepoint.set"
-
+	"id": "123",
+	"version": "1.0",
+	"params": {
+		"temperature": "30.5"
+	},
+	"method": "thing.service.measurepoint.set"
 }
+
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+	"id": "123",
+	"code": 200,
+	"data": {}
 }
+
 ```
 
 ## Parameter description

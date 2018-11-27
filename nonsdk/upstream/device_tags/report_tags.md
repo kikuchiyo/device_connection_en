@@ -8,40 +8,28 @@
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": [
-
-{
-
-"tagKey": "Temperature",
-
-"tagValue": "36.8"
-
+ "id": "123",
+ "version": "1.0",
+ "params": [
+ {
+ "tagKey": "Temperature",
+ "tagValue": "36.8"
+ }
+ ],
+ "method": "thing.tag.update"
 }
 
-],
-
-"method": "thing.tag.update"
-
-}
 ```
 
 ## Example response message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+ "id": "123",
+ "code": 200,
+ "data": {}
 }
+
 ```
 
 ## Parameter description

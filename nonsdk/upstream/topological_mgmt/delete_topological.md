@@ -14,38 +14,27 @@ After you delete the topological relationship of the sub-device from EnOS Cloud,
 
 ```
 "id": "123",
-
-"version": "1.0",
-
-"params": [
-
-{
-
-"deviceKey": "deviceKey1234",
-
-"productKey": "1234556554"
-
+ "version": "1.0",
+ "params": [
+ {
+ "deviceKey": "deviceKey1234",
+ "productKey": "1234556554"
+ }
+ ],
+ "method": "thing.topo.delete"
 }
 
-],
-
-"method": "thing.topo.delete"
-
-}
 ```
 
 ## Example Response Message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": {}
-
+ "id": "123",
+ "code": 200,
+ "data": {}
 }
+
 ```
 
 ## Parameter Description

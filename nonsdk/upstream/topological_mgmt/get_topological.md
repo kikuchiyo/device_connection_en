@@ -12,40 +12,28 @@ An edge can publish a message to this topic to request EnOS Cloud to retrieve th
 
 ```
 {
-
-"id": "123",
-
-"version": "1.0",
-
-"params": {},
-
-"method": "thing.topo.get"
-
+ "id": "123",
+ "version": "1.0",
+ "params": {},
+ "method": "thing.topo.get"
 }
+
 ```
 
 ## Example Response Message
 
 ```
 {
-
-"id": "123",
-
-"code": 200,
-
-"data": [
-
-{
-
-"deviceKey": "deviceKey1234",
-
-"productKey": "1234556554"
-
+ "id": "123",
+ "code": 200,
+ "data": [
+ {
+ "deviceKey": "deviceKey1234",
+ "productKey": "1234556554"
+ }
+ ]
 }
 
-]
-
-}
 ```
 
 ## Parameter Description
