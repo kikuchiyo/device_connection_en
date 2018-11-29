@@ -1,5 +1,10 @@
-# Query attributes
+# Get attributes
 
+A device can publish a message to this topic to request EnOS cloud to retrieve the attributes from the cloud.
+
+**Note:** Configure the parameters according to the output and input parameters of the measuring points.
+
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query_reply
@@ -30,7 +35,7 @@
        "value2": "9"
      },
    "attr2": 1.02,
-   "attr3": ["1.02", "2.02", "7.93"]
+   "attr3": [1.02, 2.02, 7.93]
  }
 }
 
@@ -67,8 +72,8 @@
     <td>attributes </td>
     <td>Array </td>
     <td>Mandatory</td>
-    <td>List of the   attribute. One request can contain maximum 200   items.<br>
-       If the value of attributes is null, system   will query all the attributes.  </td>
+    <td>List of the  attribute. One request can contain maximum 200   items.<br>
+       If the value of attributes is null, system  will retrieve all the attributes.  </td>
   </tr>
   <tr>
     <td>method</td>
@@ -80,7 +85,7 @@
     <td>attr1</td>
     <td>String </td>
     <td>Mandatory</td>
-    <td>The unique   identifier of the attribute. </td>
+    <td>The unique  identifier of the attribute. </td>
   </tr>
   <tr>
     <td>value</td>

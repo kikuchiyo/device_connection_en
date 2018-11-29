@@ -5,6 +5,7 @@ If passthrough mode is used, the device sends raw data such as a binary data str
 For more information about the request and response format, refer to
 Invoke device services (non-passthrough).
 
+Downstream
 - TOPIC /sys/{productKey}/{deviceKey}/thing/service/down_raw
 
 - Reply TOPIC /sys/{productKey}/{deviceKey}/thing/service/down_raw_reply

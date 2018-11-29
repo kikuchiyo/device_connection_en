@@ -2,6 +2,7 @@
 
 An edge can publish a message to this topic to request EnOS Cloud to retrieve the topological relationship between the edge and a sub-device.
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get_reply
@@ -55,13 +56,13 @@ An edge can publish a message to this topic to request EnOS Cloud to retrieve th
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
     <td>Object</td>
     <td>Optional</td>
-    <td>Parameters used for getting topological   relationships.</td>
+    <td>Parameters used for getting topological relationships.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -73,7 +74,7 @@ An edge can publish a message to this topic to request EnOS Cloud to retrieve th
     <td>deviceKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>DeviceKey of the sub-device.</td>
+    <td>Device key of the sub-device.</td>
   </tr>
   <tr>
     <td>productKey</td>
@@ -91,6 +92,6 @@ An edge can publish a message to this topic to request EnOS Cloud to retrieve th
     <td>data </td>
     <td>String </td>
     <td>Optional</td>
-    <td>Detailed   information of the sub-device, in JSON format. </td>
+    <td>Detailed information of the sub-device, in JSON format. </td>
   </tr>
 </table>

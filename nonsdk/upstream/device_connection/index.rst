@@ -11,4 +11,4 @@ use the edge connection.
    :maxdepth: 1
 
    connect_subdevices
-   disconnect_sundevices
+   disconnect_subdevices

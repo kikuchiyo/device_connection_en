@@ -3,6 +3,7 @@
 An edge can publish a message to this topic to request EnOS Cloud to add
 the topological relationship between the edge and a sub-device.
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add_reply
@@ -54,31 +55,31 @@ the topological relationship between the edge and a sub-device.
     <td>id</td>
     <td>Long</td>
     <td>Optional</td>
-    <td>Message ID. Reserved parameter for future   use.</td>
+    <td>Message ID. Reserved parameter for future use.</td>
   </tr>
   <tr>
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
     <td>List</td>
     <td>Mandatory</td>
-    <td>Parameters used for adding topological   relationships.</td>
+    <td>Parameters used for adding topological relationships.</td>
   </tr>
   <tr>
     <td>deviceKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>deviceKey of the sub-device.</td>
+    <td>Device key of the sub-device.</td>
   </tr>
   <tr>
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Productkey or the sub-device.</td>
+    <td>Product key or the sub-device.</td>
   </tr>
   <tr>
     <td>sign</td>
@@ -90,7 +91,7 @@ the topological relationship between the edge and a sub-device.
     <td>signmethod</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Signing method. The supported methods are   hmacSha1, hmacSha256, hmacMd5, and Sha256.</td>
+    <td>Signing method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.</td>
   </tr>
   <tr>
     <td>timestamp</td>
@@ -102,7 +103,7 @@ the topological relationship between the edge and a sub-device.
     <td>clientId</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Identifier of the sub-device. The value can   either be the productKey or deviceKey.</td>
+    <td>Identifier of the sub-device. The value can either be productKey or deviceKey.</td>
   </tr>
   <tr>
     <td>code</td>
@@ -112,4 +113,4 @@ the topological relationship between the edge and a sub-device.
   </tr>
 </table>
 
-All parameters reported to EnOS Cloudwill be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign= uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000))..
+All parameters reported to EnOS Cloudwill be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign=uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000)).

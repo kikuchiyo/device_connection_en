@@ -4,7 +4,8 @@ This topic notifies the edge that the specific sub-devices belong to
 this edge have been deleted from the EnOS Cloud. EnOS Cloud publishes
 the delete devices message to the edge topic asynchronously.
 
-- Topi: /ext/session/{productKey}/{deviceKey}/combine/delete
+Downstream
+- Request topic: /ext/session/{productKey}/{deviceKey}/combine/delete
 
 - Reply topic: /ext/session/{productKey}/{deviceKey}/combine/delete_reply
 
@@ -20,13 +21,9 @@ the delete devices message to the edge topic asynchronously.
             {
 		"productKey": "xxx",
 		"deviceKey": "xxx"
-	},
-	{
-		"productKey": "xxx",
-		"deviceKey": "xxx"
 	}
-	]
-	"method": "thing.combine.delete"
+	],
+	"method": "combine.delete"
 }
 ```
 
@@ -78,7 +75,7 @@ the delete devices message to the edge topic asynchronously.
     <td>deviceKey</td>
     <td>String </td>
     <td>Mandatory</td>
-    <td>DeviceKey of the sub-device.</td>
+    <td>Device key of the sub-device.</td>
   </tr>
   <tr>
     <td>method</td>

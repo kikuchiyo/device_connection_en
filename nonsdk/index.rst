@@ -1,4 +1,4 @@
-Developing protocol based on EnOS device protocol standard
+Sending device telemetry based on EnOS device protocol standard
 ============================================================
 
 EnOS provides device SDKs for you to configure devices. These device SDKs already encapsulate protocols for data exchange between devices and EnOS Cloud. 

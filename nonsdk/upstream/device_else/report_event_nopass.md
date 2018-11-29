@@ -3,6 +3,7 @@
 If non-passthrough mode is used, the device generates data in the JSON
 format and then sends the data to EnOS Cloud.
 
+Upstream
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post
 
 - REPLY TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply

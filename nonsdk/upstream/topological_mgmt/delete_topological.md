@@ -4,6 +4,7 @@ An edge can publish a message to this topic to request EnOS Cloud to delete the 
 
 After you delete the topological relationship of the sub-device from EnOS Cloud, the sub-device can no longer connect to the EnOS Cloud through the edge.
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete_reply
@@ -56,25 +57,25 @@ After you delete the topological relationship of the sub-device from EnOS Cloud,
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
     <td>List</td>
     <td>Mandatory</td>
-    <td>Parameters used for deleting topological   relationships.</td>
+    <td>Parameters used for deleting topological relationships.</td>
   </tr>
   <tr>
     <td>deviceKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>DeviceKey of the sub-device.</td>
+    <td>Device Key of the sub-device.</td>
   </tr>
   <tr>
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Productkey or the sub-device.</td>
+    <td>Product key or the sub-device.</td>
   </tr>
   <tr>
     <td>method</td>

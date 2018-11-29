@@ -3,6 +3,7 @@
 Device receives the invoke service request through the topic. EnOS Cloud
 publishes a message to the device topic to invoke the device services.
 
+Downstream
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply
@@ -15,7 +16,7 @@ publishes a message to the device topic to invoke the device services.
 	"version": "1.0",
 	"params": {
 		"Power": "on",
-		"WindState": "2"
+		"WindState": 2
 	},
 	"method": "thing.service.{tsl.service.identifier}"
 }
@@ -87,9 +88,9 @@ publishes a message to the device topic to invoke the device services.
     <td>data</td>
     <td>String</td>
     <td>Optional </td>
-    <td>Detailed   information , in JSON format. </td>
+    <td>Detailed information , in JSON format. </td>
   </tr>
 </table>
 
-**Note:** tsl.service.identifier is the identifier of the service that
+**Note:** ``tsl.service.identifier`` is the identifier of the service that
 has been defined in the TSL model.

@@ -2,6 +2,7 @@
 
 **Note:** Configure the parameters according to the output and input parameters of the measuring points.
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply

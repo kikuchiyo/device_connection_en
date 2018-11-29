@@ -1,5 +1,6 @@
 # Delete tags
 
+Upstream
 - Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
 
 - Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
@@ -14,7 +15,7 @@
     "tags": ["tag1", "tag2"]
  },
  "method": "thing.tag.delete"
-
+}
 ```
 
 ## Example response message
@@ -47,7 +48,7 @@
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
@@ -59,8 +60,8 @@
     <td>tags</td>
     <td>List</td>
     <td>Mandatory </td>
-    <td>The   unique identifier of the tags.<br>
-      The value of   the tags cannot be null. If the value is null, no tags will be deteled. </td>
+    <td>The unique identifier of the tags.<br>
+      The value of the tags cannot be null. If the value is null, no tag will be deleted. </td>
   </tr>
   <tr>
     <td>method</td>

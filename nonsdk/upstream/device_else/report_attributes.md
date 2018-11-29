@@ -1,5 +1,8 @@
 # Report attributes
 
+A device can publish a message to this topic to report the new add attributes to EnOS cloud.
+
+Upstream
 - Request TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update
 
 - Reply TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update_reply
@@ -17,7 +20,7 @@
      "value2": "9"
    },
  "attr2": 1.02,
- "attr3": ["1.02", "2.02", "7.93"]
+ "attr3": [1.02, 2.02, 7.93]
  }
  ],
  "method": "thing.attribute.update"
@@ -68,7 +71,7 @@
     <td>Array </td>
     <td>Optional</td>
     <td>List of the attributes. One request can contain maximum 200   items.<br>
-       If the value of attributes is null, system   will get all the attributes.  </td>
+       If the value of attribute is null, system will report all the attributes.  </td>
   </tr>
   <tr>
     <td>method</td>

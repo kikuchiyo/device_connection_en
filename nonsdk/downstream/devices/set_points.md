@@ -1,10 +1,10 @@
-# Set device measure points
+# Set device measuring points
 
 **Note:** Set the parameters according to the output and input parameters in the TSL model.
 
-After a device receives a set device measure point request, it updates
-the device measure points according to the request.
+After a device receives a set device measure point request, it updates the device measure points according to the request.
 
+Downstream
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set_reply
@@ -16,7 +16,7 @@ the device measure points according to the request.
 	"id": "123",
 	"version": "1.0",
 	"params": {
-		"temperature": "30.5"
+		"temperature": 30.5
 	},
 	"method": "thing.service.measurepoint.set"
 }

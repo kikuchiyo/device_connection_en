@@ -1,5 +1,8 @@
 # Delete attributes
 
+A device can publish a message to this topic to request EnOS cloud to delete the attributes from the cloud.
+
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete_reply
@@ -61,7 +64,7 @@
     <td>Array </td>
     <td>Optional</td>
     <td>List of the unique   identifier of the attribute. One request can contain maximum 200 items.<br>
-      The value of the attributes cannot be null. If the value is null,   no tags will be deteled.
+      The value of the attribute cannot be null. If the value is null,   no attribute will be deleted.
       &nbsp;</td>
   </tr>
   <tr>

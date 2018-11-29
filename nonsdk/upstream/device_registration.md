@@ -1,7 +1,8 @@
 # Device Registration
 
-## Register a sub-device
+## Register a device
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/device/register
 
 - Reply TOPIC: /sys/{productKey}/{deivceKey}/thing/device/register_reply
@@ -59,13 +60,13 @@
     <td>Id</td>
     <td>Long </td>
     <td>Mandatory</td>
-    <td>Message ID. Reserved parameter for future   use. </td>
+    <td>Message ID. Reserved parameter for future use. </td>
   </tr>
   <tr>
     <td>Version </td>
     <td>String </td>
     <td>Mandatory </td>
-    <td>Version of the protocol. Current version is   1.0. </td>
+    <td>Version of the protocol. Current version is 1.0. </td>
   </tr>
   <tr>
     <td>Params </td>
@@ -77,49 +78,49 @@
     <td>deviceAttributes </td>
     <td>String </td>
     <td>Optional </td>
-    <td>List of the attributes of the device. </td>
+    <td>List of the properties of the device. </td>
   </tr>
   <tr>
     <td>Color </td>
     <td>String </td>
     <td>Optional </td>
-    <td>Attribute of the device </td>
+    <td>Property of the device </td>
   </tr>
   <tr>
     <td>deviceKey </td>
     <td>String </td>
     <td>Optional </td>
-    <td>DeviceKey of the sub-device. </td>
+    <td>Device Key of the device. </td>
   </tr>
   <tr>
     <td>deviceName </td>
     <td>String </td>
     <td>Optional </td>
-    <td>Name of the sub-device. </td>
+    <td>Name of the device. </td>
   </tr>
   <tr>
     <td>deviceDesc</td>
     <td>String</td>
     <td>Optional</td>
-    <td>Description of the sub-device.</td>
+    <td>Description of the device.</td>
   </tr>
   <tr>
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Productkey of the sub-device.</td>
+    <td>Product key of the device.</td>
   </tr>
   <tr>
     <td>assetId </td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Unique identifier of the sub-device. </td>
+    <td>Unique identifier of the device. </td>
   </tr>
   <tr>
     <td>deviceSecret</td>
     <td>String </td>
     <td>Mandatory</td>
-    <td>DeviceSecret of the sub-device</td>
+    <td>Device secret of the device.</td>
   </tr>
   <tr>
     <td>Method</td>
@@ -131,12 +132,12 @@
     <td>Code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicate the request   is executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicate the request is executed successfully.</td>
   </tr>
   <tr>
     <td>Data</td>
-    <td>String </td>
+    <td>JSON </td>
     <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON format. </td>
+    <td>Detailed information of the device. </td>
   </tr>
 </table>

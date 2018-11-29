@@ -1,4 +1,4 @@
-Device measure points, event, and service protocols
+Device measure points, service protocols
 ======================================================
 
 Please refer the sections as below:

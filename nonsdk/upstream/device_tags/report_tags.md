@@ -1,5 +1,6 @@
 # Report tags
 
+Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update_reply
@@ -57,7 +58,7 @@
     <td>params</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>Parameters used for reporting tags.The maximum   items are 200.</td>
+    <td>Parameters used for reporting tags. The maximum items are 200.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -73,7 +74,7 @@
       <ul>
         <li>Maximum 100 characters in   length</li>
         <li>Support lowercase characters ( a- z), uppercase characters( A – Z), numbers (0- 9), and underline (_). </li>
-        <li>The tag name must start with   an letter or underline (_).</li>
+        <li>The tag name must start with  an letter or underline (_).</li>
       </ul></td>
   </tr>
   <tr>
@@ -92,6 +93,6 @@
     <td>data</td>
     <td>String</td>
     <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON   format.</td>
+    <td>Detailed information of the sub-device, in JSON format.</td>
   </tr>
 </table>

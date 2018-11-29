@@ -1,8 +1,9 @@
 # Connect sub-devices to EnOS Cloud
 
+Upstream
 - Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login
 
--   Reply TOPIC:
+- Reply TOPIC:
     /ext/session/{productKey}/{deviceKey}/combine/login_reply
 
 ## Example Request Message
@@ -71,25 +72,25 @@ cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
     <td>deviceKey </td>
     <td>String </td>
     <td>Mandatory </td>
-    <td>DeviceKey of the sub-device. </td>
+    <td>Device key of the sub-device. </td>
   </tr>
   <tr>
     <td>productKey </td>
     <td>String </td>
     <td>Mandatory </td>
-    <td>ProductKey of the sub-device </td>
+    <td>Product key of the sub-device </td>
   </tr>
   <tr>
-    <td>sign </td>
-    <td>String </td>
-    <td>Mandatory </td>
+    <td>sign</td>
+    <td>String</td>
+    <td>Mandatory</td>
     <td>Signature of the sub-device. Sub-devices use the same signature rules as the edge. </td>
   </tr>
   <tr>
     <td>signmethod </td>
     <td>String </td>
     <td>Mandatory </td>
-    <td>Signing method. The supported methods are  <em>hmacSha1</em>, <em>hmacSha256</em>, <em>hmacMd5</em>, and <em>Sha256</em>. </td>
+    <td>Signing method. The supported methods are <em>hmacSha1</em>. </td>
   </tr>
   <tr>
     <td>timestamp </td>
@@ -119,7 +120,7 @@ cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
     <td>data</td>
     <td>String </td>
     <td>Optional</td>
-    <td>Detailed   information of the sub-device, in JSON format. </td>
+    <td>Detailed information of the sub-device, in JSON format. </td>
   </tr>
   <tr>
     <td>code</td>

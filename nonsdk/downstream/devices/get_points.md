@@ -1,11 +1,14 @@
-# Get device measure points
+# Get device measuring points
 
 **Note:** Set the parameters according to the output and input parameters in the TSL model.
 
+
 After a device receives a get device measure points request, it returns
-the device measurepoint in a reply message to EnOS cloud. You can get
+the device measuring point in a reply message to EnOS cloud. You can get
 the information of the measure points from the the downstream.
 
+
+Downstream
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply
@@ -55,19 +58,19 @@ the information of the measure points from the the downstream.
     <td>version</td>
     <td>String</td>
     <td>Mandatory </td>
-    <td>Version of the protocol. Current   version is 1.0. </td>
+    <td>Version of the protocol. Current version is 1.0. </td>
   </tr>
   <tr>
     <td>params</td>
     <td>List</td>
     <td>Mandatory </td>
-    <td>Parameters used for   getting device properties. </td>
+    <td>Parameters used for getting device properties. </td>
   </tr>
   <tr>
     <td>method</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>The method of the   request. </td>
+    <td>The method of the request. </td>
   </tr>
   <tr>
     <td>power</td>

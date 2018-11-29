@@ -4,7 +4,8 @@ This topic notifies the edge that the specific sub-devices belong to
 this edge have been enabled from the EnOS Cloud. EnOS Cloud publishes
 the enable devices message to the edge topic asynchronously.
 
-- Topic: /ext/session/{productKey}/{deviceKey}/combine/enable
+Downstream
+- Request topic: /ext/session/{productKey}/{deviceKey}/combine/enable
 
 - Reply topic: /ext/session/{productKey}/{deviceKey}/combine/enable_reply
 
@@ -19,20 +20,11 @@ the enable devices message to the edge topic asynchronously.
           {
   "productKey": "xxx",
   "deviceKey": "xxx"
-},
-{
-  "productKey": "xxx",
-  "deviceKey": "xxx"
 }
-]
-"method": "thing.combine.enable"
+],
+"method": "combine.enable"
 }
 
-{
-"id": "123",
-"code": 200,
-"data": {}
-}
 
 ```
 
@@ -78,13 +70,13 @@ the enable devices message to the edge topic asynchronously.
     <td>productKey</td>
     <td>String</td>
     <td>Mandantory</td>
-    <td>ProductKey of the sub-device.</td>
+    <td>Product key of the sub-device.</td>
   </tr>
   <tr>
     <td>deviceKey</td>
     <td>String</td>
     <td>Mandantory</td>
-    <td>DeviceKey of the sub-device.</td>
+    <td>Device key of the sub-device.</td>
   </tr>
   <tr>
     <td>method</td>

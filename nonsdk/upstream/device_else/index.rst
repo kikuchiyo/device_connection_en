@@ -1,13 +1,14 @@
-Device Attribute, Measuring Point, Event, and Service protocols
+Device attribute, measuring point, event protocols
 ==================================================================
 
 Please refer the sections as below:
+
 
 .. toctree::
   :maxdepth: 1
 
   query_attributes
-  report_attributes
+  get_attributes
   delete_attributes
   report_points
   report_event_nopass
