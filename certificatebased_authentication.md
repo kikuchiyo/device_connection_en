@@ -1,16 +1,16 @@
-# 基于证书的双向认证
+# Certificate-based Two-way Authentication
 
 Security is a critical in an IoT system. When certificate authentication is enabled in the product configuration，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
 
 - The communications between EnOS Edge and EnOS IoT Hub are enfored to use certificate-based bi-directional authentication.
 - Support for RSA algorithm to verify signature, with enforcement for 2048 bits.
 
-## Setup phase
+## Setup Phase
 
 The following diagram illustrates the process of secure communication between the edge and IoT Hub based on X.509 certificates:
 
 
-### 1. IoT Hub acquires X.509 certificate
+### 1. IoT Hub Acquires X.509 Certificate
 ![image](media/certificate_service_secure_communication_01.png)
 1a. The IoT Hub creates key pairs and CSR locally, acquires the X.509 certificate with the CSR by using the X.509 Certificate Service API.
 
@@ -19,15 +19,15 @@ The following diagram illustrates the process of secure communication between th
 1c. The IoT Hub receives and stores the X.509 certificate.
 
 
-### 2. Edge acquires X.509 certificate
+### 2. Edge Acquires X.509 Certificate
 ![image](media/certificate_service_secure_communication_02.png)
-2a. Edge设备出厂预烧录了产品证书（`ProductKey`，`ProductSecret`），edge设备序列号（SN）。设备上电联网以后，上报产品证书以及序列号至云端去动态激活。如果云端鉴权认证通过，会返回`DeviceSecret`给edge。
+2a. Before leaving the factory, the Edge devices are pre-burned with a product certificate (`ProductKey` and `ProductSecret`) as well as a device serial number (SN). When powered on and connected to the network, the device will report its product certificate and serial number to the cloud for dynamic activation. The cloud will return the `DeviceSecret` to the Edge if the authentication is successful.
 
 
-2b. 在IoT Hub上使用edge设备序列号作为`DeviceKey`预注册edge设备，可以在EnOS控制台注册设备，也可以通过调用REST API接口注册设备。
+2b. On the IoT Hub, the serial number of the Edge device is used as the `DeviceKey` to pre-register the Edge device. The device can be registered either via the EnOS Console or by calling the REST API.
 
 
-2c. The edge receives the responses from the IoT Hub, creates key pairs and CSR, calls the API to get its X.509 certificate, 同时使用设备三元组登录至云端，设备的第一次登录会激活该设备.
+2c. The Edge receives the responses from the IoT Hub, creates key pairs and CSR, and calls the API to get its X.509 certificate. Meanwhile, the device trigraph is used to log the device in to the cloud, and the device will be activated upon its first login.
 
 2d. The IoT Hub receives the CSR from the edge, after verifing its identity, forward the CSR to the EnOS CA.
 
@@ -37,12 +37,12 @@ The following diagram illustrates the process of secure communication between th
 
 2g.The edge receives the edge certificate, saves them securely in the local repository, for example, the Trusted Platform Module (TPM).
 
-## Communication phase
+## Communication Phase
 
 The diagram below illustrates the certificate-basd authentication process:
 
 
-### 3. Edge commmunicates with the IoT Hub through certificate-based bi-directional authentication
+### 3. Edge Communicates with the IoT Hub through Certificate-based Bi-directional Authentication
 ![image](media/certificate_service_secure_communication_03.png)
 
 3a. The edge validates the certificate of the IoT Hub.
@@ -55,17 +55,17 @@ When the TLS handshake in step 3a and 3b succeeds, the TLS connection is establi
 
 3d. The IoT Hub transmits configurations and control signals through MQTT over the TLS connection.
 
-## Revocation phase
+## Revocation Phase
 
 Under some circumstances, user needs to revoke the X.509 certificate of the edge. The following diagram illustrates the revocation process.
 
-### 4. The IoT Hub revokes the X.509 certificate of the edge
+### 4. The IoT Hub Revokes the X.509 Certificate of the Edge
 ![image](media/certificate_service_secure_communication_04.png)
 4a. The IoT Hub calls the revocation API to revoke the X.509 certificate with the serial number of the certificate.
 
 4b. The EnOS CA receives the request from the IoT Hub, verifies the identity, revokes the certificate, and updates the CRL.
 
-## Edge security best practices
+## Edge Security Best Practices
 
 In the certificate-based security connection, consider the following best practices to secure the edge:
 

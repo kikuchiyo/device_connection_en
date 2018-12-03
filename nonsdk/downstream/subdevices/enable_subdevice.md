@@ -1,4 +1,4 @@
-# Enable sub-devices
+# Enable Sub-devices
 
 This topic notifies the edge that the specific sub-devices belong to
 this edge have been enabled from the EnOS Cloud. EnOS Cloud publishes
@@ -11,7 +11,7 @@ Downstream
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
-## Example request message
+## Example Request Message
 
 ```
 "id": "123",
@@ -28,7 +28,7 @@ Downstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -39,7 +39,7 @@ Downstream
 
 ```
 
-## Parameter description​
+## Parameter Description​
 
 <table>
   <tr>

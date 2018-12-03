@@ -1,4 +1,4 @@
-# Report attributes
+# Report Attributes
 
 A device can publish a message to this topic to report the new add attributes to EnOS cloud.
 
@@ -7,7 +7,7 @@ Upstream
 
 - Reply TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -28,7 +28,7 @@ Upstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -39,7 +39,7 @@ Upstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>

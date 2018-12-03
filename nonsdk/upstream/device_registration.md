@@ -1,13 +1,13 @@
 # Device Registration
 
-## Register a device
+## Register a Device
 
 Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/device/register
 
 - Reply TOPIC: /sys/{productKey}/{deivceKey}/thing/device/register_reply
 
-### Example request message
+### Example Request Message
 
 ```
 {
@@ -29,7 +29,7 @@ Upstream
 
 ```
 
-### Example response message
+### Example Response Message
 
 ```
 {

@@ -1,4 +1,4 @@
-# Get device measuring points
+# Get Device Measuring Points
 
 **Note:** Set the parameters according to the output and input parameters in the TSL model.
 
@@ -9,11 +9,11 @@ the information of the measure points from the the downstream.
 
 
 Downstream
-- TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -25,7 +25,7 @@ Downstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -39,7 +39,7 @@ Downstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>

@@ -1,4 +1,4 @@
-# Report device measuring points
+# Report Device Measuring points
 
 **Note:** Configure the parameters according to the output and input parameters of the measuring points.
 
@@ -7,7 +7,7 @@ Upstream
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -32,7 +32,7 @@ Upstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -43,7 +43,7 @@ Upstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>

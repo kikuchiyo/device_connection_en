@@ -1,14 +1,14 @@
-# Invoke device services (non-passthrough)
+# Invoke Device Services (non-passthrough)
 
 Device receives the invoke service request through the topic. EnOS Cloud
 publishes a message to the device topic to invoke the device services.
 
 Downstream
-- TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -23,7 +23,7 @@ Downstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -33,7 +33,7 @@ Downstream
 }
 ```
 
-## Parameter description​
+## Parameter Description​
 
 <table>
   <tr>

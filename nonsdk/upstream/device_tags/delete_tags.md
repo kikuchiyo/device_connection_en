@@ -1,11 +1,11 @@
-# Delete tags
+# Delete Tags
 
 Upstream
 - Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
 
 - Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -18,7 +18,7 @@ Upstream
 }
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -29,7 +29,7 @@ Upstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>

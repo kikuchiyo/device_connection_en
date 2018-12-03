@@ -1,81 +1,79 @@
-# 基于密钥的单向认证
+# Secret-based One-way Authentication
 
-基于密钥的认证具体是指基于设备三元组，即`ProductKey`、`DeviceKey`和`DeviceSecret`，对设备进行鉴权。
+Secret-based authentication refers to the authentication of devices based on device triple, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`.
 
-## 概念
+## Concepts
 
-设备与EnOS IoT Hub连接主要涉及以下操作及状态：
+The following operations and states are involved in the connection between the device and the EnOS IoT Hub:
 
-- **注册**（Registeration）
-  就是在云端创建一个设备，可以通过基于web的EnOS控制台界面创建，也可以通过调用REST API的方式创建。
+- **Registration**
+  A device is created in the cloud either on the interface through Portal or by calling the Restful interface.
 
-- **登录** （Login）
-  设备上送数据之前，必须首先登录成功，然后才可以发送数据。设备登录需要使用设备三元组鉴权。
+- **Login**
+  The device must be successfully logged in before it can send data. The device trigraph authentication is required for login.
 
-- **激活** （Activation）
-  设备的第一次登录成功，会激活设备，将设备从**未激活**状态，更新为**已激活**状态。**已激活**状态包含**在线**和**离线**两个子状态，在EnOS控制台中会使用**在线**和**离线**两个子状态来代替显示**已激活**状态。
-
-## 设备激活方式和设备状态
-
-在EnOS平台初次创建的设备，默认是处于启用但未激活的状态，等待设备激活。设备激活分为_动态激活_和_静态激活_。
-- **动态激活** 的过程如下：
-
-  1. 设备第一次尝试连接时携带`ProductKey`，`ProductSecret`，`DeviceKey`来请求激活，鉴权通过以后，返回`DeviceSecret`给设备。
-  2. 设备通过`ProductKey`，`DeviceKey`，`DeviceSecret`尝试登录。
-  3. 设备登录成功以后，设备状态从 **未激活** 变成 **在线** 状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成 **离线**。
+- **Activation**
+  The device will be activated upon its first successful login, which updates its status from **Inactive** to **Active**. The **Active** status contains two sub-statuses: **Online** and **Offline**.
 
 
-  如需采用动态激活方式，你需要在Product配置中开启**动态激活**。详细信息，参考[开启动态激活](cloud/managing_products)。
+## Device Activation Mode and Device Status
 
-- **静态激活** 的过程如下：
+Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in two ways: dynamic activation, and static activation.
+- **Dynamic Activation**: The process of dynamic activation is as follows:
+  1. When trying to connect for the first time, the device will carry the `ProductKey`, `ProductSecret`, and `DeviceKey` to request for activation. If the authentication is successful, a `DeviceSecret` will be returned to the device.
+  2. The device tries to log in using the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
+  3. Once the device is successfully logged in, its status will change from **Inactive** to **Online**. The device will now be able to send data. If no data is sent within a certain period of time, the status of the device will change to **Offline**.
 
-  1. 设备登录请求携带`ProductKey`，`DeviceKey`，`DeviceSecret`。
-  2. 设备登录成功以后，设备状态从 **未激活** 变成 **在线** 状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成 **离线**。
+  To use dynamic activation, you will need to enable **Dynamic Activation** in the product configuration.
 
-如果发现设备异常，或者不希望接受该设备的数据，可以认为将其置为 **禁用**，此时设备将自动下线，处于 **离线** 状态。
+- **Static Activation**: The process of static activation is as follows:
+  1. The device sends a login request carrying the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
+  2. Once the device is successfully logged in, its status will change from **Inactive** to **Online**. The device will now be able to send data. If no data is sent within a certain period of time, the status of the device will change to **Offline**.
 
-设备整体的状态可以分为操作状态（Operational state）、激活状态（Activation state）、连接状态（communication state）三个维度，如下表所示：
+When the device is not working properly or you do not want to receive its data, you can set it to **Disabled**, after which the device will automatically go offline and its status will change to **Offline**.
+
+Three dimensions are used to describe the overall state of the device: Operational State, Activation State, and Communication State, as shown in the following table:
 
 <table>
    <tr>
-     <th>操作状态</th>
-     <th>激活状态</th>
-     <th>连接状态</th>
+     <th>Operational State</th>
+     <th>Activation State</th>
+     <th>Communication State</th>
    </tr>
    <tr>
-     <td>禁用 Disable</td>
+     <td>Disable</td>
      <td></td>
-     <td>离线 Offline</td>
+     <td>Offline</td>
    </tr>
    <tr>
-     <td>启用 Enable</td>
-     <td>未激活 Inactivated</td>
+     <td>Enable</td>
+     <td>Inactive</td>
      <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>已激活 Activated</td>
-     <td>在线 Online</td>
    </tr>
    <tr>
      <td></td>
+     <td>Activated</td>
+     <td>Online</td>
+   </tr>
+   <tr>
      <td></td>
-     <td>离线 Offline</td>
+     <td></td>
+     <td>Offline</td>
    </tr>
 </table>
 
 
-## 认证过程
+## Authentication Process
 
-设备连接主要认证过程如下：
-- a. 云端预注册设备
-- b. 在edge端配置云端注册的设备信息，主要烧录设备三元组
-- c. edge上电、联网，尝试登录。云端验证设备三元组
-  - 成功：返回成功，告知设备发送数据
-  - 失败：返回失败，中断连接
-- d. 设备以MQTT协议发送数据
-- e. 云端以MQTT协议下发命令
-- f. 设备端响应云端请求
+The main authentication process for device connection is as follows:
+- a. Pre-register device in the cloud
+- b. On the edge side, configure the device information registered in the cloud, and mainly burn into the device trigraph
+- c. Power-on on edge side, connect to network, and try to log in. Device trigraph authentication in the cloud
+  - Successful: Returned successfully, the device is instructed to send data
+  - Failure: Return failed, connection is interrupted
+- d. The device sends data via MQTT protocol
+- e. The cloud issues instructions via the MQTT protocol
+- f. The device side responds to the cloud requests
 
-具体流程图如下：
+The specific flow chart is as follows:
 ![](media/secret_communication.png)

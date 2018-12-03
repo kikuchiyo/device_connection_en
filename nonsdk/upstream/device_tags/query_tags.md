@@ -1,4 +1,4 @@
-# Query tags
+# Query Tags
 
 Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query

@@ -1,17 +1,17 @@
-# Delete sub-devices
+# Delete Sub-devices
 
 This topic notifies the edge that the specific sub-devices belong to
 this edge have been deleted from the EnOS Cloud. EnOS Cloud publishes
 the delete devices message to the edge topic asynchronously.
 
 Downstream
-- Request topic: /ext/session/{productKey}/{deviceKey}/combine/delete
+- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/delete
 
-- Reply topic: /ext/session/{productKey}/{deviceKey}/combine/delete_reply
+- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/delete_reply
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -27,7 +27,7 @@ Downstream
 }
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -38,7 +38,7 @@ Downstream
 
 ```
 
-## Parameter description​
+## Parameter Description​
 
 <table>
   <tr>

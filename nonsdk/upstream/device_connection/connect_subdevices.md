@@ -1,4 +1,4 @@
-# Connect sub-devices to EnOS Cloud
+# Connect Sub-devices to EnOS Cloud
 
 Upstream
 - Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login
@@ -20,6 +20,7 @@ Upstream
  "sign": "xxxxxx",
  "cleanSession": "true"
  }
+ "method":"combine.login"
 }
 
 ```
@@ -30,10 +31,8 @@ Upstream
 {
  "id":"123",
  "code":200,
- "message":"success"
+ "message":""
  "data": {
-      "productKey": "123",
-      "deviceKey": "test"
   }
 }
 

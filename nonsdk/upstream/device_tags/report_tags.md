@@ -1,11 +1,11 @@
-# Report tags
+# Report Tags
 
 Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -22,7 +22,7 @@ Upstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {

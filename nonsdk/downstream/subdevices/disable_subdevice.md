@@ -1,17 +1,17 @@
-# Disable sub-devices
+# Disable Sub-devices
 
 This topic notifies the edge that the specific sub-devices belong to
 this edge have been disabled from the EnOS Cloud. EnOS Cloud publishes
 the disable devices message to the edge topic asynchronously.
 
 Downstream
-- Topic: /ext/session/{productKey}/{deviceKey}/combine/disable
+- Request Topic: /ext/session/{productKey}/{deviceKey}/combine/disable
 
 - Reply topic: /ext/session/{productKey}/{deviceKey}/combine/disable_reply
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -28,7 +28,7 @@ Downstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -38,7 +38,7 @@ Downstream
 }
 ```
 
-## Parameter description​
+## Parameter Description​
 
 <table>
   <tr>

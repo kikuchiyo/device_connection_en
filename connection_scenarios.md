@@ -1,235 +1,172 @@
-# 设备接入方案
+# Device Connection Scheme
 
-在EnOS平台中，无论是edge设备，还是直连IoT Hub的设备，都必须满足EnOS的统一鉴权、上线步骤，才能发送数据至平台。
+On the EnOS platform, unified authentication and online steps must be performed by the EnOS on both the Edge devices and devices connected directly to the IoT Hub before data can be sent to the platform.
 
-## 概念
+EnOS mainly provides the following connection schemes:
+- The device is directly connected into and communicate with the IoT Hub without using gateway, i.e. edge in our scenario, to complete the authentication and data reporting. The device connected via this solution is called _directly connected device_.
+- The device is connected to the EnOS IoT Hub via edge. The device connected via this solution is called _sub device_. The gateway serves as a proxy of the sub devices to help them complete operations, including authentication, connecting to Internet, and data transmission.
 
+The connection scheme is usually selected according to the hardware capabilities of the device and the security requirements for the device connection.
 
+## Connection Schemes
 
-设备与EnOS IoT Hub连接主要涉及以下操作及状态：
+Internet of Everything (IoE), provided that the object has the ability to be connected, that is, it should at least meet the following two requirements:
+- Has the ability to be connected
+- Supports burning of firmware and running of connection program
 
-- **注册**
-  就是在云端创建一个设备，可以通过Portal方式在界面上创建，也可以通过调用Restful接口方式创建。
+According to the above attributes, real-world devices can be divided into two main categories:
+- Those support firmware burning, as well as direct connection to the IoT platform via Wi-Fi, GPRS, 3G, or 4G signals.
+- Those do not support firmware burning, and are lack of the ability to connect via Wi-Fi, 3G, or 4G. In this scenario, data of these devices need to be collected by an edge gateway, and the devices are connected to the IoT platform through the edge gateway. Edge needs to support firmware burning and networking.
 
-- **登录**
-  设备上送数据之前，必须首先登录成功，然后才可以发送数据。设备登录需要使用设备三元组鉴权。
+### Scenario of Direct Device Connection
 
-- **激活**
-  设备的第一次登录成功，会激活设备，将设备从**未激活**状态，更新为**已激活**状态。**已激活**状态包含**在线**和**离线**两个子状态，在EnOS控制台中会使用**在线**和**离线**两个子状态来代替显示**已激活**状态。
+The devices can be connected directly to the cloud. Some common devices include:
+- Devices with smart acquisition rod, such as household inverters, and household energy storage batteries.
+- Smart home devices, such as surveillance cameras, and smart thermometers and hygrometers.
 
-
-
-## 设备激活方式和设备状态
-
-在EnOS平台初次创建的设备，默认是处于启用但未激活的状态，等待设备激活。设备激活分为_动态激活_和_静态激活_。
-- **动态激活**：动态激活的过程如下：
-  1. 设备第一次尝试连接时携带`ProductKey`，`ProductSecret`，`DeviceKey`来请求激活，鉴权通过以后，返回`DeviceSecret`给设备。
-  2. 设备通过`ProductKey`，`DeviceKey`，`DeviceSecret`尝试登录。
-  3. 设备登录成功以后，设备状态从**未激活**变成**在线**状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成**离线**。
-
-  如需采用动态激活方式，你需要在Product配置中开启**动态激活**。
-
-- **静态激活**：静态激活的过程如下：
-  1. 设备登录请求携带`ProductKey`，`DeviceKey`，`DeviceSecret`。
-  2. 设备登录成功以后，设备状态从**未激活**变成**在线**状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成**离线**。
-
-如果发现设备异常，或者不希望接受该设备的数据，可以认为将其置为**禁用**，此时设备将自动下线，处于**离线**状态。
-
-设备整体的状态可以分为操作状态（Operational state）、激活状态（Activation state）、连接状态（communication state）三个维度，如下表所示：
-
-<table>
-   <tr>
-     <th>操作状态</th>
-     <th>激活状态</th>
-     <th>连接状态</th>
-   </tr>
-   <tr>
-     <td>禁用 Disable</td>
-     <td></td>
-     <td>离线 Offline</td>
-   </tr>
-   <tr>
-     <td>启用 Enable</td>
-     <td>未激活 Inactivated</td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>已激活 Activated</td>
-     <td>在线 Online</td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td>离线 Offline</td>
-   </tr>
-</table>
-
-
-## 接入场景
-
-万物互联，前提是物具有被连接的能力，主要体现在两方面：
-- 具有联网能力
-- 支持烧录固件并运行连接程序
-
-现实世界中的设备按照以上属性主要分成两类：
-- 支持烧录固件，并通过Wifi、GPRS、3G、4G信号直连物联网平台。
-- 不支持烧录固件，也不具备Wifi、3G、4G联网的能力。该场景下，需要通过edge来采集设备的数据，设备经由edge网关代理连接物联网平台。edge需要支持固件烧录和联网的能力。
-
-### 设备直连场景
-
-设备可直接与云端连接，常见的设备有：
-- 带智能采集棒的设备，例如户用逆变器，户用储能电池
-- 智能家居设备，例如监控摄像头，智能温湿度计
-
-### 网关代理连接场景
-设备需要网关代理才能与云端连接，常见的设备有：
-- 分布式逆变器，网关直采多台逆变器，然后数据上送云端。
+### Scenario of Gateway Proxy Connection
+The devices need a gateway proxy to connect to the cloud. Some common devices include:
+- Distributed inverters: the gateway collects data directly from multiple inverters and then sends the data to the cloud.
   ![](media/inverter_gateway.png)
 
-- SCADA，SCADA与风机直连，采集风机数据，网关与SCADA连接，网关采集SCADA数据，然后将数据发送至云端对应的风机设备。
+- SCADA: the SCADA is connected directly to the wind turbine and collects the data; the gateway is connected with the SCADA to collect its data, and then sends the data to the corresponding wind turbine device instance in the cloud.
   ![](media/turbine_scada_gateway.png)
 
-## 安全认证机制
+## Security Authentication Options
 
-安全认证方式有两种：
-- 基于密钥的单项认证：单项认证，安全性弱，为系统默认认证方式。
-- 基于证书的双向认证：双向认证，安全性高，需要用户主动开启。
+There are two security authentication methods:
+- Secret-based one-way authentication: one-way authentication with weak security, used by the system by default.
+- Certificate-based two-way authentication: two-way authentication with high security, enabled actively by the user.
 
-有关设备接入安全认证机制的更多信息，参考[设备认证机制](deviceconnection_authentication).
+For more information on the authentication mechanism for device connection security, please refer to [Device Authentication Mechanism](deviceconnection_authentication).
 
-## 信息流
-
-下图描绘了不同接入方式和激活方式选择方案的信息流：
-
-![Device connection overview](media/overview_device_connection_2_0_v3.png)
+## Message Flow
 
 <table>
    <tr>
-     <th>场景编号</th>
-     <th>连接方式</th>
-     <th>激活方式</th>
-     <th>是否使用SA</th>
+     <th>Scenario Number</th>
+     <th>Union method</th>
+     <th>Activation Mode</th>
+     <th>Whether SA is Used</th>
 
    </tr>
    <tr>
      <td>1.1</td>
-     <td>通过网关连接</td>
-     <td>设备密钥静态激活</td>
-     <td>是</td>
+     <td>Connect via Gateway</td>
+     <td>Static Activation via Device Secret</td>
+     <td>Yes</td>
 
    </tr>
    <tr>
      <td>1.2</td>
-     <td>通过网关连接</td>
-     <td>设备密钥静态激活</td>
-     <td>否</td>
+     <td>Connect via Gateway</td>
+     <td>Static Activation via Device Secret</td>
+     <td>No</td>
 
    </tr>
    <tr>
      <td>2.1</td>
-     <td>直连</td>
-     <td>设备密钥静态激活</td>
-     <td>是</td>
+     <td>Direct Connection</td>
+     <td>Static Activation via Device Secret</td>
+     <td>Yes</td>
 
    </tr>
    <tr>
      <td>2.1</td>
-     <td>直连</td>
-     <td>设备密钥静态激活</td>
-     <td>否</td>
+     <td>Direct Connection</td>
+     <td>Static Activation via Device Secret</td>
+     <td>No</td>
 
    </tr>
    <tr>
      <td>2.3</td>
-     <td>直连</td>
-     <td>产品密钥动态激活</td>
-     <td>否</td>
+     <td>Direct Connection</td>
+     <td>Dynamic Activation via Product Secret</td>
+     <td>No</td>
    </tr>
  </table>
 
+The message flow of different connection and activation methods is depicted in the following figures:
 
-## 场景示例
+### Connect via Gateway
 
-以下为部分上述接入方案的场景示例。
-
-### 场景1.1：接入子设备未注册，通过Edge动态注册
-
-1. Edge开发者，通过EnOS Console在EnOS Cloud注册一个Edge应用并获得该应用的服务账号（SA），即`accessKey`和`accessSecret`。
-
-2. 物联网实施人员需要登录EnOS Console，在客户Organization下进行如下配置：
-  - 创建Edge产品，并注册Edge设备，获得Edge设备三元组。
-  - 创建Edge待接入设备的产品，获得`productkey`。
+![Device connection overview](media/overview_device_connection_2_0_v3_1.png)
 
 
-3. Edge出厂需要烧录以下凭据信息：
-  - Edge应用的SA，以获得调用EnOS API的权限。
-  - 由EnOS Cloud颁发的Edge设备三元组。
-  - Edge待接入设备所属的产品`productkey`，以及设备所属Organization的标识，即`orgId`。
+#### Scenario 1.1: The connected sub-device is not registered; it is dynamically registered through the Edge
+
+1. In the EnOS Console, the Edge developer registers an Edge app on the EnOS Cloud, and obtains the app's service account (SA): the `accessKey` and `accessSecret`.
+
+2. The IoT implementer needs to log in to the EnOS Console and performs the following configurations under Customer Organization:
+  - Creates an Edge product and registers the Edge device to obtain the Edge device trigraph.
+  - Creates a product of device to be connected to the Edge and obtains the `productkey`.
+
+3. The following credential information needs to be burned into the Edge before it leaves the factory:
+  - The SA of the Edge app to gain access to the EnOS API.
+  - The Edge device trigraph issued by the EnOS Cloud.
+  - The `productkey` of the device that needs to be connected to the Edge, and the organization identification (`orgId`) of the device.
+
+4. The EnOS Cloud performs the following authentication when the Restful interface is called by the Edge:
+  - The Edge uses the SA to gain access to the EnOS API. If the service account is incorrect, the Edge will not be able to call the EnOS API and the authentication will fail.
+  - The EnOS Cloud uses IAM to verify the parameter orgId and parameter SA carried in the Edge connection request, and checks whether the corresponding organization (orgId) has registered an Edge app. If no Edge app is registered, the authentication will fail.
+  - The EnOS Cloud verifies the attribution between the two request parameters orgId and `productkey`. If the product corresponding to the `productkey` does not belong to the organization corresponding to the orgId, the verification will fail.
+
+5. The EnOS Cloud performs authentication on the Edge device
+  - By default, the Edge enables the secret-based one-way authentication. The Edge carries the trigraph and connects to the cloud, in where an authentication will be performed on the Edge trigraph, then the device is allowed to log in if the authentication is successful.
+  - The Edge device will be activated upon its first login, and its status will be updated from inactive to online.
+
+6. If the certificate-based two-way authentication is enabled, the generation and distribution of the certificate will be carried out as follows:
+    - The Edge Configuration Center initiates a certificate request, which carries the certificate request file, to the EnOS IoT Hub.
+    - The EnOS IoT Hub proxy forwards the request to the EnOS Certificate Service.
+    - The Certificate Service generates a certificate and returns it to the IoT Hub.
+    - The IoT Hub records the certificate associated with the Edge, and returns the certificate to the Edge.
+
+7. The IoT implementer configures the sub-devices (e.g., inverters, fans, energy storage devices) that require the Edge to access the EnOS Cloud in the EnOS Edge Configuration Center. The sub-devices can be registered using the two methods below:
+    - Dynamic Registration: Creates the device to be connected directly in the Edge Configuration Center; the Configuration Center will call the REST API of the IoT Hub to create the device in the EnOS Cloud.
+    - Static Registration: Creates the device to be connected in the EnOS Console and then binds it in the Edge Configuration Center. The Edge functions as a proxy and connects the sub-device to the EnOS Cloud.
+
+8. Device Data Transmission
+  - The Edge is connected directly to the IoT Hub, and the sub-device is connected to the EnOS IoT Hub via the Edge proxy.
+  - The MQTT protocol is used for data transmission between the Edge and the IoT Hub.
+  - If the certificate-based two-way authentication is enabled, the data transmission between the Edge and the IoT Hub will be encrypted by the certificate.
+
+#### Scenario 1.2: The connected sub-device is registered, and the device trigraph has been stored in the Edge.
+
+Scenarios 1.1 and 1.2 follow the same basic principles, except that in Scenario 1.1, SA is burned into the Edge and thus allows it to call the EnOS API to create the sub-device. While in Scenario 1.2, you will need to register the sub-device in the cloud beforehand, obtain the sub-device trigraph information, and burn the sub-device trigraph information into the Edge in advance. When configuring the device connection in the Edge Configuration Center, you need to bind the connected device with the pre-burned sub-device trigraph.
+
+Compared with the more flexible Scenario 1.1, Scenario 1.2 has a more complex configuration but with higher security. You may choose Scenario 1.1 if convenience is your priority.
+
+### Direct Connection
+
+![Device connection overview](media/overview_device_connection_2_0_v3_2.png)
+
+#### Scenario 2.1: The connected device is not registered; it is dynamically registered through pluggable information collection.
+Take the household photovoltaic inverter for example.
+
+Household photovoltaic inverters do not support burning. In normal scenarios, an acquisition rod is required to collect data and forward them to the cloud. As the acquisition rod only collects data of one inverter, we can consider the inverter and the acquisition rod as one smart device; and since the acquisition rod supports burning, the inverter and the acquisition rod can be regarded as a whole device that supports burning.
+
+1. Create an inverter product in the cloud (under Customer Organization, not Developer Organization).
+
+2. The acquisition rod developer creates an acquisition rod app under Developer OU and obtains the app SA: `accesskey` and `accesssecret`.
+
+3. The acquisition rod developer configures the factory settings of the rod and burns the following credential information into it:
+  - SA of the acquisition rod app
+  - The `productKey` of the inverter
+  - The `orgId` to which `productKey` belongs.
+
+4. The IoT implementer performs on-site construction and installation, installing the acquisition rod on the inverter, powering on the device and connecting it to the network. Once connected, the device will perform the following actions:
+  - The acquisition rod collects the serial number of the inverter, and uses it as the `deviceKey`; it then calls the REST API using SA, dynamically creates the device using the `productKey`, `deviceKey` (serial number), and `orgId`, and obtains the device's `deviceSecret`.
+  - The acquisition rod records the `deviceSecret`, which will be automatically burned into the firmware of the device.
+  - The acquisition rod collects data from the inverter, and uses the `productKey`, `deviceKey`, and `deviceSecret` to connect to the cloud. Once authenticated, the device will go online and send data.
 
 
-4. EnOS Cloud对edge调用Restful接口进行如下鉴权：
-  - Edge基于SA获得调用EnOS API的权限。如果服务账号不对，则无法调用EnOS API，鉴权失败。
-  - EnOS Cloud基于IAM校验edge连接请求中携带的orgId和SA参数，验证orgId所对应的Organization是否注册了Edge应用。如果没有注册Edge App，鉴权失败。
-  - EnOS Cloud校验请求参数orgId与`productkey`的归属关系。如果`productkey`对应的产品不属于orgId对应的Organization，校验不通过。
+
+#### Scenario 2.2: The connected device is registered, and the device is burned with its own trigraph before leaving the factory.
+This scenario requires the device to be burned with the device trigraph obtained through cloud registration before it leaves the factory. The scenario has higher security but makes burning more difficult and hence has lower operability.
 
 
-5. EnOS Cloud对edge设备进行身份认证
-  - Edge默认启用基于密钥的单项认证，Edge携带三元组连接云端，云端对edge三元组进行认证，认证通过以后edge设备登录。
-  - Edge的第一次登录会同时激活edge设备，将其状态从**未激活**更新为**在线**状态。
-
-
-6. 如果启用了基于证书的双向认证，证书的生成与分发过程如下：
-    - Edge配置中心向EnOS IoT Hub发起证书请求，请求中携带证书请求文件。
-    - EnOS IoT Hub代理将请求转发给EnOS Certificate Service。
-    - Certificate Service产生证书，并返回给IoT Hub。
-    - IoT Hub记录Edge关联的证书，并将Edge证书返回给Edge。
-
-
-7. 物联网实施人员在EnOS Edge配置中心配置需要通过edge接入EnOS Cloud的子设备（如逆变器，风机，储能设备等），子设备注册有以下两种方式：
-    - 动态注册：在edge配置中心直接创建要接入的设备，配置中心调用IoT Hub的REST API在EnOS Cloud中创建设备。
-    - 静态注册：在EnOS Console中创建要接入设备，然后在edge配置中心进行绑定。由edge代理子设备连接至EnOS Cloud。
-
-
-8. 设备数据传输
-  - Edge与IoT Hub直接连接，子设备由edge代理连接至EnOS IoT Hub。
-  - Edge与与IoT Hub之间的数据传输使用MQTT协议。
-  - 如果启用基于证书的双向认证机制，edge与IoT Hub之间的数据传输内容将被证书加密。
-
-
-### 场景1.2：接入子设备已注册，设备三元组已保存在Edge
-
-原理与1.1是一样的，只是1.1当中edge烧录了SA，具备调用EnOS API的权限，所以可以通过API创建子设备。而在1.2场景当中，你需要事先在云端注册子设备，获取子设备三元组信息，并提前将子设备三元组信息烧录到edge中。在edge配置中心进行设备连接配置的时候，需要将接入设备与预先烧录的子设备三元组绑定。
-
-1.2场景的配置复杂度要大于1.1的场景，1.1灵活性更好，但是1.2的安全性更高。从便捷的角度，可以考虑使用1.1场景。
-
-### 场景2.1：接入设备未注册，通过可插拔采集信息动态注册
-该以户用光伏逆变器为例进行说明。
-
-户用光伏逆变器不支持烧录，常规场景需要使用采集棒进行数据采集并转发至云端。考虑采集棒只采集一台逆变器的数据，因此可以将逆变器和采集棒整体视为一个智能设备，采集棒支持烧录，所以可以看做逆变器和采集棒作为一个整体设备支持烧录。
-
-1. 在云端创建逆变器产品（在客户Organization下创建，而非在开发者Organization下创建）。
-
-2. 采集棒开发者在开发者OU下创建采集棒应用，获得采集棒应用的SA，`accesskey`和`accesssecret`。
-
-3. 采集棒开发者对采集棒进行出厂配置，烧录以下凭证信息：
-  - 烧录采集棒App的SA
-  - 烧录逆变器`productKey`
-  - 烧录`productKey`所属的`orgId`
-
-4. 物联网实施人员进行现场施工安装，将采集棒安装在逆变器上，将设备上电和联网。设备联网后将发生以下动作：
-  - 采集棒采集逆变器序列号，将序列号作为`deviceKey`，凭借SA调用REST API接口，通过`productKey`，`deviceKey`(序列号)，`orgId`动态创建设备，并获取设备的`deviceSecret`。
-  - 采集棒记录`deviceSecret`，自动烧录到设备的固件当中。
-  - 采集棒采集逆变器数据，使用`productKey`，`deviceKey`，`deviceSecret`去连接云端，鉴权通过，设备上线，然后发送数据。
-
-
-
-### 场景2.2：接入设备已注册，设备出厂烧录自身的三元组
-该场景要求设备出厂的时候就需要烧录在云端注册设备得到的设备三元组，这种场景对于烧录要求较高，安全性最高，但是可操作性较低。
-
-
-### 场景2.3：接入设备已注册，批量设备烧录相同的Product信息
-针对2.2场景可操作性较低的情况，增加了2.3场景。即
-1. 每个设备出厂批量烧录相同的产品证书（即`productKey`和`productSecret`）。
-2. 设备注册可以与设备厂商的设备管理系统进行集成，每发货一批次设备，客户设备管理系统可以通过调用REST API批量注册设备。
-3. 当设备发往现场、上电、联网以后可以自动与云端进行连接。
+#### Scenario 2.3: The connected device is registered, and the devices are burned with the same product information in batch.
+Scenario 2.3 is added to deal with the low operability issue of Scenario 2.2. Which is
+1. Devices are burned in batch with the same product certificate (i.e., `productKey` and `productSecret`) before leaving the factory.
+2. Device registration can be integrated with the manufacturer's device management system. After each batch of devices is shipped, the customer's device management system can register the devices in batch by calling the REST API.
+3. When the devices are sent to the site, powered on, and connected to the network, they can automatically connect to the cloud.

@@ -1,71 +1,70 @@
-# 物模型概述
+# Thing Model Overview
 
-物模型是对物理世界中的实体对象的抽象与数字化。物模型是对连入EnOS Cloud的对象在云端的功能总述，包括设备的属性、测点、服务和事件。
+The thing model is the abstraction and digitization of the physical objects in the physical world. The thing model is a summary of the cloud-side functions of the objects connected to the EnOS Cloud, including attributes, measure points, services and events of the device.
 
-在EnOS中，定义物模型即定义产品的功能。物模型描述产品是什么，能做什么，可以对外提供哪些服务。在EnOS平台上，物模型的描述语言采用JSON格式，你可以根据物模型的语法组装上报设备的数据。
+In EnOS, defining thing model means defining the functions of the product. The thing model describes what the product is, what it can do, and what services it can provide. On the EnOS platform, the description language of the thing model is in JSON format, and you can assemble and report the device data according to the syntax of the thing model.
 
 
-## 物模型组成要素
-用户可根据产品的实际需求定义以下要素用以定义一个物模型。
+## Thing Model Elements
+The user can define the following elements to define an thing model according to the actual needs of the product.
 
 <table>
    <tr>
-      <th>模型要素</th>
-      <th>描述</th>
-      <th>例子</th>
+      <th>Model elements</th>
+      <th>Description</th>
+      <th>Instance</th>
     </tr>
     <tr>
-      <td>属性</td>
-      <td>描述设备的静态属性。静态属性允许用户自定义属性的名称以及标识符，名称相当于是一个描述，允许中文输入。</td>
-      <td>名称、型号、位置、设计参数、经度等</td>
+      <td>Attribute</td>
+      <td>Describes the static attribute of the device. The static attribute allows the user to customize the name of the attribute as well as the corresponding identifier. The name is equivalent to a description that allows Chinese input.</td>
+      <td>Name, model, location, design parameters, longitude, etc.</td>
     </tr>
     <tr>
-      <td>测点</td>
-      <td>描述设备运行时的状态。测点允许用户自定义测点的名称以及标识符，名称相当于是一个描述，允许中文输入。</td>
-      <td>温度、压力、电流、电压、各类状态等</td>
+      <td>Measure point</td>
+      <td>Describes the operating state of the device. The measure point allows the user to customize the name of the measuring point as well as its identifier. The name is equivalent to a description that allows Chinese input.</td>
+      <td>Temperature, pressure, current, voltage, various states, etc.</td>
     </tr>
         <tr>
-      <td>服务</td>
-      <td>可被外部调用的能力或方法。可设置输入参数和输出参数。相比于属性，服务可通过一条指令实现更复杂的业务逻辑。</td>
-      <td>下发的指令、执行的任务等</td>
+      <td>Service</td>
+      <td>A capability or method that can be called externally. Both its input and output parameters can be configured. Compared with an attribute, a service can perform more complex business logic with one instruction.</td>
+      <td>Issued instructions, performed jobs, etc.</td>
     </tr>
         <tr>
-      <td>事件</td>
-      <td>设备运行时的事件，事件一般包含需要被外部感知和处理的通知信息，可包含多个输出参数。</td>
-      <td>告警、状态变更、某项任务完成的信息，或者设备发生故障或告警时的温度等，事件可以被订阅和推送等</td>
+      <td>event</td>
+      <td>An event is one occurring when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.</td>
+      <td>Alarms, status changes, information about the completion of a job, or the temperature of a device when a failure or alarm occurs, etc. An event can be subscribed and pushed.</td>
     </tr>
 </table>
 
-## 模型关系
+## Model Relationship
 
-创建模型的时候，有**拷贝**和**继承**两种模式。两种不同的创建模式主要体现在模型关系上。
-
-
-
-**拷贝**
-
-基于**拷贝**模式创建的模型，新建模型与被拷贝模型有完全相同的四要素，两个模型相互独立，模型变更互不影响。
-
-
-**继承**
-
-基于**继承**模式创建的模型，我们定义新建的模型为**子模型**，被继承的模型为**父模型**。子模型主要有以下特性：
-- 子模型继承父模型的所有要素，被继承的元素无法被修改。
-- 子模型可以再被继承，支持多层的继承关系。
-- 子模型可以创建独立的要素，但子模型中新增的要素不可与所有上级父模型重名。
-- 父模型四要素发生变更，则子模型从父模型继承的四要素同步变更，保持与父模型一致。
+There are two modes for creating a model: **Clone** and **Inherit**. The difference of the two creating modes are mainly reflected in the model relationship.
 
 
 
-## 模型权限
-针对模型的读写权限，可以分为**共有模型**和**私有模型**两类。
+**Clone**
 
-**公共模型**
-
-对所有组织开放，具有读权限，不具有写权限。公共模型是沉淀到EnOS平台的一些领域标准模型，由EnOS对所有组织开放。
+For the model created by the **Clone** mode, the new model has exactly the same four elements as the copied model. The two models are independent of each other, and the any change to one model will not affect the other one.
 
 
+**Inherit**
 
-**私有模型**
+For model created by the **Inherit** mode, we define the newly created models as **Sub Model** and the inherited model as **Parent Model**. The sub model has the following main features:
+- The sub model inherits all the features of the parent model, and the inherited elements cannot be modified.
+- The sub model can be inherited again, and supports multi-level inheritance relationships.
+- The sub model can create independent elements, but the newly added elements in the sub model shall not have the same name as the elements of all parent models.
+- When the four elements of the parent model are changed, the sub model's four elements inherited from the parent model are changed synchronously to remain consistent with the parent model.
 
-开发者在自身组织下创建的模型都属于私有模型，私有模型不对外开放，只在组织内可见，组织内开发者具有模型读写权限。
+
+
+## Model Permission
+The read and write permissions for the model can be divided into two categories: **Public Model** and **Private Model**.
+
+**Public Model**
+
+Open to all organizations, with read access and without write access. The public models are some of the domain standard models that are deposited on the EnOS platform and are made public to all organizations by EnOS.
+
+
+**Private Model**
+
+The models created by the developers in their own organization are all private models. They are not open to the outside and are only visible within the organization. The developers in the organization have the model read and write permissions.

@@ -28,7 +28,7 @@ The following table describes the common parameters used in the request and resp
   * - params
     - JSON
     - Mandatory in request
-    - Request parameters, in JSON format, Can   either be int or dict.
+    - Request parameters, in JSON format, Can   either be arry or dict.
   * - method
     - String
     - Mandatory in request
@@ -41,6 +41,26 @@ The following table describes the common parameters used in the request and resp
     - JSON
     - Optional
     - Detailed infomaton, in JSON format. Can be   either int or dict regarded to the returned message.  
+
+
+
+
+
+Connection Establishment
+===================
+Before develop any communication protocol, you should establish the communication with your EnOS cloud using the MQTT protocol.
+
+Please refer to the following section.
+
+`Establishing communicate with EnOS Cloud using the MQTT protocol <nonsdk_login>`__
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  nonsdk_login
+
+
 
 Protocol Standards
 ===================

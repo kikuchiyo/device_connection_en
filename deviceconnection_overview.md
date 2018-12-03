@@ -1,70 +1,91 @@
-# 设备接入概述
+# Device Provisioning Overview
 
-EnOS接入服务帮助物联网开发人员进行设备全生命周期管理，该服务建立设备与EnOS Cloud间的数据通道，并保障设备终端与EnOS Cloud间进行安全的双向通信。
+The EnOS™ Device Provisioning service helps IoT engineers to manage the device lifecycle, establishes a data path between the device and EnOS Cloud, and secures two-way communication between the device end and EnOS Cloud.
 
-EnOS接入服务提供以下主要功能：
+## Concepts
 
-## 设备接入
-提供设备端SDK让设备边界接入IoT Hub。
-- 提供MQTT设备SDK，既满足长连接的实时性需求，也满足短连接的低功耗需求。
-- 提供设备直连和网关代理连接等接入方案，为企业异构网络设备接入的多种场景提供解决方案。
+**Model**
 
-## 设备管理
-提供完整的设备生命周期管理功能，包括：
-- 设备注册
-- 设备配置
-- 远程控制
-- 固件升级
-- 实时监测
-- 设备注销
+A model is an abstraction of the function of an object that is connected to IoT. The model defines the functions of the object's attributes, measure points, services, and events. For more information, please refer to [Model Overview] (model_overview). A model can be associated with multiple products.
 
-## 模型管理
-提供设备模型。设备模型使得来自众多厂家、成千上万种型号的设备能够统一于少量的通用模型，从而为简化基于设备数据的应用开发。
+**Product**
 
-## 保护设备与云端的安全
+A product, or product model, is a collection of devices with the same functions. On the basis of model, a product further defines the communication method for the device to connect to IoT A product can contain multiple devices.
 
-**鉴权**
-- 提供一机一密的设备认证机制，降低设备被攻破的安全风险，适合有能力批量预分配ID密钥烧入到每个芯片的设备。
-- 提供一型一密的设备预烧，认证时动态获取三元组，适合批量生产时无法将三元组烧入每个设备的情况。
+**Device**
 
-更多信息，参考[设备认证机制](deviceconnection_authentication)。
+A device is an instance of a model. A device belongs to a certain product.
 
-**通信安全**
-- 通过CA证书机制对数据进行加密和解密，保证设备与云端通信的安全。
-- 通过topic对通信资源进行隔离，避免设备访问未经授权的数据
+## Major Functions
 
-## 概念
+The EnOS Provisioning service provides the following key features:
 
-**模型**
+### Device Connection
+Provides device SDK to allow devices to connect to the IoT Hub.
+- Provides MQTT device SDK to meet the real-time requirements for long connections and low power requirements for short connections.
+- Provides connection schemes such as direct device connection and gateway proxy connection, providing solutions to meet the requirements of various scenarios where the enterprise's heterogeneous network devices need to be connected.
 
-模型是对接入物联网的对象的功能的抽象。模型定义了对象的属性，测点，服务，和事件四个维度的功能。更多信息，参考[模型概述](model_overview)。一个模型可被关联至多个产品。
+### Device Management
+Supports complete device lifecycle management, including:
+- Device registration
+- Device configuration
+- Remote control
+- Firmware upgrade
+- Real-time monitoring
+- Device logout
 
-**产品**
+### Model Management
+Provides device model. The device model allows devices of thousands of models from different manufacturers to be unified into a small number of common models and thus simplifies application development.
 
-产品，或称为产品型号，是一组具有相同功能的设备的集合。在模型的基础上，产品进一步定义了设备接入物联网的通信方式。一个产品可包含多个设备。
+### Device and Cloud Security Protection
 
-**设备**
+**Authentication**
+- Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches.
+- Supports _secret-per-product_ mechanism, where devices are pre-burned with product credentials. The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where device secret cannot be burned into each device in mass production.
 
-设备是模型的实例。一个设备属于某一种产品。
+For more information, please refer to [Device Authentication Mechanism](deviceconnection_authentication).
 
-## 技术架构
+**Communication Security**
+- Encrypts and decrypts data through the CA certificate mechanism to ensure the security of communication between the device and the cloud.
+- Segregates communication resources by topic to prevent devices from accessing unauthorized data.
 
-![](media/device_connection_methods.png)
 
-如上图所示, 设备可以直连或通过edge连接至EnOS IoT Hub。EnOS IoT Hub接受直连设备或edge通过MQTT协议进行通信。MQTT是一种轻量级基于TCP/IP的开源物联网协议。EnOS的MQTT协议支持以下功能：
-- 数据基于话题（topic）的订阅（subscription）与发布（publish）
+## Technical Architecture
+
+As shown in the figure below, a device can be connected directly or through the edge to the EnOS IoT Hub. The EnOS IoT Hub accepts direct-connecting devices or edges to communicate via the MQTT protocol. MQTT is a lightweight open-source IoT protocol based on TCP/IP. EnOS's MQTT protocol supports the following features:
+- Topic-based subscriptions and publish of data
 - RRPC
 
-数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同存储中用于以下用途：
-- 时序数据库
-- 告警引擎
-- 流式计算
+![Device Connection Architecture](media/device_connection_methods.png)
 
-## 功能模块
+Based on the whether and where the edge device is used in the connection. The following connection scenarios are supported:
+
+**Scenario 1: Connect through EnOS IoT Hub via MQTT protocol (cloud service)**
+
+This method requires the device end to support MQTT protocol and is applicable to most of the new IoT devices.
+
+**Scenario 2: Connect through on-site EnOS Edge**
+
+In this case, the EnOS™ Edge is deployed on-site with the devices. This method applies to most traditional devices and systems that do not support the MQTT protocol.
+
+**Scenario 3: Connect through remote EnOS Edge**
+
+In this case, the EnOS™ Edge is deployed remotely at the cloud side. This method applies to most traditional devices and systems that do not support the MQTT protocol.
+
+**Scenario 4: Connect through EnOS™ Cloud Edge clusters (cloud service)**
+
+This requires that the device to be connected has a unique ID and can upload data through supported communication protocols. This method is frequently used for the photovoltaic device connection.
+
+Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage for the following purposes:
+- Time series database
+- Alarm engine
+- Stream computing
+
+## Functional Modules
 
 ### IoT Hub
 
-IoT Hub is a cloud broker service that EnOS™ provides for device connection.
+IoT Hub is a cloud broker service that EnOS provides for device connection.
 
 The cloud broker provides the following functions:
 
@@ -73,14 +94,6 @@ The cloud broker provides the following functions:
 - Providing license authorization and creation of thing and policy themes.
 - Exposing interface for connections from MQTT clients.
 
-### EnOS™ Edge
+### EnOS Edge
 
-Edge is the front end of Envision EnOS™ IoT platform for data acquisition. It is used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to the EnOS™ Cloud. Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS™ Cloud.
-
-## 接入方案
-
-EnOS主要提供以下接入方案：
-- 设备无需通过网关（在我们的场景中，即edge），直接与云端IoT Hub进行连接及通信，完成鉴权，数据上报的场景。通过该方案连接的设备称为_直连设备_。
-- 设备通过edge与EnOS IoT Hub连接。通过该方案连接的设备称为_子设备_。网关代理子设备，帮助他们完成身份的鉴权、上线、数据发送等操作。
-
-通常根据设备的硬件能力及对设备连接的安全性要求选择接入方案。有关接入方案的选择的详细信息，参考 [设备接入方案](connection_scenarios).
+Edge is the front end of Envision EnOS IoT platform for data acquisition. It is used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to the EnOS Cloud. Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS Cloud.

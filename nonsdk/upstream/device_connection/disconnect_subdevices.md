@@ -1,4 +1,4 @@
-# Disconnect sub-devices from EnOS Cloud
+# Disconnect Sub-devices from EnOS Cloud
 
 Upstream
 - Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout
@@ -14,6 +14,8 @@ Upstream
  "productKey": "xxxxx",
  "deviceKey": "xxxxx"
  }
+ "method":"combine.logout"
+ "version":"1.0"
 }
 
 ```
@@ -24,10 +26,8 @@ Upstream
 {
  "id": "123",
  "code": 200,
- "message": "success",
+ "message": "",
  "data": {
-      "productKey": "xxxxx",
-      "deviceKey": "xxxxx"
   }
 }
 

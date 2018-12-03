@@ -1,15 +1,15 @@
-# Set device measuring points
+# Set Device Measuring Points
 
 **Note:** Set the parameters according to the output and input parameters in the TSL model.
 
 After a device receives a set device measure point request, it updates the device measure points according to the request.
 
 Downstream
-- TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -23,7 +23,7 @@ Downstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -34,7 +34,7 @@ Downstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>

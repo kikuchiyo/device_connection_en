@@ -1,4 +1,4 @@
-# Delete topological relationships of sub-devices
+# Delete Topological Relationships of Sub-devices
 
 An edge can publish a message to this topic to request EnOS Cloud to delete the topological relationship between the edge and a sub-device.
 

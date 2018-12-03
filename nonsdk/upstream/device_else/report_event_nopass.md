@@ -1,14 +1,14 @@
-# Report device events​ (non-passthrough)
+# Report Device Events​ (non-passthrough)
 
 If non-passthrough mode is used, the device generates data in the JSON
 format and then sends the data to EnOS Cloud.
 
 Upstream
-- TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post
+- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post
 
-- REPLY TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply
+- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply
 
-## Example request message
+## Example Request Message
 
 ```
 {
@@ -32,7 +32,7 @@ Upstream
 
 ```
 
-## Example response message
+## Example Response Message
 
 ```
 {
@@ -43,7 +43,7 @@ Upstream
 
 ```
 
-## Parameter description
+## Parameter Description
 
 <table>
   <tr>
