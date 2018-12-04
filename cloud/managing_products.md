@@ -1,37 +1,37 @@
-# 管理产品
+# Managing Products
 
-在产品的管理界面，你可以完成动态注册开启，查看设备日志，及调试设备等操作。
+On the Products screen, you can perform operations such as turning on dynamic registration, viewing device logs, and debugging devices.
 
-## 开启动态注册
+## Turning On Dynamic Registration
 
-在产品的详情界面，你可以开启动态注册以支持同种产品型号多个设备烧录批量烧录相同的productKey和productSecret并在设备上线时完成动态激活。
+On the Product Details screen, you can turn on dynamic registration to support batch burning for devices of the same product model. By doing so, you can batch burn the same productKey and productSecret to multiple devices, and these devices will be activated dynamically if they go online.
 
-1. 在EnOS控制台中选择**接入管理>产品管理**。
-2. 点击产品后的**查看**打开**产品详情**页面，在**产品信息**标签页，开启**动态注册**。
+1. In the EnOS Console, select **Access Management > Product Management**.
+2. Click **View** next to the product to open the **Product Details** page; choose the **Product Info** tab and turn on **Dynamic Registration**.
 
-## 查看日志
+## Viewing Logs
 
-在产品详情界面，你可查看该产品下所有设备的重要行为日志。
+On the Product Details screen, you can view the logs of important behaviors of all the devices under the product.
 
-1. 在EnOS控制台中选择**接入管理>产品管理**。
-2. 点击需要查看产品的后的**查看**打开**产品详情**页面，选择**日志服务**标签页。
-3. 在**设备行为分析**标签输入需要查看日志的设备并设置目标查看时间端，即可查看该设备该时段的日志。
-4. （可选）如需查看上下行信息日志，点击**上行消息分析**和**下行消息分析**标签页。
-  - **上行消息分析**页主要展示以下上行消息的日志:
-    - 设备发送消息到topic队列
-    - 消息从topic队列流转至规则引擎
-    - 消息从规则引擎转发至EnOS云端其他服务和应用
-  - **下行消息分析**页主要展示云端发送消息到设备的日志。
-  <!--这里需要错误码列表-->
+1. In the EnOS Console, select **Access Management > Product Management**.
+2. Click **View** next to the target product to open the **Product Details** page, and choose the **Log Service** tab.
+3. On the **Device Behavior Analysis** tab, enter the target device and set a time period to view the log of that device for the set period of time.
+4. (Optional) To view logs of uplink and downlink messages, click the **Uplink Message Analysis** and **Downlink Message Analysis** tabs.
+  - The **Uplink Message Analysis** page mainly displays the logs of the following uplink messages:
+    - Messages sent by the device to the topic queue
+    - Messages flowed from the topic queue to the rules engine
+    - Messages forwarded from the rules engine to other services and applications in the EnOS Cloud
+  - The **Downlink Message Analysis** page mainly displays the logs of messages sent from the cloud to the device.
+  <!--This requires a list of error codes-->
 
-## 调试线上设备
+## Debugging Online Devices
 
-你可在产品详情界面调试该产品下的设备，虚拟设备模拟真实设备与云端建立连接，上报定义的属性及事件处理。此时，云端可根据虚拟设备的数据，完成应用的开发调试。而真实设备上线后，虚拟设备也会自动下线。
+On the Product Details screen, you can debug devices under the product, simulate a real device to connect to the cloud, report defined attributes, and handle events. Based on the data of the simulated device, the cloud can complete app development and debugging. Once the real device is online, the virtual device will automatically go offline.
 
-1. 在EnOS控制台中选择**接入管理>产品管理**。
-2. 点击需要查看产品的后的**查看**，选择**在线调试**。
-3. 在左上角选择需要调试的设备。
-4. 在调试功能中模拟一个场景。
-5. 点击**发送**指令。
+1. In the EnOS Console, select **Access Management > Product Management**.
+2. Click **View** next to the target product, and choose **Online Debugging**.
+3. Select the device you want to debug in the upper left corner.
+4. Simulate a scenario using the debugging feature.
+5. Click the **Send** command.
 
-<!--问徐伟要一个列子-->
+<!--Ask Xu Wei for a list-->

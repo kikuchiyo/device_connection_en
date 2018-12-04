@@ -1,262 +1,265 @@
-# 直连设备连接快速入门
+# Getting Started With Direct Device Connection
 
-该文章帮助你快速入门将直连设备预配至EnOS Cloud，从设备发送数据至EnOS Cloud，并从EnOS Cloud查看设备通信信息。
+This article helps you quickly learn how to pre-configure direct connected devices to EnOS Cloud, how to send data from your device to EnOS Cloud, and how to check device communication information from EnOS Cloud.
 
-## 场景描述
+## Scenario Description
 
-接入场景参考[设备接入方案](connection_scenarios)当中提到的“场景2.2”。
+For information on connection scenarios, please refer to "Scenario 2.2" mentioned in [Device Connection Scenarios](connection_scenarios).
 
 
-## 任务描述
+## About This Task
 
-本示例以户用光伏逆变器接入为例进行说明，逆变器采集器出厂烧录逆变器设备三元组。逆变器上电、联网以后，基于设备三元组认证直连云端IoT Hub。整体流程如下图所示：
+Here we take the household PV inverter connection as an example. The inverter device triple is burned into the inverter collector during factory production. After powered on and connected to the network, the inverter, based on the device triple authentication, is directly connected to the cloud IoT Hub. The overall process is shown below:
+
   ![](media/device_connection_task_description.png)
 
-基于上述接入流程图，本示例主要有以下任务：
-1. 创建设备模型
-2. 创建产品
-3. 注册设备
-4. 通过设备SDK模拟设备发送数据
-5. 查看设备通信状态
-6. 查看设备数据
+Based on the above connection flowchart, the purposes to be achieved in this example are mainly as follows:
+1. Create a device model
+2. Create a product
+3. Register the device
+4. Simulate device sending data via device SDK
+5. Check device communication status
+6. Check device data
 
 
-## 步骤1：创建设备模型
+## Step 1: Create a Device Model
 
-该步骤假设没有可以复用的设备模型，我们创建一个名称为***Inverter_Demo*，功能定义如下表的新的模型：
+This step assumes that there is no device model to be reused. We create a new model named **Inverter_Demo** with the function defined as follows:
 
 <table>
     <tr>
-      <th>功能类型</th>
-      <th>名称</th>   
-      <th>标识符</th>   
-      <th>数据类型</th>   
-      <th>数据定义</th>   
+      <th>Function type</th>
+      <th>Name</th>   
+      <th>Identifier</th>   
+      <th>Data Type</th>   
+      <th>Data definition</th>   
     </tr>
     <tr>
-      <td>属性</td>
-      <td>逆变器类型</td>     
+      <td>Attribute</td>
+      <td>Inverter type</td>     
       <td>invType</td>
       <td>enum</td>  
       <td>{0:Central,1:String}</td>      
     </tr>
     <tr>
-     <td>属性</td>
-      <td>组件容量</td>
+     <td>Attribute</td>
+      <td>Component capacity</td>
       <td>capacity</td>     
       <td>float</td>
       <td>kWp</td>      
     </tr>
     <tr>
-      <td>测点</td>
-      <td>有功功率</td>     
+      <td>Measure Points</td>
+      <td>Active power</td>     
       <td>INV.GenActivePW</td>
       <td>float</td>  
       <td>kW</td>      
     </tr>
     <tr>
-      <td>服务</td>
-      <td>控制</td>     
+      <td>Service</td>
+      <td>Control</td>     
       <td>INV.Control</td>
       <td>--</td>  
-      <td>调用方式:异步调用</td>      
+      <td>Invoke Method: Asynchronous</td>      
     </tr>
     <tr>
-      <td>事件</td>
-      <td>故障信息</td>     
+      <td>Event</td>
+      <td>Error information</td>     
       <td>Error</td>
       <td>--</td>  
-      <td>事件类型:故障</td>      
+      <td>Event Type: Error</td>      
     </tr>
 </table>
 
-创建该模型的步骤如下：
+The steps to create this model are as follows:
 
-1. 在EnOS控制台中选择**接入管理 > 模型管理**。
-2. 点击在页面右上方**创建模型**, 并在**创建模型**窗口提供以下配置信息：
-  - **模型标识符**： Inverter_Demo
-  - **模型名称**：Inverter_Demo
-  - **模型名称(英文)**：Inverter_Demo
-  - **分类**：无
-  - **模型关系**：无
-  - **模型模板**：无
-  - **模型描述**：Inverter model for demo project
+1. In the EnOS Console, select **Access Management > Model Management**.
+2. Click **New Model** at the top right of the page, and provide the following settings in the **Creating Model** window:
+  - **Identifier**: Inverter_Demo
+  - **Model Name**: Inverter_Demo
+  - **Model Name (en)**: Inverter_Demo
+  - **Category**: None
+  - **Create From**: None
+  - **Source model**: None
+  - **Model Description**: Inverter model for demo project
 
   ![](media/model_inverter.png)
 
-3. 点击**确定**完成操作。
-4. 点击**查看**，在模型详细信息界面中点击**功能定义**标签。
-5. 点击**新增**，并在**添加功能**窗口提供以下配置信息：
-  - **属性1**
-    - **名称**：逆变器类型/Inverter_Type
-    - **标识符**：invType
-    - **数据类型**：enum
-    - **枚举项**：
-      - 参数值：0；参数描述：Central
-      - 参数值：1；参数描述：String
-    - **是否必填**：是
-  - **属性2**
-      - **名称**：组件容量/Inverter_Capacity
-      - **标识符**：capacity
-      - **数据类型**：float
-      - **单位**：kWp
-      - **是否必填**：是
-  - **测点**
-    - **名称**：有功功率/Active_Power
-    - **标识符**：INV.GenActivePW
-    - **数据类型**：float
-    - **测点类型**：AI
-    - **单位**：kW
-  - **服务**
-    - **名称**：控制/Control
-    - **标识符**：INV.Control
-    - **调用方式**：异步
-    - **输入参数**：
-      - 参数名称：control
-      - 标识符：control
-      - 数据类型：enum
-      - 枚举项：
-        - 参数值：0；参数描述：Stop
-        - 参数值：1；参数描述：Start
-    - **输出参数**：
-      - 参数名称：execResult
-      - 标识符：execResult
-      - 数据类型：enum
-      - 枚举项：
-        - 参数值：0；参数描述：Failure
-        - 参数值：1；参数描述：Success
-  - **事件**
-    - **名称**：故障信息/Error
-    - **标识符**：Error
-    - **事件类型**：故障
+3. Click **Confirm** to complete the operation.
+4. Click **View**, and click the **Feature Definition** tag in the "Model Details" screen.
+5. Click **Add**, and provide the following settings in the **Add Feature** window:
+  - **Attribute 1**
+    - **Name**: Inverter Type/Inverter_Type
+    - **Identifier**: invType
+    - **Data Type**: enum
+    - **Enum Items**:
+      - Value: 0; Description: Central
+      - Value: 1; Description: String
+    - **Required**: Yes
+  - **Attribute 2**
+      - **Name**: Component capacity/Inverter_Capacity
+      - **Identifier**: capacity
+      - **Data Type**: float
+      - **Unit**: kWp
+      - **Required**: Yes
+  - **Measure Point**
+    - **Name**: Active power/Active_Power
+    - **Identifier**: INV.GenActivePW
+    - **Data Type**: float
+    - **Point Type**: AI
+    - **Unit**: kW
+  - **Service**
+    - **Name**: Control/Control
+    - **Identifier**: INV.Control
+    - **Invoke Method**: Asynchronous
+    - **Input Parameters**:
+      - Parameter Name: control
+      - Identifier: control
+      - Data Type: enum
+      - Enum Items:
+        - Value: 0; Description: Stop
+        - Value: 1; Description: Start
+    - **Output Parameters**:
+      - Parameter Name: execResult
+      - Identifier: execResult
+      - Data Type: enum
+      - Enum Items:
+        - Value: 0; Description: Failure
+        - Value: 1; Description: Success
+  - **Event**
+    - **Name**: Error information/Error
+    - **Identifier**: Error
+    - **Severity**: Error
 
-有关设备模型设置的详细信息，参见[创建模型](creating_model)。
+For details on device model settings, please refer to [Creating Model](creating_model).
 
 
-## 步骤2：创建产品
+## Step 2: Create a Product
 
-在该步骤，我们创建一个名为**Inverter_Product**的产品，我们假设该产品型号的设备通过JSON格式上送数据且数据传输不使用CA证书加密。
+In this step, we create a product called **Inverter_Product**. We assume that the device of this product model sends data in JSON format and the data transfer is not encrypted using CA certificate.
 
-1. 在EnOS控制台中选择**接入管理 > 产品管理**。
-2. 点击在页面右上方**创建产品** ，在**创建产品**窗口提供以下配置信息。
-  - **产品名称**：Inverter_Product
-  - **节点类型**：设备
-  - **设备模型**：Inverter_Demo
-  - **数据格式**：Json
-  - **证书双向认证**：禁用
-  - **产品描述**：Inverter product for demo
+1. In the EnOS Console, select **Access Management > Product Management**.
+2. Click **New Product** at the top right of the page, and provide the following settings in the **Creating Model** window:
+  - **Product Name**: Inverter_Product
+  - **Asset Type**: Device
+  - **Device Model**: Inverter_Demo
+  - **Data Format**: Json
+  - **Certificate-based Two-way Authentication**: Disable
+  - **Product Description**: Inverter product for demo
 
   ![](media/create_product.png)
-填写规范如下表所示：
+
+Filling specifications are as follows:
 <table>
     <tr>
-  		<th>参数
+  		<th>Parameter
   		</th>
-  		<th>输入值
+  		<th>Input Value
   		</th>      
   	</tr>
     <tr>
-  		<td>产品名称
+  		<td>Product Name
   		</td>
-  		<td>产品名不可重复，支持中文、英文字母、数字和下划线
+  		<td>The product name must be unique, supports Chinese characters, uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9) and underline(_).
   		</td>      
   	</tr>
     <tr>
-  		<td>节点类型
+  		<td>Asset type
   		</td>
-  		<td>选择设备
-  		</td>
-  	</tr>
-    <tr>
-  		<td>设备模型
-  		</td>
-  		<td>选择一个已定义好的模型。如果选择的模型还未定义功能，则可在产品创建后再设置。
+  		<td>Select a device
   		</td>
   	</tr>
     <tr>
-  		<td>数据格式
+  		<td>Device model
+  		</td>
+  		<td>Select a model that is already defined. If the selected model has not yet defined a feature, it can be set after the product is created.
+  		</td>
+  	</tr>
+    <tr>
+  		<td>Data Format
   		</td>
   		<td>JSON:
-      透传：
+      Passthrough:
   		</td>
   	</tr>
     <tr>
-  		<td>产品描述
+  		<td>Product Description
   		</td>
-  		<td>产品名称
+  		<td>Product Name
   		</td>
   	</tr>
   </table>
-3. 点击**确定** 完成操作。
+3. Click **Confirm** to complete the operation.
 
-有关产品设置的详细信息，参见[创建产品](creating_products)。
+For details on product settings, please refer to [Creating Products](creating_products).
 
 
-## 步骤3：注册设备
+## Step 3: Register the Device
 
-在该步骤中，我们创建一个名称为**INV001**的设备，该设备属于在上一步骤中创建的**Inverter_Product**产品型号。
+In this step, we create a device named **INV001**, which belongs to the **Inverter_Product** product model created in the previous step.
 
-1. 在EnOS控制台中选择 **接入管理>设备管理**。
-2. 点击在页面右上方 **添加设备** ，在弹出窗口配置如下信息：
-  - **产品**：Inverter_Product
-  - **Device Name**：INV001
-  - **逆变器类型**：0:Central，表示集中式逆变器
-  - **组件容量**：5.0
-  - **Device Key**：选填，系统自动生产
+1. In the EnOS Console, select **Access Management > Device Management**.
+2. Click **New Device** at the top right of the page, and provide the following settings in the pop-up window:
+  - **Product**: Inverter_Product
+  - **Device Name**: INV001
+  - **Inverter Type**: 0: Central, indicating centralized inverter
+  - **Component Capacity**: 5.0
+  - **Device Key**: Optional, generated automatically by system
 
   ![](media/register_device.png)
 
-填写规范如下表所示：
+Filling specifications are as follows:
 <table>
   <tr>
-		<th>参数
+		<th>Parameter
 		</th>
-		<th>描述
+		<th>Description
 		</th>
 	</tr>
   <tr>
-		<td>产品</td>
-		<td>设备所归属的产品。根据产品配置的不同，会出现相应的选项。
+		<td>Product</td>
+		<td>The product to which the device belongs. The displayed options vary according to the product configuration.
 		</td>
 	</tr>
   <tr>
 		<td>DeviceName	</td>
-		<td>设备名，在同一产品下设备名可重名。例如：INV001。
+		<td>The device name can be duplicated under the same product. For example: INV001.
 		</td>
 	</tr>
   <tr>
 		<td>Devicekey</td>
 		<td>
-    可选填。
-    如果不填，则系统自动生成。
-    如果自定义设置，需要保证在组织下唯一，并只支持大小写字母[a-z][A-Z]，数字[0-9]，横杠"-"，下划线"_ "。
+    Optional.
+    When left blank, it will be automatically generated by the system.
+    If you customize the setting, you need to ensure it is unique in the organization, and only supports uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9), dash "-" and underline "_".
     </td>
   </tr>
   <tr>
-    <td>模型属性</td>
-    <td>必填项属性在注册设备的时候就必须要填写，选填项可以在设备注册以后再补充。
+    <td>Model Attribute</td>
+    <td>The required attribute must be filled in when registering the device. The optional item can be added after the device is registered.
     </td>
   </tr>
 </table>
 
 
-## 步骤4：SDK模拟设备发送数据
+## Step 4: SDK Simulates Device Sending Data
 
-在该步骤中，我们通过设备端SDK模拟发送逆变器有功功率至云端。
+In this step, we send the inverter active power to the cloud through the device SDK simulation.
 
-1. 获取[设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
-2. 配置EnOS Cloud连接地址。
-3. 将注册设备获取的设备三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置到sample连接程序当中。
-4. 修改**postSubMeasurepoint**方法，配置发送数据测点名称，这里发送逆变器有功功率点，设置点名**INV.GenActivePW**，以及对应的点值。
+1. Obtain [Device Side SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For more information, please refer to the SDK's GitHub readme file.
+2. Configure the EnOS Cloud connection address.
+3. Configure the device triple, i.e. `ProductKey`,`DeviceKey`,`DeviceSecret`, obtained by the registered device into the sample connection program.
+4. Modify the **postSubMeasurepoint** method, configure the name of the measure point that sending data. In this case, send the inverter active power point, set the point name **INV.GenActivePW** and the corresponding point value.
 
-SDK具体使用参考[SDK设备端连接](using_sdk)。
+For specific SDK application, please refer to [SDK Device Side Connection](using_sdk).
 
-## 步骤5：查看设备连接状态
+## Step 5: Check the Device Connection Status
 
-进入控制台，选择**接入管理>设备管理**，查看INV001设备的状态，确认设备处于在线状态。
+Go to the console and select **Connection Management > Device Management** to check the status of the INV001 device and confirm that the device is online.
+
   ![](media/device_status.png)
 
 
-## 步骤6：查看设备数据
+## Step 6: Check the Device Data
 
-进入控制台，选择**接入管理>设备管理**，进入**设备详情**，打开**测点**tab页面，选择一个测点，点击**查看数据**，可以查看历史数据记录。
+Go to the console, select **Connection Management > Device Management**, then go to **Device Details**, open the **Measure Point** tab, and select a measure point, click **View Data** to check the data history record.

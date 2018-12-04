@@ -1,138 +1,138 @@
-# 创建模型
+# Creating Model
 
-模型是对产品功能的抽象，模型定义了产品是什么、能做什么、可以对外提供哪些服务。该文章描述了如何创建模型。
+A model is an abstraction of the product's features, and defines what the product is, what it can do, and what services it can provide. This article describes how to create a model.
 
-## 开始前准备
-已设计好该模型所需要的功能。有何如何进行模型的功能设计，参见[物模型概述](../model_overview)
+## Before You Start
+The features required for the model have been designed. For information on how to design the features of the model, please refer to [Thing Model Overview](../model_overview)
 
-## 任务描述
+## About This Task
 
-根据定义好的物模型，在EnOS中配置各项功能。
-- 属性
-- 测点
-- 服务
-- 事件
+Configure all the features in EnOS according to the defined thing model.
+- Attributes
+- Measure Points
+- Service
+- Event
 
-## 步骤一：创建模型
+## Step 1: Create a Model
 
-1. 在EnOS控制台中选择**接入管理>模型管理**。
-2. 点击页面右上方**创建模型**，在**创建模型**页面配置下列信息：
-  - **模型标识符**：模型的唯一识别码。
-  - **模型名称**：模型的名称，在同一组织下不可重复。
-  - **分类**：产品的静态扩展信息。如厂商、设备型号等。
-  - **模型关系**：
-    - 无：暂不配置具体属性。在模板创建完毕后手动定义要素。
-    - 拷贝：复制源模型上的所有信息。通过拷贝创建的模型与其源模型无关联。
-    - 继承：复制源模型上的所有信息。与源模型关联。    
-      - 子模型继承父模型的所有元素，子模板不可修改父模板中的元素。
-      - 子模型可以在父模型基础上增加新的元素，但不可以与父模型重名。
-      - 子模型可以再被继承，支持多层的继承关系。
-      - 父模型中元素的改动会关联到子模版中。
-  - **模型模板**：选择拷贝的模板或者继承的父模板。
-  - **模型描述**：对模型的详细描述。
-3. 点击**确定**完成操作。
+1. In the EnOS Console, select **Access Management > Model Management**.
+2. Click **New Model** at the top right of the page, and provide the following settings on the **Creating Model** page:
+  - **Identifier**: A unique identifier of the model.
+  - **Model Name**: The name of the model; duplicate name is not allowed under the same organization.
+  - **Category**: Static extension info of the product, Such as manufacturer, and device model.
+  - **Create From**:
+    - None: Do not configure specific attributes for now. Manually define the elements after the template is created.
+    - Copy: Copy all the information of the source model. There is no association between the source model and the model created by copying it.
+    - Inherit: Copy all the information of the source model. The created model is associated with the source model.    
+      - The child model will inherit all the elements of its parent model, and the child template cannot modify the elements in the parent template.
+      - The child model can add new elements based on the parent model, but it needs to use a different name from the parent model.
+      - The child model can be further inherited to support multi-level inheritance.
+      - Changes to the elements in the parent model will affect the child template.
+  - **Source Model**: The model selected for copying or the inherited parent model.
+  - **Description**: A detailed description of the model.
+3. Click **Confirm** to complete the operation.
 
-## 步骤二：为模型定义要素
+## Step 2: Define Elements for the Model
 
-1. 点击需要定义功能的模型的所对应的**查看**。
-2. 选择 **功能定义** 标签，并点击 **新增**，根据产品属性设置一个或多个要素。
+1. Find the model that needs feature definition and click **View**.
+2. Select the **Feature Definition** tag and click **Add** to set one or more elements according to the product attributes.
 
-### 新增属性
+### Adding Attributes
 
-1. 在**添加功能**页面，**功能类型**中选择属性，并配置如下信息：
-   - **名称**：属性的名称，同一模块下的名称不可重复。
-   - **名称（英文）**：如果**名称**为中文，则可在此设置英文名称。如果**名称**为英文，则本设置可忽略。
-   - **标识符**：功能的唯一标识码，同一组织下不可重复。此值为JSON格式中的identifier的值，作为设备上报该属性数据的Key，云端根据该标识符校验是否接收数据。
-   - **数据类型**：该属性的数据类型。
+1. On the **Add Feature** page, select the attribute in **Feature Type** section and provide the following settings:
+   - **Name**: The name of the attribute; duplicate name is not allowed under the same module.
+   - **Name (en)**: if the **Name** is in Chinese, an English name can be set here. You can ignore this setting if the **Name** is in English.
+   - **Identifier**: A unique identification code for the feature; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Data Type**: The data type of this attribute.
 
-     + int,float,double：需定义默认值，该数据的单位等信息。
-     + enum：需定义枚举项的参数值和该参数的描述。
-     + bool：需采用0和1来定义布尔值。
-     + string：需定义默认值，String的类型和string的数据长度。
-     + timestamp：timestamp的格式为String类型的UTC时间戳(毫秒)。
-     + date: date的格式为yyyy-MM-dd HH:mm:ss。
-     + struct：通过定义**参数名**，**标识符**，**数据类型**和**单位**来定义一个JSON结构体。
-     + array:需定义**元素类型**。确保同一个数组元素类型相同。
+     + int, float, double: Information such as the default value and the data unit shall be defined.
+     + enum: The parameter value of enum items and parameter description shall be defined.
+     + bool: Boolean value shall be defined as 0 or 1.
+     + string: A default value, the string type and string length shall be defined.
+     + timestamp: The timestamp is in the form of a UTC timestamp string (in milliseconds).
+     + date: The format of date is yyyy-MM-dd HH:mm:ss.
+     + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
+     + array: **Type** shall be defined. Make sure that the same type is used in the same array.
 
-   - **是否必填**：如果设置为必填，新建在该产品下的设备时，必须填写该参数。
-   - **描述**：对属性的描述。
+   - **Required**: If set to "Required", the parameter must be provided when creating a new device under this product.
+   - **Description**: A description of the attribute.
 
-2. 点击 **确认** 完成创建该属性。
+2. Click **Confirm** to finish creating the attribute.
 
-3. 重复以上操作创建更多属性。
+3. To create more attributes, repeat the above steps.
 
-### 新增测点
+### Adding Measure Points
 
-测点页面中的配置信息如下：
-1. 在**添加功能**页面，**功能类型**中选择测点，并配置如下信息：
-   - **名称**： 测点的名称，同一模块下的名称不可重复。
-   - **名称（英文）**：如果名称为中文，则可在此设置英文名称。如果**名称**为英文，则本设置可忽略。
-   - **标识符**：功能唯一标识码，同一组织下不可重复。此值为JSON格式中的identifier的值，作为设备上报该属性数据的Key，云端根据该标识符校验是否接收数据。
-   - **是否是质量指数**：设置该测点值是否代表数据质量。如果设置为**是**，则配置如下：
+Below is the configuration information in the "Measure Points" page:
+1. On the **Add Feature** page, select the measure point in the **Feature Type** section and provide the following settings:
+   - **Name**: The name of the measure point; duplicate name is not allowed under the same module.
+   - **Name (en)**: If the name is in Chinese, an English name can be set here. You can ignore this setting if the **Name** is in English.
+   - **Identifier**: A unique identification code for the feature; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Whether It Is a Quality Indicator**: Whether the measure point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
 
-      + 质量位：系统使用预定义的数组型的数据质量指示，不可更改。可点击**查看**了解预定义的质量位参数和描述。
-      + 值：设置该测点的数据类型。类型只支持int,float和double。
+      + Quality Indicator: Data quality indicator in the form of array that is predefined by the system; cannot be changed. You can click **View** to see the predefined quality indicator parameters as well as their descriptions.
+      + Value: Sets the data type of the measure point. Only three types are supported: int, float, and double.
 
-   - **数据类型**：如果该测试不是质量指数，则配置该测点的数据类型。
+   - **Data Type**: If the test is not about quality indicator, the data type of the measure point shall be configured.
    -
-     + int,float,double：需定义默认值，该数据的单位等信息。
-     + enum：需定义枚举项的参数值和该参数的描述。
-     + bool：需采用0和1来定义布尔值。
-     + string：需定义默认值，String的类型和string的数据长度。
-     + timestamp：timestamp的格式为String类型的UTC时间戳(毫秒)。
-     + date: date的格式为yyyy-MM-dd HH:mm:ss。
-     + struct：通过定义**参数名**，**标识符**，**数据类型**和**单位**来定义一个JSON结构体。
+     + int, float, double: Information such as the default value and the data unit shall be defined.
+     + enum: The parameter value of enum items and parameter description shall be defined.
+     + bool: Boolean value shall be defined as 0 or 1.
+     + string: A default value, the string type and string length shall be defined.
+     + timestamp: The timestamp is in the form of a UTC timestamp string (in milliseconds).
+     + date: The format of date is yyyy-MM-dd HH:mm:ss.
+     + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
 
-   - **自定义标签**：测点的标签是对测点本身进行描述，可根据需要对测点进行灵活的标识，如测点的类型、分组、优先级等。
-   - **描述**：对该测点的描述。
+   - **Tags**: Tags can be used to describe a measure point; depending on the needs, you can flexibly identify a measure point, such as its type, group, and priority.
+   - **Description**: A description of the measure point.
 
-2. 点击 **确认** 来创建该测点。
+2. Click **Confirm** to create a measure point.
 
-3. 重复以上操作创建更多测点。
+3. To create more measure points, repeat the above steps.
 
-### 新增服务
+### Adding Service
 
-1. 在**添加功能** 页面，**功能类型**中选择服务，并配置如下信息：
-   - **名称**：测点的名称，同一模块下的名称不可重复。
-   - **名称（英文）**：如果名称为中文，则可在此设置英文名称。
-   - **标识符**：功能唯一标识码，同一组织下不可重复。此值为JSON格式中的identifier的值，作为设备上报该属性数据的Key，云端根据该标识符校验是否接收数据。
-   - **调用方式**：服务的调用方式。
-     + 同步：云端执行调用服务后，会等待设备回复，如无回应，则调用超时。
-     + 异步：云端执行调用后直接返回，由异步的方式获取设备的回复消息。
-   - **输入参数**：点击 **新增参数** 配置该服务的输入参数的参数名，识别符，数据类型和数据单位。
-   - **输出参数**：点击 **新增参数** 配置该服务的输出参数的参数名，识别符，数据类型和数据单位。
-   - **描述**：对该服务的描述。
+1. On the **Add Feature** page, select a service in **Feature Type** section and provide the following settings:
+   - **Name**: The name of the measure point; duplicate name is not allowed under the same module.
+   - **Name (en)**: If the name is in Chinese, an English name can be set here.
+   - **Identifier**: A unique identification code for the feature; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Invoke Method**: The way to invoke the service.
+     + Synchronous: The cloud invokes the service and waits for the device to reply. If no reply is received, the invocation times out.
+     + Asynchronous: The cloud invokes the service and returns immediately; the reply message from the device is obtained asynchronously.
+   - **Input Parameters**: Click **New Parameter** to configure the name, identifier, data type, and data unit of the input parameter of the service.
+   - **Output Parameters**: Click **New Parameter** to configure the name, identifier, data type, and data unit of the output parameter of the service.
+   - **Description**: A description of the service.
 
-2. 点击 **确认** 来创建该服务。
+2. Click **Confirm** to create the service.
 
-3. 重复以上操作创建更多服务。
+3. To create more services, repeat the above steps.
 
-### 新增事件
+### Adding Event
 
-1. 在**添加功能** 页面，**功能类型**中选择事件，并配置如下信息：
-   - **名称**：测点的名称，同一模块下的名称不可重复。
-   - **名称（英文）**：如果名称为中文，则可在此设置英文名称。
-   - **标识符**：功能唯一标识码，同一组织下不可重复。此值为JSON格式中的identifier的值，作为设备上报该属性数据的Key，云端根据该标识符校验是否接收数据。
-   - **事件类型**：
-     + 信息：指设备上报的一般性通知，如完成某项任务等.
-     + 告警：告警类信息。设备运行过程中主动上报的突发或异常情况，优先级高。你可以针对不同的事件类型进行业务逻辑处理和统计分析。
-     + 故障：故障类信息。设备运行过程中主动上报的突发或异常情况的，优先级高。你可以针对不同的事件类型进行业务逻辑处理和统计分析。
-   - **输出参数**：点击 **新增参数**  配置该服务的输出参数的参数名，识别符，数据类型和数据单位。
-   - **描述**：对该事件的描述。
+1. On the **Add Feature** page, select an event in **Feature Type** section and provide the following settings:
+   - **Name**: The name of the measure point; duplicate name is not allowed under the same module.
+   - **Name (en)**: If the name is in Chinese, an English name can be set here.
+   - **Identifier**: A unique identification code for the feature; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Severity**:
+     + Info: Refers to general notifications reported by devices, such as a notification on job completion.
+     + Warning: Warning messages. Emergencies or exceptions reported voluntarily by a running device; these events have a high priority. You can perform service logic processing and statistical analysis depending on the severity of the events.
+     + Error: Error messages. Emergencies or exceptions reported voluntarily by a running device; these events have a high priority. You can perform service logic processing and statistical analysis depending on the severity of the events.
+   - **Output Parameters**: Click **New Parameter** to configure the name, identifier, data type, and data unit of the output parameter of the service.
+   - **Description**: A description of the event.
 
-2. 点击 **确认** 来创建该事件。
+2. Click **Confirm** to create the event.
 
-## 步骤3：（可选）添加标签
-标签描述同类模型所具有的共性信息。用于区分模型对象所属的领域、类型、范围等各种分类。比如，你可以通过添加**domain:solar**标签代表该模型属于太阳能领域。
+## Step 3: (Optional) Add a Tag
+A tag describes the common information shared by models of the same type. It can be used to distinguish model objects by describing their categories such as domain, type, and scope. For example, by adding a **domain:solar** tag to a model, you are specifying that the model falls in the solar field.
 
-1. 在EnOS控制台中选择 **接入管理>模型管理**。
-2. 点击需要添加标签的模型后的 **查看**，在标签信息处点击 **编辑** 来添加标签。标签由键值对（key:value）组成。
+1. In the EnOS Console, select **Access Management > Model Management**.
+2. Click **View** next to the model to be added, and click **Edit** in the Tags section to add a tag. A tag is made up of a key-value pair (key:value).
 
-## 结果
+## Results
 
-完成功能定义后，系统将自动生成该产品的模型，以JSON格式表述。
+When feature definition is completed, the system will automatically generate a model for the product in JSON format.
 
-## 相关信息
+## Related Information
 
-- [模型概述](../model_overview)
-- [创建产品](creating_product)
+- [Model Overview](../model_overview)
+- [Creating Product](creating_product)

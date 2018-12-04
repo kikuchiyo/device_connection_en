@@ -1,178 +1,178 @@
-# 添加EnOS Edge网关
+# Add EnOS Edge Gateway
 
-当使用EnOS Edge网关接入子设备时，需要对edge网关进行配置，该文章描述如果配置edge网关，完成子设备与edge网关的连接配置。
+The Edge gateway needs to be configured when using it to connect the sub device. This article describes how to configure it to complete the connection configuration between it and the sub device.
 
-## 开始前准备
+## Before You Start
 
-1. 你必须已获得Edge网关的序列号（SN）。
-2. 你必须已经完成对edge网关的初始化。Edge网关硬件初始化等工作通常由远景项目团队完成，详细可以咨询远景的项目经理。
+1. You must have obtained the serial number (SN) of the Edge gateway.
+2. You must have completed the initialization of the Edge gateway. The hardware initialization of the Edge gateway is usually done by the Envision project team. For more information, please consult project manager of Envision.
 
 
-## 步骤1：添加和激活Edge网关
+## Step 1: Add and Activate the Edge Gateway
 
-1. 在EnOS控制台中选择**设备Edge接入 > Edge管理**。
-2. 在页面左上方点击**添加**按钮，输入Edge网关的名称和序列号。
-3. 点击**保存**完成Edge网关添加。
+1. Select **Device Edge Connection > Edge Management** in the EnOS console.
+2. Click **Add** button at the top left of the page to enter the name and serial number of the Edge gateway.
+3. Click **Save** to complete the addition of the Edge gateway.
 
-Edge网关添加成功后，在**Edge管理**页面，可以查看每一个Edge的名称，SN，版本，以及当前通讯状态，发布状态等信息，如下图所示：
+After the Edge gateway is successfully added, you can view the name, SN, version, and current communication status and publish status of each Edge on the **Edge Management** page, as shown in the following figure:
 ![](media/imageN001.png)
 
-## 步骤2：接入子设备
+## Step 2: Connect the Sub-device
 
-完成edge网关的添加后，就可以使用该edge网关完成子设备的数据接入。在表格中点击edge网关记录后的**子设备接入**按钮，进入到Edge网关子设备接入配置页面。
+After the Edge gateway is added, you can use it to complete data connection of the sub-device. Click **Sub-device Connection** button after the Edge gateway record in the table to open the Edge gateway sub-device connection configuration page.
 
-### 添加连接
+### Add Connection
 
-接入子设备的首要步骤是配置为edge网关添加通讯连接。根据实际需要，一个Edge下可添加多个连接，需要根据规约类型选择连接方式。根据以下步骤添加连接：
+The first step in connecting a sub-device is to configure a communication connection for the Edge gateway. According to actual needs, multiple connections can be added under one Edge, and the connection method shall be selected according to the protocol type. Follow the following steps to add a connection:
 
-1. 点击页面中的**添加连接**按钮后。
-2. 在弹出的对话框中填写连接的名称，选择连接方式，并根据所选连接方式设置连接参数。
+1. Click **Add Connection** button on the page.
+2. Fill in the name of the connection in the pop-up dialog box, select the connection method, and set the connection parameters according to the selected connection method.
 
-如下图示例，edge作为TCP/IP客户端，因此配置的连接参数即为服务器的IP地址和端口号。
+As shown in the following figure, Edge is used as the TCP/IP client, so the configured connection parameters are the server's IP address and port number.
 
-*注意：通常Edge不会直接连接对端服务器或设备，而是连接到一个网络网关，再由此网关连接到对端服务器或设备，因此需要注意网关IP地址和端口号与Edge的映射配置。*
+*Note: Usually the Edge will not connect directly to the peer server or device, but will connect to a network gateway, and then connect to the peer server or device via this gateway. Therefore, you need to pay attention to the mapping configuration of the IP address and port number of the gateway to the edge. *
 
 ![](media/image011.png)
 
-*图：添加连接示例*
+*Figure: Example of Adding Connection*
 
-### 添加设备
+### New Device
 
-添加连接后，下一步工作是向连接中添加设备。如下图所示：
+After adding connection, the next step is to add devices to the connection. As shown below:
 
 ![](media/image012.png)
 
-*图：向连接中添加设备*
+*Figure: Add Devices to the Connection*
 
-**添加设备**
+**New Device**
 
-1. 在连接下点击**添加设备**按钮。
-2. 选择需要添加的设备所属的产品，然后选择需要添加的设备，并选择设备需要关联的设备模板，点击**保存**。如下图所示：
+1. Click **New Device** button under the connection.
+2. Select the product to which you want to add the devices, select the devices you want to add, and select the device template that the device needs to be associated with, then click **Save**. As shown below:
 
-  *注意：需首先选择同一种设备，此后才能为这些设备选择设备模板，设备模板相当于设备通讯驱动，里面中包括了设备通讯的点表，通讯规约，规约配置文件等信息。具体可以参考[管理模板](managing_templates)*
+  *Note: You need to select the same kind of devices first, then you can select the device template for these devices. The device template is equivalent to the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, please refer to [Managing Templates](managing_templates)*
 
   ![](media/image013.png)
 
-  *图：添加设备*
+  *Figure: New Device*
 
 
-**更新设备信息**
+**Update Basic Information**
 
-若所添加的设备信息需要更新，点击连接下的**导出**按钮导出设备连接信息表，填写完成后再点击**导入**以上传此信息表。如下图所示：
+If the basic information of the added device needs to be updated, click **Export** button under the connection to export the device connection information table. After filling in the table, click **Import** to upload this information table. As shown below:
 
 ![](media/image014.png)
 
-*图：更新设备信息*
+*Figure: Update Device Information*
 
 ![](media/image015.png)
 
-*图：设备连接信息表*
+*Figure: Device Connection Information Table*
 
-<!--点击设备后的**删除**按钮可以从连接中删除此设备。若需批量删除设备，则勾选此连接下需要删除的设备，而后点击批量删除按钮即可。-->
+<!--Click the **Delete** button next to the device to remove this device from the connection. To delete devices in batch, check the devices you want to delete under this connection, and click the “Bulk Delete” button.-->
 
-### 配置逻辑地址或偏移量
+### Configure Logical Addresses or Offsets
 
-由于一条连接下接入了多个设备，因此需为每个设备配置其逻辑地址及各类点的偏移量。其配置方法取决于所采用的通信规约及其设置。可以逐个设备进行配置，也可导出设备连接信息表线下配置完成后再导入系统，实现批量配置。
+Since multiple devices are connected under one connection, each device needs to be configured with its logical address and offset of various points. The method of configuration depends on the communication protocol used and its settings. You can configure the device one by one, or export the device connection information table and then import it into the system after offline configuration to implement batch configuration.
 
-- 逐个设备进行配置
+- Configure device by device
 
-   点击设备后的**编辑**图标，可对此台设备进行编辑
+   Edit this device by clicking **Edit** icon next to the device
 
    ![](media/image020.png)
 
-   *图：逐个设备配置逻辑地址及偏移量*
+   *Figure: Configure Logical Addresses and Offsets on a Device-by-Device Basis*
 
-- 批量配置
+- Batch configuration
 
-   点击连接下的导出按钮，下载连接信息表填写后，再点击导入按钮上传信息表，如下图所示：
+   Click the "Export" button under the connection, download and fill in the connection information table, and then click the "Import" button to upload it, as shown below:
 
    ![](media/image015.png)
 
-   *图：设备连接信息表*
+   *Figure: Device Connection Information Table*
 
-   导出的表中支持AI，DI，PI，AO，DO，PO偏移量的配置。基本的配置方式为用短划线连接，如`0-50`，当同时存在多个偏移量时，可用`\#`隔离，如`0-50\#1000-1050`。
+   The configuration that supports the AI, DI, PI, AO, DO, and PO offsets in the exported table. The basic configuration method uses dash-connection, such as `0-50`, when there are multiple offsets at the same time, you can use `\#` to separate multiple values , such as `0-50\#1000-1050`
 
-### 发布配置
+### Publish Configuration
 
-完成上述各种配置后，需将配置发布到Edge。点击发布，即可将配置发布到对应的Edge上，并可见发布状态。只有发布后，所做的配置才会生效。如下图所示：
+After completing the above various configurations, you need to publish the configuration to the Edge. Click "Publish" to publish the configuration to the corresponding Edge and view the publish status. The configuration will not take effect until it is published. As shown below:
 
 ![](media/image021.png)
 
-*图：发布配置到Edge*
+*Figure: Publish Configuration to Edge*
 
-## 步骤3：测试通信
+## Step 3: Test Communication
 
-完成并发布到Edge后，需检查配置是否正确。在连接配置页面，提供了通信指示灯，当设备在传输层（TCP/IP层）连接正常时，指示灯为绿色，否则为红色。如下图所示：
+After completing and publishing the configuration to the Edge, you need to check whether the configuration is correct. On the connection configuration page, a communication indicator is provided. When the device connection is normal in the transmission layer (TCP/IP layer), the indicator is green, otherwise it is red. As shown below:
 
 ![](media/image022.png)
 
-*图：传输层通信状态指示图标*
+*Figure: Communication Status Indication Icon on Transport Layer*
 
-通信中断的原因有多种，包含但不限于以下原因：
-- 配置没有下发
-- 配置有误
-- 场站端的通信有异常
-为此，需要有进一步的调试来帮助用户定位问题所在。EnOS Edge提供了通信测试功能以帮助实现此目标。
+There are several reasons for communication interruption, including but not limited to the following reasons:
+- Configuration is not delivered
+- Configuration error
+- There is an abnormal communication at the station end
+Therefore, further debugging is needed to help the user locate the problem. EnOS Edge provides communication testing capabilities to help achieve this goal.
 
-点击连接下的**测试**按钮，进入如下图所示的连接的批量测试页面：
+Click **Test** button under the connection to open the batch test page for the connection as shown below:
 
 ![](media/image026.png)
 
-*图：批量通信测试概览*
+*Figure: Bulk Communication Test Overview*
 
-- 你可以通过下拉菜单切换连接。
-- 你可以点击**开始/暂停**按钮以启动或暂停通信测试功能。
+- You can switch connections by using the drop-down menu.
+- You can activate or pause the communication test feature by clicking the **Start/Pause** button.
 
-批量测试提供了4项功能，分别为：数据、原始报文、日志和控制台。通过点击相应的标签页可以在不同功能间切换，以下内容描述各标签页用法及信息含义：
+Batch testing provides four features: data, original message, log, and console. You can switch between different features by clicking the corresponding tabs. The following contents describe the usage and meaning of each tab:
 
-### 数据
+### Data
 
-在数据标签页，你可查看本连接下的所有设备，或者筛选所需查看的设备，查看其在edge中的采集点数据更新情况。
+On the data tab, you can view all the devices under this connection, or filter the devices you want to view to see the update of the collection point data in the Edge.
 
 ![](media/image029.png)
 
-*图：数据功能*
+*Figure: Data Feature*
 
-该测试功能同时支持遥测、遥信点的置数。点击**添加置数**，可设值，点击**发送**后可向云端发送所设置的值。点击一次发送一次，不会终止原始数据的上传，相当于插了一个值送上云端。
+This test feature supports telemetry and remote signal point number setting. Click **Add Set Number** to set the value, click **Send** to send the set value to the cloud. Click once to send one time, it will not terminate the upload of the original data, equivalent to inserting a value to the cloud.
 
 ![](media/image030.png)
 
-*图：置数功能*
+*Figure: Number Setting Feature*
 
-### 原始报文
+### Original Message
 
-在原始报文标签页，你可以查看和复制原始收发报文。
+On the original message tab, you can view and copy the original message received and sent.
 
 ![](media/image031.png)
 
-*图：原始报文功能*
+*Figure: Original Message Feature*
 
-### 日志
+### Log
 
-为避免信息泛滥，该标签页隐藏了info类日志，只显示warning和error类型的日志，用于辅助用户判断通信故障原因。
+To avoid flooding of information, the tab hides the log of info types and only displays logs of warning and error types to assist the user in determining the cause of the communication error.
 
 ![](media/image032.png)
 
-*图：日志功能*
+*Figure: Log Feature*
 
-### 控制台
+### Console
 
-在该标签页，你可以使用常用的通信调试命令，包括基本ping测试，本机IP查看，Telnet命令和TCP连接查看命令。
-- ping测试需在输入框中填写需要ping的IP地址
-- Telnet测试需填写IP和端口号
+On this tab, you can use common communication debugging commands, including the ones for basic ping tests, native IP viewing and Telnet, as well as for TCP connection viewing.
+- The ping test needs to fill in the IP address of the required ping in the input box.
+- Telnet test requires IP and port number
 
 ![](media/image033.png)
 
-*图：控制台功能*
+*Figure: Console Feature*
 
-### 单台设备的通信测试
+### Communication Test for a Single Device
 
-在每一个连接下的的设备列表页面，点击单设备的**查看数据**按钮，可对单台设备进行通信测试，查看此设备对应的Edge中的数据。此功能与批量通常测试中的数据功能一致，只是这里仅对单台设备进行测试。
+Under each connection on the device list page , click **View Data** button of the single device to perform a communication test on a single device and view the data in the Edge corresponding to the device. This feature is consistent with the data features in the bulk test, except that only a single device is tested here.
 
 ![](media/image034.png)
 
-*图：单台设备通信测试功能*
+*Figure: Single Device Communication Test Feature*
 
-## 总结
+## Summary
 
-在Edge网关中完成子设备的接入配置后，这些子设备的数据即会自动上送到EnOS云端。
+After the connection configuration of the sub-devices is completed in the Edge gateway, the data of these sub-devices is automatically sent to the EnOS cloud.

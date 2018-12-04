@@ -1,4 +1,4 @@
-Edge网关配置
+EnOS Edge Configuration
 --------
 
 .. toctree::

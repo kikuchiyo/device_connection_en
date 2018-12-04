@@ -48,7 +48,7 @@ The following table describes the common parameters used in the request and resp
 
 Connection Establishment
 ===================
-Before develop any communication protocol, you should establish the communication with your EnOS cloud using the MQTT protocol.
+Before develop any communication protocol, you should establish the communication with EnOS Cloud.
 
 Please refer to the following section.
 

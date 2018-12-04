@@ -1,16 +1,18 @@
 # Device Connection Scheme
 
-On the EnOS platform, unified authentication and online steps must be performed by the EnOS on both the Edge devices and devices connected directly to the IoT Hub before data can be sent to the platform.
+All edge devices and directly connected devices must meet unified authentication and online steps to be able to send data into the EnOS Cloud.
 
 EnOS mainly provides the following connection schemes:
-- The device is directly connected into and communicate with the IoT Hub without using gateway, i.e. edge in our scenario, to complete the authentication and data reporting. The device connected via this solution is called _directly connected device_.
+
+- The device is directly connected into and communicate with the IoT Hub without using gateway devices (edge gateways, in our scenario) to complete authentication and data transmission. The device connected via this solution is called _directly connected device_.
+
 - The device is connected to the EnOS IoT Hub via edge. The device connected via this solution is called _sub device_. The gateway serves as a proxy of the sub devices to help them complete operations, including authentication, connecting to Internet, and data transmission.
 
 The connection scheme is usually selected according to the hardware capabilities of the device and the security requirements for the device connection.
 
 ## Connection Schemes
 
-Internet of Everything (IoE), provided that the object has the ability to be connected, that is, it should at least meet the following two requirements:
+Internet of everything, provided that the object has the ability to be connected, that is, it should at least meet the following two requirements:
 - Has the ability to be connected
 - Supports burning of firmware and running of connection program
 

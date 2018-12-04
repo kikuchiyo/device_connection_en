@@ -1,4 +1,4 @@
-## Creating a protocol
+## Creating a Protocol
 
 EnOS Edge supports various communication protocols. This article instructs how to develop your own protocol and upload the package that defines the protocol.
 

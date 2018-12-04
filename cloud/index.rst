@@ -1,4 +1,4 @@
-云端配置
+Cloud Configuration
 --------
 
 .. toctree::

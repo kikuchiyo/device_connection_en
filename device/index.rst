@@ -1,15 +1,16 @@
-设备端开发
-=========
+Device-end Development
+======================
 
-EnOS™ Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云端的交互协议,你可以直接使用设备端SDK来进行开发。
-如果提供的SDK不能满足你的需求，你可以遵循EnOS™设备协议完成设备与EnOS™之间基于MQTT协议的数据传输。如果你的数据格式正确，你的设备可随时连接EnOS™。
+EnOS™ provides device SDKs that encapsulates protocols for data transmission between devices and EnOS Cloud.
 
-**前提条件**
+When the device SDKs provided by EnOS cannot meet your requirements, you can refer to this article to send telemetries into EnOS Cloud based on the EnOS device protocol standards, which defines the data format of the MQTT-based transmission between devices and EnOS cloud. You can connect your devices into EnOS as long as your data format conforms to the standard.
 
-完成EnOS™控制台所需配置，并获取设备开发阶段的必要信息：
+## Prerequisites
 
-- 设备认证信息
-- Topic信息
+Complete the cloud configuration in the EnOS Console and obtain the following information that are needed in the device-end ddevelopment:
+
+- Device credentials for authentication
+- Topics to subscribe data from and publish data to
 
 .. toctree::
    :maxdepth: 1

@@ -1,157 +1,157 @@
-# 创建和管理设备模板
+# Creating and Managing Device Templates
 
-设备模板是设备接入的桥梁，由规约与设备测点映射关系两部分组成。对于一个实际的设备，其设备测点的名称多数情况下是客户化的，系统无法直接识别此客户化的名称。因此，一方面，需通过映射，将客户化的实际测点与标准化的设备模型领域点对应起来。另一方面，需配置设备接入的规约。
+A device template works as a bridge for device access. It consists of two parts: the protocol and the mapping relationship of device measure points. For an actual device, the names of its measure points are often customized, and cannot be identified directly by the system. Therefore, it is necessary to map the customized actual measure points to the domain points of standard device models. On the other hand, protocol configuration is also required for device access.
 
-设备模板的创建步骤：
+Steps to create a device template:
 
 ![](media/image035.png)
 
-*图：设备模板管理三部曲*
+*Figure: Three Steps to Managing Device Templates*
 
-设备模板的创建主要有2种方式：
-- 全新创建。
-- 基于原有设备模板复制创建，而后基于此模板做修改。该方式适用于两种设备模板近似的场景，通过复制的方式获取副本而后稍作修改得到新模板，可减少实施的工作量。
+A device template can be created mainly in two ways:
+- Created from scratch.
+- Created and later modified based on an existing device template. You can choose this method when the scenario requires a device template that is similar to an existing one. By copying an existing template and slightly modifying the duplicate to obtain a new template, you can reduce your workload.
 
-## 全新创建设备模板
+## Creating a Brand New Device Template
 
-1. 在EnOS控制台导航栏中点击**设备Edge接入 > 设备模板**。
-2. 点击 **新建设备模板**。在弹出的对话框填写设备基本信息及选择设备模型，点击 **保存**。
-3. 点击新建好的模板记录后的编辑按钮![](media/image037.png)，进入模板详情页面。模板详情页面包括最上方的基本信息编辑栏，中部的点表上传栏，和下部的映射关系配置栏，如下图所示：
+1. In the navigation bar of the EnOS Console, click **Device Access via Edge > Device Template**.
+2. Click **New Device Template**. In the pop-up window, enter basic device information, select a device model, and click **Save**.
+3. Click the "Edit" button [](media/image037.png) next to the newly created template record to enter the Template Details page. The Template Details page includes (from top to bottom): the basic info editing section, the point table upload section, and the mapping relationship configuration section, as shown in the figure below:
 
   ![](media/image039.png)
 
-  *图：设备模板编辑页面——以风机为例*
+  *Figure: Device Template Editing Page - Taking Fan as an Example*
 
-以下信息描述如何配置设备模板。
+Follow the instructions below to configure a device template.
 
-### 配置基本信息
+### Configuring Basic Info
 
-在**基本信息**部分，填写设备基本信息，选择规约类型和具体规约。
+In the **Basic Info** section, enter the basic information of the device, select the protocol type as well as the specific protocol.
 
 ![](media/image040.png)
 
-*图：模板基本信息编辑*
+*Figure: Basic Template Info Editing*
 
-- 你可以查看和选择当前EnOS Edge支持的通用规约以及各规约关联的模板。点击规约详情链接，在弹出的对话框中，光标置于![](media/image041.png)图标处，可查看各规约的描述信息，以确定合适的规约。
-- 若没有找到合适规约，可联系平台系统管理员。你也可以重新开发规约并上传到规约管理中心，并进行编辑，更新等操作。有关开发新规约，参考[创建规约](creating_protocol)。
+- You can view and select the general protocols currently supported by the EnOS Edge as well as their associated templates. To view the description of each protocol so as to choose the right one, click on the Protocol Details link and move the cursor to the ![](media/image041.png) icon in the window that appears.
+- If no suitable protocol is found, you can contact the system administrator of the platform. You can also re-develop the protocol and upload it to the protocol management center for editing, updating, and more operations. For information on developing new protocols, please refer to [Creating Protocol](creating_protocol).
 
 ![](media/image042.png)
 
-*图：规约详情页*
+*Figure: Protocol Details Page*
 
-### 上传点表
+### Uploading Point Table
 
-在**电表上传**部分，你需要编辑两个配置文件：
-- `config.sys`文件是与通信规约相关的参数配置文件
-- `point.csv`表是设备实际的测点表。
+In the **Point Table Upload** section, you will need to edit two configuration files:
+- `config.sys` is a parameter configuration file relating to communication protocols
+- `point.csv` is the actual measure point table of the device.
 
-下载`config.sys`模板和`point.csv`模板，填写完成后上传。
+Download the `config.sys` and `point.csv` templates, fill in both templates, and upload them.
 
-*注意：point.csv点表需为UTF-8 BOM格式，格式不正确可能导致显示出错等问题；若point.csv表里的"别名"列有值，在进行更新点表操作，即上传一份新的点表时，需首先上传一份空的点表覆盖原有的，再上传实际的点表，以免出错。*
+**Note**: The point.csv point table shall be in UTF-8 BOM format to avoid display errors and other issues. If there are values in the "alias" column of the point.csv table when you are updating it (i.e., uploading a new point table), you will need to first upload an empty point table to overwrite the original table before uploading the actual point table to avoid errors. *
 
-上一步通信规约选择完成后，这里上传`point.csv`表若成功，则会在下方的预览栏中看到`point.csv`表中的测点信息，如下图所示：
+If you have chosen a communication protocol in the previous step and successfully uploaded the `point.csv` table here, you will see the measure point information in the `point.csv` table in the preview section below, as shown in the following figure:
 
 ![](media/image043.png)
 
-*图：规约选择及点表导入*
+*Figure: Protocol Selection and Point Table Import*
 
 
-### 选择模型与配置映射关系
+### Selecting Model and Configuring Mapping Relationship
 
-在**模型选择与映射**部分，你可以通过配置映射关系将客制化的实际点与标准化的设备模型点对应起来。主要步骤为：
-1. 选择采用的标准设备模型。
-2. 找到需配置映射的测点记录，点击标准模型点右侧的![](media/image045.png)按钮。
+In the **Model Selection and Mapping** section, you can configure mapping relationships to match customized actual points with standard device model points. The main steps include:
+1. Select the standard device model.
+2. Find the measure point record for which a mapping configuration is required, and click the ![](media/image045.png) button to the right of the standard model point.
 
   ![](media/image044.png)
 
-  *图：标准模型选择及映射关系配置*
+  *Figure: Standard Model Selection and Mapping Relationship Configuration*
 
-3. 在弹出的对话框中选择其所要对应的实际采集点，如下图所示：
+3. Select the actual acquisition point in the pop-up window, as shown in the figure below:
 
   ![](media/image046.png)
 
-  *图：映射关系配置*
+  *Figure: Mapping Relationship Configuration*
 
-  在弹出的对话框中，可在搜索栏中输入采集点点名的关键词，系统会过滤出包含关键词的测点供用户选择，如下图所示。
+  In the search bar of the pop-up window, you can enter a keyword to search for the acquisition points, and the system will use it as a filter and show the measure points that contain the keyword for users to choose, as shown in the figure below.
 
-  - 对于简单一一对应的映射关系，直接勾选相应的测点即可
-  - 对于复杂的映射关系，可点击添加公式按钮，配置映射公式，如下图所示：
+  - If it is a simple one-to-one mapping, just check the corresponding measure point
+  - For complex mappings, you can click the "Add Formula" button to configure a mapping formula, as shown in the figure below:
 
     ![](media/image047.png)
 
-    *图：添加公式按钮*
+    *Figure: Add Formula Button*
 
     ![](media/image048.png)
 
-    *图：选择公式*
+    *Figure: Select Formula*
 
-    以"SUM"相加公式为例，公式算法栏中选择"SUM"，选取采集点框内按相加顺序点击相应点后的![](media/image049.png)，即可完成添加，如下图所示，添加的公式为"ai.4999+ai.5001"，顺序和点击顺序一致：
+    Take the addition formula "SUM" as an example: select "SUM" in the formula algorithm column and, in the acquisition point box, click the ![](media/image 049.png) next to the corresponding point in the order of adding the points. As you can see in the figure below, the added formula is "ai.4999+ai.5001", consistent with the order of clicking.
 
     ![](media/image050.png)
 
-    *图：SUM公式添加说明*
+    *Figure: Notes for Adding the SUM Formula*
 
-  **说明**：添加顺序在某些公式中很重要，如在cross
-  product操作中，公式算法栏选择"cross
-  product"，按顺序选择四个点，添加的公式为"(ai.4999\*ai.5000+ai.5009\*ai.5010)"，图中操作数一栏类似于系数，为0则不操作，例如下图中操作数为0.01，则最后添加的公式为"(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01"。
+  **Notes**: For some formulas, the order of adding the points is important. For example, in the cross
+  product operation, when you select "cross
+  product" in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
 
   ![](media/image051.png)
 
-  *图：点选择顺序与操作数*
+  *Figure: Point Selection Order and Operand*
 
-### 批量配置映射关系
+### Batch Configuration of Mapping Relationship
 
-你可以通过以下步骤实现一次性完成所有映射关系配置：
+You can configure all the mappings at once by performing the following steps:
 
-1. 在**模型选择与映射**栏，点击**导出**按钮，下载领域点映射表。
-2. 编辑表格以完成所有点的映射关系后，再点击**导入**按钮上传映射表。
+1. In the **Model Selection and Mapping** section, click the **Export** button to download the mapping table of domain points.
+2. Edit the table to map the relationship of all points, and then click the **Import** button to upload the mapping table.
 
   ![](media/image052.png)
 
-  *图：批量配置映射关系*
+  *Figure: Batch Configuration of Mapping Relationship*
 
   ![](media/image053.png)
 
-  *图：映射关系表*
+  *Figure: Mapping Relationship Table*
 
-  *注意：在映射关系表的mapping列下填写采集点的点号即可，mdesp一列指采集点的描述，不需要填写。在成功上传映射关系表后，再下载领域点列表，即可下载包含了映射关系的映射关系表，此时的表中已包含了采集点的描述（因描述可以从驱动配置文件point.csv表中自动获取）。*
+  *Note: You only need to enter the numbers of acquisition points in the mapping column of the mapping relationship table; the mdesp column is used to describe the acquisition points and requires no input. After successfully uploading the mapping relationship table, download the list of domain points to obtain a table that contains mapping relationship. The table now includes the description of acquisition points (because the description can be automatically obtained from the driver configuration file point.csv) *
 
-  完成映射关系配置后，各标准模型点对应的采集点点号及描述关系可在页面中看到，如下图所示，点击保存后完成设备模板的编辑操作。
+  After configuring the mapping relationship, you can see the number and description of the acquisition points of each corresponding standard model point, as shown in the figure below. Click "Save" to finish the device template editing.
 
-  **说明**：
+  **Notes**:
 
-  - 并非所有设备模型点都需要配置映射关系，具体根据各领域的应用需求而定；
+  - Depending on the application requirements of the domain, a device model point may or may not require mapping relationship configuration;
 
-  - 需要添加公式映射的点必须通过手动添加的方式来配置，无法直接使用导入/导出来操作；
+  - Points that require a formula for mapping must be added manually, and shall not be operated directly via import/export;
 
-  - 已完成映射的表点击 **导出** 后，对于那些通过配公式映射的点，不会出现在导出后的csv文件中，但是在后台是存在的。
+  - After clicking **Export** to export a configured mapping table, the exported csv file will not include the points mapped using formulas, but such points do exist in the background.
 
-## 通过复制创建设备模板
+## Creating a Device Template by Copying
 
-在模板管理菜单页可查看本客户下所有设备模板，当某个新设备的设备模板与已有设备模板类似时，可通过复制创建的方式，减少实施工作量。
+You can view all the device templates of the current customer on the Templates menu page. When the device template required by a new device is similar to an existing device template, you can reduce the creation workload by copying the existing template.
 
-找到所需要复制的原始设备模板，点击复制按钮，填写新设备模板的名称后，即可完成创建。
+Find the original device template you need and click the "Copy" button; enter a name for the new device template to complete the creation.
 
-**注意**：设备模板名称必须唯一，不可重名，否则会报错。
+**Note**: The name of device template must be unique to avoid error messages.
 
-此后，用户只需要对此设备模板做相应的修改以满足需要即可，如下图所示：
+After that, you will only need to modify the device template duplicate to meet your needs, as shown in the figure below:
 
 ![](media/image055.png)
 
-*图：复制设备模板*
+*Figure: Copy Device Template*
 
 ![](media/image056.png)
 
-*图：填写新设备模板的名称*
+*Figure: Enter a Name for the New Device Template*
 
 ![](media/image057.png)
 
-*图：完成设备模板复制*
+*Figure: Finish Copying the Device Template*
 
-## 修改和删除设备模板
+## Modifying and Deleting Device Templates
 
-在**模板管理**页：
-- 点击模板**编辑**按钮，进入目标设备模板详情页面即可修改模板。
-- 点击模板**删除**按钮，即可直接将模板删除。
+On the **Template Management** page:
+- To modify a template, click the template's **Edit** button to enter the template details page of the target device.
+- To delete a template, simply click the template's **Delete** button.
 
-*注意：对已经被使用的模板的修改和删除操作需要谨慎，因为将会影响到所有使用到该模板的设备实例。*
+*Note: Be cautious when modifying or deleting a template that is in use, as the operation will affect all the device instances that are using the template. *

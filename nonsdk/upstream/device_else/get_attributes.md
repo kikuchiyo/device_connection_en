@@ -2,8 +2,6 @@
 
 A device can publish a message to this topic to request EnOS cloud to retrieve the attributes from the cloud.
 
-**Note:** Configure the parameters according to the output and input parameters of the measuring points.
-
 Upstream
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query
 
@@ -72,7 +70,7 @@ Upstream
     <td>attributes </td>
     <td>Array </td>
     <td>Mandatory</td>
-    <td>List of the  attribute. One request can contain maximum 200   items.<br>
+    <td>List of the attribute. One request can contain maximum 200 items.<br>
        If the value of attributes is null, system  will retrieve all the attributes.  </td>
   </tr>
   <tr>
@@ -98,6 +96,6 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates the request is  executed successfully. or  </td>
   </tr>
 </table>

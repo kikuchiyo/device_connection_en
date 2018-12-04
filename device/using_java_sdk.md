@@ -1,5 +1,5 @@
-# 使用设备端SDK
+# Using the device SDK
 
-EnOS提供设备端SDK，帮助设备通过MQTT协议连接到EnOS™ Cloud。
+EnOS provides a device SDK to help devices connect to EnOS™ Cloud via the MQTT protocol.
 
-有关如何获取和使用设备端SDK，参考该SDK在[GitHub的readme文件](https://github.com/EnvisionIot/enos-mqtt-java-sdk/blob/master/README.md)。
+For information on how to obtain and use the device SDK, please refer to the SDK's [README File in GitHub](https://github.com/EnvisionIot/enos-mqtt-java-sdk/blob/master/README.md)。

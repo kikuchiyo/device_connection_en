@@ -1,89 +1,93 @@
-# 使用JavaSDK实现基于证书的双向认证快速入门
+# Getting Started with Certificate-Based Authentication
 
-该文章帮助你快速入门如何基于Java SDK实现基于证书的双向认证连接EnOS Cloud。
+This article helps you quickly get started with using certificate-based authentication to secure connection between the device and the cloud.
 
-## 开始前准备
+## Before You Start
 
-前期准备整体流程如下图所示：
+The preparation work is as shown in the following diagram.
 
 ![](media/certificate_preparation.png)
 
 
-### 步骤0:创建模型、产品、设备
+### Step 0: Create Model, Product, and Device
 
-本步骤的前提是你已完成[直连设备连接快速入门](gettingstarted_device_connection)和[子设备通过edge连接至EnOS Cloud快速入门](gettingstarted_edge_connection)这两个示例。
+This step supposes assumes that you have complete the following tutorials:
+- [Getting Started With Direct Device Connection](gettingstarted_device_connection)
+- [Getting Started With Connecting Sub-device to EnOS Cloud via Edge](gettingstarted_edge_connection).
 
-**创建网关产品**
+**Creating an edge gateway product**
 
-本步骤大部分与上述两个快速入门示例相似，差异点在创建网关产品时需要创建开启**证书双向认证机制**的产品。如下图所示：
+This step is almost the same as what you've done in the aforementioned tutorials with the only difference that you need to enable **Certificate Authentication** when you create the edge gateway product as shown in the following screenshot:
 
 ![](media/edge_ssl.png)
 
+The inverter product does not need to have **Certificate Authentication** enabled because the inverter connects to the EnOS Cloud through the edge gateway. You only need to enable the authentication for the connection between the edge and the cloud.
 
-逆变器产品不需要开启**证书双向认证机制**，因为逆变器是作为子设备由网关代理连接EnOS Cloud，只需要edge与EnOS Cloud进行基于证书的双向认证即可。
 
-**创建网关设备**
+**Creating edge device**
 
-基于以上产品创建网关类型设备Edge01_Certificate。如下图所示：
+Create an edge device instance named **Edge01_Certificate** based on the product that you just created.
 
 ![](media/edge01_certificate.png)
 
-Edge01_Certificate的设备三元组如下，后续创建证书请求文件的时候会用到Device Key。
-- Product Key:Et***YP6
-- Device Key:UB***rOhJD
-- Device Secret:jgWGPE***B7bShf2P5cz
+Take note of the device triple of the **Edge01_Certificate** device, which will be used for creating the CSR. The following device triple is an example for your reference, you'll need to use your own.
+- Product Key: Et***YP6
+- Device Key: UB***rOhJD
+- Device Secret: jgWGPE***B7bShf2P5cz
 
-**创建子设备**
+**Creating sub-device**
 
-逆变器设备参照[直连设备连接快速入门](gettingstarted_device_connection)进行创建。如下图所示：
+Follow [Getting Started With Direct Device Connection](gettingstarted_device_connection) to create an inverter device as shown in the following figure:
 
 ![](media/INV002.png)
 
-### 步骤1：获取根证书
+### Step 1: Obtain Root Certificate
 
-下载CA根证书`cacert.pem`，下载地址为：https://<cluster_name>.envisioniot.com/enos/CA/cacert
-- 如果是公有云用户，<cluster_name>参考[EnOS Cloud集群信息]()。
-- 如果是私有云用户，<cluster_name>请咨询远景智能客户经理。
+Download the CA root certificate `cacert.pem` from `https://<cluster_name>.envisioniot.com/enos/CA/cacert`
 
-### 步骤2：创建证书请求文件和私钥
+- If you are in the EnOS public cloud, see []() for the `cluster_name`.
+- If you are in a private cloud instance, obtain the `cluster_name` from your Envision project manager or support representative.
 
-使用openssl命令创建证书请求文件**edge.csr**和私钥**edge.key**，示例命令如下：
+### Step 2: Create CSR File and Private Key
+
+Use openssl to create an CSR file named `edge.csr` and a private key named `edge.key` with the following command:
 
 ```shell
 openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=Shanghai/L=Shanghai/O=EnOS/OU="Edge Service"/CN="UB***rOhJD" -passout pass:123456  -sha256 -batch
 ```
 
-证书请求文件**edge.csr**用于向EnOS Cloud申请证书，私钥**edge.key**用于解密被证书加密的内容。
+- The CSR file is used for requesting certificate from EnOS Cloud
+- The private key is used for decrypting the data that is encrypted by the certificate.
 
-创建证书命令具体可参考[证书请求文件创建规范]()。
+For the guidelines of creating CSR file, see [证书请求文件创建规范]()。
 
-### 步骤3：调用REST API申请证书
+### Step 3: Invoke REST API to Request for Certificate
 
-在生成`edge.csr`以后，调用EnOS Cloud的REST API申请证书。创建Edge01_Certificate网关设备时获得了设备三元组，此处可调用`applyCertificateByDeviceKey`接口获取证书。
+After the CSR file `edge.csr` is created, invoke the relevant EnOS API to request for certificate. You have obtained the device triple when you create the **Edge01_Certificate** device, you can now call the `applyCertificateByDeviceKey` API to obtain your certificate.
 
 ![](media/postman_getcertificate.png)
 
-获取到证书以后，将其保存为`edge.pem`。
+After you obtain the certificate, save it as `edge.pem`.
 
-### 步骤4：使用keytool生成JKS文件
+### Step 4: Use Keytool to Generate JKS File
 
-通过以下命令生产`edge.jks`文件。
+Run the following commands to generate the `edge.jks` file.
 
 ```
-//查看文件
+//Check file
 [root@DemoMachine cert]# ll
 total 12
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
 -rw-r--r-- 1 root root 1858 Nov 28 19:51 edge.key
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
 
-//导入证书与私钥至.p12文件
+//Export certificate and private key as .p12 file
 [root@DemoMachine cert]# openssl pkcs12 -export -in edge.pem -inkey edge.key -out edge.p12 -name edge -CAfile cacert.pem -caname cacert
 Enter pass phrase for edge.key:
 Enter Export Password:
 Verifying - Enter Export Password:
 
-//查看生成的.p12文件
+//Check the generated .p12 file
 [root@DemoMachine cert]# ll
 total 16
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
@@ -91,14 +95,14 @@ total 16
 -rw-r--r-- 1 root root 2654 Nov 28 20:19 edge.p12
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
 
-//导入.p12文件至jks文件
+//Import the .p12 file into the keystore
 [root@DemoMachine cert]# keytool -importkeystore -deststorepass 123456 -destkeypass 123456 -destkeystore edge.jks -srckeystore edge.p12 -srcstoretype PKCS12 -srcstorepass 123456 -alias edge
 Importing keystore edge.p12 to edge.jks...
 
 Warning:
-The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
+The JKS keystore uses a proprietary format. You are recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
 
-//查看jks文件
+//Check the JKS file
 [root@DemoMachine cert]# ll
 total 20
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
@@ -107,7 +111,7 @@ total 20
 -rw-r--r-- 1 root root 2654 Nov 28 20:19 edge.p12
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
 
-//查看jks文件详情，有一个trustedCertEntry
+//Verify that the JSK has one trusted certificate entry
 [root@DemoMachine cert]# keytool -list --keystore edge.jks
 Enter keystore password:  
 Keystore type: jks
@@ -121,7 +125,7 @@ Certificate fingerprint (SHA1): 38:16:5A:1F:1D:68:44:44:FE:56:1A:84:36:31:85:CB:
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
 
-//导入cacert根证书至jks文件
+//Import cacert root certificate into the keystore
 [root@DemoMachine cert]# keytool -import -trustcacerts -alias cacert -file cacert.pem -keystore edge.jks -storepass 123456
 Owner: EMAILADDRESS=ca@eniot.io, CN=EnOS CA, OU=EnOS CA, O=EnOS, L=Shanghai, ST=Shanghai, C=CN
 Issuer: EMAILADDRESS=ca@eniot.io, CN=EnOS CA, OU=EnOS CA, O=EnOS, L=Shanghai, ST=Shanghai, C=CN
@@ -165,7 +169,7 @@ Certificate was added to keystore
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
 
-//查看jks文件详情，有两个trustedCertEntry
+//Verify that the JKS has two trusted certificate entries
 [root@DemoMachine cert]# keytool -list --keystore edge.jks
 Enter keystore password:  
 Keystore type: jks
@@ -184,11 +188,11 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 
 ```
 
-## Java SDK使用配置
+## Configuring Certificate for the Use of Java SDK
 
-### 步骤5：在Java SDK当中配置jks文件
+### Step 5: Configure the JKS File in Java sample program
 
-在Sample程序的初始化连接方法当中填写jks文件路径及密码，代码片段如下：
+In the sample program, enter the URL to the JKS file and the password to the file as shown in the following code snippet:
 
 ```Java
 public static void initSSLConnection() {
@@ -222,18 +226,18 @@ public static void initSSLConnection() {
 
 ```
 
-### 步骤6：启动Sample程序
-启动Sample程序，查看日志。
+### Step 6: Start Sample Program
+Start the sample program and view the logs.
 
-## 连接验证
+## Verify Connection
 
-### 步骤7：检查设备连接状态
+### Step 7: Check Device Connection Status
 
-在运行Sample程序以后，edge上线，并添加子设备作为拓扑，代理子设备连接云端。设备连接状态如下图所示：
+After you run the sample program, the edge device logs in and adds sub-devices into its topology, proxies the sub-devices to connect to the cloud. The device connection status is as shown in the following figure:
 
 ![](media/device_list.png)
 
 
-### 步骤8：查看设备数据
+### Step 8: Check Device Data
 
-进入控制台，选择**接入管理>设备管理**，进入**设备详情**，打开**测点**tab页面，选择一个测点，点击**查看数据**，可以查看历史数据记录。
+Go to the console, select **Connection Management > Device Management**, then go to **Device Details*, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historocal data records.

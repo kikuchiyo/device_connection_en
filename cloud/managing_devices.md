@@ -1,28 +1,28 @@
-# 管理设备
+# Managing Devices
 
-本文章描述了如何进行查看和改变设备状态，如何获取设备秘钥凭证信息等管理操作。
+This article describes the management operations such as how to view and change device status, how to obtain device secret credentials, and more.
 
-## 开始前准备
+## Before You Start
 
-了解设备的激活运行状态，参考[基于密钥的单向认证](../secretbased_authentication)。
+To learn about the activation and running status of a device, please refer to [Secret-based One-way Authentication](../secretbased_authentication).
 
-## 查看激活状态
+## Viewing Activation Status
 
-1. 在控制面板中选择**接入管理>设备管理**。
-2. 可在页面中浏览设备状态。未激活状态只在产品未被激活时显示。
+1. In the control panel, select **Access Management > Device Management**.
+2. You can view the device status on the page. The "Inactive" status is displayed only when the product is not activated.
 
-一旦产品被激活，控制台将显示设备的运行状态：在线和离线。
+Once the product is activated, its running status - online or offline - will be displayed in the console.
 
-## 下线/上线设备
+## Device Going Online/Offline
 
-当设备进入运行状态以后，你可以通过开启和关闭操作改变其运行状态。
+When a device is in operation, you can change its status by turning it on or off.
 
-如果发现设备有异常情况，可在EnOS中禁用该设备。
-1. 在控制面板中选择**接入管理>设备管理**。
-2. 把需要禁用的设备在**状态/启用状态**栏中禁用设备。
+If the device is found to be abnormal, it can be disabled in EnOS.
+1. In the control panel, select **Access Management > Device Management**.
+2. Go to the **Status/Enable** column to disable the device.
 
 
-## 获取三元组信息
+## Acquiring the Trigraph Information
 
-1. 在EnOS控制台中选择**接入管理>设备管理**。
-2. 点击需要查看三元组信息的设备后的**查看**，可在改界面浏览设备的三元组信息。
+1. In the EnOS Console, select **Access Management > Device Management**.
+2. Click **View** next to the target device to view its trigraph information on the current screen.

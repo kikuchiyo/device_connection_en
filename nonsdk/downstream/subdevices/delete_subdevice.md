@@ -87,7 +87,7 @@ Downstream
     <td>code</td>
     <td>String</td>
     <td>Mandatory </td>
-    <td>Response code. &ldquo;200&rdquo;  indicates the request is executed   successfully. </td>
+    <td>Response code &ldquo;200&rdquo; or the error code defined on device end. &ldquo;200&rdquo; indicates the request is executed   successfully. </td>
   </tr>
   <tr>
     <td>data</td>
