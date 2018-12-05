@@ -21,11 +21,13 @@ A device is an instance of a model. A device belongs to a certain product.
 The EnOS Provisioning service provides the following key features:
 
 ### Device Connection
+
 Provides device SDK to allow devices to connect to the IoT Hub.
 - Provides MQTT device SDK to meet the real-time requirements for long connections and low power requirements for short connections.
 - Provides connection schemes such as direct device connection and indirect connection through gateway proxies, providing solutions to meet the requirements of various scenarios for the heterogeneous network devices of enterprises.
 
 ### Device Management
+
 Supports complete device lifecycle management, including:
 - Device registration
 - Device configuration
@@ -35,25 +37,32 @@ Supports complete device lifecycle management, including:
 - Device logout
 
 ### Model Management
+
 Provides device models. The device model allows devices of thousands of models from different manufacturers to be unified into a small number of common models and thus simplifies application development.
 
 ### Device and Cloud Security
 
 **Authentication**
+
 - Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches.
+
 - Supports _secret-per-product_ mechanism, where devices are pre-burned with product credentials. The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where _device triple_ cannot be burned into each device in mass production.
 
 For more information, please refer to [Device Authentication Mechanism](deviceconnection_authentication).
 
 **Communication and Data Security**
+
 - Encrypts and decrypts data through the CA certificate mechanism to ensure the security of communication between the device and the cloud.
+
 - Segregates communication resources by topic to prevent devices from accessing unauthorized data.
 
 
 ## Technical Architecture
 
 As shown in the figure below, a device can be connected directly or through the edge to the EnOS IoT Hub. The EnOS IoT Hub accepts direct-connecting devices or edges to communicate via the MQTT protocol. MQTT is a lightweight open-source IoT protocol based on TCP/IP. EnOS's MQTT protocol supports the following features:
+
 - Topic-based subscriptions and publish of data
+
 - RRPC
 
 ![Device Connection Architecture](media/device_connection_methods.png)
@@ -77,9 +86,13 @@ In this case, the EnOS Edge is deployed remotely at the cloud side. This method 
 This requires that the device to be connected has a unique ID and can upload data through supported communication protocols. This method is frequently used for the photovoltaic device connection.
 
 Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage or functional modules for further processing:
+
 - Time series database
+
 - Alert engine
+
 - Stream computing engine
+
 
 ## Functional Modules
 
@@ -90,8 +103,11 @@ IoT Hub is a cloud broker service that EnOS provides for device connection.
 The cloud broker provides the following functions:
 
 - Safe and reliable large-scale bi-directional message transmission from the devices to the cloud.
+
 - Forwarding the data from the client to corresponding subscribers on EnOS™.
+
 - Providing license authorization and creation of thing and policy themes.
+
 - Exposing interface for connections from MQTT clients.
 
 ### EnOS Edge

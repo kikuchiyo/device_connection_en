@@ -76,4 +76,5 @@ The main authentication process for device connection is as follows:
 - f. The device side responds to the cloud requests
 
 The specific flow chart is as follows:
+
 ![](media/secret_communication.png)

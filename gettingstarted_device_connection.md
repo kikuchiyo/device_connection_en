@@ -14,6 +14,7 @@ Here we take the household PV inverter connection as an example. The inverter de
   ![](media/device_connection_task_description.png)
 
 As shown in the flowchart above, the procedure falls into the following steps:
+
 1. Create a device model for the inverter
 2. Create a product for the inverter
 3. Register the inverter
