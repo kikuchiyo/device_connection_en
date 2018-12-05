@@ -1,173 +1,204 @@
-# Add EnOS Edge Gateway
+# Adding an EnOS Edge Gateway
 
-The Edge gateway needs to be configured when using it to connect the sub device. This article describes how to configure it to complete the connection configuration between it and the sub device.
+The Edge gateway needs to be configured before connect the sub-device to the edge gateway. This article describes how to configure edge gateway in order to establish the connection between edge gateway and the sub device.
 
 ## Before You Start
 
 1. You must have obtained the serial number (SN) of the Edge gateway.
-2. You must have completed the initialization of the Edge gateway. The hardware initialization of the Edge gateway is usually done by the Envision project team. For more information, please consult project manager of Envision.
+2. You must have completed the initialization of the Edge gateway. The initialization of the Edge gateway hardware is usually done by the Envision project team. For more information,  consult the Envision project manager.
 
 
-## Step 1: Add and Activate the Edge Gateway
+## Step 1: Adding the Edge Gateway
 
-1. Select **Device Edge Connection > Edge Management** in the EnOS console.
-2. Click **Add** button at the top left of the page to enter the name and serial number of the Edge gateway.
-3. Click **Save** to complete the addition of the Edge gateway.
+1. In the EnOS console, click **Edge Gateway > Edge Management** from the left navigation panel.    
+2. Click **Add**.
+3. In the pop-window, enter the name and serial number of the Edge gateway.
+3. Click **Save** to complete creating Edge gateway.
 
-After the Edge gateway is successfully added, you can view the name, SN, version, and current communication status and publish status of each Edge on the **Edge Management** page, as shown in the following figure:
+After the Edge gateway is successfully added, in the **Edge Management** page, you can view the name, SN, version, the current communication status, and the publish status of each Edge, as shown in below figure:
 ![](media/imageN001.png)
 
-## Step 2: Connect the Sub-device
+## Step 2: Connecting the Sub-device to the Edge Gateway
 
-After the Edge gateway is added, you can use it to complete data connection of the sub-device. Click **Sub-device Connection** button after the Edge gateway record in the table to open the Edge gateway sub-device connection configuration page.
+After the Edge gateway is added, you can connect the sub-device to the edge gateway.
 
-### Add Connection
+1. Click **Connect Devices** after the Edge gateway to be connect to open the configuration page.
+2. In the configuration page, you must finish the following configuration in order to establish the connection between the sub-device and the edge gateway.
 
-The first step in connecting a sub-device is to configure a communication connection for the Edge gateway. According to actual needs, multiple connections can be added under one Edge, and the connection method shall be selected according to the protocol type. Follow the following steps to add a connection:
+### Adding Connection
 
-1. Click **Add Connection** button on the page.
-2. Fill in the name of the connection in the pop-up dialog box, select the connection method, and set the connection parameters according to the selected connection method.
+Firstly, you need to configure the connection for the Edge gateway.
 
-As shown in the following figure, Edge is used as the TCP/IP client, so the configured connection parameters are the server's IP address and port number.
+According to the actual needs, multiple connections can be added under one Edge gateway, and the connection method must be selected according to the type of the protocol.
 
-*Note: Usually the Edge will not connect directly to the peer server or device, but will connect to a network gateway, and then connect to the peer server or device via this gateway. Therefore, you need to pay attention to the mapping configuration of the IP address and port number of the gateway to the edge. *
+1. Click **Add Connection** next to the **Non-Direct Connections**.
+2. In the pop-up window, enter the name of the connection, select the connection mode, and set the connection parameters according to the selected connection method.
+  **Note:** Usually the Edge is not connect directly to the end server or device. Instead, the edge is connect to a network gateway, and then connect to the end server or device via this network gateway. Therefore, you need to know the mapping relationship between the IP address and port number of the network gateway and the edge gateway.
+
+As shown in the following figure, Edge is used as the TCP/IP client, so the configured connection parameters are the IP address and port number of the server.
+
+
 
 ![](media/image011.png)
 
 *Figure: Example of Adding Connection*
 
-### New Device
+### Adding Devices
 
-After adding connection, the next step is to add devices to the connection. As shown below:
+After adding connection, the next step is to add device to this connection.
+In this step, you'll add the device and configure the basic information.
 
-![](media/image012.png)
+**Step 1: Add Devices**
 
-*Figure: Add Devices to the Connection*
+1. Click **Add Device** next to the connection.
+   ![](media/image012.png)
 
-**New Device**
+   *Figure: Add Devices to the Connection*
 
-1. Click **New Device** button under the connection.
-2. Select the product to which you want to add the devices, select the devices you want to add, and select the device template that the device needs to be associated with, then click **Save**. As shown below:
+2. In the pop-up window,
+    - select the product to which you want to add the devices.
+    - select the devices you want to add.
+    - select the device template that the device needs to be associated with.
+      **Note:** You must first select the same kind of devices, then you can select the device template that the devices to be associated with.
+      The device template is used as the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, see [Creating and Managing Device Templates](managing_templates)
+3. Click **Save** to add the device.
 
-  *Note: You need to select the same kind of devices first, then you can select the device template for these devices. The device template is equivalent to the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, please refer to [Managing Templates](managing_templates)*
-
-  ![](media/image013.png)
-
-  *Figure: New Device*
 
 
-**Update Basic Information**
+**Step 2: Update Basic Information**
 
-If the basic information of the added device needs to be updated, click **Export** button under the connection to export the device connection information table. After filling in the table, click **Import** to upload this information table. As shown below:
+If the basic information of the added device needs to be updated, you can modify the information in the following approach:
+
+1. Click **Export** next to device connection to export the device connection information table.
+2. Update the basic information in device connection information table .
+3. Click **Import** to upload the information table.
+
+You can find the **Import** and **Export** button as shown below:
 
 ![](media/image014.png)
 
-*Figure: Update Device Information*
 
-![](media/image015.png)
+<!--![](media/image015.png)
 
-*Figure: Device Connection Information Table*
+*Figure: Device Connection Information Table*-->
 
 <!--Click the **Delete** button next to the device to remove this device from the connection. To delete devices in batch, check the devices you want to delete under this connection, and click the “Bulk Delete” button.-->
 
-### Configure Logical Addresses or Offsets
+### Configuring Logical Addresses or Offsets
 
-Since multiple devices are connected under one connection, each device needs to be configured with its logical address and offset of various points. The method of configuration depends on the communication protocol used and its settings. You can configure the device one by one, or export the device connection information table and then import it into the system after offline configuration to implement batch configuration.
+Since multiple devices are connected under one connection, the logical address and corresponding offset must be configured for each device. The configuration of each device depends on the communication protocol used and its settings.
 
-- Configure device by device
+ You can configure the device by two ways:
+  - One by one.
+  - In batches by updating device connection information table.
 
-   Edit this device by clicking **Edit** icon next to the device
+**Configure the device one by one in the following approach:**
+
+   1. Click **Edit** after the device to be edit.
+   2. Edit the configuration according to your requirement and then click **OK**.
 
    ![](media/image020.png)
 
    *Figure: Configure Logical Addresses and Offsets on a Device-by-Device Basis*
 
-- Batch configuration
+**You can configure the device in batches in the following approach:**
 
-   Click the "Export" button under the connection, download and fill in the connection information table, and then click the "Import" button to upload it, as shown below:
+   1. Click **Export** after the device connection to download the device connection information table.
+   2. Edit the device connection information table according to your requirement.
+      The table supports the configuration of the AI, DI, PI, AO, DO, and PO offsets. The basic configuration method is use dash-connection, such as `0-50`, when there are multiple offsets, you can use `#` to separate multiple values, such as `0-50#1000-1050`.
 
-   ![](media/image015.png)
+   3. Click **Import** to upload the information table.
 
-   *Figure: Device Connection Information Table*
 
-   The configuration that supports the AI, DI, PI, AO, DO, and PO offsets in the exported table. The basic configuration method uses dash-connection, such as `0-50`, when there are multiple offsets at the same time, you can use `\#` to separate multiple values , such as `0-50\#1000-1050`
+### Publishing Configuration
 
-### Publish Configuration
+After completing the above configurations, you need to publish the configuration to the Edge.
 
-After completing the above various configurations, you need to publish the configuration to the Edge. Click "Publish" to publish the configuration to the corresponding Edge and view the publish status. The configuration will not take effect until it is published. As shown below:
+1. Click **Publish** to publish the configuration to the corresponding edge gateway and view the publish status. The configuration will not take effect until it is published.
+
+You can find the **Publish** button and the publish status as shown below:
 
 ![](media/image021.png)
 
-*Figure: Publish Configuration to Edge*
 
-## Step 3: Test Communication
+## Step 3: Testing Communication
 
-After completing and publishing the configuration to the Edge, you need to check whether the configuration is correct. On the connection configuration page, a communication indicator is provided. When the device connection is normal in the transmission layer (TCP/IP layer), the indicator is green, otherwise it is red. As shown below:
+After completing and publishing the configuration to the edge gateway, you need to check whether the configuration is correct. In the connection configuration page, a communication indicator is provided. When the device connection is normal in the transmission layer (TCP/IP layer), the indicator is green, otherwise it is red.
 
 ![](media/image022.png)
 
 *Figure: Communication Status Indication Icon on Transport Layer*
 
 There are several reasons for communication interruption, including but not limited to the following reasons:
-- Configuration is not delivered
+- Configuration is not published
 - Configuration error
-- There is an abnormal communication at the station end
-Therefore, further debugging is needed to help the user locate the problem. EnOS Edge provides communication testing capabilities to help achieve this goal.
+- The site end communication is abnormal.
+Therefore, further debugging is needed to help you locate the problem. EnOS Edge provides communication testing functionality to help achieve this goal.
 
-Click **Test** button under the connection to open the batch test page for the connection as shown below:
+
+**You can debug the communication in the following approach:**
+
+1. Click **Test**  after the device connection to open the batch test page.
+2. In the connection debugging page, you can:
+   - Switch connections by using the drop-down menu.
+   - Activate or pause the communication test features by clicking the **Start/Pause** button.
 
 ![](media/image026.png)
 
 *Figure: Bulk Communication Test Overview*
 
-- You can switch connections by using the drop-down menu.
-- You can activate or pause the communication test feature by clicking the **Start/Pause** button.
 
-Batch testing provides four features: data, original message, log, and console. You can switch between different features by clicking the corresponding tabs. The following contents describe the usage and meaning of each tab:
+Batch testing provides four features: data, datagram, log, and console. Click the corresponding tab to switch among the different features, the operations of each page are described in the below sections:
 
 ### Data
 
-On the data tab, you can view all the devices under this connection, or filter the devices you want to view to see the update of the collection point data in the Edge.
+In the **Data** tab, you can view all the devices under this connection, filter the devices to see the update of the collection point data and set numbers for telemetry and telecommand points:
 
 ![](media/image029.png)
 
-*Figure: Data Feature*
+*Figure: Data Feature Overview*
 
-This test feature supports telemetry and remote signal point number setting. Click **Add Set Number** to set the value, click **Send** to send the set value to the cloud. Click once to send one time, it will not terminate the upload of the original data, equivalent to inserting a value to the cloud.
+**Setting number**
+
+You can set numbers for the telemetry and telecommand points in the following approach:
+
+1. Click **Set** to set the value.
+2. click **Send** to send the set value to the cloud. Click once to send one time, it will not interrupt the upload of the original data, equivalent to inserting a value to the cloud.
 
 ![](media/image030.png)
 
 *Figure: Number Setting Feature*
 
-### Original Message
+### Datagram
 
-On the original message tab, you can view and copy the original message received and sent.
+In the **Datagram** tab, you can view and copy the incoming and outgoing datagram.
 
-![](media/image031.png)
 
-*Figure: Original Message Feature*
 
 ### Log
 
-To avoid flooding of information, the tab hides the log of info types and only displays logs of warning and error types to assist the user in determining the cause of the communication error.
+In the **Log** tab, to avoid flooding of information, the system hides the logs of info types and only displays logs of warning and error types to assist the user in diagnosing the cause of the communication error.
 
-![](media/image032.png)
-
-*Figure: Log Feature*
 
 ### Console
 
-On this tab, you can use common communication debugging commands, including the ones for basic ping tests, native IP viewing and Telnet, as well as for TCP connection viewing.
-- The ping test needs to fill in the IP address of the required ping in the input box.
-- Telnet test requires IP and port number
+In the **Console** tab, you can debug through the common communication debugging commands. The most frequently used debugging commands are including:
+- Test basic ping test (You'll need to enter the IP address of the ping in the input box)
+- Check local IP
+- Test Telnet (You’ll need to enter the IP and port number.)
+- Check TCP connection
 
 ![](media/image033.png)
 
-*Figure: Console Feature*
+*Figure: Console Feature Overview*
 
-### Communication Test for a Single Device
+### Testing the Communication of a Single Device
 
-Under each connection on the device list page , click **View Data** button of the single device to perform a communication test on a single device and view the data in the Edge corresponding to the device. This feature is consistent with the data features in the bulk test, except that only a single device is tested here.
+You can test the communication on a single device and view the corresponding data in the Edge of this device.
+
+1. Click **View** after the device to be tested.
+2. In the pop-up window, you can test the view the detailed information and set the  telemetry and telecommand points which the operations are same as the bulk communication test.
+
 
 ![](media/image034.png)
 

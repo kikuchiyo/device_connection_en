@@ -1,4 +1,4 @@
-Device-end Development
+Device-End Development
 ======================
 
 EnOS™ provides device SDKs that encapsulates protocols for data transmission between devices and EnOS Cloud.

@@ -1,18 +1,21 @@
 ## Creating a Protocol
 
-EnOS Edge supports various communication protocols. This article instructs how to develop your own protocol and upload the package that defines the protocol.
+EnOS Edge supports various communication protocols. This article instructs how to create a customized protocol.
+
 
 ### Procedure
+You'll need to create a protocol and update the jar package of the protocol file.
 
-1. Click **Edge Gateway > Edge Management** in the navigation menu.
+1. In the EnOS console, click **Edge Gateway > Protocols** from the left navigation panel.    
 2. Click **Create Protocol** and provide the following settings:
 
-  - **Name** (required): A complete protocol name takes the format of `Protocol Type - Role – Name`. For a standard protocol, please use the default Std as the name. For example, if the protocol type is Modbus TCP, the role is Client, and the name is Std, the user only needs to fill in Std, and the system will splice the complete protocol name "Modbus TCP-Client-Std". The developer names the protocol according to the naming convention.
+  - **Name** (required): The syntax of a completed name is _Protocol Type - Role – Name_.
+    For a standard protocol, use the default _Std_ as the name. For example, if the protocol type is Modbus TCP, the role is Client, and the name is Std, the developer only needs to enter _Std_ in the **Name** filed, and the system will assemble the complete protocol name _Modbus TCP-Client-Std_.
 
-  - **Type** (required): Click the drop-down menu for protocol types, which displays some common protocol types that are predefined, such as Modbus RTU, Modbus TCP, DL645/97, DL645/07, IEC104, etc. The developer selects the type as needed based on the new protocol to be created.
+  - **Type** (required): Select a protocol type from the drop-down list.
 
-  - **Version** (required): Click the drop-down menu for protocol types, which displays some common protocol types that are predefined, such as Modbus RTU, Modbus TCP, DL645/97, DL645/07, IEC104, etc. The developer selects the type as needed based on the new protocol to be created.
+  - **Version** (required): The vision of this protocol.
 
-  - **Jar package** (required): A jar package of the protocol program running on the platform, that is, the jar package running on EnOS™ Edge. The developer can click "Upload" to upload the protocol jar package.
+  - **Jar package** (required): Click **Upload** to upload a jar package of the protocol that you created, which is going to be run on the EnOS Edge.
 
-  - **Description** (required): The developer may fill in the description dialog with a description of the applicable scenario, version,etc. of the protocol.
+  - **Description** (required): The description of the protocol. Such as applied scenario.

@@ -1,3 +1,3 @@
 # Not Using SDK
 
-If the provided SDK does not meet your needs, you can develop a customized device SDK based on the EnOS device protocol. For details, please refer to [Device-side Protocol].(../nonsdk/index)。
+If the SDKs provided by EnOS cannot meet your requirement, you can develop a customized device SDK based on the EnOS device protocol standard. For detail information, see [Device-side Protocol](../nonsdk/index).

@@ -1,38 +1,38 @@
 # Getting Started With Direct Device Connection
 
-This article helps you quickly learn how to pre-configure direct connected devices to EnOS Cloud, how to send data from your device to EnOS Cloud, and how to check device communication information from EnOS Cloud.
+This article helps you quickly learn how to provision direct-connecting devices to the EnOS Cloud, how to send device telemetry, and how to check device communication state from the EnOS Console.
 
-## Scenario Description
+## About the Scenario
 
-For information on connection scenarios, please refer to "Scenario 2.2" mentioned in [Device Connection Scenarios](connection_scenarios).
+For information about the connection scenario of this task, see "Scenario 2.2" in [Device Connection Schemes](connection_scenarios).
 
 
 ## About This Task
 
-Here we take the household PV inverter connection as an example. The inverter device triple is burned into the inverter collector during factory production. After powered on and connected to the network, the inverter, based on the device triple authentication, is directly connected to the cloud IoT Hub. The overall process is shown below:
+Here we take the household PV inverter connection as an example. The inverter device triple is burned into the inverter during manufacturing. After you power on and connect the inverter to the network, the inverter is connected to the IoT Hub based on the device triple authentication. The overall process is shown below:
 
   ![](media/device_connection_task_description.png)
 
-Based on the above connection flowchart, the purposes to be achieved in this example are mainly as follows:
-1. Create a device model
-2. Create a product
-3. Register the device
-4. Simulate device sending data via device SDK
+As shown in the flowchart above, the procedure falls into the following steps:
+1. Create a device model for the inverter
+2. Create a product for the inverter
+3. Register the inverter
+4. Simulate the inverter to send data via device SDK
 5. Check device communication status
-6. Check device data
+6. View device data
 
 
 ## Step 1: Create a Device Model
 
-This step assumes that there is no device model to be reused. We create a new model named **Inverter_Demo** with the function defined as follows:
+This step assumes that there is no device model to be reused. We create a new model named **Inverter_Demo** with the features defined as follows:
 
 <table>
     <tr>
-      <th>Function type</th>
+      <th>Feature Type</th>
       <th>Name</th>   
       <th>Identifier</th>   
       <th>Data Type</th>   
-      <th>Data definition</th>   
+      <th>Value</th>   
     </tr>
     <tr>
       <td>Attribute</td>
@@ -49,7 +49,7 @@ This step assumes that there is no device model to be reused. We create a new mo
       <td>kWp</td>      
     </tr>
     <tr>
-      <td>Measure Points</td>
+      <td>Measure Point</td>
       <td>Active power</td>     
       <td>INV.GenActivePW</td>
       <td>float</td>  
@@ -73,23 +73,23 @@ This step assumes that there is no device model to be reused. We create a new mo
 
 The steps to create this model are as follows:
 
-1. In the EnOS Console, select **Access Management > Model Management**.
-2. Click **New Model** at the top right of the page, and provide the following settings in the **Creating Model** window:
+1. In the EnOS Console, click **Model** from the left navigation panel.
+2. Click **New Model**, and provide the following settings in the **New Model** window:
   - **Identifier**: Inverter_Demo
   - **Model Name**: Inverter_Demo
   - **Model Name (en)**: Inverter_Demo
-  - **Category**: None
-  - **Create From**: None
-  - **Source model**: None
-  - **Model Description**: Inverter model for demo project
+  - **Category**: NA
+  - **Create From**: No
+  - **Source Model**: NA
+  - **Description**: Inverter model for demo project
 
   ![](media/model_inverter.png)
 
-3. Click **Confirm** to complete the operation.
-4. Click **View**, and click the **Feature Definition** tag in the "Model Details" screen.
+3. Click **OK** to complete the operation.
+4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 5. Click **Add**, and provide the following settings in the **Add Feature** window:
   - **Attribute 1**
-    - **Name**: Inverter Type/Inverter_Type
+    - **Name**: Inverter_Type
     - **Identifier**: invType
     - **Data Type**: enum
     - **Enum Items**:
@@ -97,19 +97,19 @@ The steps to create this model are as follows:
       - Value: 1; Description: String
     - **Required**: Yes
   - **Attribute 2**
-      - **Name**: Component capacity/Inverter_Capacity
+      - **Name**: Inverter_Capacity
       - **Identifier**: capacity
       - **Data Type**: float
       - **Unit**: kWp
       - **Required**: Yes
   - **Measure Point**
-    - **Name**: Active power/Active_Power
+    - **Name**: Active_Power
     - **Identifier**: INV.GenActivePW
     - **Data Type**: float
     - **Point Type**: AI
     - **Unit**: kW
   - **Service**
-    - **Name**: Control/Control
+    - **Name**: Control
     - **Identifier**: INV.Control
     - **Invoke Method**: Asynchronous
     - **Input Parameters**:
@@ -127,19 +127,21 @@ The steps to create this model are as follows:
         - Value: 0; Description: Failure
         - Value: 1; Description: Success
   - **Event**
-    - **Name**: Error information/Error
+    - **Name**: Error
     - **Identifier**: Error
     - **Severity**: Error
 
-For details on device model settings, please refer to [Creating Model](creating_model).
+6. Click **Confirm** to complete the operation.
+
+For details on device model settings, see [Creating Model](cloud/creating_model).
 
 
 ## Step 2: Create a Product
 
-In this step, we create a product called **Inverter_Product**. We assume that the device of this product model sends data in JSON format and the data transfer is not encrypted using CA certificate.
+In this step, we create a product called **Inverter_Product**. We assume that a device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
 
-1. In the EnOS Console, select **Access Management > Product Management**.
-2. Click **New Product** at the top right of the page, and provide the following settings in the **Creating Model** window:
+1. In the EnOS Console, select **Device Provisioning > Products**.
+2. Click **New Product**, and provide the following settings in the **New Product** window:
   - **Product Name**: Inverter_Product
   - **Asset Type**: Device
   - **Device Model**: Inverter_Demo
@@ -149,57 +151,17 @@ In this step, we create a product called **Inverter_Product**. We assume that th
 
   ![](media/create_product.png)
 
-Filling specifications are as follows:
-<table>
-    <tr>
-  		<th>Parameter
-  		</th>
-  		<th>Input Value
-  		</th>      
-  	</tr>
-    <tr>
-  		<td>Product Name
-  		</td>
-  		<td>The product name must be unique, supports Chinese characters, uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9) and underline(_).
-  		</td>      
-  	</tr>
-    <tr>
-  		<td>Asset type
-  		</td>
-  		<td>Select a device
-  		</td>
-  	</tr>
-    <tr>
-  		<td>Device model
-  		</td>
-  		<td>Select a model that is already defined. If the selected model has not yet defined a feature, it can be set after the product is created.
-  		</td>
-  	</tr>
-    <tr>
-  		<td>Data Format
-  		</td>
-  		<td>JSON:
-      Passthrough:
-  		</td>
-  	</tr>
-    <tr>
-  		<td>Product Description
-  		</td>
-  		<td>Product Name
-  		</td>
-  	</tr>
-  </table>
 3. Click **Confirm** to complete the operation.
 
-For details on product settings, please refer to [Creating Products](creating_products).
+For details about product settings, see [Creating Products](cloud/creating_product).
 
 
 ## Step 3: Register the Device
 
 In this step, we create a device named **INV001**, which belongs to the **Inverter_Product** product model created in the previous step.
 
-1. In the EnOS Console, select **Access Management > Device Management**.
-2. Click **New Device** at the top right of the page, and provide the following settings in the pop-up window:
+1. In the EnOS Console, select **Device Provisioning > Devices**.
+2. Click **New Device**, and provide the following settings in the **New Device** window:
   - **Product**: Inverter_Product
   - **Device Name**: INV001
   - **Inverter Type**: 0: Central, indicating centralized inverter
@@ -208,58 +170,32 @@ In this step, we create a device named **INV001**, which belongs to the **Invert
 
   ![](media/register_device.png)
 
-Filling specifications are as follows:
-<table>
-  <tr>
-		<th>Parameter
-		</th>
-		<th>Description
-		</th>
-	</tr>
-  <tr>
-		<td>Product</td>
-		<td>The product to which the device belongs. The displayed options vary according to the product configuration.
-		</td>
-	</tr>
-  <tr>
-		<td>DeviceName	</td>
-		<td>The device name can be duplicated under the same product. For example: INV001.
-		</td>
-	</tr>
-  <tr>
-		<td>Devicekey</td>
-		<td>
-    Optional.
-    When left blank, it will be automatically generated by the system.
-    If you customize the setting, you need to ensure it is unique in the organization, and only supports uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9), dash "-" and underline "_".
-    </td>
-  </tr>
-  <tr>
-    <td>Model Attribute</td>
-    <td>The required attribute must be filled in when registering the device. The optional item can be added after the device is registered.
-    </td>
-  </tr>
-</table>
+3. Click **Confirm** to complete the operation.
+
+For details about device settings, see [Creating a Device](cloud/creating_device).
+
+After you complete the device registration, obtain the device triple: `ProductKey`,`DeviceKey`,and `DeviceSecret`, which will be used in the following step.
 
 
-## Step 4: SDK Simulates Device Sending Data
+## Step 4: Use Java SDK to Simulate Device Sending Telemetry
 
-In this step, we send the inverter active power to the cloud through the device SDK simulation.
+In this step, we use the device SDK to simulate sending the inverter active power to the cloud.
 
-1. Obtain [Device Side SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For more information, please refer to the SDK's GitHub readme file.
-2. Configure the EnOS Cloud connection address.
-3. Configure the device triple, i.e. `ProductKey`,`DeviceKey`,`DeviceSecret`, obtained by the registered device into the sample connection program.
-4. Modify the **postSubMeasurepoint** method, configure the name of the measure point that sending data. In this case, send the inverter active power point, set the point name **INV.GenActivePW** and the corresponding point value.
+1. Obtain the [Device SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For more information, see the GitHub readme file.
+2. Configure the EnOS Cloud connection as instructed in the readme file.
+3. Configure the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
+4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
 
-For specific SDK application, please refer to [SDK Device Side Connection](using_sdk).
+For more information, see [Using the Device SDK](device/using_java_sdk).
 
 ## Step 5: Check the Device Connection Status
 
-Go to the console and select **Connection Management > Device Management** to check the status of the INV001 device and confirm that the device is online.
+In the EnOS Console, click **Device Provisioning > Devices**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
 
   ![](media/device_status.png)
 
 
 ## Step 6: Check the Device Data
 
-Go to the console, select **Connection Management > Device Management**, then go to **Device Details**, open the **Measure Point** tab, and select a measure point, click **View Data** to check the data history record.
+1. In the **Devices** page, locate the device and click **View** to show the **Device Details** page.
+2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.

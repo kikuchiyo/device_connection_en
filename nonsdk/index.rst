@@ -5,6 +5,12 @@ EnOS provides device SDKs for you to configure devices. These device SDKs alread
 
 When the device SDKs provided by EnOS cannot meet your requirements, you can refer to this article to develop your own communication protocol based on the EnOS device protocol standard, which defines the data format of the MQTT-based transmission between devices and EnOS cloud. You can connect your devices into EnOS as long as your data format conforms to the standard.
 
+The supported MQTT version:
+
+- MQTT v3.1.1 on port 11883 if you use the secret-based one-way authentication.
+- MQTT v3.1.1 over SSL/TLS on port 18883 if you use the certificate-based two-way authentication.
+
+
 Common Parameter Description
 =============================
 

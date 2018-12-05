@@ -1,8 +1,8 @@
 # Certificate-based Two-way Authentication
 
-Security is a critical in an IoT system. When certificate authentication is enabled in the product configuration，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
+Security is critical in an IoT system. When certificate authentication is enabled in the product configuration，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
 
-- The communications between EnOS Edge and EnOS IoT Hub are enfored to use certificate-based bi-directional authentication.
+- The communications between the EnOS Edge and EnOS IoT Hub are enfored to use certificate-based bi-directional authentication.
 - Support for RSA algorithm to verify signature, with enforcement for 2048 bits.
 
 ## Setup Phase
