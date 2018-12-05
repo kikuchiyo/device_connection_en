@@ -29,9 +29,11 @@ The devices can be connected directly to the cloud. Some common devices include:
 ### Scenario of Gateway Proxy Connection
 The devices need a gateway proxy to connect to the cloud. Some common devices include:
 - Distributed inverters: the gateway collects data directly from multiple inverters and then sends the data to the cloud.
+
   ![](media/inverter_gateway.png)
 
 - SCADA: the SCADA is connected directly to the wind turbines and collects the data; the gateway is connected to the SCADA to collect its data, and then sends the data to the cloud.
+
   ![](media/turbine_scada_gateway.png)
 
 ## Security Authentication Options

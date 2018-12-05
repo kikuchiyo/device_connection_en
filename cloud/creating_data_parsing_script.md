@@ -1,10 +1,10 @@
-# Creating a Data Parsing Script
+# Creating Data Parsing Script
 
-When creating a product, if you select **Passthrough** for the **Data Type** field, the device can send data in any format (like binary data) to the EnOS Cloud. If this is the case, you will need to create a data parsing script to encode and decode the upstream and downstream data. This topic describes how to edit and debug the script in the EnOS Cloud, and how to upload it to the EnOS runtime environment.
+When creating a product, if you select **Passthrough** for the **Data Type** field, the device can send data in any format (like binary data) to the EnOS Cloud. If this is the case, you will need to create data parsing script to encode and decode the upstream and downstream data. This topic describes how to edit and debug the script in the EnOS Cloud, and how to upload it to the EnOS runtime environment.
 
 ## Procedure
 
-1. In the EnOS Console, select **Device Provisioning > Products**.
+1. In the EnOS Console, select **Device Provisioning** > **Products**.
 2. In the table of created products, for the target product, click **View** to open the **Product Details** page.
 3. Click the **Data Parsing** tab to open the data parsing page.
 4. In **Edit Script**, enter the script code. JavaScript is currently supported.

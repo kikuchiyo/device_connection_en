@@ -28,13 +28,14 @@ The product to which the device belongs has been created. For information about 
 
 ## Results
 
-After creating the device, you will obtain a set of credentials: Device Name (`deviceName`) and Device Secret (`deviceSecret`). The device secret credential issued by EnOS Cloud will be used to activate the device. For more information, see [Secret-based One-way Authentication](.. / secretbased_authentication).
+After creating the device, you will obtain a set of credentials: Device Name (`deviceName`) and Device Secret (`deviceSecret`). The device secret credential issued by EnOS Cloud will be used to activate the device. For more information, see [Secret-based One-way Authentication](.. /secretbased_authentication).
 
 ## Follow-up Operations
 
-When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [Using Java SDK](device/using_java_sdk.md)
+When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](https://docs.envisioniot.com/docs/app-development/en/latest/sdk_overview.html)
 
 ## Related Information
 
 - [Creating a Model](creating_model)
 - [Creating a Product](creating_product)
+
