@@ -17,10 +17,10 @@ Configure all the features in EnOS according to the defined thing model.
 
 1. In the EnOS Console, select **Model** from the **Model and Asset** section to open the Models page.
 2. Click the **New Model** button and complete the following settings on the **New Model** pop-up window:
-  - **Identifier**: A unique identifier of the model.
-  - **Model Name**: The name of the model; duplicate name is not allowed in the same organization.
-  - **Category**: Static extension info of the product, such as manufacturer and device model.
-  - **Create From**:
+   - **Identifier**: A unique identifier of the model.
+   - **Model Name**: The name of the model; duplicate name is not allowed in the same organization.
+   - **Category**: Static extension info of the product, such as manufacturer and device model.
+   - **Create From**:
     - No: Do not configure specific attributes for now. Manually define the features after the template is created.
     - Clone: Copy all the information of the source model. There is no association between the source model and the model created by cloning it.
     - Inherit: Copy all the information of the source model. The created model is associated with the source model.    
@@ -28,8 +28,8 @@ Configure all the features in EnOS according to the defined thing model.
       - The child model can add new features based on the parent model, but it needs to use a different name from the parent model.
       - The child model can be further inherited to support multi-level inheritance.
       - Changes to the features in the parent model will affect the child template.
-  - **Source Model**: The model selected for copying or the inherited parent model.
-  - **Description**: Detailed description of the model.
+   - **Source Model**: The model selected for copying or the inherited parent model.
+   - **Description**: Detailed description of the model.
 3. Click **OK**.
 
 ## Step 2: Defining features for the Model

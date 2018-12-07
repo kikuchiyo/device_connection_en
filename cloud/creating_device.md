@@ -19,12 +19,11 @@ The product to which the device belongs has been created. For information about 
 
 ## Step 2: (Optional) Adding a Tag
 
-1. A tag describes the common information shared by all instances of the device.
-   1. From the list of created devices, find the target device and click **View**.
-   2. Under the **Basic Information** tab, click **Edit** in the **Tags** section.
-   3. On the pop-up window, click **New tag**, and enter the key-value pair (key:value) for the new tag.
-   4. Click **OK** to save the tag.
-
+A tag describes the common information shared by all instances of the device.
+1. From the list of created devices, find the target device and click **View**.
+2. Under the **Basic Information** tab, click **Edit** in the **Tags** section.
+3. On the pop-up window, click **New tag**, and enter the key-value pair (key:value) for the new tag.
+4. Click **OK** to save the tag.
 
 ## Results
 
@@ -38,4 +37,3 @@ When offline, the status of the newly created device is shown as Inactive. To ac
 
 - [Creating a Model](creating_model)
 - [Creating a Product](creating_product)
-

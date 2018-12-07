@@ -9,8 +9,8 @@ When creating a product, if you select **Passthrough** for the **Data Type** fie
 3. Click the **Data Parsing** tab to open the data parsing page.
 4. In **Edit Script**, enter the script code. JavaScript is currently supported.
 5. Click **Save Draft** at the bottom of the page for the system to save the results of this edit. The next time you log in and enter this screen, you will be prompted with the last-saved draft, and you can choose to resume editing or delete the draft.
-  - The draft will not enter the script parsing runtime environment, and saving the draft does not affect the formal scripts you have already submitted;
-  - Each time you save a draft, it will overwrite the last saved one.
+   - The draft will not enter the script parsing runtime environment, and saving the draft does not affect the formal scripts you have already submitted;
+   - Each time you save a draft, it will overwrite the last saved one.
 6. In **Analog input**, enter the mockup data, and select the simulation type as **Sent data** or **Receive data**.
    - **Sent data**: In the text box, enter the passthrough binary data to be sent and click **Run**. The data format will be converted from binary to JSON according to the script rules, and you can view the parsing result of the passthrough data.
    - **Receive data**: In the text box, enter data in JSON format and click **Run**. The data format will be converted from JSON to binary according to the script rules, and you can view the parsed result.

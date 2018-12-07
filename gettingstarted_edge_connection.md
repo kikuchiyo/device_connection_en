@@ -3,7 +3,7 @@
 This article helps you quickly learn how to provision the sub-device and edge to the EnOS Cloud, allowing the sub-device to connect and send telemetry to the EnOS Cloud through the edge, as well as how to check the communication status and view the data from EnOS Console.
 
 
-## About the Scenario
+## About This Scenario
 For information about the connection scenario of this task, see "Scenario 1.2" in [Device Connection Scenarios](connection_scenarios).
 
 
@@ -15,20 +15,19 @@ In this example, an inverter will be connected to the EnOS Cloud through an edge
 
 As shown in the flowchart above, the procedure falls into the following steps:
 1. Create device models
-    - Gateway model
-    - Inverter Model
+   - Gateway model
+   - Inverter Model
 2. Create products
-    - Gateway product
-    - Inverter product
+   - Gateway product
+   - Inverter product
 3. Register devices
-    - Gateway device
-    - Inverter device
+   - Gateway device
+   - Inverter device
 4. Configure the edge gateway
-    - Access data using EnOS Edge
-    - Use the device SDK to simulate gateway sending data as a proxy of the sub-device
+   - Access data using EnOS Edge
+   - Use the device SDK to simulate gateway sending data as a proxy of the sub-device
 5. Check device communication status
 6. Check device data
-
 
 ## Prerequisites
 
@@ -40,24 +39,24 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
 
 1. In the EnOS Console, click **Model** from the left navigation panel.
 2. Click **New Model**, and provide the following settings in the **New Model** window:
-  - **Identifier**: Edge_Model
-  - **Model Name**: Edge_Model
-  - **Category**: NA
-  - **Create From**: No
-  - **Source model**: NA
-  - **Description**: Edge Model
+   - **Identifier**: Edge_Model
+   - **Model Name**: Edge_Model
+   - **Category**: NA
+   - **Create From**: No
+   - **Source model**: NA
+   - **Description**: Edge Model
 
-  ![](media/model_edge.png)
+    ![](media/model_edge.png)
 
 3. Click **OK** to complete the operation.
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 5. Click **Add**, and provide the following settings in the **Add Feature** window:
-  - **Attribute**
-    - **Name**: Version
-    - **Identifier**: Version
-    - **Data Type**: string
-    - **String Length**: 20
-    - **Required**: Yes
+   - **Attribute**
+   - **Name**: Version
+   - **Identifier**: Version
+   - **Data Type**: string
+   - **String Length**: 20
+   - **Required**: Yes
 
 6. Click **Confirm** to complete the operation.
 
@@ -70,12 +69,12 @@ In this step, we create a product called **Edge_Product**. The We assume that an
 
 1. In the EnOS Console, select **Device Provisioning > Products**.
 2. Click **New Product**, and provide the following settings in the **New Product** window:
-  - **Product Name**: Edge_Product
-  - **Asset Type**: Gateway
-  - **Device Model**: Edge_Product
-  - **Data Format**: Json
-  - **Certificate-based Two-way Authentication**: Disable
-  - **Product Description**: Edge Product
+   - **Product Name**: Edge_Product
+   - **Asset Type**: Gateway
+   - **Device Model**: Edge_Product
+   - **Data Format**: Json
+   - **Certificate-based Two-way Authentication**: Disable
+   - **Product Description**: Edge Product
 
 3. Click **Confirm** to complete the operation.
 
@@ -88,10 +87,10 @@ In this step, we create an edge device named **Edge01**, which belongs to the **
 
 1. In the EnOS Console, select **Device Provisioning > Devices**.
 2. Click **New Device**, and provide the following settings in the **New Device** window:
-  - **Product**: Edge_Product
-  - **Device Name**: Edge01
-  - **Version**: Optional, left blank by default
-  - **Device Key**: Optional, generated automatically by system
+   - **Product**: Edge_Product
+   - **Device Name**: Edge01
+   - **Version**: Optional, left blank by default
+   - **Device Key**: Optional, generated automatically by system
 
 ![](media/register_edge.png)
 
@@ -120,10 +119,10 @@ In this step, we use the device SDK to simulate sending the inverter active powe
 3. Configure the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
 4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
 5. Invoke sample methods for the following operations:
-  - Gateway logs in
-  - Gateway adds the topology of sub-devices
-  - Sub-device logs through the edge gateway
-  - Gateway sends data of the sub-device as the proxy
+   - Gateway logs in
+   - Gateway adds the topology of sub-devices
+   - Sub-device logs through the edge gateway
+   - Gateway sends data of the sub-device as the proxy
 
 For more information, see [Using the Device SDK](device/using_java_sdk).
 

@@ -44,7 +44,6 @@ A model can be created from a source model through: **Clone** and **Inherit**. T
 
 For models created from the **Clone** mode, the new model has exactly the same four elements as the source model. The two models are independent from each other, and changes to one model will not affect the other.
 
-
 **Inherit**
 
 For models created from the **Inherit** mode, we define the newly created models as the **Sub Model** and the source model is the **Parent Model**. The sub model has the following main characteristics:
@@ -58,7 +57,7 @@ The read and write permissions for the model can be divided into two categories:
 
 **Public Model**
 
-The public models are the domain standard models that are accumalated on EnOS and are made public to all organization units by EnOS. All OUs have read permission but no write permission to the public models.
+The public models are the domain standard models that are accumulated on EnOS and are made public to all organization units by EnOS. All OUs have read permission but no write permission to the public models.
 
 **Private Model**
 

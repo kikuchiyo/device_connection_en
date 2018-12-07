@@ -2,7 +2,7 @@
 
 Security is critical in an IoT system. When certificate authentication is enabled in the product configuration，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
 
-- The communications between the EnOS Edge and EnOS IoT Hub are enfored to use certificate-based bi-directional authentication.
+- The communications between the EnOS Edge and EnOS IoT Hub are enforced to use certificate-based bi-directional authentication.
 - Support for RSA algorithm to verify signature, with enforcement for 2048 bits.
 
 ## Setup Phase
@@ -32,17 +32,17 @@ The following diagram illustrates the process of secure communication between th
 
 2c. The Edge receives the responses from the IoT Hub, creates key pairs and CSR, and calls the API to get its X.509 certificate. Meanwhile, the device trigraph is used to log the device in to the cloud, and the device will be activated upon its first login.
 
-2d. The IoT Hub receives the CSR from the edge, after verifing its identity, forward the CSR to the EnOS CA.
+2d. The IoT Hub receives the CSR from the edge, after verifying its identity, forward the CSR to the EnOS CA.
 
 2e. The EnOS CA receives the CSR, issues the edge certificate and responds to the IoT Hub.
 
 2f. The IoT Hub receives the issued X.509 certificate, binds it with the device id, and then sends the edge certificate to the edge.
 
-2g.The edge receives the edge certificate, saves them securely in the local repository, for example, the Trusted Platform Module (TPM).
+2g. The edge receives the edge certificate, saves them securely in the local repository, for example, the Trusted Platform Module (TPM).
 
 ## Communication Phase
 
-The diagram below illustrates the certificate-basd authentication process:
+The diagram below illustrates the certificate-based authentication process:
 
 
 ### 3. Edge Communicates with the IoT Hub through Certificate-based Bi-directional Authentication
@@ -80,6 +80,6 @@ In the certificate-based security connection, consider the following best practi
 - Each edge must have a unique public/private key pair.
 - The key pair used to be authenticated by IoT Hub should not be used for other purposes or communications through other protocols.
 - The key must be revoked when the edge is reset.
-- When your edge runs on an operating system, make sure your operating system is secured through certain machanisms, for example, firewall.
+- When your edge runs on an operating system, make sure your operating system is secured through certain mechanisms, for example, firewall.
 - Ensure that you have a way to update root CA certificates and CRL.
 - Ensure that the clock on the edge is not tampered with.

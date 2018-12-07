@@ -1,12 +1,12 @@
 # Device Provisioning Overview
 
-The EnOS™ Device Provisioning service helps IoT engineers to manage the device lifecycle, establishes connection from the devices to the EnOS Cloud, and secures the two-way communication between the devices and the cloud.
+The EnOS™ Device Provisioning service helps IoT engineers to manage the device lifecycle, establish connection from the devices to the EnOS Cloud, and secure the two-way communication between the devices and the cloud.
 
 ## Concepts
 
 **Model**
 
-A model is an abstraction of the features of an object that is connected to IoT. The model defines the features of the object's attributes, measure points, services, and events. For more information, please refer to [Model Overview](model_overview). A model can be associated with multiple _products_.
+A model is the abstraction of the features of an object that is connected to IoT. The model defines the features of the object's attributes, measure points, services, and events. For more information, see [Model Overview](model_overview). A model can be associated with multiple _products_.
 
 **Product**
 
@@ -14,7 +14,7 @@ A product, or product model, is a collection of devices with the same features. 
 
 **Device**
 
-A device is an instance of a model. A device belongs to a certain product.
+A device is the instance of a product.
 
 ## Major Functions
 
@@ -57,7 +57,7 @@ For more information, please refer to [Device Authentication Mechanism](deviceco
 - Segregates communication resources by topic to prevent devices from accessing unauthorized data.
 
 
-## Technical Architecture
+## Architecture
 
 As shown in the figure below, a device can be connected directly or through the edge to the EnOS IoT Hub. The EnOS IoT Hub accepts direct-connecting devices or edges to communicate via the MQTT protocol. MQTT is a lightweight open-source IoT protocol based on TCP/IP. EnOS's MQTT protocol supports the following features:
 
@@ -88,9 +88,7 @@ This requires that the device to be connected has a unique ID and can upload dat
 Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage or functional modules for further processing:
 
 - Time series database
-
 - Alert engine
-
 - Stream computing engine
 
 

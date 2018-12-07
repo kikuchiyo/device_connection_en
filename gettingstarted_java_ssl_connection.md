@@ -240,4 +240,4 @@ After you run the sample program, the edge device logs in and adds sub-devices i
 
 ### Step 8: Check Device Data
 
-Go to the console, select **Connection Management > Device Management**, then go to **Device Details*, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historocal data records.
+Go to the console, select **Connection Management > Device Management**, then go to **Device Details**, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historocal data records.

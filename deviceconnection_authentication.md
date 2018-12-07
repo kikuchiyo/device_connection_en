@@ -12,13 +12,13 @@ Before discussing the secret-based one-way authentication mechanism, you need to
 - **Device credentials**: `DeviceKey` and `DeviceSecret`.
   - `DeviceKey`: The device identifier that is automatically generated or defined by the user by the system when a device is being registered. A `DeviceKey` is unique across the OU.
   - `DeviceSecret`: The device secret issued by EnOS, which is paired with `DeviceKey`.
-- **Device triple**: Contains three elements, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`, mainly used for secret-based authentication.
+- **Device triple**: Contains three elements, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`, used for secret-based authentication.
 
-EnOS enforces the secret-based authentication mechanism by default. For more information, please refer to [Secret-based Authentication](secretbased_authentication).
+EnOS enforces the secret-based authentication mechanism by default. For more information, see [Secret-based Authentication](secretbased_authentication).
 
 ## Certificate-based Two-way Authentication
 
-The secret-based authentication involves device identity authentication through the device triple. It is a one-way authentication mechanism, that is, the IoT Hub validates the identify of the device, however, the device does not verify the identity of the IoT Hub. If you want to enable two-way authentication, the certificate-based authentication mechanism shall be used.
+The secret-based authentication involves device identity authentication through the device triple. It is a one-way authentication mechanism, that is, the IoT Hub validates the identity of the device, however, the device does not verify the identity of the IoT Hub. To enforce two-way authentication, the certificate-based authentication mechanism shall be used.
 
 Before discussing the certificate-based two-way authentication mechanism, you need to understand the following concepts:
 - **Certificate Authority (CA)**: A digital certificate issuer that is capable of issuing CA certificates.
@@ -34,7 +34,7 @@ EnOS provides CA certificate service, for more information, see [X.509 Certifica
 When you enable the certificate-based authentication, you need to use the certificate APIs to generate the device certificates as instructed in [Getting Started with Certificate-Based Authentication](gettingstarted_java_ssl_connection) to establish secure connection between devices and IoT Hub.
 
 When you enable certificate-based two-way authentication, we recommend the following best practices:
-  - Provide each device with a unique certificate for finer certificate management, such as certificate revocation.
-  - The device must support replacement of the certificate to streamline to process when the certificate expires.
+- Provide each device with a unique certificate for finer certificate management, such as certificate revocation.
+- The device must support replacement of the certificate to streamline to process when the certificate expires.
 
 For details about the certificate-based two-way authentication, see [Certificate-based Two-way Authentication](certificatebased_authentication).

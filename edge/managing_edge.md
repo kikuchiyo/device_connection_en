@@ -33,11 +33,9 @@ According to the actual needs, multiple connections can be added under one Edge 
 
 1. Click **Add Connection** next to the **Non-Direct Connections**.
 2. In the pop-up window, enter the name of the connection, select the connection mode, and set the connection parameters according to the selected connection method.
-  **Note:** Usually the Edge is not connect directly to the end server or device. Instead, the edge is connect to a network gateway, and then connect to the end server or device via this network gateway. Therefore, you need to know the mapping relationship between the IP address and port number of the network gateway and the edge gateway.
+   **Note:** Usually the Edge is not connect directly to the end server or device. Instead, the edge is connect to a network gateway, and then connect to the end server or device via this network gateway. Therefore, you need to know the mapping relationship between the IP address and port number of the network gateway and the edge gateway.
 
 As shown in the following figure, Edge is used as the TCP/IP client, so the configured connection parameters are the IP address and port number of the server.
-
-
 
 ![](media/image011.png)
 
@@ -56,13 +54,12 @@ In this step, you'll add the device and configure the basic information.
    *Figure: Add Devices to the Connection*
 
 2. In the pop-up window,
-    - select the product to which you want to add the devices.
-    - select the devices you want to add.
-    - select the device template that the device needs to be associated with.
-      **Note:** You must first select the same kind of devices, then you can select the device template that the devices to be associated with.
-      The device template is used as the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, see [Creating and Managing Device Templates](managing_templates)
+   - select the product to which you want to add the devices.
+   - select the devices you want to add.
+   - select the device template that the device needs to be associated with.
+     **Note:** You must first select the same kind of devices, then you can select the device template that the devices to be associated with.
+   The device template is used as the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, see [Creating and Managing Device Templates](managing_templates)
 3. Click **Save** to add the device.
-
 
 
 **Step 2: Update Basic Information**
@@ -88,14 +85,14 @@ You can find the **Import** and **Export** button as shown below:
 
 Since multiple devices are connected under one connection, the logical address and corresponding offset must be configured for each device. The configuration of each device depends on the communication protocol used and its settings.
 
- You can configure the device by two ways:
-  - One by one.
-  - In batches by updating device connection information table.
+You can configure the device by two ways:
+- One by one.
+- In batches by updating device connection information table.
 
 **Configure the device one by one in the following approach:**
 
-   1. Click **Edit** after the device to be edit.
-   2. Edit the configuration according to your requirement and then click **OK**.
+1. Click **Edit** after the device to be edit.
+2. Edit the configuration according to your requirement and then click **OK**.
 
    ![](media/image020.png)
 
@@ -103,18 +100,16 @@ Since multiple devices are connected under one connection, the logical address a
 
 **You can configure the device in batches in the following approach:**
 
-   1. Click **Export** after the device connection to download the device connection information table.
-   2. Edit the device connection information table according to your requirement.
-      The table supports the configuration of the AI, DI, PI, AO, DO, and PO offsets. The basic configuration method is use dash-connection, such as `0-50`, when there are multiple offsets, you can use `#` to separate multiple values, such as `0-50#1000-1050`.
-
-   3. Click **Import** to upload the information table.
-
+1. Click **Export** after the device connection to download the device connection information table.
+2. Edit the device connection information table according to your requirement.
+   The table supports the configuration of the AI, DI, PI, AO, DO, and PO offsets. The basic configuration method is use dash-connection, such as `0-50`, when there are multiple offsets, you can use `#` to separate multiple values, such as `0-50#1000-1050`.
+3. Click **Import** to upload the information table.
 
 ### Publishing Configuration
 
 After completing the above configurations, you need to publish the configuration to the Edge.
 
-1. Click **Publish** to publish the configuration to the corresponding edge gateway and view the publish status. The configuration will not take effect until it is published.
+Click **Publish** to publish the configuration to the corresponding edge gateway and view the publish status. The configuration will not take effect until it is published.
 
 You can find the **Publish** button and the publish status as shown below:
 
@@ -173,12 +168,9 @@ You can set numbers for the telemetry and telecommand points in the following ap
 
 In the **Datagram** tab, you can view and copy the incoming and outgoing datagram.
 
-
-
 ### Log
 
 In the **Log** tab, to avoid flooding of information, the system hides the logs of info types and only displays logs of warning and error types to assist the user in diagnosing the cause of the communication error.
-
 
 ### Console
 
@@ -198,7 +190,6 @@ You can test the communication on a single device and view the corresponding dat
 
 1. Click **View** after the device to be tested.
 2. In the pop-up window, you can test the view the detailed information and set the  telemetry and telecommand points which the operations are same as the bulk communication test.
-
 
 ![](media/image034.png)
 

@@ -1,6 +1,6 @@
 # Getting Started With Direct Device Connection
 
-This article helps you quickly learn how to provision direct-connecting devices to the EnOS Cloud, how to send device telemetry, and how to check device communication state from the EnOS Console.
+This article helps you quickly learn how to provision a direct-connecting device to the EnOS Cloud, how to send device telemetry, and how to check device communication state from the EnOS Console.
 
 ## About the Scenario
 
@@ -11,7 +11,7 @@ For information about the connection scenario of this task, see "Scenario 2.2" i
 
 Here we take the household PV inverter connection as an example. The inverter device triple is burned into the inverter during manufacturing. After you power on and connect the inverter to the network, the inverter is connected to the IoT Hub based on the device triple authentication. The overall process is shown below:
 
-  ![](media/device_connection_task_description.png)
+![](media/device_connection_task_description.png)
 
 As shown in the flowchart above, the procedure falls into the following steps:
 
@@ -76,61 +76,62 @@ The steps to create this model are as follows:
 
 1. In the EnOS Console, click **Model** from the left navigation panel.
 2. Click **New Model**, and provide the following settings in the **New Model** window:
-  - **Identifier**: Inverter_Demo
-  - **Model Name**: Inverter_Demo
-  - **Model Name (en)**: Inverter_Demo
-  - **Category**: NA
-  - **Create From**: No
-  - **Source Model**: NA
-  - **Description**: Inverter model for demo project
-
-  ![](media/model_inverter.png)
+   - **Identifier**: Inverter_Demo
+   - **Model Name**: Inverter_Demo
+   - **Model Name (en)**: Inverter_Demo
+   - **Category**: NA
+   - **Create From**: No
+   - **Source Model**: NA
+   - **Description**: Inverter model for demo project
 
 3. Click **OK** to complete the operation.
+
+    ![](media/model_inverter.png)
+
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 5. Click **Add**, and provide the following settings in the **Add Feature** window:
-  - **Attribute 1**
-    - **Name**: Inverter_Type
-    - **Identifier**: invType
-    - **Data Type**: enum
-    - **Enum Items**:
-      - Value: 0; Description: Central
-      - Value: 1; Description: String
-    - **Required**: Yes
-  - **Attribute 2**
-      - **Name**: Inverter_Capacity
-      - **Identifier**: capacity
-      - **Data Type**: float
-      - **Unit**: kWp
-      - **Required**: Yes
-  - **Measure Point**
-    - **Name**: Active_Power
-    - **Identifier**: INV.GenActivePW
-    - **Data Type**: float
-    - **Point Type**: AI
-    - **Unit**: kW
-  - **Service**
-    - **Name**: Control
-    - **Identifier**: INV.Control
-    - **Invoke Method**: Asynchronous
-    - **Input Parameters**:
-      - Parameter Name: control
-      - Identifier: control
-      - Data Type: enum
-      - Enum Items:
-        - Value: 0; Description: Stop
-        - Value: 1; Description: Start
-    - **Output Parameters**:
-      - Parameter Name: execResult
-      - Identifier: execResult
-      - Data Type: enum
-      - Enum Items:
-        - Value: 0; Description: Failure
-        - Value: 1; Description: Success
-  - **Event**
-    - **Name**: Error
-    - **Identifier**: Error
-    - **Severity**: Error
+   - **Attribute 1**
+     - **Name**: Inverter_Type
+     - **Identifier**: invType
+     - **Data Type**: enum
+     - **Enum Items**:
+       - Value: 0; Description: Central
+       - Value: 1; Description: String
+     - **Required**: Yes
+   - **Attribute 2**
+     - **Name**: Inverter_Capacity
+     - **Identifier**: capacity
+     - **Data Type**: float
+     - **Unit**: kWp
+     - **Required**: Yes
+   - **Measure Point**
+     - **Name**: Active_Power
+     - **Identifier**: INV.GenActivePW
+     - **Data Type**: float
+     - **Point Type**: AI
+     - **Unit**: kW
+   - **Service**
+     - **Name**: Control
+     - **Identifier**: INV.Control
+     - **Invoke Method**: Asynchronous
+     - **Input Parameters**:
+       - Parameter Name: control
+       - Identifier: control
+       - Data Type: enum
+       - Enum Items:
+         - Value: 0; Description: Stop
+         - Value: 1; Description: Start
+     - **Output Parameters**:
+       - Parameter Name: execResult
+       - Identifier: execResult
+       - Data Type: enum
+       - Enum Items:
+         - Value: 0; Description: Failure
+         - Value: 1; Description: Success
+   - **Event**
+     - **Name**: Error
+     - **Identifier**: Error
+     - **Severity**: Error
 
 6. Click **Confirm** to complete the operation.
 
@@ -143,16 +144,16 @@ In this step, we create a product called **Inverter_Product**. We assume that a 
 
 1. In the EnOS Console, select **Device Provisioning > Products**.
 2. Click **New Product**, and provide the following settings in the **New Product** window:
-  - **Product Name**: Inverter_Product
-  - **Asset Type**: Device
-  - **Device Model**: Inverter_Demo
-  - **Data Format**: Json
-  - **Certificate-based Two-way Authentication**: Disable
-  - **Product Description**: Inverter product for demo
-
-  ![](media/create_product.png)
+   - **Product Name**: Inverter_Product
+   - **Asset Type**: Device
+   - **Device Model**: Inverter_Demo
+   - **Data Format**: Json
+   - **Certificate-based Two-way Authentication**: Disable
+   - **Product Description**: Inverter product for demo
 
 3. Click **Confirm** to complete the operation.
+
+  ![](media/create_product.png)
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
@@ -163,15 +164,15 @@ In this step, we create a device named **INV001**, which belongs to the **Invert
 
 1. In the EnOS Console, select **Device Provisioning > Devices**.
 2. Click **New Device**, and provide the following settings in the **New Device** window:
-  - **Product**: Inverter_Product
-  - **Device Name**: INV001
-  - **Inverter Type**: 0: Central, indicating centralized inverter
-  - **Component Capacity**: 5.0
-  - **Device Key**: Optional, generated automatically by system
-
-  ![](media/register_device.png)
+   - **Product**: Inverter_Product
+   - **Device Name**: INV001
+   - **Inverter Type**: 0: Central, indicating centralized inverter
+   - **Component Capacity**: 5.0
+   - **Device Key**: Optional, generated automatically by system
 
 3. Click **Confirm** to complete the operation.
+
+    ![](media/register_device.png)
 
 For details about device settings, see [Creating a Device](cloud/creating_device).
 
@@ -182,7 +183,7 @@ After you complete the device registration, obtain the device triple: `ProductKe
 
 In this step, we use the device SDK to simulate sending the inverter active power to the cloud.
 
-1. Obtain the [Device SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For more information, see the GitHub readme file.
+1. Obtain the [Device SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For information about how to set up the development environment, see the GitHub readme file.
 2. Configure the EnOS Cloud connection as instructed in the readme file.
 3. Configure the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
 4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
@@ -193,7 +194,7 @@ For more information, see [Using the Device SDK](device/using_java_sdk).
 
 In the EnOS Console, click **Device Provisioning > Devices**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
 
-  ![](media/device_status.png)
+![](media/device_status.png)
 
 
 ## Step 6: Check the Device Data
