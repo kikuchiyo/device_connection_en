@@ -93,6 +93,8 @@ The message flow of different connection and activation methods are illustrated 
 
 ### Connect via Gateway
 
+The following figure illustrates the message flow of connection scenarios 1.1 and 1.2.
+
 ![Device connection overview](media/overview_device_connection_2_0_v3_1.png)
 
 
@@ -143,6 +145,8 @@ Compared with the more flexible Scenario 1.1, Scenario 1.2 has more complex conf
 
 ### Direct Connection
 
+The following figure illustrates the message flow of direct connection scenarios 2.1, 2.2, and 2.3.
+
 ![Device connection overview](media/overview_device_connection_2_0_v3_2.png)
 
 #### Scenario 2.1: The connected device is not registered; it is dynamically registered through pluggable data acquisition pod
@@ -164,13 +168,11 @@ Household photovoltaic inverters do not support burning firmware. In this scenar
    - The acquisition rod records the `deviceSecret`, which will be automatically burned into the firmware of the device.
    - The acquisition rod collects data from the inverter, and uses the `productKey`, `deviceKey`, and `deviceSecret` to connect to the cloud. Once authenticated, the device goes online and send telemetry.
 
-
-
-#### Scenario 2.2: The connected device is registered, and the device is burned with its unique device triple before leaving the factory
+#### Scenario 2.2: The connected device is registered, and the device is burned with a unique device triple before leaving the factory
 This scenario requires that the device is burned with its unique device triple that is obtained through cloud registration before it leaves the factory. The scenario provides stronger security but lower operability due to the demand of burning unique device triple during manufacturing.
 
 
-#### Scenario 2.3: The connected device is registered, and the devices are burned with the same product information in batch
+#### Scenario 2.3: The connected devices are registered, and devices are burned with the same product information in batch
 Scenario 2.3 deals with the low operability issue of Scenario 2.2. Which is
 1. Devices are burned in batch with the same product credential (i.e., `productKey` and `productSecret`) before leaving the factory.
 2. Device registration can be integrated with the manufacturer's device management system. Upon the shipment of a batch of devices, the customer's device management system can register the devices in batch by calling the REST API.

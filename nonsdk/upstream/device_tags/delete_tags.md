@@ -1,9 +1,9 @@
 # Delete Tags
 
 Upstream
-- Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
+- Request TOPIC `/sys/{productKey}/{deviceName}/thing/tag/delete`
 
-- Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
+- Reply TOPIC `/sys/{productKey}/{deviceName}/thing/tag/delete_reply`
 
 ## Example Request Message
 
@@ -61,7 +61,7 @@ Upstream
     <td>List</td>
     <td>Mandatory </td>
     <td>The unique identifier of the tags.<br>
-      The value of the tags cannot be null. If the value is null, no tag will be deleted. </td>
+      When not specified, no tag is deleted. </td>
   </tr>
   <tr>
     <td>method</td>
@@ -73,12 +73,12 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON   format.</td>
+    <td>Detailed returned information in JSON format.</td>
   </tr>
 </table>

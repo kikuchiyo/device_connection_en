@@ -1,11 +1,11 @@
 # Get Topological Relationships of Sub-devices
 
-An edge can publish a message to this topic to request EnOS Cloud to retrieve the topological relationship between the edge and a sub-device.
+An edge can publish a message to this topic to retrieve the topological relationship between the edge and a sub-device.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get_reply`
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
@@ -41,10 +41,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -86,12 +86,12 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
   <tr>
     <td>data </td>
     <td>String </td>
     <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON format. </td>
+    <td>Detailed returned information in JSON format. </td>
   </tr>
 </table>

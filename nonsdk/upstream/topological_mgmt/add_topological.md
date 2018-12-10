@@ -1,14 +1,13 @@
 # Add Topological Relationships of Sub-devices
 
-An edge can publish a message to this topic to request EnOS Cloud to add
-the topological relationship between the edge and a sub-device.
+An edge can publish a message to this topic to add the topological relationship between the edge and a sub-device.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add_reply`
 
-**Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
+**Note:** The *productKey* and *deviceKey* in the TOPIC are the credentials of the edge device.
 
 ## Example Request Message
 
@@ -46,10 +45,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -79,7 +78,7 @@ Upstream
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Product key or the sub-device.</td>
+    <td>Product key of the sub-device.</td>
   </tr>
   <tr>
     <td>sign</td>
@@ -103,14 +102,14 @@ Upstream
     <td>clientId</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Identifier of the sub-device. The value can either be productKey or deviceKey.</td>
+    <td>Identifier of the sub-device. The value can be productKey or deviceKey.</td>
   </tr>
   <tr>
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
 </table>
 
-All parameters reported to EnOS Cloudwill be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign=uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000)).
+All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, `sign=uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000))`.

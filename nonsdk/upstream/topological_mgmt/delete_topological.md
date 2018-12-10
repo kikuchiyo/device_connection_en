@@ -1,13 +1,13 @@
 # Delete Topological Relationships of Sub-devices
 
-An edge can publish a message to this topic to request EnOS Cloud to delete the topological relationship between the edge and a sub-device.
+An edge can publish a message to this topic to delete the topological relationship between the edge and a sub-device.
 
-After you delete the topological relationship of the sub-device from EnOS Cloud, the sub-device can no longer connect to the EnOS Cloud through the edge.
+After you delete the topological relationship of the sub-device, the sub-device can no longer connect to the EnOS Cloud through the edge.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete_reply`
 
 **Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
 
@@ -42,10 +42,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -75,7 +75,7 @@ Upstream
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Product key or the sub-device.</td>
+    <td>Product key of the sub-device.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -88,6 +88,6 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
 </table>

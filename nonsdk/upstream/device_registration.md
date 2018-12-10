@@ -3,9 +3,9 @@
 ## Register a Device
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/device/register
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/device/register`
 
-- Reply TOPIC: /sys/{productKey}/{deivceKey}/thing/device/register_reply
+- Reply TOPIC: `/sys/{productKey}/{deivceKey}/thing/device/register_reply`
 
 ### Example Request Message
 
@@ -132,7 +132,7 @@ Upstream
     <td>Code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicate the request is executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the request is executed successfully.</td>
   </tr>
   <tr>
     <td>Data</td>

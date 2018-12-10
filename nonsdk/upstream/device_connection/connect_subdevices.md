@@ -1,10 +1,9 @@
 # Connect Sub-devices to EnOS Cloud
 
 Upstream
-- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login
+- Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login`
 
-- Reply TOPIC:
-    /ext/session/{productKey}/{deviceKey}/combine/login_reply
+- Reply TOPIC:    `/ext/session/{productKey}/{deviceKey}/combine/login_reply`
 
 ## Example Request Message
 
@@ -50,10 +49,10 @@ cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id </td>

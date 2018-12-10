@@ -1,9 +1,9 @@
 # Query Tags
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query_reply`
 
 ## Example Request Message
 
@@ -55,13 +55,13 @@ Upstream
   <tr>
     <td>params</td>
     <td>Object</td>
-    <td>Parameters used for quering sub-devics </td>
+    <td>Parameters used for quering tags</td>
   </tr>
   <tr>
     <td>tags</td>
     <td>Object</td>
-    <td>The unique identifier of the tags .<br>
-      If the value of tags is null in the request topic, the request will query all the tags.</td>
+    <td>The unique identifiers of the tags .<br>
+      When not specified, the request will query all tags.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -71,6 +71,6 @@ Upstream
   <tr>
     <td>code</td>
     <td>Integer</td>
-    <td>Response   code. &ldquo;200&rdquo; indicates the request is executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
 </table>

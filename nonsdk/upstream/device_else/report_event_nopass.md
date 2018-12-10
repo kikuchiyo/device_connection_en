@@ -1,12 +1,11 @@
 # Report Device Events​ (non-passthrough)
 
-If non-passthrough mode is used, the device generates data in the JSON
-format and then sends the data to EnOS Cloud.
+If non-passthrough mode is used, the device data sent to the cloud is in JSON.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply`
 
 ## Example Request Message
 
@@ -47,10 +46,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameters</td>
-    <td>Type</td>
-    <td>Occurrence </td>
-    <td>Description</td>
+    <th>Parameters</th>
+    <th>Type</th>
+    <th>Occurrence </th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -80,37 +79,37 @@ Upstream
     <td>power</td>
     <td>String</td>
     <td>Optional</td>
-    <td>The property of the events.</td>
+    <td>The power property of an event.</td>
   </tr>
   <tr>
     <td>value</td>
     <td>String</td>
     <td>Optional</td>
-    <td>The property of the events.</td>
+    <td>The value property of an event.</td>
   </tr>
   <tr>
     <td>quality</td>
     <td>String</td>
     <td>Optional</td>
-    <td>The property of the events.</td>
+    <td>The quality property of an event.</td>
   </tr>
   <tr>
     <td>temp</td>
     <td>String</td>
     <td>Optional</td>
-    <td>The property of the events.</td>
+    <td>The temp property of an event.</td>
   </tr>
   <tr>
     <td>branchCurr</td>
     <td>String</td>
     <td>Optional</td>
-    <td>The property of the events.</td>
+    <td>The branchCurr property of an event.</td>
   </tr>
   <tr>
     <td>time</td>
     <td>String</td>
     <td>Optional</td>
-    <td>Timestamp for reporting measure point. If leave   it blank, the value is set to the timestamp of the server.</td>
+    <td>Timestamp for event reporting. When not specified, the value is the server time.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -128,7 +127,7 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is executed successfully. </td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully. </td>
   </tr>
   <tr>
     <td>data</td>

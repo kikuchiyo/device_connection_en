@@ -1,8 +1,5 @@
-Device attribute, measuring point, event protocols
+Device attributes, measuring points, events
 ==================================================================
-
-Please refer the sections as below:
-
 
 .. toctree::
   :maxdepth: 1

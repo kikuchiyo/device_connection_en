@@ -1,9 +1,9 @@
 # Report Tags
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update_reply`
 
 ## Example Request Message
 
@@ -58,7 +58,7 @@ Upstream
     <td>params</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>Parameters used for reporting tags. The maximum items are 200.</td>
+    <td>Parameters used for reporting tags. A request can carry a maximum of 200 parameters.</td>
   </tr>
   <tr>
     <td>method</td>
@@ -72,9 +72,9 @@ Upstream
     <td>Mandatory</td>
     <td>Tag name.
       <ul>
-        <li>Maximum 100 characters in   length</li>
-        <li>Support lowercase characters ( a- z), uppercase characters( A – Z), numbers (0- 9), and underline (_). </li>
-        <li>The tag name must start with  an letter or underline (_).</li>
+        <li>Maximum of 100 characters in length</li>
+        <li>Support lowercase characters (a - z), uppercase characters (A – Z), numbers (0 - 9), and underline ( _ ). </li>
+        <li>Start with an letter or underline ( _ ).</li>
       </ul></td>
   </tr>
   <tr>
@@ -87,12 +87,12 @@ Upstream
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is   executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON format.</td>
+    <td>Detailed returned information in JSON format.</td>
   </tr>
 </table>

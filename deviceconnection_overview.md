@@ -48,7 +48,7 @@ Provides device models. The device model allows devices of thousands of models f
 
 - Supports _secret-per-product_ mechanism, where devices are pre-burned with product credentials. The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where _device triple_ cannot be burned into each device in mass production.
 
-For more information, please refer to [Device Authentication Mechanism](deviceconnection_authentication).
+For more information, see [Device Authentication Mechanism](deviceconnection_authentication).
 
 **Communication and Data Security**
 
@@ -67,7 +67,7 @@ As shown in the figure below, a device can be connected directly or through the 
 
 ![Device Connection Architecture](media/device_connection_methods.png)
 
-Based on the whether and where the edge device is used in the connection. The following connection scenarios are supported:
+Based on whether and where the edge device is used in the connection. The following connection scenarios are supported:
 
 **Scenario 1: Connect through EnOS IoT Hub via MQTT protocol (cloud service)**
 
@@ -110,4 +110,6 @@ The cloud broker provides the following functions:
 
 ### EnOS Edge
 
-Edge is the front end of Envision EnOS IoT platform for data acquisition. It is used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to the EnOS Cloud. Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS Cloud. For more information, see [EnOS Edge Overview](https://docs.envisioniot.com/docs/enos-edge/en/latest/edge_overview.html)
+Edge is the front end of Envision EnOS IoT platform for data acquisition. It is used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to the EnOS Cloud.
+
+Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either be deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS Cloud. For more information, see [EnOS Edge Overview](https://docs.envisioniot.com/docs/enos-edge/en/latest/edge_overview.html)

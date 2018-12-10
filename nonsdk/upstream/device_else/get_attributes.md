@@ -1,11 +1,11 @@
 # Get Attributes
 
-A device can publish a message to this topic to request EnOS cloud to retrieve the attributes from the cloud.
+A device can publish a message to this topic to retrieve attributes from the cloud.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/query`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/query_reply`
 
 ## Example Request Message
 
@@ -43,10 +43,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>

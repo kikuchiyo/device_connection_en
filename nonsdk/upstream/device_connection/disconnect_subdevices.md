@@ -1,9 +1,9 @@
 # Disconnect Sub-devices from EnOS Cloud
 
 Upstream
-- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout
+- Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout`
 
-- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout_reply
+- Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout_reply`
 
 ## Example Request Message
 
@@ -37,10 +37,10 @@ Upstream
 
 <table>
   <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Occurrence</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id </td>
@@ -70,7 +70,7 @@ Upstream
     <td>code </td>
     <td>Integer </td>
     <td>Mandatory </td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is executed  successfully. </td>
+    <td>Response code. &ldquo;200&rdquo; indicates the request is executed successfully. </td>
   </tr>
   <tr>
     <td>message </td>

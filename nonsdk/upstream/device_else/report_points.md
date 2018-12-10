@@ -3,9 +3,9 @@
 **Note:** Configure the parameters according to the output and input parameters of the measuring points.
 
 Upstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply`
 
 ## Example Request Message
 
@@ -85,38 +85,38 @@ Upstream
   <tr>
     <td>power</td>
     <td>String</td>
-    <td>Optioanl</td>
-    <td>The property of this measure point.</td>
+    <td>Optional</td>
+    <td>The power property of this measure point.</td>
   </tr>
   <tr>
     <td>value</td>
     <td>String</td>
-    <td>Optioanl</td>
+    <td>Optional</td>
     <td>The property of this measure point.</td>
   </tr>
   <tr>
     <td>quality</td>
     <td>Strign</td>
-    <td>Optioanl</td>
-    <td>The property of this measure point.</td>
+    <td>Optional</td>
+    <td>The value property of this measure point.</td>
   </tr>
   <tr>
     <td>temp</td>
     <td>String</td>
-    <td>Optioanl</td>
-    <td>The property of this measure point.</td>
+    <td>Optional</td>
+    <td>The temp property of this measure point.</td>
   </tr>
   <tr>
     <td>branchCurr</td>
     <td>String</td>
-    <td>Optioanl</td>
-    <td>The property of this measure point.</td>
+    <td>Optional</td>
+    <td>The branchCurr property of this measure point.</td>
   </tr>
   <tr>
     <td>time</td>
     <td>Timestamp</td>
-    <td>Optioanl</td>
-    <td>Timestamp for reporting measure point. If leave   it blank, the value is set to the timestamp of the server.</td>
+    <td>Optional</td>
+    <td>Timestamp for measure point reporting. When not specified, the value is the server time.</td>
   </tr>
   <tr>
     <td>code</td>

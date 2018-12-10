@@ -7,7 +7,7 @@ Secret-based authentication refers to the authentication of devices based on dev
 The following operations and states are involved in the connection between the device and the EnOS IoT Hub:
 
 - **Registration**
-  A device is created in the cloud either on the interface through Portal or by calling the Restful interface.
+  A device instance is created in the cloud through the web-based EnOS Console or by calling the REST API.
 
 - **Login**
   The device must be successfully logged in before it can send data. The device trigraph authentication is required for login.
@@ -18,11 +18,11 @@ The following operations and states are involved in the connection between the d
 
 ## Device Activation Mode and Device Status
 
-Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in two ways: dynamic activation, and static activation.
+Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in the _dynamic_ or _static_ mode.
 - **Dynamic Activation**: The process of dynamic activation is as follows:
   1. When trying to connect for the first time, the device will carry the `ProductKey`, `ProductSecret`, and `DeviceKey` to request for activation. If the authentication is successful, a `DeviceSecret` will be returned to the device.
   2. The device tries to log in using the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
-  3. Once the device is successfully logged in, its status will change from **Inactive** to **Online**. The device will now be able to send data. If no data is sent within a certain period of time, the status of the device will change to **Offline**.
+  3. Once the device successfully logs in, its status will change from **Inactive** to **Online**. The device will then be able to send telemetry. If no telemetry is sent within a certain period of time, the status of the device will change to **Offline**.
 
   To use dynamic activation, you will need to enable **Dynamic Activation** in the product configuration.
 
