@@ -65,7 +65,7 @@ For details on device model settings, see [Creating Model](cloud/creating_model)
 
 ## Step 2: Create a Product
 
-In this step, we create a product called **Edge_Product**. The We assume that an edge device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
+In this step, we create a product called **Edge_Product**. We assume that an edge device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
 
 1. In the EnOS Console, select **Device Provisioning > Products**.
 2. Click **New Product**, and provide the following settings in the **New Product** window:

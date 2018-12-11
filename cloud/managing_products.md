@@ -28,7 +28,7 @@ On the **Product Details** page, you can view the logs of important behaviors of
 
 ## Debugging Online Devices
 
-On  the **Product Details** page, you can debug devices under the product, simulate a real device to connect to the cloud, report defined attributes, and handle events. Based on the data of the simulated device, the cloud can complete application development and debugging. Once the real device is online, the virtual device will automatically go offline.
+On the **Product Details** page, you can debug devices under the product, simulate a real device to connect to the cloud, report defined attributes, and handle events. Based on the data of the simulated device, the cloud can complete application development and debugging. Once the real device is online, the virtual device will automatically go offline.
 
 1. In the EnOS Console, select **Device Provisioning > Products**.
 2. In the table of created products, for the target product, click **View** to open the **Product Details** page.

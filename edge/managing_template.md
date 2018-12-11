@@ -7,10 +7,7 @@ A device template works as a bridge for device connection, which consists of two
 For an actual device, the names of the measuring points are often customized, and cannot be identified directly by the system. Therefore, it is necessary to map the customized actual measure points to the domain points of the standard device models. On the other hand, protocol configuration is also required for device connection.
 
 
-
-## Creating a New Device Template
-
-### About This Task
+## About This Task
 The following major steps are involved:
 
 ![](media/image035.png)
@@ -19,9 +16,9 @@ The following major steps are involved:
 
 A device template can be created mainly in two ways:
 - Created from scratch.
-- Created and later modified based on an existing device template. You can choose this method when the scenario requires a device template that is similar to an existing one. By copying an existing template and slightly modifying to obtain a new template, in order to reduce your workload.
+- Created and modified based on an existing device template. You can choose this method when the scenario requires a device template that is similar to an existing one. By copying an existing template and slightly modifying to obtain a new template, in order to reduce your workload.
 
-### Procedure of creating a device template from scratch:
+## Creating a Device Template from Scratch
 
 You can create a device template from scratch in the following approach:
 
@@ -32,13 +29,13 @@ You can create a device template from scratch in the following approach:
 5. Click ![](media/image037.png) after the newly created template.
 6. In the **Details** page, follow the instructions below to configure a device template.
 
-The device template includes the  basic info editing, the point table upload, and the mapping relationship configuration.
+The device template includes the basic info editing, the point table upload, and the mapping relationship configuration.
 
-#### Configuring Basic Info
+### Configuring Basic Info
 
 In the **Basic Information** section, provide the information of the device, among this settings:
 
-- You can view and select the general protocols supported by the EnOS Edge as well as their associated templates. To view the description of each protocol so as to choose the right template, you can click on the  **Detail** next to the protocol field and move the cursor to the ![](media/image041.png) icon in the window that appears.
+- You can view and select the general protocols supported by the EnOS Edge as well as their associated templates. To view the description of each protocol so as to choose the right template, you can click on the **Detail** next to the protocol field and move the cursor to the ![](media/image041.png) icon in the window that appears.
 
 ![](media/image040.png)
 
@@ -47,7 +44,7 @@ In the **Basic Information** section, provide the information of the device, amo
 **Note**: If no suitable protocol is found, you can contact the system administrator. You can also re-develop the protocol and upload it to the protocol management center for editing, updating, and more operations. For information on developing new protocols, please refer to [Creating Protocol](creating_protocol).
 
 
-#### Uploading Point Table
+### Uploading Point Table
 
 In the **Configuration** section, you need to edit two configuration files:
 - `config.sys` is a parameter configuration file relating to communication protocols.
@@ -69,7 +66,7 @@ If you have chosen a communication protocol in the previous step and successfull
 *Figure: Protocol Selection and Point Table Import*
 
 
-#### Selecting Model and Configuring Mapping Relationship
+### Selecting Model and Configuring Mapping Relationship
 
 In the **Model Selection and Mapping** section, you can configure mapping relationships to match customized actual points with the standard device model points. The main steps include:
 

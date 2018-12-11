@@ -15,27 +15,28 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
 
 ```
   mqttClientId: clientId+"|securemode=2,signmethod=hmacsha1,timestamp=132323232|"
-
   mqttUsername: deviceKey+"&"+productKey
-  mqttPassword: uppercase(sign_hmac(deviceSecret,content))
+  mqttPassword: uppercase(sign_hmac(content,deviceSecret))
  ```
 
 
  - For the **mqttClientId** segment:
    - _clientId_: Mandatory. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. The parameters within  ``||`` are the optional parameters.
-   - _securemode_: Optional. Indicates the secure mode that has been used. Currently, only support securemode=2.
+   - _securemode_: Optional. Indicates the secure mode that has been used. Currently, only support `securemode=2`.
    - _signmethod_: Optional. Indicates the signing method. Currently, only support `signmethod=hmacsha1`.
    - _timestamp_: Optional. Indicates the current time in milliseconds.
 
  - For the **mqttUsername** segment:
-   - The value of the _deviceKey_ and _productKey_ of a device can be obtained from the EnOS Console after you complete provisioning the device.
+   - The value of the _deviceKey_ and _productKey_ of a device which can be obtained from the EnOS Console after you complete provisioning the device.
 
  - For the **mqttPassword** segment:
-   - The value of the _deviceSecret_ can be obtained from the EnOS Console.
-   - _content_ is the concatenation of _productKey_, _deviceKey_, _timestamp_, and _clientID_. The values must be sorted in alphabetical order and concatenated without concatenation symbols.  
-     Below is an example of _content_ when clientId=123, deviceKey=test, productKey=123, timestamp=1524448722000, deviceSecret=deviceSecret.
+   - _content_: The concatenation of _clientID_, _deviceKey_, _productKey_, _timestamp_, and their values. The parameter names must be sorted in alphabetical order and concatenated without concatenation symbols.  
+   - _deviceSecret_: The value of the _deviceSecret_ which can be obtained from the EnOS Console. The value of _deviceSecret_ follows the _content_ without any space or symbol.
+
+     Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, _deviceSecret_=`aaabbbcc123`.
+
      ```
-     sign= toUpperCase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecret))
+     sign=uppercase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000aaabbbcc123))
      ```
 
      **NOTE**: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.

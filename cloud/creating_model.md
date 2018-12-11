@@ -126,6 +126,7 @@ A tag describes the common information shared by models of the same type. It can
 1. From the list of created models, find the target model and click **Edit**.
 2. Under the **Basic Information** tab, click **Edit** in the **Tags** section.
 3. On the pop-up window, click **New tag**, and enter the key-value pair (key:value) for the new tag.
+4. Click **OK** to save the tag.
 
 ## Results
 

@@ -52,7 +52,7 @@ Upstream
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol.  Current version is 1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>

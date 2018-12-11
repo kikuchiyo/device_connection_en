@@ -8,10 +8,10 @@ You can use EnOS™ Edge to ingest data from on-site devices or 3rd party system
 
 A device template is the adapter between a common device model and a specific model of the device. A device template allows mapping between a specific device measuring point and a common device model.
 
-Based on industrial experiences, EnOS has accumulated a number of device templates for inquiry and reuse. You can also define customized device templates.
+Based on industrial experiences, EnOS has accumulated a number of device templates for reusing. You can also define customized device templates.
 
 ### Communication Protocol
 
-Communication protocol is a common phrase used in energy industry. EnOS Edge provides a rich protocol library that contains common protocols of energy and power industry, such as modbus, IEC104, OPCDA, OPCUA, and OPC-XML-DA. In addition, EnOS supports conventions for the major device manufacturers in the industry. For more information, see [Protocols Supported by EnOS Edge](https://docs.envisioniot.com/docs/enos-edge/en/latest/edge_specification/data_ingestion.html).
+Communication protocol is a common phrase used in energy industry. EnOS Edge provides a rich protocol library that contains common protocols of energy and power industry, such as modbus, IEC104, OPCDA, OPCUA, and OPC-XML-DA. In addition, EnOS supports conventions of the major device manufacturers in the industry. For more information, see [Protocols Supported by EnOS Edge](https://docs.envisioniot.com/docs/enos-edge/en/latest/edge_specification/data_ingestion.html).
 
-With these protocols made available, you can browse and select desired protocols in the device template, which can be used after simple configuration, to avoid development or integration of protocols.
+With these protocols, you can search and select desired protocols in the device template, which can be directly used after simple configuration  to avoid development or integration of protocols.

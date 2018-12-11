@@ -5,7 +5,7 @@ The Edge gateway needs to be configured before connect the sub-device to the edg
 ## Before You Start
 
 1. You must have obtained the serial number (SN) of the Edge gateway.
-2. You must have completed the initialization of the Edge gateway. The initialization of the Edge gateway hardware is usually done by the Envision project team. For more information,  consult the Envision project manager.
+2. You must have completed the initialization of the Edge gateway. The initialization of the Edge gateway hardware is usually done by the Envision project team. For more information, consult the Envision project manager.
 
 
 ## Step 1: Adding the Edge Gateway
@@ -177,7 +177,7 @@ In the **Log** tab, to avoid flooding of information, the system hides the logs 
 In the **Console** tab, you can debug through the common communication debugging commands. The most frequently used debugging commands are including:
 - Test basic ping test (You'll need to enter the IP address of the ping in the input box)
 - Check local IP
-- Test Telnet (You’ll need to enter the IP and port number.)
+- Telnet Test(You’ll need to enter the IP and port number.)
 - Check TCP connection
 
 ![](media/image033.png)
@@ -186,10 +186,10 @@ In the **Console** tab, you can debug through the common communication debugging
 
 ### Testing the Communication of a Single Device
 
-You can test the communication on a single device and view the corresponding data in the Edge of this device.
+You can test the communication on a single device and view the corresponding data.
 
 1. Click **View** after the device to be tested.
-2. In the pop-up window, you can test the view the detailed information and set the  telemetry and telecommand points which the operations are same as the bulk communication test.
+2. In the pop-up window, you can test the view the detailed information and set the telemetry and telecommand points which the operations are same as the bulk communication test.
 
 ![](media/image034.png)
 

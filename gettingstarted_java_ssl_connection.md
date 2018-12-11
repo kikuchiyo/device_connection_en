@@ -1,4 +1,4 @@
-# Getting Started with Certificate-Based Authentication
+# Getting Started with Certificate-Based Authentication (Java)
 
 This article helps you quickly get started with using certificate-based authentication to secure connection between the device and the cloud.
 
@@ -59,7 +59,7 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 - The CSR file is used for requesting certificate from EnOS Cloud
 - The private key is used for decrypting the data that is encrypted by the certificate.
 
-For the guidelines of creating CSR file, see [证书请求文件创建规范]()。
+For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](https://docs.envisioniot.com/docs/enos/en/latest/security/x509_ca/creating_csr.html)。
 
 ### Step 3: Invoke REST API to Request for Certificate
 
@@ -240,4 +240,4 @@ After you run the sample program, the edge device logs in and adds sub-devices i
 
 ### Step 8: Check Device Data
 
-Go to the console, select **Connection Management > Device Management**, then go to **Device Details**, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historocal data records.
+Go to the console, select **Connection Management > Device Management**, then go to **Device Details*, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historical data records.

@@ -37,13 +37,7 @@ Upstream
 
 ```
 
-All parameters reported to EnOS Cloudwill be signed
-except **sign** and **signmethod**. The parameter names and values are
-sorted in alphabetical order and concatenated without concatenation
-symbols. The concatenated string is then signed by using the algorithm
-specified by **signmethod**. Taking the request message above for
-example, sign= uppercase(hmac_md5(deviceSecret,
-cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
+All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values of are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign= uppercase(hmacsha1(deviceSecret, cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123deviceSecret)).
 
 ## Parameter Description
 
@@ -106,7 +100,7 @@ cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
     <td>cleanSession </td>
     <td>String </td>
     <td>Mandatory</td>
-    <td>Supported   value: True. This   indicates to clear offline information for all sub-devices, which is   information that has not been received by QoS 1. </td>
+    <td>Supported   value: True. This indicates to clear offline information for all sub-devices, which is information that has not been received by QoS 1. </td>
   </tr>
   <tr>
     <td>message </td>
@@ -124,7 +118,7 @@ cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123)).
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code.   &ldquo;200&rdquo; indicates the request is executed successfully. </td>
+    <td>Response code.  &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
 </table>
 

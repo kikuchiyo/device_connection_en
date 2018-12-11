@@ -1,6 +1,6 @@
 # Creating a Product
 
-This topic describes how to create a product. Any device that connects to the EnOS Cloud must have an identity on the platform to perform data interaction with the cloud normally. The device can be registered in the cloud in dynamic mode or static mode. Both of these modes require the device to offer the Product Key issued by the cloud.
+This article describes how to create a product. Any device that connects to the EnOS Cloud must have an identity on the platform to perform data interaction with the cloud normally. The device can be registered in the cloud in dynamic mode or static mode. Both of these modes require the device to offer the Product Key issued by the cloud.
 
 ## Before You Start
 
@@ -20,7 +20,7 @@ The model corresponding to this product has been created. For information about 
    - **Certificate-based bi-directional authentication**: Specify whether to enable the Certificate-based bi-directional authentication method for this product.
    - **Description**: Description of the product.
 
-3. Click **Confirm** to complete the operation.
+3. Click **Confirm** to complete the setting.
 
 4. Click **OK** to create the product.
 
@@ -34,7 +34,7 @@ A tag describes the common information shared by products of the same type.
 
 ## Results
 
-When the Product is created, you can get a pair of credentials: Product Key (`productKey`) and Product Secret (`ProductSecret`). This pair of credentials uniquely identifies the product and is the key to the device registration and product information modification for this product. The product secret credentials will be used for activating the device. For more information, see [Secret-based One-way Authentication](.. / secretbased_authentication).
+When the Product is created, you can get a pair of credentials: Product Key (`productKey`) and Product Secret (`ProductSecret`). This pair of credentials uniquely identifies the product and is the key to the device registration and product information modification for this product. The product secret credentials will be used for activating the device. For more information, see [Secret-based One-way Authentication](.. /secretbased_authentication).
 
 ## Follow-up Operations
 
