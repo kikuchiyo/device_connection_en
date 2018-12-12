@@ -90,7 +90,7 @@ Upstream
     <td>signmethod</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Signing method. The supported methods are hmacSha1, hmacSha256, hmacMd5, and Sha256.</td>
+    <td>Signing method. The supported methods are <em>hmacSha1</em>.</td>
   </tr>
   <tr>
     <td>timestamp</td>
@@ -112,4 +112,4 @@ Upstream
   </tr>
 </table>
 
-All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, `sign=uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000))`.
+All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, `sign=uppercase(hmacsha1( clientId123deviceKeytestproductKey123timestamp1524448722000{deviceSecret}))`.

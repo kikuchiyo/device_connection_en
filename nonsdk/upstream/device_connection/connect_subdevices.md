@@ -3,7 +3,7 @@
 Upstream
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login`
 
-- Reply TOPIC:    `/ext/session/{productKey}/{deviceKey}/combine/login_reply`
+- Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login_reply`
 
 ## Example Request Message
 
@@ -37,7 +37,7 @@ Upstream
 
 ```
 
-All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values of are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign= uppercase(hmacsha1(deviceSecret, cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123deviceSecret)).
+All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, sign=uppercase(hmacsha1( cleanSessiontrueclientId123deviceKeytestproductKey123timestamp123{deviceSecret})).
 
 ## Parameter Description
 
@@ -94,13 +94,13 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
     <td>clientId </td>
     <td>String </td>
     <td>Mandatory </td>
-    <td>Identifier of   the device client. The value can either be productKey or deviceName. </td>
+    <td>The identifier of the device client. The value can be productKey or deviceName. </td>
   </tr>
   <tr>
     <td>cleanSession </td>
     <td>String </td>
     <td>Mandatory</td>
-    <td>Supported   value: True. This indicates to clear offline information for all sub-devices, which is information that has not been received by QoS 1. </td>
+    <td>Supported value: True. This indicates to clear offline information for all sub-devices, which is information that has not been received by QoS 1. </td>
   </tr>
   <tr>
     <td>message </td>
@@ -109,19 +109,19 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
     <td>Response message </td>
   </tr>
   <tr>
-    <td>data</td>
-    <td>String </td>
-    <td>Optional</td>
-    <td>Detailed information of the sub-device, in JSON format. </td>
-  </tr>
-  <tr>
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code.  &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
+  <tr>
+    <td>data</td>
+    <td>JSON</td>
+    <td>Optional</td>
+    <td>Detailed returned information in JSON format. </td>
+  </tr>
+
 </table>
 
-**Note**: A edge can accommodate a maximum of 200 online sub-devices
-simultaneously. When the maximum number is reached, the edge rejects any
+**Note**: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any
 connection requests.

@@ -35,12 +35,11 @@ Upstream
 
 ## Parameter Description
 
-<body>
 <table>
   <tr>
     <td>Parameter </td>
     <td>Type </td>
-    <td>Description </td>
+    <td>Description</td>
   </tr>
   <tr>
     <td>id</td>
@@ -50,17 +49,17 @@ Upstream
   <tr>
     <td>version</td>
     <td>String</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
     <td>Object</td>
-    <td>Parameters used for quering tags</td>
+    <td>Parameters used for querying tags</td>
   </tr>
   <tr>
     <td>tags</td>
     <td>Object</td>
-    <td>The unique identifiers of the tags .<br>
+    <td>The unique identifiers of the tags.<br>
       When not specified, the request will query all tags.</td>
   </tr>
   <tr>

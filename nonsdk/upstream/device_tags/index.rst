@@ -1,4 +1,4 @@
-Device tags
+Device Tags
 ============
 
 Device information such as vendor and device model, and static attribute information can be saved as device tags.

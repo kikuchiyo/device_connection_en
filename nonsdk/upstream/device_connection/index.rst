@@ -1,4 +1,4 @@
-Device connection
+Device Connection
 =====================
 
 Ensure that the sub-device to connect has been registered to the EnOS Cloud.

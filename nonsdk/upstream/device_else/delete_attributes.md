@@ -63,7 +63,7 @@ Upstream
     <td>attributes </td>
     <td>Array </td>
     <td>Optional</td>
-    <td>List of the attributes. A request can carry a maximum of 200 attributes.<br>
+    <td>List of the identifier of the attribute-type of features. A request can carry a maximum of 200 attributes.<br>
        When not specified, no attribute is deleted.</td>
   </tr>
   <tr>

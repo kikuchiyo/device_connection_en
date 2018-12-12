@@ -132,11 +132,11 @@ Upstream
     <td>Code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the request is executed successfully.</td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.</td>
   </tr>
   <tr>
     <td>Data</td>
-    <td>JSON </td>
+    <td>JSON</td>
     <td>Optional</td>
     <td>Detailed information of the device. </td>
   </tr>

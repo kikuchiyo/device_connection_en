@@ -17,7 +17,7 @@ Upstream
  "attributes": {
  "attr1": {
      "value": 1.0,
-     "value2": "9"
+     "value2": 9
    },
  "attr2": 1.02,
  "attr3": [1.02, 2.02, 7.93]
@@ -67,11 +67,11 @@ Upstream
     <td>Parameters used for reporting attributes.</td>
   </tr>
   <tr>
-    <td>attributes </td>
-    <td>Array </td>
+    <td>attribute </td>
+    <td>Array</td>
     <td>Optional</td>
-    <td>List of the attributes. A request can carry a maximum of 200 attributes.<br>
-       When not specified, all attributes are reported.  </td>
+    <td>List of the attributes-type of features of the device. A request can carry a maximum of 200 attributes.<br>
+       When not specified, no attribute will be reported.  </td>
   </tr>
   <tr>
     <td>method</td>
@@ -81,15 +81,15 @@ Upstream
   </tr>
   <tr>
     <td>attr1</td>
-    <td>String </td>
+    <td>Struct</td>
     <td>Mandatory</td>
-    <td>The unique identifier of the attribute. </td>
+    <td>The identifier of the attribute that you want to report, in this example, the attribute with the identifier of <strong>attr1</strong>. The format here must match the data type defined for this parameter. For example, when the data type of this parameter is struct. the data here must be match the defined struct which is <strong>value</strong> and <strong>value2</strong>. </td>
   </tr>
   <tr>
     <td>value</td>
-    <td>String</td>
+    <td>Integer</td>
     <td>Mandatory</td>
-    <td>The value of the tags. </td>
+    <td>The parameter name of the struct data of this attribute, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the thing model, the value here must be an integer. </td>
   </tr>
   <tr>
     <td>code</td>

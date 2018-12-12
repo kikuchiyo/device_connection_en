@@ -1,15 +1,14 @@
 # Delete Sub-devices
 
-This topic notifies the edge that the specific sub-devices belong to
-this edge have been deleted from the EnOS Cloud. EnOS Cloud publishes
-the delete devices message to the edge topic asynchronously.
+This TOPIC notifies the edge that the specific sub-device belongs to this edge have been deleted from EnOS Cloud. EnOS Cloud publishes
+the delete devices message to the edge asynchronously.
 
 Downstream
-- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/delete
+- Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/delete`
 
-- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/delete_reply
+- Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/delete_reply`
 
-**Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
+**Note:** The *productKey* and *deviceKey* in the TOPIC are the credentials of the edge.
 
 ## Example Request Message
 
@@ -42,10 +41,10 @@ Downstream
 
 <table>
   <tr>
-    <td>Parameters</td>
-    <td>​Type​</td>
-    <td>Occurrence </td>
-    <td>Description</td>
+    <th>Parameters</th>
+    <th>​Type​</th>
+    <th>Occurrence </th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -63,13 +62,13 @@ Downstream
     <td>params</td>
     <td>Object</td>
     <td>Mandatory </td>
-    <td>Request parameters. </td>
+    <td>Parameters used for deleting a sub-device.</td>
   </tr>
   <tr>
     <td>productKey</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>ProductKey of the sub-device.</td>
+    <td>Product Key of the sub-device.</td>
   </tr>
   <tr>
     <td>deviceKey</td>
@@ -87,12 +86,12 @@ Downstream
     <td>code</td>
     <td>String</td>
     <td>Mandatory </td>
-    <td>Response code &ldquo;200&rdquo; or the error code defined on device end. &ldquo;200&rdquo; indicates the request is executed   successfully. </td>
+    <td>Response code &ldquo;200&rdquo; or the error code defined on the device end. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>Optional </td>
-    <td>Detailed information, in JSON format. </td>
+    <td>Detailed returned information in JSON format. </td>
   </tr>
 </table>

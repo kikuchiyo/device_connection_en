@@ -73,8 +73,8 @@ Upstream
     <td>Tag name.
       <ul>
         <li>Maximum of 100 characters in length</li>
-        <li>Support lowercase characters (a - z), uppercase characters (A – Z), numbers (0 - 9), and underline ( _ ). </li>
-        <li>Start with an letter or underline ( _ ).</li>
+        <li>Support lowercase characters (a-z), uppercase characters (A–Z), numbers (0-9), and underline (_). </li>
+        <li>Start with an letter or underline (_).</li>
       </ul></td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@ Upstream
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>Optional</td>
     <td>Detailed returned information in JSON format.</td>
   </tr>

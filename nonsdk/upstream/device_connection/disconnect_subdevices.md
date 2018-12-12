@@ -46,7 +46,7 @@ Upstream
     <td>id </td>
     <td>Long </td>
     <td>Optional </td>
-    <td>Message ID. Reserved  parameter for future use. </td>
+    <td>Message ID. Reserved parameter for future use. </td>
   </tr>
   <tr>
     <td>params </td>
@@ -70,7 +70,7 @@ Upstream
     <td>code </td>
     <td>Integer </td>
     <td>Mandatory </td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is executed successfully. </td>
+    <td>Response code. &ldquo;200&rdquo; indicates the request operation is executed successfully. </td>
   </tr>
   <tr>
     <td>message </td>
@@ -79,9 +79,9 @@ Upstream
     <td>Response message.</td>
   </tr>
   <tr>
-    <td>data </td>
-    <td>String </td>
+    <td>data</td>
+    <td>JSON</td>
     <td>Optional </td>
-    <td>Additional information in the response, in JSON format. </td>
+    <td>Detailed returned information in JSON format. </td>
   </tr>
 </table>

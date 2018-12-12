@@ -1,4 +1,4 @@
-Device attributes, measuring points, events
+Device Attributes, Measuring points, Events(Upstream)
 ==================================================================
 
 .. toctree::

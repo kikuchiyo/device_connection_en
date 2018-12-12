@@ -1,17 +1,14 @@
 # Get Device Measuring Points
 
-**Note:** Set the parameters according to the output and input parameters in the TSL model.
+**Note:** Set the parameters according to the output and input parameters in the thing model.
 
-
-After a device receives a get device measure points request, it returns
-the device measuring point in a reply message to EnOS cloud. You can get
-the information of the measure points from the the downstream.
+After a device receives a get device measure points request, it returns the device measuring point in a reply message to EnOS cloud. You can get the information of the measuring points from the downstream.
 
 
 Downstream
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/get`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply`
 
 ## Example Request Message
 
@@ -43,10 +40,10 @@ Downstream
 
 <table>
   <tr>
-    <td>Parameters</td>
-    <td>Type</td>
-    <td>Occurrence </td>
-    <td>Description</td>
+    <th>Parameters</th>
+    <th>Type</th>
+    <th>Occurrence </th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>id</td>
@@ -64,7 +61,7 @@ Downstream
     <td>params</td>
     <td>List</td>
     <td>Mandatory </td>
-    <td>Parameters used for getting device properties. </td>
+    <td>Parameters used for getting the properties of the device measuring points. </td>
   </tr>
   <tr>
     <td>method</td>
@@ -76,24 +73,24 @@ Downstream
     <td>power</td>
     <td>String</td>
     <td>Optional </td>
-    <td>Property name.</td>
+    <td>The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of <strong>power</strong>.</td>
   </tr>
   <tr>
     <td>temp</td>
     <td>String</td>
-    <td>Optional </td>
-    <td>Property name.</td>
+    <td>Optional</td>
+    <td>The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of <strong>temp</strong>.</td>
   </tr>
   <tr>
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory </td>
-    <td>​ Response code &ldquo;200&rdquo; or the error code defined on device end. &ldquo;200&rdquo; indicates the request is executed successfully. </td>
+    <td>​ Response code &ldquo;200&rdquo; or the error code defined on the device end. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
   <tr>
     <td>data </td>
-    <td>String </td>
+    <td>JSON</td>
     <td>Optional </td>
-    <td>Detailed information, in JSON format. </td>
+    <td>Detailed returned information in JSON format. </td>
   </tr>
 </table>

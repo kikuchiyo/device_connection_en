@@ -1,4 +1,6 @@
-# Report Device Measuring points
+# Report Device Measuring Points
+
+A device can publish a message to this topic to report the newly added measuring point to the cloud.
 
 **Note:** Configure the parameters according to the output and input parameters of the measuring points.
 
@@ -16,8 +18,8 @@ Upstream
 	"params": {
 		"measurepoints": {
 			"Power": {
-				"value": "1.0",
-				"quality": "9"
+				"value": 1.0,
+				"quality": 9
 			},
 			"temp": 1.02,
 			"branchCurr": [
@@ -68,7 +70,7 @@ Upstream
     <td>params</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>Parameters used for reporting device measure points. </td>
+    <td>Parameters used for reporting device measuring points. </td>
   </tr>
   <tr>
     <td>method</td>
@@ -80,54 +82,54 @@ Upstream
     <td>measurepoints</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>Measure point of the device.</td>
+    <td>List of the measuring point-type of features of the device.</td>
   </tr>
   <tr>
     <td>power</td>
-    <td>String</td>
+    <td>-</td>
     <td>Optional</td>
-    <td>The power property of this measure point.</td>
+    <td>The identifier of the measuring point that you want to report, in this example, the event with the identifier of <strong>power</strong>.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be <strong>value</strong> and <strong>quality</strong>. </td>
   </tr>
   <tr>
     <td>value</td>
-    <td>String</td>
+    <td>Integer</td>
     <td>Optional</td>
-    <td>The property of this measure point.</td>
+    <td>The parameter name of the quality indicator of this measuring point, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the model, the value here must be an integer.</td>
   </tr>
   <tr>
     <td>quality</td>
-    <td>Strign</td>
+    <td>Integer</td>
     <td>Optional</td>
-    <td>The value property of this measure point.</td>
+    <td>The parameter name of the quality indicator of this measuring point, in this example, the <strong>quality</strong> parameter that indicates the data quality. The valid value is integer in the range 0 - 9.</td>
   </tr>
   <tr>
     <td>temp</td>
-    <td>String</td>
+    <td>Integer</td>
     <td>Optional</td>
-    <td>The temp property of this measure point.</td>
+    <td>The identifier of the measuring point that you want to report, in this example, the measuring point with the identifier of <strong>temp</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
   </tr>
   <tr>
     <td>branchCurr</td>
-    <td>String</td>
+    <td>Array</td>
     <td>Optional</td>
-    <td>The branchCurr property of this measure point.</td>
+    <td>The identifier of the measuring point that you want to report, in this example, the measuring point with the identifier of <strong>branchCurr</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
   </tr>
   <tr>
     <td>time</td>
     <td>Timestamp</td>
     <td>Optional</td>
-    <td>Timestamp for measure point reporting. When not specified, the value is the server time.</td>
+    <td>The timestamp for this request topic. When not specified, the value is the server time.</td>
   </tr>
   <tr>
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is executed successfully. </td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
-    <td>Optional </td>
-    <td>Detailed information, in JSON format.</td>
+    <td>JSON</td>
+    <td>Optional</td>
+    <td>Detailed returned information in JSON format.</td>
   </tr>
 </table>

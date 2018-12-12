@@ -9,7 +9,7 @@ Upstream
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete_reply`
 
-**Note:** The *productKey* and *deviceKey* in the TOPIC are the parameters of the edge.
+**Note:** The *productKey* and *deviceKey* in the TOPIC are the credentials of the edge.
 
 ## Example Request Message
 

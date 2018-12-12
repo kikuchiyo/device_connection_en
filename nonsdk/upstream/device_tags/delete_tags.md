@@ -77,7 +77,7 @@ Upstream
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>Optional</td>
     <td>Detailed returned information in JSON format.</td>
   </tr>

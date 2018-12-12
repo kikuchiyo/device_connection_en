@@ -58,20 +58,26 @@ Upstream
     <td>version</td>
     <td>String</td>
     <td>Mandatory</td>
-    <td>Version of the protocol. Current version is   1.0.</td>
+    <td>Version of the protocol. Current version is 1.0.</td>
   </tr>
   <tr>
     <td>params</td>
     <td>List</td>
     <td>Mandatory</td>
-    <td>Parameters used for deleting tags.</td>
+    <td>Parameters used for getting attributes.</td>
   </tr>
   <tr>
     <td>attributes </td>
     <td>Array </td>
     <td>Mandatory</td>
-    <td>List of the attribute. One request can contain maximum 200 items.<br>
-       If the value of attributes is null, system  will retrieve all the attributes.  </td>
+    <td>List of the identifier of the attribute-type of features. A request can carry maximum 200 items.<br>
+       When not specified, system will retrieve all the attributes.  </td>
+  </tr>
+  <tr>
+    <td>attr1</td>
+    <td>String </td>
+    <td>Mandatory</td>
+    <td>The unique identifier of the attribute. </td>
   </tr>
   <tr>
     <td>method</td>
@@ -80,22 +86,15 @@ Upstream
     <td>The method of the request.</td>
   </tr>
   <tr>
-    <td>attr1</td>
-    <td>String </td>
-    <td>Mandatory</td>
-    <td>The unique  identifier of the attribute. </td>
-  </tr>
-  <tr>
     <td>value</td>
-    <td>String</td>
+    <td>Struct</td>
     <td>Mandatory</td>
-    <td><br>
-      The value of the tags. </td>
+    <td>The detailed returned information of this attributes. In this example, the data type of this attribute is struct. Therefore, the parameter <strong>value</strong> is returned with its value. </td>
   </tr>
   <tr>
     <td>code</td>
     <td>Integer</td>
     <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates the request is  executed successfully. or  </td>
+    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
   </tr>
 </table>
