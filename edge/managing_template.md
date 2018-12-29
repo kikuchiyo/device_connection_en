@@ -6,7 +6,6 @@ A device template works as a bridge for device connection, which consists of two
 
 For an actual device, the names of the measuring points are often customized, and cannot be identified directly by the system. Therefore, it is necessary to map the customized actual measure points to the domain points of the standard device models. On the other hand, protocol configuration is also required for device connection.
 
-
 ## About This Task
 The following major steps are involved:
 

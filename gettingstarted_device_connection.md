@@ -135,7 +135,7 @@ The steps to create this model are as follows:
 
 6. Click **Confirm** to complete the operation.
 
-For details on device model settings, see [Creating Model](cloud/creating_model).
+For details on device model settings, see [Creating Model](model/creating_model).
 
 
 ## Step 2: Create a Product

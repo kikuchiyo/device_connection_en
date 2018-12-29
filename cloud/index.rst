@@ -4,7 +4,7 @@ Cloud Configuration
 .. toctree::
    :maxdepth: 1
 
-   creating_model
+   ../model/creating_model
    creating_product
    creating_device
    managing_products

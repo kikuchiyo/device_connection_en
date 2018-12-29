@@ -83,3 +83,7 @@ In the certificate-based security connection, consider the following best practi
 - When your edge runs on an operating system, make sure your operating system is secured through certain mechanisms, for example, firewall.
 - Ensure that you have a way to update root CA certificates and CRL.
 - Ensure that the clock on the edge is not tampered with.
+
+## Related Information
+
+- [Getting Started with Certificate-Based Authentication (Java)](gettingstarted_java_ssl_connection)

@@ -4,7 +4,7 @@ This article describes how to create a product. Any device that connects to the 
 
 ## Before You Start
 
-The model corresponding to this product has been created. For information about how to create a model, see [Creating a Model](creating_model).
+The model corresponding to this product has been created. For information about how to create a model, see [Creating a Model](../model/creating_model).
 
 ## Step 1: Creating a Product
 1. In the EnOS Console, select **Device Provisioning > Products**.
@@ -42,5 +42,5 @@ If you select **Passthrough** for the **Data Type** field, you need to upload th
 
 ## Related Information
 
-- [Creating a Model](creating_model)
+- [Creating a Model](../model/creating_model)
 - [Creating a Device](creating_device)

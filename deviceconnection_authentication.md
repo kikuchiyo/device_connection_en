@@ -16,7 +16,7 @@ Before discussing the secret-based one-way authentication mechanism, you need to
 
 EnOS enforces the secret-based authentication mechanism by default. For more information, see [Secret-based Authentication](secretbased_authentication).
 
-## Certificate-based Two-way Authentication
+## Certificate-based Authentication
 
 The secret-based authentication involves device identity authentication through the device triple. It is a one-way authentication mechanism, that is, the IoT Hub validates the identity of the device, however, the device does not verify the identity of the IoT Hub. To enforce two-way authentication, the certificate-based authentication mechanism shall be used.
 

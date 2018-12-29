@@ -3,7 +3,7 @@
 A model is an abstraction of the product's features, and defines what the product is, what it can do, and what services it can provide. This topic describes how to create a model.
 
 ## Before You Start
-The features that are required for the model have been designed. For information about how to design features for a model, see [Thing Model Overview](../model_overview).
+The features that are required for the model have been designed. For information about how to design features for a model, see [Thing Model Overview](model_overview).
 
 ## About This Task
 
@@ -134,5 +134,5 @@ When feature definition of the model is completed, the system will automatically
 
 ## Related Information
 
-- [Thing Model Overview](../model_overview)
-- [Creating a Product](creating_product)
+- [Thing Model Overview](model_overview)
+- [Creating a Product](../cloud/creating_product)

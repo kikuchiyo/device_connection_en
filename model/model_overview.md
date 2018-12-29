@@ -1,4 +1,4 @@
-# Thing Model Overview
+# Thing Model
 
 The thing model is the abstraction and digitization of the physical objects in the physical world. A thing model is the summary of the features of the objects that are connected to the EnOS Cloud, including attributes, measure points, services and events of the device.
 
@@ -26,11 +26,11 @@ You can define the following elements to define a thing model according to the a
     </tr>
         <tr>
       <td>Service</td>
-      <td>A capability or method that can be called externally. You can define its input and output parameters. Compared with an attribute, you can achieve more complex business logic through a command.</td>
+      <td>A capability or method that can be called to achieve remote operation or control. You can define its input and output parameters. Compared with an attribute, you can achieve more complex business logic through a command.</td>
       <td>Command to issue, job to perform, etc.</td>
     </tr>
         <tr>
-      <td>event</td>
+      <td>Event</td>
       <td>The event that can occur when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.</td>
       <td>Alerts, state changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. An event can be subscribed and pushed.</td>
     </tr>
@@ -62,3 +62,7 @@ The public models are the domain standard models that are accumulated on EnOS an
 **Private Model**
 
 The private models are created by the developers in their own OU. Private models are not open to the public and are visible only within the organization. The developers in the organization have read and write permissions to the private models.
+
+## Related Information
+
+- [Creating a Model](creating_model)

@@ -35,5 +35,5 @@ When offline, the status of the newly created device is shown as Inactive. To ac
 
 ## Related Information
 
-- [Creating a Model](creating_model)
+- [Creating a Model](../model/creating_model)
 - [Creating a Product](creating_product)

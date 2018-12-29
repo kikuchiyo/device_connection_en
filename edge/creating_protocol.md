@@ -1,8 +1,8 @@
-## Creating a Protocol
+# Creating a Protocol
 
 EnOS Edge supports various communication protocols. This article instructs how to create a customized protocol.
 
-### Procedure
+## Procedure
 You'll need to create a protocol and update the jar package of the protocol file.
 
 1. In the EnOS console, click **Edge Gateway > Protocols** from the left navigation panel.    

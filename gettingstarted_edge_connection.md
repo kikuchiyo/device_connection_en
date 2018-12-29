@@ -60,7 +60,7 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
 
 6. Click **Confirm** to complete the operation.
 
-For details on device model settings, see [Creating Model](cloud/creating_model).
+For details on device model settings, see [Creating Model](model/creating_model).
 
 
 ## Step 2: Create a Product

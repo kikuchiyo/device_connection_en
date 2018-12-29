@@ -1,10 +1,10 @@
 EnOS Edge Configuration
---------
+-------------------------
 
 .. toctree::
    :maxdepth: 1
 
-   overview
+   edgeoverview
    managing_edge
    managing_template
    creating_protocol

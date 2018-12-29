@@ -10,7 +10,7 @@ The following operations and states are involved in the connection between the d
   A device instance is created in the cloud through the web-based EnOS Console or by calling the REST API.
 
 - **Login**
-  The device must be successfully logged in before it can send data. The device trigraph authentication is required for login.
+  The device must be successfully logged in before it can send data. The device triple authentication is required for login.
 
 - **Activation**
   The device will be activated upon its first successful login, which updates its status from **Inactive** to **Active**. The **Active** status contains two sub-statuses: **Online** and **Offline**.
@@ -67,8 +67,8 @@ Three dimensions are used to describe the overall state of the device: Operation
 
 The main authentication process for device connection is as follows:
 - a. Pre-register device in the cloud
-- b. On the edge side, configure the device information registered in the cloud, and mainly burn into the device trigraph
-- c. Power-on on edge side, connect to network, and try to log in. Device trigraph authentication in the cloud
+- b. On the edge side, configure the device information registered in the cloud, and mainly burn into the device triple
+- c. Power-on on edge side, connect to network, and try to log in. Device triple authentication in the cloud
   - Successful: Returned successfully, the device is instructed to send data
   - Failure: Return failed, connection is interrupted
 - d. The device sends data via MQTT protocol
