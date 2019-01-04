@@ -1,8 +1,8 @@
-# Report Device Measuring Points
+# Report Device Measure Points
 
-A device can publish a message to this topic to report the newly added measuring point to the cloud.
+A device can publish a message to this topic to report the newly added measure point to the cloud.
 
-**Note:** Configure the parameters according to the output and input parameters of the measuring points.
+**Note:** Configure the parameters according to the output and input parameters of the measure points.
 
 Upstream
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
@@ -25,13 +25,11 @@ Upstream
 			"branchCurr": [
 				"1.02", "2.02", "7.93"
 			]
-		}
+		},
 		"time": 123456
-	}
-},
-"method": "thing.measurepoint.post"
+	},
+	"method": "thing.measurepoint.post"
 }
-
 ```
 
 ## Example Response Message
@@ -70,7 +68,7 @@ Upstream
     <td>params</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>Parameters used for reporting device measuring points. </td>
+    <td>Parameters used for reporting device measure points. </td>
   </tr>
   <tr>
     <td>method</td>
@@ -82,37 +80,37 @@ Upstream
     <td>measurepoints</td>
     <td>Object</td>
     <td>Mandatory</td>
-    <td>List of the measuring point-type of features of the device.</td>
+    <td>List of the measure point-type of features of the device.</td>
   </tr>
   <tr>
     <td>power</td>
     <td>-</td>
     <td>Optional</td>
-    <td>The identifier of the measuring point that you want to report, in this example, the event with the identifier of <strong>power</strong>.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be <strong>value</strong> and <strong>quality</strong>. </td>
+    <td>The identifier of the measure point that you want to report, in this example, the event with the identifier of <strong>power</strong>.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be <strong>value</strong> and <strong>quality</strong>. </td>
   </tr>
   <tr>
     <td>value</td>
     <td>Integer</td>
     <td>Optional</td>
-    <td>The parameter name of the quality indicator of this measuring point, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the model, the value here must be an integer.</td>
+    <td>The parameter name of the quality indicator of this measure point, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the model, the value here must be an integer.</td>
   </tr>
   <tr>
     <td>quality</td>
     <td>Integer</td>
     <td>Optional</td>
-    <td>The parameter name of the quality indicator of this measuring point, in this example, the <strong>quality</strong> parameter that indicates the data quality. The valid value is integer in the range 0 - 9.</td>
+    <td>The parameter name of the quality indicator of this measure point, in this example, the <strong>quality</strong> parameter that indicates the data quality. The valid value is integer in the range 0 - 9.</td>
   </tr>
   <tr>
     <td>temp</td>
     <td>Integer</td>
     <td>Optional</td>
-    <td>The identifier of the measuring point that you want to report, in this example, the measuring point with the identifier of <strong>temp</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
+    <td>The identifier of the measure point that you want to report, in this example, the measure point with the identifier of <strong>temp</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
   </tr>
   <tr>
     <td>branchCurr</td>
     <td>Array</td>
     <td>Optional</td>
-    <td>The identifier of the measuring point that you want to report, in this example, the measuring point with the identifier of <strong>branchCurr</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
+    <td>The identifier of the measure point that you want to report, in this example, the measure point with the identifier of <strong>branchCurr</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
   </tr>
   <tr>
     <td>time</td>
