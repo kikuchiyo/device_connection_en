@@ -1,4 +1,4 @@
-# Certificate-based Two-way Authentication
+# X.509 Certificate-based Authentication
 
 Security is critical in an IoT system. When certificate authentication is enabled in the product configuration，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
 

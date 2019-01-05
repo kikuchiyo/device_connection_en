@@ -54,7 +54,7 @@ Stream Analysis enables you to define the asset calculation logic, subscribe to 
 
 Learn how to quickly provision a typical smart IoT device on EnOS Cloud and start to sending telemetries between the device and the cloud:
 
-- [Getting Started With Direct Device Connection](gettingstarted_device_connection)
+- [Getting Started With Direct Device Connection (Without Edge)](gettingstarted_device_connection)
 
 Learn how to provision a traditional industry equipment that connects through an edge gateway:
 

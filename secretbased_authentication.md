@@ -1,4 +1,4 @@
-# Secret-based One-way Authentication
+# Secret-based Authentication
 
 Secret-based authentication refers to the authentication of devices based on device triple, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`.
 

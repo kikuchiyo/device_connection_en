@@ -1,4 +1,4 @@
-# Getting Started With Direct Device Connection
+# Connecting Device into Cloud Directly (Without Edge)
 
 This article helps you quickly learn how to provision a direct-connecting device to the EnOS Cloud, how to send device telemetry, and how to check device communication state from the EnOS Console.
 

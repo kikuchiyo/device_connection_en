@@ -1,4 +1,4 @@
-# Getting Started with Certificate-Based Authentication (Java)
+# Securing Connection Through Certificate-Based Authentication (Java)
 
 This article helps you quickly get started with using certificate-based authentication to secure connection between the device and the cloud.
 
@@ -12,8 +12,8 @@ The preparation work is as shown in the following diagram.
 ### Step 0: Create Model, Product, and Device
 
 This step supposes assumes that you have complete the following tutorials:
-- [Getting Started With Direct Device Connection](gettingstarted_device_connection)
-- [Getting Started With Connecting Sub-device to EnOS Cloud via Edge](gettingstarted_edge_connection).
+- [Connect Device into Cloud Directly (Without Edge)](gettingstarted_device_connection)
+- [Connecting Sub-devices to EnOS Cloud via Edge](gettingstarted_edge_connection).
 
 **Creating an edge gateway product**
 

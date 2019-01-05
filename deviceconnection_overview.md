@@ -30,9 +30,9 @@ Provides device models. The device model allows devices of thousands of models f
 
 **Authentication**
 
-- Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches.
+- Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches. Each device carries a unique key-secret pair as the device leaves the factory.
 
-- Supports _secret-per-product_ mechanism, where devices are pre-burned with product credentials. The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where _device triple_ cannot be burned into each device in mass production.
+- Supports _secret-per-product_ mechanism, where devices of the same product model are pre-burned with key-secret pair (the _product key-secret pair_). The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where unique key-secret pairs cannot be burned into each device in mass production.
 
 For more information, see [Device Authentication Mechanism](deviceconnection_authentication).
 

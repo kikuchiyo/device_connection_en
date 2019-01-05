@@ -6,10 +6,10 @@ To ensure the security of the devices and data transmission, the device needs to
 
 Before discussing the secret-based one-way authentication mechanism, you need to understand the following concepts:
 
-- **Product credentials**: `ProductKey` and `ProductSecret`.
+- **Product key-secret pair**: `ProductKey` and `ProductSecret`.
   - `ProductKey`: Globally unique identifier issued by EnOS for the product.
   - `ProductSecret`: The product secret issued by EnOS, which is paired with `ProductKey`. It's commonly used for dynamic activation of devices. To initiate the dynamic activation, a device first carries `ProductKey`, `ProductSecret` and `DeviceKey` upon its first connection to the EnOS Cloud, to get `DeviceSecret` from the cloud for device activation.
-- **Device credentials**: `DeviceKey` and `DeviceSecret`.
+- **Device key-secret pair**: `DeviceKey` and `DeviceSecret`.
   - `DeviceKey`: The device identifier that is automatically generated or defined by the user by the system when a device is being registered. A `DeviceKey` is unique across the OU.
   - `DeviceSecret`: The device secret issued by EnOS, which is paired with `DeviceKey`.
 - **Device triple**: Contains three elements, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`, used for secret-based authentication.
