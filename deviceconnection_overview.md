@@ -50,7 +50,8 @@ As shown in the figure below, a device can be connected directly or through the 
 - Topic-based subscription and publish of data
 - RRPC
 
-![Device Connection Architecture](media/device_connection_methods.png)
+.. image:: media/device_connection_methods.png
+   :width: 700px
 
 Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage or functional modules for further processing:
 

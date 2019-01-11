@@ -9,7 +9,7 @@ Upstream
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete_reply`
 
-**Note:** The *productKey* and *deviceKey* in the TOPIC are the credentials of the edge.
+.. note:: The *productKey* and *deviceKey* in the TOPIC are the credentials of the edge.
 
 ## Example Request Message
 
@@ -40,54 +40,40 @@ Upstream
 
 ## Parameter Description
 
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Type</th>
-    <th>Occurrence</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>Optional</td>
-    <td>Message ID. Reserved parameter for future use.</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Version of the protocol. Current version is 1.0.</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>List</td>
-    <td>Mandatory</td>
-    <td>Parameters used for deleting topological relationships.</td>
-  </tr>
-  <tr>
-    <td>deviceKey</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Device Key of the sub-device.</td>
-  </tr>
-  <tr>
-    <td>productKey</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Product key of the sub-device.</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Signing method. </td>
-  </tr>
+.. list-table::
+   :widths: 20 20 20 40
 
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
-  </tr>
-</table>
+   * - Parameter
+     - Type
+     - Occurrence
+     - Description
+   * - id
+     - Long
+     - Optional
+     - Message ID. Reserved parameter for future use.
+   * - version
+     - String
+     - Mandatory
+     - Version of the protocol. Current version is 1.0.
+   * - params
+     - List
+     - Mandatory
+     - Parameters used for deleting topological relationships.
+   * - deviceKey
+     - String
+     - Mandatory
+     - Device Key of the sub-device.
+   * - productKey
+     - String
+     - Mandatory
+     - Product key of the sub-device.
+   * - method
+     - String
+     - Mandatory
+     - Signing method.
+   * - code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
+
+<!--end-->

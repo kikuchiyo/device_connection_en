@@ -41,87 +41,63 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
 
 ## Parameter Description
 
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Type</th>
-    <th>Occurrence</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>id </td>
-    <td>Long </td>
-    <td>Optional </td>
-    <td>Message ID. Reserved parameter for future use. </td>
-  </tr>
-  <tr>
-    <td>params </td>
-    <td>List </td>
-    <td>Mandatory </td>
-    <td>Parameters used for connecting sub-device to EnOS Cloud. </td>
-  </tr>
-  <tr>
-    <td>deviceKey </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>Device key of the sub-device. </td>
-  </tr>
-  <tr>
-    <td>productKey </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>Product key of the sub-device </td>
-  </tr>
-  <tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Signature of the sub-device. Sub-devices use the same signature rules as the edge. </td>
-  </tr>
-  <tr>
-    <td>signmethod </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>Signing method. The supported methods are <em>hmacSha1</em>. </td>
-  </tr>
-  <tr>
-    <td>timestamp </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>Timestamp </td>
-  </tr>
-  <tr>
-    <td>clientId </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>The identifier of the device client. The value can be productKey or deviceName. </td>
-  </tr>
-  <tr>
-    <td>cleanSession </td>
-    <td>String </td>
-    <td>Mandatory</td>
-    <td>Supported value: True. This indicates to clear offline information for all sub-devices, which is information that has not been received by QoS 1. </td>
-  </tr>
-  <tr>
-    <td>message </td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Response message </td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>Optional</td>
-    <td>Detailed returned information in JSON format. </td>
-  </tr>
+.. list-table::
+   :widths: 20 20 20 40
 
-</table>
+   * - Parameter
+     - Type
+     - Occurrence
+     - Description
+   * - id
+     - Long
+     - Optional
+     - Message ID. Reserved parameter for future use.
+   * - params
+     - List
+     - Mandatory
+     - Parameters used for connecting sub-device to EnOS Cloud.
+   * - deviceKey
+     - String
+     - Mandatory
+     - Device key of the sub-device.
+   * - productKey
+     - String
+     - Mandatory
+     - Product key of the sub-device
+   * - sign
+     - String
+     - Mandatory
+     - Signature of the sub-device. Sub-devices use the same signature rules as the edge.
+   * - signmethod
+     - String
+     - Mandatory
+     - Signing method. The supported methods are <em>hmacSha1</em>.
+   * - timestamp
+     - String
+     - Mandatory
+     - Timestamp
+   * - clientId
+     - String
+     - Mandatory
+     - The identifier of the device client. The value can be productKey or deviceName.
+   * - cleanSession
+     - String
+     - Mandatory
+     - Supported value: True. This indicates to clear offline information for all sub-devices, which is information that has not been received by QoS 1.
+   * - message
+     - String
+     - Mandatory
+     - Response message
+   * - code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.
+   * - data
+     - JSON
+     - Optional
+     - Detailed returned information in JSON format.
 
-**Note**: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any
+.. note:: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any
 connection requests.
+
+<!--end-->

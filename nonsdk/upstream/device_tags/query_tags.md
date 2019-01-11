@@ -35,41 +35,30 @@ Upstream
 
 ## Parameter Description
 
-<table>
-  <tr>
-    <td>Parameter </td>
-    <td>Type </td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>Message ID. Reserved parameter for future use.</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>Version of the protocol. Current version is 1.0.</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>Object</td>
-    <td>Parameters used for querying tags</td>
-  </tr>
-  <tr>
-    <td>tags</td>
-    <td>Object</td>
-    <td>The unique identifiers of the tags.<br>
-      When not specified, the request will query all tags.</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>The method of the request.</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
-  </tr>
-</table>
+.. list-table::
+   :widths: 20 20 60
+
+   * - Parameter
+     - Type
+     - Description
+   * - id
+     - Long
+     - Message ID. Reserved parameter for future use.
+   * - version
+     - String
+     - Version of the protocol. Current version is 1.0.
+   * - params
+     - Object
+     - Parameters used for querying tags
+   * - tags
+     - Object
+     - The unique identifiers of the tags.
+      When not specified, the request will query all tags.
+   * - method
+     - String
+     - The method of the request.
+   * - code
+     - Integer
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
+
+<!--end-->

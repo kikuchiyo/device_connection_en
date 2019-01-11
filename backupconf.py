@@ -158,7 +158,24 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    'preamble': '\geometry{a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm}',
+      'preamble': r'''
+    #     \geometry{a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm}',
+          \hypersetup{unicode=true}
+          \usepackage{CJKutf8}
+          \DeclareUnicodeCharacter{00A0}{\nobreakspace}
+          \DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
+          \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
+          \DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
+          \DeclareUnicodeCharacter{2713}{x}
+          \DeclareUnicodeCharacter{27FA}{\ensuremath{\Longleftrightarrow}}
+          \DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{}}}
+          \DeclareUnicodeCharacter{221B}{\ensuremath{\sqrt[3]{}}}
+          \DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}
+          \DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
+          \begin{CJK}{UTF8}{gbsn}
+          \AtEndDocument{\end{CJK}}
+      '''
+
 
     # Latex figure (float) alignment
     #
@@ -169,8 +186,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, u'EnOS™DocumentationCenter.tex', u'EnOS™ Device Connection 2.0',
-     u'Envision Digital', u'manual'),
+    (master_doc, 'EnOS™DocumentationCenter.tex', 'EnOS™ Device Connection 2.0',
+     'Envision Digital', 'manual'),
 ]
 
 
@@ -179,7 +196,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, u'EnOS™documentationcenter', u'EnOS™ Device Connection 2.0',
+    (master_doc, 'EnOS™documentationcenter', 'EnOS™ Device Connection 2.0',
      [author], 1)
 ]
 

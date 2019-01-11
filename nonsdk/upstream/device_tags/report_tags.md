@@ -35,64 +35,47 @@ Upstream
 
 ## Parameter description
 
-<table>
-  <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>Optional</td>
-    <td>Message ID. Reserved parameter for future use.</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Version of the protocol. Current version is 1.0.</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>Object</td>
-    <td>Mandatory</td>
-    <td>Parameters used for reporting tags. A request can carry a maximum of 200 parameters.</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>The method of the request.</td>
-  </tr>
-  <tr>
-    <td>tagKey</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Tag name.
-      <ul>
-        <li>Maximum of 100 characters in length</li>
-        <li>Support lowercase characters (a-z), uppercase characters (A–Z), numbers (0-9), and underline (_). </li>
-        <li>Start with an letter or underline (_).</li>
-      </ul></td>
-  </tr>
-  <tr>
-    <td>tagValue</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>The value of the tag.</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>Optional</td>
-    <td>Detailed returned information in JSON format.</td>
-  </tr>
-</table>
+.. list-table::
+   :widths: 20 20 20 40
+
+   * - Parameter
+     - Type
+     - Occurrence
+     - Description
+   * - id
+     - Long
+     - Optional
+     - Message ID. Reserved parameter for future use.
+   * - version
+     - String
+     - Mandatory
+     - Version of the protocol. Current version is 1.0.
+   * - params
+     - Object
+     - Mandatory
+     - Parameters used for reporting tags. A request can carry a maximum of 200 parameters.
+   * - method
+     - String
+     - Mandatory
+     - The method of the request.
+   * - tagKey
+     - String
+     - Mandatory
+     - Tag name.
+        + Maximum of 100 characters in length.
+        + Support lowercase characters (a-z), uppercase characters (A–Z), numbers (0-9), and underline (_).
+        + Start with an letter or underline (_).
+   * - tagValue
+     - String
+     - Mandatory
+     - The value of the tag.
+   * - code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
+   * - data
+     - JSON
+     - Optional
+     - Detailed returned information in JSON format.
+
+<!--end-->

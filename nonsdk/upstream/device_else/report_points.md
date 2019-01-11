@@ -2,7 +2,7 @@
 
 A device can publish a message to this topic to report the newly added measure point to the cloud.
 
-**Note:** Configure the parameters according to the output and input parameters of the measure points.
+.. note:: Configure the parameters according to the output and input parameters of the measure points.
 
 Upstream
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
@@ -45,89 +45,64 @@ Upstream
 
 ## Parameter Description
 
-<table>
-  <tr>
-    <td>Parameters</td>
-    <td>Type</td>
-    <td>Occurrence </td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>Optional </td>
-    <td>Message ID. Reserved parameter for future use.</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Version of the protocol. Current version is 1.0. </td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>Object</td>
-    <td>Mandatory</td>
-    <td>Parameters used for reporting device measure points. </td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>The method of the device.</td>
-  </tr>
-  <tr>
-    <td>measurepoints</td>
-    <td>Object</td>
-    <td>Mandatory</td>
-    <td>List of the measure point-type of features of the device.</td>
-  </tr>
-  <tr>
-    <td>power</td>
-    <td>-</td>
-    <td>Optional</td>
-    <td>The identifier of the measure point that you want to report, in this example, the event with the identifier of <strong>power</strong>.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be <strong>value</strong> and <strong>quality</strong>. </td>
-  </tr>
-  <tr>
-    <td>value</td>
-    <td>Integer</td>
-    <td>Optional</td>
-    <td>The parameter name of the quality indicator of this measure point, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the model, the value here must be an integer.</td>
-  </tr>
-  <tr>
-    <td>quality</td>
-    <td>Integer</td>
-    <td>Optional</td>
-    <td>The parameter name of the quality indicator of this measure point, in this example, the <strong>quality</strong> parameter that indicates the data quality. The valid value is integer in the range 0 - 9.</td>
-  </tr>
-  <tr>
-    <td>temp</td>
-    <td>Integer</td>
-    <td>Optional</td>
-    <td>The identifier of the measure point that you want to report, in this example, the measure point with the identifier of <strong>temp</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
-  </tr>
-  <tr>
-    <td>branchCurr</td>
-    <td>Array</td>
-    <td>Optional</td>
-    <td>The identifier of the measure point that you want to report, in this example, the measure point with the identifier of <strong>branchCurr</strong>. Similar to above, the value you set must match the data type defined for this parameter.</td>
-  </tr>
-  <tr>
-    <td>time</td>
-    <td>Timestamp</td>
-    <td>Optional</td>
-    <td>The timestamp for this request topic. When not specified, the value is the server time.</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully. </td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>Optional</td>
-    <td>Detailed returned information in JSON format.</td>
-  </tr>
-</table>
+.. list-table::
+   :widths: 20 20 20 40
+
+   * - Parameters
+     - Type
+     - Occurrence
+     - Description
+   * - id
+     - Long
+     - Optional
+     - Message ID. Reserved parameter for future use.
+   * - version
+     - String
+     - Mandatory
+     - Version of the protocol. Current version is 1.0.
+   * - params
+     - Object
+     - Mandatory
+     - Parameters used for reporting device measure points.
+   * - method
+     - String
+     - Mandatory
+     - The method of the device.
+   * - measurepoints
+     - Object
+     - Mandatory
+     - List of the measure point-type of features of the device.
+   * - power
+     - -
+     - Optional
+     - The identifier of the measure point that you want to report, in this example, the event with the identifier of **power**.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be **value** and **quality**.
+   * - value
+     - Integer
+     - Optional
+     - The parameter name of the quality indicator of this measure point, in this example, the parameter named **value**. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the model, the value here must be an integer.
+   * - quality
+     - Integer
+     - Optional
+     - The parameter name of the quality indicator of this measure point, in this example, the **quality** parameter that indicates the data quality. The valid value is integer in the range 0 - 9.
+   * - temp
+     - Integer
+     - Optional
+     - The identifier of the measure point that you want to report, in this example, the measure point with the identifier of **temp**. Similar to above, the value you set must match the data type defined for this parameter.
+   * - branchCurr
+     - Array
+     - Optional
+     - The identifier of the measure point that you want to report, in this example, the measure point with the identifier of **branchCurr**. Similar to above, the value you set must match the data type defined for this parameter.
+   * - time
+     - Timestamp
+     - Optional
+     - The timestamp for this request topic. When not specified, the value is the server time.
+   * - code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.
+   * - data
+     - JSON
+     - Optional
+     - Detailed returned information in JSON format.
+
+<!--end-->

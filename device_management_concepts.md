@@ -2,7 +2,8 @@
 
 This article introduces the major concepts involved in device management.
 
-![Concepts related to device management](media/device_management_concepts.png)
+.. image:: media/device_management_concepts.png
+   :width: 700px
 
 **Model**
 

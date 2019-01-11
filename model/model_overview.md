@@ -8,33 +8,24 @@ In EnOS, defining thing model means defining the features of the product. The th
 ## Thing Model Elements
 You can define the following elements to define a thing model according to the actual needs of the product.
 
-<table>
-   <tr>
-      <th>Model elements</th>
-      <th>Description</th>
-      <th>Instance</th>
-    </tr>
-    <tr>
-      <td>Attribute</td>
-      <td>Describes the static attribute of the device. You can define the name and identifier of the static attribute. The attribute name is a descriptive string that allows Chinese input.</td>
-      <td>Name, model, location, design parameters, longitude, etc.</td>
-    </tr>
-    <tr>
-      <td>Measure point</td>
-      <td>Describes the runtime state of the device. You can define the name of the measure points as well as its identifier. The measure point name is a descriptive string that allows Chinese input.</td>
-      <td>Temperature, pressure, current, voltage, various states, etc.</td>
-    </tr>
-        <tr>
-      <td>Service</td>
-      <td>A capability or method that can be called to achieve remote operation or control. You can define its input and output parameters. Compared with an attribute, you can achieve more complex business logic through a command.</td>
-      <td>Command to issue, job to perform, etc.</td>
-    </tr>
-        <tr>
-      <td>Event</td>
-      <td>The event that can occur when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.</td>
-      <td>Alerts, state changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. An event can be subscribed and pushed.</td>
-    </tr>
-</table>
+.. list-table::
+   :widths: 20 40 40
+
+   * - Model elements
+     - Description
+     - Instance
+   * - Attribute
+     - Describes the static attribute of the device. You can define the name and identifier of the static attribute. The attribute name is a descriptive string that allows Chinese input.
+     - Name, model, location, design parameters, longitude, etc.
+   * - Measure point
+     - Describes the runtime state of the device. You can define the name of the measure points as well as its identifier. The measure point name is a descriptive string that allows Chinese input.
+     - Temperature, pressure, current, voltage, various states, etc.
+   * - Service
+     - A capability or method that can be called to achieve remote operation or control. You can define its input and output parameters. Compared with an attribute, you can achieve more complex business logic through a command.
+     - Command to issue, job to perform, etc.
+   * - Event
+     - The event that can occur when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.
+     - Alerts, state changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. An event can be subscribed and pushed.
 
 ## Model Relationship
 

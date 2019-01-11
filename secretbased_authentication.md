@@ -21,47 +21,40 @@ The following operations and states are involved in the connection between the d
 Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in the _dynamic_ or _static_ mode.
 - **Dynamic Activation**: The process of dynamic activation is as follows:
   1. When trying to connect for the first time, the device will carry the `ProductKey`, `ProductSecret`, and `DeviceKey` to request for activation. If the authentication is successful, a `DeviceSecret` will be returned to the device.
+
   2. The device tries to log in using the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
+
   3. Once the device successfully logs in, its status will change from **Inactive** to **Online**. The device will then be able to send telemetry. If no telemetry is sent within a certain period of time, the status of the device will change to **Offline**.
 
   To use dynamic activation, you will need to enable **Dynamic Activation** in the product configuration.
 
 - **Static Activation**: The process of static activation is as follows:
+
   1. The device sends a login request carrying the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
+
   2. Once the device is successfully logged in, its status will change from **Inactive** to **Online**. The device will now be able to send data. If no data is sent within a certain period of time, the status of the device will change to **Offline**.
 
 When the device is not working properly or you do not want to receive its data, you can set it to **Disabled**, after which the device will automatically go offline and its status will change to **Offline**.
 
 Three dimensions are used to describe the overall state of the device: Operational State, Activation State, and Communication State, as shown in the following table:
 
-<table>
-   <tr>
-     <th>Operational State</th>
-     <th>Activation State</th>
-     <th>Communication State</th>
-   </tr>
-   <tr>
-     <td>Disable</td>
-     <td></td>
-     <td>Offline</td>
-   </tr>
-   <tr>
-     <td>Enable</td>
-     <td>Inactive</td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>Activated</td>
-     <td>Online</td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td>Offline</td>
-   </tr>
-</table>
+.. list-table::
 
+   * - Operational State
+     - Activation State
+     - Communication State
+   * - Disable
+     - /
+     - Offline
+   * - Enable
+     - Inactive
+     - /
+   * - /
+     - Activated
+     - Online
+   * - /
+     - /
+     - Offline
 
 ## Authentication Process
 
@@ -77,4 +70,7 @@ The main authentication process for device connection is as follows:
 
 The specific flow chart is as follows:
 
-![](media/secret_communication.png)
+.. image:: media/secret_communication.png   
+   :width: 700px
+
+<!--end-->

@@ -39,4 +39,4 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
      sign=uppercase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000aaabbbcc123))
      ```
 
-     **NOTE**: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
+     .. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.

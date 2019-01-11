@@ -31,9 +31,10 @@ Upstream
 
 ## Parameter Description
 
-<table>
-  <tr>
-    <td>Parameter</td>
+.. list-table::
+   :widths: 20 20 20 40
+
+   * - Parameter</td>
     <td>Type</td>
     <td>Occurrence</td>
     <td>Description</td>
@@ -82,3 +83,4 @@ Upstream
     <td>Detailed returned information in JSON format.</td>
   </tr>
 </table>
+<!--end-->

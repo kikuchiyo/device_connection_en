@@ -11,7 +11,8 @@ For information about the connection scenario of this task, see "Scenario 1.2" i
 
 In this example, an inverter will be connected to the EnOS Cloud through an edge gateway. Edge will collect data from the inverter and send them to the EnOS Cloud as a proxy. The overall connection scenario is shown in the figure below:
 
-  ![](media/edge_connection_task_description.png)
+.. image:: media/edge_connection_task_description.png   
+     :width: 700px
 
 As shown in the flowchart above, the procedure falls into the following steps:
 1. Create device models
@@ -45,7 +46,8 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
    - **Source model**: NA
    - **Description**: Edge Model
 
-    ![](media/model_edge.png)
+    .. image:: media/model_edge.png   
+       :width: 500px
 
 3. Click **OK** to complete the operation.
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
@@ -91,8 +93,8 @@ In this step, we create an edge device named **Edge01**, which belongs to the **
    - **Version**: Optional, left blank by default
    - **Device Key**: Optional, generated automatically by system
 
-![](media/register_edge.png)
-
+.. image:: media/register_edge.png   
+   :width: 700px
 
 ## Step 4: Configure Edge Connection
 

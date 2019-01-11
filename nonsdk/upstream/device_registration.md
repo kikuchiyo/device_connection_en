@@ -49,95 +49,69 @@ Upstream
 
 ### Parameter Description
 
-<table>
-  <tr>
-    <td>Parameter</td>
-    <td>Type</td>
-    <td>Occurrence </td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>Id</td>
-    <td>Long </td>
-    <td>Mandatory</td>
-    <td>Message ID. Reserved parameter for future use. </td>
-  </tr>
-  <tr>
-    <td>Version </td>
-    <td>String </td>
-    <td>Mandatory </td>
-    <td>Version of the protocol. Current version is 1.0. </td>
-  </tr>
-  <tr>
-    <td>Params </td>
-    <td>List </td>
-    <td>Mandatory </td>
-    <td>Parameters used for dynamic registration. </td>
-  </tr>
-  <tr>
-    <td>deviceAttributes </td>
-    <td>String </td>
-    <td>Optional </td>
-    <td>List of the properties of the device. </td>
-  </tr>
-  <tr>
-    <td>Color </td>
-    <td>String </td>
-    <td>Optional </td>
-    <td>Property of the device </td>
-  </tr>
-  <tr>
-    <td>deviceKey </td>
-    <td>String </td>
-    <td>Optional </td>
-    <td>Device Key of the device. </td>
-  </tr>
-  <tr>
-    <td>deviceName </td>
-    <td>String </td>
-    <td>Optional </td>
-    <td>Name of the device. </td>
-  </tr>
-  <tr>
-    <td>deviceDesc</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td>Description of the device.</td>
-  </tr>
-  <tr>
-    <td>productKey</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Product key of the device.</td>
-  </tr>
-  <tr>
-    <td>assetId </td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Unique identifier of the device. </td>
-  </tr>
-  <tr>
-    <td>deviceSecret</td>
-    <td>String </td>
-    <td>Mandatory</td>
-    <td>Device secret of the device.</td>
-  </tr>
-  <tr>
-    <td>Method</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>The method of the request.</td>
-  </tr>
-  <tr>
-    <td>Code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.</td>
-  </tr>
-  <tr>
-    <td>Data</td>
-    <td>JSON</td>
-    <td>Optional</td>
-    <td>Detailed information of the device. </td>
-  </tr>
-</table>
+.. list-table::
+   :widths: 20 20 20 40
+
+   * - Parameter
+     - Type
+     - Occurrence
+     - Description
+   * - Id
+     - Long
+     - Mandatory
+     - Message ID. Reserved parameter for future use.
+   * - Version
+     - String
+     - Mandatory
+     - Version of the protocol. Current version is 1.0.
+   * - Params
+     - List
+     - Mandatory
+     - Parameters used for dynamic registration.
+   * - deviceAttributes
+     - String
+     - Optional
+     - List of the properties of the device.
+   * - Color
+     - String
+     - Optional
+     - Property of the device
+   * - deviceKey
+     - String
+     - Optional
+     - Device Key of the device.
+   * - deviceName
+     - String
+     - Optional
+     - Name of the device.
+   * - deviceDesc
+     - String
+     - Optional
+     - Description of the device.
+   * - productKey
+     - String
+     - Mandatory
+     - Product key of the device.
+   * - assetId
+     - String
+     - Mandatory
+     - Unique identifier of the device.
+   * - deviceSecret
+     - String
+     - Mandatory
+     - Device secret of the device.
+   * - Method
+     - String
+     - Mandatory
+     - The method of the request.
+   * - Code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.
+   * - Data
+     - JSON
+     - Optional
+     - Detailed information of the device. 
+
+
+<!--end-->

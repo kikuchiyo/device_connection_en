@@ -30,11 +30,13 @@ The devices can be connected directly to the cloud. Some common devices include:
 The devices need a gateway proxy to connect to the cloud. Some common devices include:
 - Distributed inverters: the gateway collects data directly from multiple inverters and then sends the data to the cloud.
 
-  ![](media/inverter_gateway.png)
+  .. image:: media/inverter_gateway.png
+     :width: 500px
 
 - SCADA: the SCADA is connected directly to the wind turbines and collects the data; the gateway is connected to the SCADA to collect its data, and then sends the data to the cloud.
 
-  ![](media/turbine_scada_gateway.png)
+  .. image:: media/turbine_scada_gateway.png
+     :width: 500px
 
 ## Security Authentication Options
 
@@ -46,48 +48,32 @@ For more information about the authentication mechanism for device connection se
 
 ## Message Flow
 
-<table>
-   <tr>
-     <th>Scenario Number</th>
-     <th>Connection Scheme</th>
-     <th>Activation Mode</th>
-     <th>Whether SA is Used</th>
+.. list-table::
 
-   </tr>
-   <tr>
-     <td>1.1</td>
-     <td>Connect via Gateway</td>
-     <td>Static Activation via Device Secret</td>
-     <td>Yes</td>
-
-   </tr>
-   <tr>
-     <td>1.2</td>
-     <td>Connect via Gateway</td>
-     <td>Static Activation via Device Secret</td>
-     <td>No</td>
-
-   </tr>
-   <tr>
-     <td>2.1</td>
-     <td>Direct Connection</td>
-     <td>Static Activation via Device Secret</td>
-     <td>Yes</td>
-
-   </tr>
-   <tr>
-     <td>2.2</td>
-     <td>Direct Connection</td>
-     <td>Static Activation via Device Secret</td>
-     <td>No</td>
-   </tr>
-   <tr>
-     <td>2.3</td>
-     <td>Direct Connection</td>
-     <td>Dynamic Activation via Product Secret</td>
-     <td>No</td>
-   </tr>
- </table>
+   * - Scenario Number
+     - Connection Scheme
+     - Activation Mode
+     - Whether SA is Used
+   * - 1.1
+     - Connect via Gateway
+     - Static Activation via Device Secret
+     - Yes
+   * - 1.2
+     - Connect via Gateway
+     - Static Activation via Device Secret
+     - No      
+   * - 2.1
+     - Direct Connection
+     - Static Activation via Device Secret
+     - Yes      
+   * - 2.2
+     - Direct Connection
+     - Static Activation via Device Secret
+     - No      
+   * - 2.3
+     - Direct Connection
+     - Dynamic Activation via Product Secret
+     - No   
 
 The message flow of different connection and activation methods are illustrated in the following sections:
 
@@ -97,7 +83,8 @@ The message flow of different connection and activation methods are illustrated 
 
 The following figure illustrates the message flow of connection scenario 1.1.
 
-![](media/connection_scenario_1.1.png)
+.. image:: media/connection_scenario_1.1.png
+   :width: 800px
 
 1. In the EnOS Console, the edge developer registers an Edge application in the EnOS Cloud, and obtains the service account (SA) of the application: the `accessKey` and `accessSecret`.
 
@@ -138,7 +125,8 @@ The following figure illustrates the message flow of connection scenario 1.1.
 
 The following figure illustrates the message flow of connection scenario 1.2.
 
-![](media/connection_scenario_1.2.png)
+.. image:: media/connection_scenario_1.2.png
+   :width: 800px
 
 Scenarios 1.2 is similar to 1.1 except that in Scenario 1.1, SA is burned into the edge and thus enables the edge to call the EnOS API to create the sub-device. While in Scenario 1.2, you will need to register the sub-device in the cloud beforehand, obtain the sub-device triple information, and burn the sub-device triple into the edge in advance.
 
@@ -152,7 +140,8 @@ Compared with the more flexible Scenario 1.1, Scenario 1.2 has more complex conf
 
 The following figure illustrates the message flow of connection scenario 2.1.
 
-![](media/connection_scenario_2.1.png)
+.. image:: media/connection_scenario_2.1.png
+   :width: 800px
 
 Take the household photovoltaic inverter for example.
 
@@ -176,7 +165,8 @@ Household photovoltaic inverters do not support burning firmware. In this scenar
 
 The following figure illustrates the message flow of connection scenario 2.2.
 
-![](media/connection_scenario_2.2.png)
+.. image:: media/connection_scenario_2.2.png
+   :width: 800px
 
 This scenario requires that the device is burned with its unique device triple that is obtained through cloud registration before it leaves the factory. The scenario provides stronger security but lower operability due to the demand of burning unique device triple during manufacturing.
 
@@ -185,9 +175,12 @@ This scenario requires that the device is burned with its unique device triple t
 
 The following figure illustrates the message flow of connection scenario 2.3.
 
-![](media/connection_scenario_2.3.png)
+.. image:: media/connection_scenario_2.3.png
+   :width: 800px
 
 Scenario 2.3 deals with the low operability issue of Scenario 2.2. Which is
 1. Devices are burned in batch with the same product credential (i.e., `productKey` and `productSecret`) before leaving the factory.
+
 2. Device registration can be integrated with the manufacturer's device management system. Upon the shipment of a batch of devices, the customer's device management system can register the devices in batch by calling the REST API.
+
 3. After the devices are sent to the site, powered on, and connected to the network, they can automatically connect to the cloud.

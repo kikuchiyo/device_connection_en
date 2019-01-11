@@ -66,7 +66,8 @@ According to the above scenarios, you need to create models for the types of ass
 
     The asset tree for this scenario is as follows:
 
-    ![image](../media/building_tree.png)
+    .. image:: ../media/building_tree.png   
+       :width: 800px
 
 
 ## Procedure
