@@ -7,6 +7,7 @@ A device template works as a bridge for device connection, which consists of two
 For an actual device, the names of the measuring points are often customized, and cannot be identified directly by the system. Therefore, it is necessary to map the customized actual measure points to the domain points of the standard device models. On the other hand, protocol configuration is also required for device connection.
 
 ## About This Task
+
 The following major steps are involved:
 
 .. image:: media/image035.png   
@@ -96,26 +97,24 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
    *Figure: Mapping Relationship Configuration*
 
 4. Add the mapping relationship:
+
    - If it is a simple one-to-one mapping, just check the corresponding measuring point.
    - For complex mappings, you can click **Add Formula** to configure a mapping formula:
 
-   Take the addition formula "SUM" as an example:
-   + select _SUM_ in the formula algorithm column.
-   + In the acquisition point box, click |img049| next to the corresponding point in the order of adding the points. As you can see in the figure below, the added formula is "ai.4999+ai.5001", consistent with the order of clicking.
+     Take the addition formula "SUM" as an example:
+     + select _SUM_ in the formula algorithm column.
+     + In the acquisition point box, click |img049| next to the corresponding point in the order of adding the points. As you can see in the figure below, the added formula is "ai.4999+ai.5001", consistent with the order of clicking.
 
-   .. |img049| image:: media/image049.png
+.. image:: media/image050.png
+   :alt: Figure: Notes for Adding the SUM Formula   
+   :width: 700px
 
-   .. image:: media/image050.png   
-       :width: 700px
+.. note:: For some formulas, the order of adding the points is important. For example, in the cross product operation, when you select _cross product_ in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
 
-    *Figure: Notes for Adding the SUM Formula*
+.. image:: media/image051.png
+   :alt: Figure: Point Selection Order and Operand   
+   :width: 700px
 
-     .. note:: For some formulas, the order of adding the points is important. For example, in the cross product operation, when you select _cross product_ in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
-
-     .. image:: media/image051.png   
-        :width: 700px
-
-     *Figure: Point Selection Order and Operand*
 
 #### Batch Configuration of Mapping Relationship
 
@@ -136,8 +135,8 @@ In the **Model Selection and Mapping** section, you can configure all the mappin
 7. Click **Save** to finish the device template editing.
 
    .. note:: - Depending on the application requirements of the domain, a device model point may or may not require mapping relationship configuration. Perform configuration based on your needs;
-             - Points that require a formula for mapping must be added manually, and must not be operated directly via import/export;
-             - In the exported mapping relation table, the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
+           - Points that require a formula for mapping must be added manually, and must not be operated directly via import/export;
+           - In the exported mapping relation table, the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
 
 ## Creating a Device Template by Cloning
 
@@ -167,3 +166,7 @@ In the **Template** page:
 .. |img0delete| image:: media/delete.png
 
 .. note:: When modifying or deleting a template that is in use, as the operation will affect all the device instances that are using the template.
+
+.. |img049| image:: media/image049.png
+
+<!--end-->

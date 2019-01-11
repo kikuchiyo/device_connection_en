@@ -8,7 +8,7 @@ Downstream
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply`
 
 
-.. note:: ``tsl.service.identifier`` is the identifier of the service that has been defined in the thing model.
+.. note:: `tsl.service.identifier` is the identifier of the service that has been defined in the thing model.
 
 
 ## Example Request Message

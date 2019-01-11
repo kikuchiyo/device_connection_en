@@ -10,7 +10,7 @@ Upstream
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply`
 
-.. note:: ``tsl.service.identifier`` is the identifier of the event that has been defined in the thing model.
+.. note:: `tsl.service.identifier` is the identifier of the event that has been defined in the thing model.
 
 
 

@@ -9,7 +9,9 @@ The product to which the device belongs has been created. For information about 
 ## Step 1: Creating a Device
 
 1. In the EnOS Console, select **Device Provisioning > Devices**.
+
 2. Click the **New Device** button and complete the following settings on the **New Device** pop-up window.
+
    - **Product**: Select the product to which the device belongs. After selecting the product, continue to configure the Attributes settings in the template of the product. Attributes are either required or optional.
    - **Device Name**: The name of the device; same name can be used under the same organization.
    - **Device Key**: A unique identifier for the product under the same organization. If not provided, the system will generate a device key. When self-defined, supports uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9), dash "-" and underline.
@@ -20,9 +22,13 @@ The product to which the device belongs has been created. For information about 
 ## Step 2: (Optional) Adding a Tag
 
 A tag describes the common information shared by all instances of the device.
+
 1. From the list of created devices, find the target device and click **View**.
+
 2. Under the **Basic Information** tab, click **Edit** in the **Tags** section.
+
 3. On the pop-up window, click **New tag**, and enter the key-value pair (key:value) for the new tag.
+
 4. Click **OK** to save the tag.
 
 ## Results

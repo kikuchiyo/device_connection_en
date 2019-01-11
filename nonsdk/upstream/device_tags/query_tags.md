@@ -36,7 +36,7 @@ Upstream
 ## Parameter Description
 
 .. list-table::
-   :widths: 20 20 60
+   :widths: auto
 
    * - Parameter
      - Type
@@ -53,7 +53,7 @@ Upstream
    * - tags
      - Object
      - The unique identifiers of the tags.
-      When not specified, the request will query all tags.
+       When not specified, the request will query all tags.
    * - method
      - String
      - The method of the request.

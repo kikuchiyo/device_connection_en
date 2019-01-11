@@ -34,53 +34,39 @@ Upstream
 .. list-table::
    :widths: 20 20 20 40
 
-   * - Parameter</td>
-    <td>Type</td>
-    <td>Occurrence</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>Optional</td>
-    <td>Message ID. Reserved parameter for future use.</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>Version of the protocol. Current version is 1.0.</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>List</td>
-    <td>Mandatory</td>
-    <td>Parameters used for deleting tags.</td>
-  </tr>
-  <tr>
-    <td>tags</td>
-    <td>List</td>
-    <td>Mandatory </td>
-    <td>The unique identifier of the tags.<br>
-      When not specified, no tag is deleted. </td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>Mandatory</td>
-    <td>The method of the request.</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>Mandatory</td>
-    <td>Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.</td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>Optional</td>
-    <td>Detailed returned information in JSON format.</td>
-  </tr>
-</table>
+   * - Parameter
+     - Type
+     - Occurrence
+     - Description
+   * - id
+     - Long
+     - Optional
+     - Message ID. Reserved parameter for future use.
+   * - version
+     - String
+     - Mandatory
+     - Version of the protocol. Current version is 1.0.
+   * - params
+     - List
+     - Mandatory
+     - Parameters used for deleting tags.
+   * - tags
+     - List
+     - Mandatory
+     - The unique identifier of the tags.<br>
+      When not specified, no tag is deleted.
+   * - method
+     - String
+     - Mandatory
+     - The method of the request.
+   * - code
+     - Integer
+     - Mandatory
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
+   * - data
+     - JSON
+     - Optional
+     - Detailed returned information in JSON format.
+
+     
 <!--end-->

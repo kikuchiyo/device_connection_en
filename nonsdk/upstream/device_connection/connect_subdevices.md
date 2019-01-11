@@ -96,8 +96,9 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
      - JSON
      - Optional
      - Detailed returned information in JSON format.
+     
 
-.. note:: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any
-connection requests.
+.. note:: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any connection requests.
+
 
 <!--end-->

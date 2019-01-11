@@ -17,10 +17,15 @@ Here we take the household PV inverter connection as an example. The inverter de
 As shown in the flowchart above, the procedure falls into the following steps:
 
 1. Create a device model for the inverter
+
 2. Create a product for the inverter
+
 3. Register the inverter
+
 4. Simulate the inverter to send data via device SDK
+
 5. Check device communication status
+
 6. View device data
 
 
@@ -77,13 +82,14 @@ The steps to create this model are as follows:
 
 3. Click **OK** to complete the operation.
 
-    .. image:: media/model_inverter.png   
-       :width: 700px
+   .. image:: media/model_inverter.png   
+      :width: 550px
 
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 
 5. Click **Add**, and provide the following settings in the **Add Feature** window:
    - **Attribute 1**
+
      - **Name**: Inverter_Type
      - **Identifier**: invType
      - **Data Type**: enum
@@ -91,19 +97,25 @@ The steps to create this model are as follows:
        - Value: 0; Description: Central
        - Value: 1; Description: String
      - **Required**: Yes
+
    - **Attribute 2**
+
      - **Name**: Inverter_Capacity
      - **Identifier**: capacity
      - **Data Type**: float
      - **Unit**: kWp
      - **Required**: Yes
+
    - **Measure Point**
+
      - **Name**: Active_Power
      - **Identifier**: INV.GenActivePW
      - **Data Type**: float
      - **Point Type**: AI
      - **Unit**: kW
+
    - **Service**
+
      - **Name**: Control
      - **Identifier**: INV.Control
      - **Invoke Method**: Asynchronous
@@ -114,6 +126,7 @@ The steps to create this model are as follows:
        - Enum Items:
          - Value: 0; Description: Stop
          - Value: 1; Description: Start
+
      - **Output Parameters**:
        - Parameter Name: execResult
        - Identifier: execResult
@@ -121,6 +134,7 @@ The steps to create this model are as follows:
        - Enum Items:
          - Value: 0; Description: Failure
          - Value: 1; Description: Success
+
    - **Event**
      - **Name**: Error
      - **Identifier**: Error
@@ -148,8 +162,8 @@ In this step, we create a product called **Inverter_Product**. We assume that a 
 
 3. Click **Confirm** to complete the operation.
 
-  .. image:: media/create_product.png   
-     :width: 700px
+   .. image:: media/create_product.png   
+      :width: 550px
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
@@ -170,8 +184,8 @@ In this step, we create a device named **INV001**, which belongs to the **Invert
 
 3. Click **Confirm** to complete the operation.
 
-    .. image:: media/register_device.png   
-       :width: 700px
+   .. image:: media/register_device.png   
+      :width: 700px
 
 For details about device settings, see [Creating a Device](cloud/creating_device).
 

@@ -20,7 +20,7 @@ This step supposes assumes that you have complete the following tutorials:
 This step is almost the same as what you've done in the aforementioned tutorials with the only difference that you need to enable **Certificate Authentication** when you create the edge gateway product as shown in the following screenshot:
 
 .. image:: media/edge_ssl.png   
-   :width: 700px
+   :width: 450px
 
 The inverter product does not need to have **Certificate Authentication** enabled because the inverter connects to the EnOS Cloud through the edge gateway. You only need to enable the authentication for the connection between the edge and the cloud.
 
@@ -244,4 +244,4 @@ After you run the sample program, the edge device logs in and adds sub-devices i
 
 ### Step 8: Check Device Data
 
-Go to the console, select **Connection Management > Device Management**, then go to **Device Details*, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historical data records.
+Go to the console, select **Connection Management > Device Management**, then go to **Device Details**, open the **Measure Point** tab, and select a measure point, click **View Data** to check the historical data records.
