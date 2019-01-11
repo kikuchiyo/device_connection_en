@@ -49,6 +49,7 @@ For more information about the authentication mechanism for device connection se
 ## Message Flow
 
 .. list-table::
+   :widths: auto
 
    * - Scenario Number
      - Connection Scheme
@@ -89,34 +90,41 @@ The following figure illustrates the message flow of connection scenario 1.1.
 1. In the EnOS Console, the edge developer registers an Edge application in the EnOS Cloud, and obtains the service account (SA) of the application: the `accessKey` and `accessSecret`.
 
 2. The IoT engineer logs in to the EnOS Console and performs the following configurations in the client's organization:
+
    - Create an edge product and registers the edge device instance to obtain the edge device triple.
    - Create product for the sub-devices to be connected through the edge and obtain the `productkey`.
 
 3. Burn the following credential information into the edge firmware during manufacturing:
+
    - The SA of the edge application, which will be used for obtaining access to the EnOS API.
    - The edge device triple issued by the EnOS Cloud.
    - The `productkey` of the sub-device to be connected through the edge, and the identifier (`orgId`) of the organization that the device belongs to.
 
 4. The EnOS Cloud performs the following authentication procedure when the edge device calls the REST APIs:
+
    - The edge carries the SA to gain access to the EnOS API. If the service account is incorrect, the edge will not be able to call the EnOS API and the authentication will fail.
    - The EnOS Cloud, based on the access policies defined in IAM, verifies the `orgId` and `SA` parameters carried in the edge connection request, and verifies whether the corresponding organization identified by `orgId` has registered the edge application. If the edge application is not registered in the organization, the authentication will fail.
    - The EnOS Cloud verifies the attribution between the two request parameters `orgId` and `productkey`. If the product corresponding to the `productkey` does not belong to the organization identified by `orgId`, the verification will fail.
 
-5. The EnOS Cloud performs authentication against the edge device
+5. The EnOS Cloud performs authentication against the edge device.
+
    - By default, the edge enables the secret-based one-way authentication. The edge carries the device triple and connects to the cloud, where authentication will be performed based on the edge device triple, the device is then allowed to log in if the authentication is successful.
    - The edge device will be activated upon its first login, and its status will be updated from **Inactive** to **Online**.
 
 6. If the certificate-based two-way authentication is enabled, the process of certificate generation and distribution is as follows (using EnOS Edge as an example):
+
    - The EnOS Edge initiates a certificate request, which carries the CSR, to the EnOS IoT Hub.
    - The EnOS IoT Hub forwards the request to the EnOS Certificate Service.
    - The Certificate Service generates a certificate and returns it to the IoT Hub.
    - The IoT Hub records the certificate associated with the edge, and returns the certificate to the edge.
 
 7. The IoT engineer configures the connection of sub-devices (e.g., inverters, fans, energy storage devices) that connects through the edge. The sub-devices can be registered in the following methods:
+
    - Dynamic registration: Creates the sub-device to be connected directly in the EnoS Edge Configuration Center; the Configuration Center calls the REST API of the IoT Hub to create the device in the EnOS Cloud.<!--Temporarily not supported, but coming soon-->
    - Static registration: Creates the sub-device to be connected in the EnOS Console and then binds it in the EnOS Edge Configuration Center. The edge functions as a proxy and connects the sub-device to the EnOS Cloud.
 
 8. Device data transmission
+
    - The edge is connected directly to the IoT Hub, and the sub-device is connected to the EnOS IoT Hub via the edge proxy.
    - Data is transmitted between the edge and the IoT Hub through the MQTT protocol.
    - If the certificate-based two-way authentication is enabled, the data transmitted between the edge and the IoT Hub is encrypted by the certificate.
@@ -152,11 +160,13 @@ Household photovoltaic inverters do not support burning firmware. In this scenar
 2. The acquisition rod developer creates an acquisition rod app under the developer's OU and obtains the application SA: `accesskey` and `accesssecret`.
 
 3. The acquisition rod developer configures the manufacturer settings of the rod and burns the following credential information into the rod:
+
    - SA of the acquisition rod app
    - The `productKey` of the inverter
    - The `orgId` that the `productKey` belongs to.
 
 4. The IoT engineer performs on-site construction and installation, installing the acquisition rod for the inverter, powering on the device and connecting it to the network. Once the device is connected, the following actions occur:
+
    - The acquisition rod collects the serial number of the inverter, and uses it as the `deviceKey`; it then calls the REST API using SA, dynamically creates the device using the `productKey`, `deviceKey` (serial number), and `orgId`, and obtains the device's `deviceSecret`.
    - The acquisition rod records the `deviceSecret`, which will be automatically burned into the firmware of the device.
    - The acquisition rod collects data from the inverter, and uses the `productKey`, `deviceKey`, and `deviceSecret` to connect to the cloud. Once authenticated, the device goes online and starts to send telemetry.

@@ -77,23 +77,23 @@ Upstream
    * - power
      - String
      - Optional
-     - The identifier of the event that you want to report, in this example, the event with the identifier of <strong>power</strong>.
+     - The identifier of the event that you want to report, in this example, the event with the identifier of **power**.
    * - value
      - Integer
      - Optional
-     - The name of the output parameter of this event, in this example, the parameter named <strong>value</strong>. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the thing model, the value here must be an integer.
+     - The name of the output parameter of this event, in this example, the parameter named **value**. The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to integer in the thing model, the value here must be an integer.
    * - quality
      - Integer
      - Optional
-     - The name of the output parameter of this event, in this example, the <strong>quality</strong> parameter that indicates the data quality. The valid value is integer in the range 0 - 9.
+     - The name of the output parameter of this event, in this example, the **quality** parameter that indicates the data quality. The valid value is integer in the range 0 - 9.
    * - temp
      - Integer
      - Optional
-     - The identifier of the event that you want to report, in this example, the event with the identifier of <strong>temp</strong>. Similar to above, the value you set must match the data type defined for this parameter.
+     - The identifier of the event that you want to report, in this example, the event with the identifier of **temp**. Similar to above, the value you set must match the data type defined for this parameter.
    * - branchCurr
      - Array
      - Optional
-     - The identifier of the event that you want to report,  in this example, the event with the identifier of <strong>branchCurr</strong>. Similar to above, the value you set must match the data type defined for this parameter.
+     - The identifier of the event that you want to report,  in this example, the event with the identifier of **branchCurr**. Similar to above, the value you set must match the data type defined for this parameter.
    * - time
      - String
      - Optional

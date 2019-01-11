@@ -4,6 +4,7 @@ This article helps you quickly learn how to provision the sub-device and edge to
 
 
 ## About This Scenario
+
 For information about the connection scenario of this task, see "Scenario 1.2" in [Device Connection Scenarios](connection_scenarios).
 
 

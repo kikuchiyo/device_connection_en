@@ -64,11 +64,11 @@ Downstream
    * - Power
      - String
      - Optional
-     - The identifier of the service that you want to invoke, in this example, the service with the identifier of <strong>Power</strong>.The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to string in the model, the value here must be a string.
+     - The identifier of the service that you want to invoke, in this example, the service with the identifier of **Power**.The value you set must match the data type defined for this parameter. For example, when the data type of this parameter is set to string in the model, the value here must be a string.
    * - WindState
      - Integer
      - Optional
-     - The identifier of the service that you want to invoke, in this example, the event with the identifier of <strong>WindState</strong>. Similar to above, the value you set must match the data type defined for this parameter.​
+     - The identifier of the service that you want to invoke, in this example, the event with the identifier of **WindState**. Similar to above, the value you set must match the data type defined for this parameter.​
    * - code
      - Integer
      - Mandatory

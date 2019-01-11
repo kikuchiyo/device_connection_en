@@ -1,6 +1,7 @@
 # Creating and Managing Device Templates
 
 A device template works as a bridge for device connection, which consists of two parts:
+
 - The protocol.
 - The mapping relationship of the device measuring points.
 
@@ -10,12 +11,12 @@ For an actual device, the names of the measuring points are often customized, an
 
 The following major steps are involved:
 
-.. image:: media/image035.png   
+.. image:: media/image035.png
+   :alt: Figure: Three Steps to Managing Device Templates
    :width: 700px
 
-*Figure: Three Steps to Managing Device Templates*
-
 A device template can be created mainly in two ways:
+
 - Created from scratch.
 - Created and modified based on an existing device template. You can choose this method when the scenario requires a device template that is similar to an existing one. By copying an existing template and slightly modifying to obtain a new template, in order to reduce your workload.
 
@@ -47,16 +48,16 @@ In the **Basic Information** section, provide the information of the device, amo
 
 .. |img041| image:: media/image041.png
 
-.. image:: media/image040.png   
+.. image:: media/image040.png
+   :alt: Figure: Protocol Details Page
    :width: 700px
-
-*Figure: Protocol Details Page*
 
 .. note:: If no suitable protocol is found, you can contact the system administrator. You can also re-develop the protocol and upload it to the protocol management center for editing, updating, and more operations. For information on developing new protocols, please refer to [Creating Protocol](creating_protocol).
 
 ### Uploading Point Table
 
 In the **Configuration** section, you need to edit two configuration files:
+
 - `config.sys` is a parameter configuration file relating to communication protocols.
 - `point.csv` is the actual measuring point table of the device.
 
@@ -70,14 +71,11 @@ In the **Configuration** section, you need to edit two configuration files:
 
    .. note:: If there are values in the `alias` column of the `point.csv` table when you are updating the table (For example, uploading a new point table), you need to first upload an empty point table to overwrite the original table before uploading the actual point table to avoid errors.
 
-
 If you have chosen a communication protocol in the previous step and successfully uploaded the `point.csv` table here, you will see the measuring point information in the `point.csv` table, as shown in the following figure:
 
-.. image:: media/image043.png   
+.. image:: media/image043.png
+   :alt: Figure: Protocol Selection and Point Table Import
    :width: 700px
-
-*Figure: Protocol Selection and Point Table Import*
-
 
 ### Selecting Model and Configuring Mapping Relationship
 
@@ -91,10 +89,9 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
 
    .. |img045| image:: media/image045.png
 
-   .. image:: media/image046.png   
+   .. image:: media/image046.png
+      :alt: Figure: Mapping Relationship Configuration
       :width: 700px
-
-   *Figure: Mapping Relationship Configuration*
 
 4. Add the mapping relationship:
 
@@ -135,8 +132,8 @@ In the **Model Selection and Mapping** section, you can configure all the mappin
 7. Click **Save** to finish the device template editing.
 
    .. note:: - Depending on the application requirements of the domain, a device model point may or may not require mapping relationship configuration. Perform configuration based on your needs;
-           - Points that require a formula for mapping must be added manually, and must not be operated directly via import/export;
-           - In the exported mapping relation table, the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
+            - Points that require a formula for mapping must be added manually, and must not be operated directly via import/export;
+            - In the exported mapping relation table, the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
 
 ## Creating a Device Template by Cloning
 

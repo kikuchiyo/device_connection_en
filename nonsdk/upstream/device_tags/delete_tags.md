@@ -54,7 +54,7 @@ Upstream
      - List
      - Mandatory
      - The unique identifier of the tags.<br>
-      When not specified, no tag is deleted.
+       When not specified, no tag is deleted.
    * - method
      - String
      - Mandatory
@@ -68,5 +68,5 @@ Upstream
      - Optional
      - Detailed returned information in JSON format.
 
-     
+
 <!--end-->

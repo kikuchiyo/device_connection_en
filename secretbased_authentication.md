@@ -19,7 +19,9 @@ The following operations and states are involved in the connection between the d
 ## Device Activation Mode and Device Status
 
 Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in the _dynamic_ or _static_ mode.
+
 - **Dynamic Activation**: The process of dynamic activation is as follows:
+
   1. When trying to connect for the first time, the device will carry the `ProductKey`, `ProductSecret`, and `DeviceKey` to request for activation. If the authentication is successful, a `DeviceSecret` will be returned to the device.
 
   2. The device tries to log in using the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
@@ -39,21 +41,22 @@ When the device is not working properly or you do not want to receive its data, 
 Three dimensions are used to describe the overall state of the device: Operational State, Activation State, and Communication State, as shown in the following table:
 
 .. list-table::
+   :widths: auto
 
    * - Operational State
      - Activation State
      - Communication State
    * - Disable
-     - /
+     - --
      - Offline
    * - Enable
      - Inactive
-     - /
-   * - /
+     - --
+   * - --
      - Activated
      - Online
-   * - /
-     - /
+   * - --
+     - --
      - Offline
 
 ## Authentication Process

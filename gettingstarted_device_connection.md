@@ -34,6 +34,7 @@ As shown in the flowchart above, the procedure falls into the following steps:
 This step assumes that there is no device model to be reused. We create a new model named **Inverter_Demo** with the features defined as follows:
 
 .. list-table::
+   :widths: auto
 
    * - Feature Type
      - Name   

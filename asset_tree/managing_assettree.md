@@ -31,7 +31,7 @@ The deletion of a node only deletes the node itself and does not delete the atta
 The deletion of a instance deletes the asset itself as well as all nodes that this asset is bound to.
 
 .. note:: - You only can delete a instance when all nodes to that this asset is bound are leaf node.  
-          - You cannot delete a instance if this asset is a connected device. You can delete a connected device via **Device Management**.
+         - You cannot delete a instance if this asset is a connected device. You can delete a connected device via **Device Management**.
 
 1. In the EnOS Console, click **Asset Management** form the left navigation panel.
 

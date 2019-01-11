@@ -73,7 +73,7 @@ Upstream
      - Mandatory
      - List of the measure point-type of features of the device.
    * - power
-     - -
+     - --
      - Optional
      - The identifier of the measure point that you want to report, in this example, the event with the identifier of **power**.The value you set must match the data type defined for this parameter. For example, when the quality indicator is selected, the data here must be **value** and **quality**.
    * - value

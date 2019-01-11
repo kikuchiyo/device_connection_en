@@ -64,11 +64,11 @@ Downstream
    * - power
      - String
      - Optional
-     - The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of <strong>power</strong>.
+     - The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of **power**.
    * - temp
      - String
      - Optional
-     - The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of <strong>temp</strong>.
+     - The identifier of the measuring point that you want to retrieve, in this example, the measuring point with the identifier of **temp**.
    * - code
      - Integer
      - Mandatory

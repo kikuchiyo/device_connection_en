@@ -66,6 +66,7 @@ In this step, you'll add the device and configure the basic information.
    *Figure: Add Devices to the Connection*
 
 2. In the pop-up window,
+
    - select the product to which you want to add the devices.
    - select the devices you want to add.
    - select the device template that the device needs to be associated with.
@@ -113,9 +114,8 @@ You can configure the device by two ways:
 2. Edit the configuration according to your requirement and then click **OK**.
 
    .. image:: media/image020.png
+      :alt: Figure: Configure Logical Addresses and Offsets on a Device-by-Device Basis
       :width: 700px
-
-   *Figure: Configure Logical Addresses and Offsets on a Device-by-Device Basis*
 
 **You can configure the device in batches in the following approach:**
 
@@ -143,14 +143,15 @@ You can find the **Publish** button and the publish status as shown below:
 After completing and publishing the configuration to the edge gateway, you need to check whether the configuration is correct. In the connection configuration page, a communication indicator is provided. When the device connection is normal in the transmission layer (TCP/IP layer), the indicator is green, otherwise it is red.
 
 .. image:: media/image022.png
+   :alt: Figure: Communication Status Indication Icon on Transport Layer
    :width: 700px
 
-*Figure: Communication Status Indication Icon on Transport Layer*
-
 There are several reasons for communication interruption, including but not limited to the following reasons:
+
 - Configuration is not published
 - Configuration error
 - The site end communication is abnormal.
+
 Therefore, further debugging is needed to help you locate the problem. EnOS Edge provides communication testing functionality to help achieve this goal.
 
 
@@ -159,14 +160,13 @@ Therefore, further debugging is needed to help you locate the problem. EnOS Edge
 1. Click **Test**  after the device connection to open the batch test page.
 
 2. In the connection debugging page, you can:
+
    - Switch connections by using the drop-down menu.
    - Activate or pause the communication test features by clicking the **Start/Pause** button.
 
 .. image:: media/image026.png
+   :alt: Figure: Bulk Communication Test Overview
    :width: 700px
-
-*Figure: Bulk Communication Test Overview*
-
 
 Batch testing provides four features: data, datagram, log, and console. Click the corresponding tab to switch among the different features, the operations of each page are described in the below sections:
 
@@ -175,9 +175,8 @@ Batch testing provides four features: data, datagram, log, and console. Click th
 In the **Data** tab, you can view all the devices under this connection, filter the devices to see the update of the collection point data and set numbers for telemetry and telecommand points:
 
 .. image:: media/image029.png
+   :alt: Figure: Data Feature Overview
    :width: 700px
-
-*Figure: Data Feature Overview*
 
 **Setting number**
 
@@ -188,9 +187,8 @@ You can set numbers for the telemetry and telecommand points in the following ap
 2. click **Send** to send the set value to the cloud. Click once to send one time, it will not interrupt the upload of the original data, equivalent to inserting a value to the cloud.
 
 .. image:: media/image030.png
+   :alt: Figure: Number Setting Feature
    :width: 700px
-
-*Figure: Number Setting Feature*
 
 ### Datagram
 
@@ -203,27 +201,27 @@ In the **Log** tab, to avoid flooding of information, the system hides the logs 
 ### Console
 
 In the **Console** tab, you can debug through the common communication debugging commands. The most frequently used debugging commands are including:
+
 - Test basic ping test (You'll need to enter the IP address of the ping in the input box)
 - Check local IP
 - Telnet Test(You’ll need to enter the IP and port number.)
 - Check TCP connection
 
 .. image:: media/image033.png
+   :alt: Figure: Console Feature Overview
    :width: 700px
-
-*Figure: Console Feature Overview*
 
 ### Testing the Communication of a Single Device
 
 You can test the communication on a single device and view the corresponding data.
 
 1. Click **View** after the device to be tested.
+
 2. In the pop-up window, you can test the view the detailed information and set the telemetry and telecommand points which the operations are same as the bulk communication test.
 
 .. image:: media/image034.png
+   :alt: Figure: Single Device Communication Test Feature
    :width: 700px
-
-*Figure: Single Device Communication Test Feature*
 
 ## Summary
 

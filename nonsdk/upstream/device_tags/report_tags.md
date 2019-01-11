@@ -62,9 +62,9 @@ Upstream
      - String
      - Mandatory
      - Tag name.
-        + Maximum of 100 characters in length.
-        + Support lowercase characters (a-z), uppercase characters (A–Z), numbers (0-9), and underline (_).
-        + Start with an letter or underline (_).
+       + Maximum of 100 characters in length.
+       + Support lowercase characters (a-z), uppercase characters (A–Z), numbers (0-9), and underline (_).
+       + Start with an letter or underline (_).
    * - tagValue
      - String
      - Mandatory

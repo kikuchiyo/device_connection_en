@@ -231,6 +231,7 @@ public static void initSSLConnection() {
 ```
 
 ### Step 6: Start Sample Program
+
 Start the sample program and view the logs.
 
 ## Verify Connection
