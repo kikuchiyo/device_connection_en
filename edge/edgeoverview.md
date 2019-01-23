@@ -12,6 +12,6 @@ Based on industrial experiences, EnOS has accumulated a number of device templat
 
 ### Communication Protocol
 
-Communication protocol is a common phrase used in energy industry. EnOS Edge provides a rich protocol library that contains common protocols of energy and power industry, such as modbus, IEC104, OPCDA, OPCUA, and OPC-XML-DA. In addition, EnOS supports conventions of the major device manufacturers in the industry. For more information, see [Protocols Supported by EnOS Edge](https://docs.envisioniot.com/docs/enos-edge/en/latest/edge_specification/data_ingestion.html).
+Communication protocol is a common phrase used in energy industry. EnOS Edge provides a rich protocol library that contains common protocols of energy and power industry, such as modbus, IEC104, OPCDA, OPCUA, and OPC-XML-DA. In addition, EnOS supports conventions of the major device manufacturers in the industry. For more information, see [Protocols Supported by EnOS Edge](https://docs.eniot.io/docs/enos-edge/en/latest/edge_specification/data_ingestion.html).
 
 With these protocols, you can search and select desired protocols in the device template, which can be directly used after simple configuration  to avoid development or integration of protocols.

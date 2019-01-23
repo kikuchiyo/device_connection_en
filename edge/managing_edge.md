@@ -47,9 +47,8 @@ According to the actual needs, multiple connections can be added under one Edge 
 As shown in the following figure, Edge is used as the TCP/IP client, so the configured connection parameters are the IP address and port number of the server.
 
 .. image:: media/image011.png
+   :alt: Figure: Example of Adding Connection
    :width: 700px
-
-*Figure: Example of Adding Connection*
 
 ### Adding Devices
 
@@ -61,9 +60,8 @@ In this step, you'll add the device and configure the basic information.
 1. Click **Add Device** next to the connection.
 
    .. image:: media/image012.png
+      :alt: Figure: Add Devices to the Connection
       :width: 700px
-
-   *Figure: Add Devices to the Connection*
 
 2. In the pop-up window,
 

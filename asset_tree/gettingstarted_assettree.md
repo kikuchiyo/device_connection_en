@@ -28,41 +28,46 @@ According to the above scenarios, you need to create models for the types of ass
 
 1. Create a model for each type of asset, you need to create the following six models:
 
-   + The model that describes features of the devices:
+   - The model that describes features of the devices:
 
-     a. Model for PM2.5 sensor
+     1a. Model for PM2.5 sensor
+
         - Measuring point: PM2.5
 
-     b. Model for temperature sensor
+     1b. Model for temperature sensor
+
         - Measuring point: temperature
 
-     c. Model for humidity sensor
+     1c. Model for humidity sensor
+
         - Measuring point: humidity
 
-     d. Model for noise sensor
+     1d. Model for noise sensor
+
         - Measuring point: noise
 
-     e. Model for gateway device
+     1e. Model for gateway device
+
         - Attribute: version
         - Measuring point: cpuRates
 
-   + The model that describes the device group:
+   - The model that describes the device group:
 
-     f. Building model
+     1f. Building model
 
-        After creating the models, you can create the products based on the models.
+   After creating the models, you can create the products based on the models.
 
 2. Create the asset tree based on the asset hierarchy of this scenario.
 
-   a. Create the root node of the asset tree for the organization.
+   2a. Create the root node of the asset tree for the organization.
 
-   b. Create a child node **1#Building** under the root node.
+   2b. Create a child node **1#Building** under the root node.
 
-   c. Create a child node for each sensor under the node **1#Building**.
+   2c. Create a child node for each sensor under the node **1#Building**.
 
-   d. Repeat b and c for **2#Building**.
+   2d. Repeat b and c for **2#Building**.
 
-      If the gateway is treated as a device, you can attached the gateway device under the node **1#Building** and **2#Building** as shown in the following figure.
+   If the gateway is treated as a device, you can attached the gateway device under the node **1#Building** and **2#Building** as shown in the following figure.
 
    The asset tree for this scenario is as follows:
 
@@ -80,8 +85,8 @@ See [Creating a Model](../model/creating_model) to create models for each type o
 
 1. Create the root node of the asset tree.
 
-   - In the EnOS Console, click **Asset Management** from the left navigation panel.
-   - In the **Asset tree** page, click **+** in the upper left corner to create the root node of the asset tree.
+   - In the EnOS Console, click **Asset Tree** from the left navigation panel.
+   - In the **Asset Tree** page, click **+** in the upper left corner to create the root node of the asset tree.
      - The name of the root node is used as the name of this asset tree.
      - Generally, the root node of the asset tree is generally not a connected device.
      - If the node does not need a model, you can use the built-in model `<None>`, which has four empty elements, for root node.

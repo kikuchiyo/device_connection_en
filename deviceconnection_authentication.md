@@ -29,7 +29,7 @@ Before discussing the certificate-based two-way authentication mechanism, you ne
   - The CSR is sent to the CA.
   - The CA certificate signs and issues the device certificates and registers the device certificates to the CA. Meanwhile, the device certificates are also stored in the device.
 
-EnOS provides CA certificate service, for more information, see [X.509 Certificate Service in EnOS](https://docs.envisioniot.com/docs/enos/en/latest/security/x509_ca/index.html#).
+EnOS provides CA certificate service, for more information, see [X.509 Certificate Service in EnOS](https://docs.eniot.io/docs/enos/en/latest/security/x509_ca/index.html#).
 
 When you enable the certificate-based authentication, you need to use the certificate APIs to generate the device certificates as instructed in [Getting Started with Certificate-Based Authentication](gettingstarted_java_ssl_connection) to establish secure connection between devices and IoT Hub.
 

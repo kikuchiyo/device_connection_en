@@ -4,7 +4,7 @@ This article helps you quickly learn how to provision a direct-connecting device
 
 ## About the Scenario
 
-For information about the connection scenario of this task, see "Scenario 2.2" in [Device Connection Schemes](connection_scenarios).
+For information about the connection scenario of this task, see "Scenario 1.1" in [Device Connection Schemes](connection_scenarios).
 
 
 ## About This Task
@@ -78,13 +78,14 @@ The steps to create this model are as follows:
    - **Model Name (en)**: Inverter_Demo
    - **Category**: NA
    - **Create From**: No
+   - **Support Passthrough**: Default
    - **Source Model**: NA
    - **Description**: Inverter model for demo project
 
 3. Click **OK** to complete the operation.
 
-   .. image:: media/model_inverter.png   
-      :width: 550px
+   .. image:: media/model_inverter.png
+      :width: 400px
 
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 
@@ -141,7 +142,7 @@ The steps to create this model are as follows:
      - **Identifier**: Error
      - **Severity**: Error
 
-6. Click **Confirm** to complete the operation.
+6. Click **OK** to complete the operation.
 
 For details on device model settings, see [Creating Model](model/creating_model).
 
@@ -150,7 +151,7 @@ For details on device model settings, see [Creating Model](model/creating_model)
 
 In this step, we create a product called **Inverter_Product**. We assume that a device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
 
-1. In the EnOS Console, select **Device Provisioning > Products**.
+1. In the EnOS Console, select **Device Management > Product**.
 
 2. Click **New Product**, and provide the following settings in the **New Product** window:
 
@@ -161,10 +162,10 @@ In this step, we create a product called **Inverter_Product**. We assume that a 
    - **Certificate-based Two-way Authentication**: Disable
    - **Product Description**: Inverter product for demo
 
-3. Click **Confirm** to complete the operation.
+3. Click **OK** to complete the operation.
 
-   .. image:: media/create_product.png   
-      :width: 550px
+   .. image:: media/create_product.png
+      :width: 400px
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
@@ -173,14 +174,16 @@ For details about product settings, see [Creating Products](cloud/creating_produ
 
 In this step, we create a device named **INV001**, which belongs to the **Inverter_Product** product model created in the previous step.
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. Click **New Device**, and provide the following settings in the **New Device** window:
 
    - **Product**: Inverter_Product
    - **Device Name**: INV001
+   - **Use DST**: No
+   - **timezone**: UTC+14:00
    - **Inverter Type**: 0: Central, indicating centralized inverter
-   - **Component Capacity**: 5.0
+   - **Inverter Capacity**: 5.0
    - **Device Key**: Optional, generated automatically by system
 
 3. Click **Confirm** to complete the operation.
@@ -209,13 +212,13 @@ For more information, see [Using the Device SDK](device/using_java_sdk).
 
 ## Step 5: Check the Device Connection Status
 
-In the EnOS Console, click **Device Provisioning > Devices**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
+In the EnOS Console, click **Device Management > Device**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
 
 .. image:: media/device_status.png   
    :width: 700px
 
 ## Step 6: Check the Device Data
 
-1. In the **Devices** page, locate the device and click **View** to show the **Device Details** page.
+1. In the **Device** page, locate the device and click **View** to show the **Device Details** page.
 
 2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.

@@ -36,8 +36,8 @@ After creating the root node, you can add a leaf node under the root node by the
 
 2. Enter the asset name, select the device model from the drop down list, and specify whether the device to bind is a connected device or not. If `Yes`, you can bind this asset by the following approaches:
 
-   - **Bind connected device**: Use this option if you have already created the device in the **Device Provisioning > Devices**. In this case, you'll bind the device to a node of the asset tree.
-   - **Create connected device now**: Use this option if you haven't created the device in the **Device Provisioning > Devices** yet. In this case, you'll create a device and bind this device to a node of the asset tree. For how to create a new device, see [Creating a Device](../cloud/creating_device)
+   - **Bind connected device**: Use this option if you have already created the device in the **Device Management > Device**. In this case, you'll bind the device to a node of the asset tree.
+   - **Create connected device now**: Use this option if you haven't created the device in the **Device Management > Device** yet. In this case, you'll create a device and bind this device to a node of the asset tree. For how to create a new device, see [Creating a Device](../cloud/creating_device)
    - **Bind device later**: User this option if you are sure that the asset to be created is a connected device, but you need to confirm whether the device is created or not afterwards. In this case, you'll bind the device later.
 
 3. Complete the configuration of the selected approach, and then click **Confirm**.

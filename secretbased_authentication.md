@@ -62,14 +62,15 @@ Three dimensions are used to describe the overall state of the device: Operation
 ## Authentication Process
 
 The main authentication process for device connection is as follows:
-- a. Pre-register device in the cloud
-- b. On the edge side, configure the device information registered in the cloud, and mainly burn into the device triple
-- c. Power-on on edge side, connect to network, and try to log in. Device triple authentication in the cloud
-  - Successful: Returned successfully, the device is instructed to send data
-  - Failure: Return failed, connection is interrupted
-- d. The device sends data via MQTT protocol
-- e. The cloud issues instructions via the MQTT protocol
-- f. The device side responds to the cloud requests
+
+1. Pre-register device in the cloud
+2. On the edge side, configure the device information registered in the cloud, and mainly burn into the device triple
+3. Power-on on edge side, connect to network, and try to log in. Device triple authentication in the cloud
+   - Successful: Returned successfully, the device is instructed to send data
+   - Failure: Return failed, connection is interrupted
+4. The device sends data via MQTT protocol
+5. The cloud issues instructions via the MQTT protocol
+6. The device side responds to the cloud requests
 
 The specific flow chart is as follows:
 

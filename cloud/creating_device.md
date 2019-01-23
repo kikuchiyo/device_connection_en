@@ -8,12 +8,14 @@ The product to which the device belongs has been created. For information about 
 
 ## Step 1: Creating a Device
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. Click the **New Device** button and complete the following settings on the **New Device** pop-up window.
 
    - **Product**: Select the product to which the device belongs. After selecting the product, continue to configure the Attributes settings in the template of the product. Attributes are either required or optional.
    - **Device Name**: The name of the device; same name can be used under the same organization.
+   - **Use DST**: Use daylight saving time, the time zone is city.
+   - **timezone**: Refers to the local time of a region or a country to select timezone.
    - **Device Key**: A unique identifier for the product under the same organization. If not provided, the system will generate a device key. When self-defined, supports uppercase alphabets (A-Z), lowercase alphabets (a-z), numbers (0-9), dash "-" and underline.
    - Model-defined features: The features that are defined by the device model, when a feature is set to required in the model, you must provide the setting when registering the device. The optional features can be added after the device is registered.
 
@@ -37,7 +39,7 @@ After creating the device, you will obtain a set of credentials: Device Name (`d
 
 ## Follow-up Operations
 
-When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](https://docs.envisioniot.com/docs/app-development/en/latest/sdk_overview.html)
+When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](https://docs.eniot.io/docs/app-development/en/latest/sdk_overview.html)
 
 ## Related Information
 

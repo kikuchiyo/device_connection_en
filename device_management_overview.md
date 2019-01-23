@@ -36,7 +36,7 @@ Helps you establish connection from the devices to EnOS Cloud, secure the two-wa
 
 **Asset Alerts**
 
-Enables you to define, receive, and process alerts for your organization assets. The service also allows you to define alert triggering rules against the asset data, to achieve real-time alarming and troubleshooting. [Learn more >>](https://docs.envisioniot.com/docs/event-management/en/latest/alert_overview.html)
+Enables you to define, receive, and process alerts for your organization assets. The service also allows you to define alert triggering rules against the asset data, to achieve real-time alarming and troubleshooting. [Learn more >>](https://docs.eniot.io/docs/event-management/en/latest/alert_overview.html)
 
 **Asset Management**
 
@@ -47,7 +47,7 @@ Enables asset owners, who understand the enterprise asset management business, t
 
 **Stream Analysis Service**
 
-Stream Analysis enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://docs.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
+Stream Analysis enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://docs.eniot.io/docs/online-data/en/latest/streaming_overview.html)
 
 
 ## Next Steps

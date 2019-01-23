@@ -6,7 +6,7 @@ EnOS Edge supports various communication protocols. This article instructs how t
 
 You'll need to create a protocol and update the jar package of the protocol file.
 
-1. In the EnOS console, click **Edge Gateway > Protocols** from the left navigation panel.
+1. In the EnOS console, click **Edge Gateway > Protocol** from the left navigation panel.
 
 2. Click **Create Protocol** and provide the following settings:
 
@@ -18,6 +18,6 @@ You'll need to create a protocol and update the jar package of the protocol file
 
    - **Version** (required): The vision of this protocol.
 
-   - **Jar package** (required): Click **Upload** to upload a jar package of the protocol that you created, which is going to be run on the EnOS Edge.
+   - **Protocol File** (required): Click **Upload** to upload a jar package of the protocol that you created, which is going to be run on the EnOS Edge.
 
-   - **Description** (required): The description of the protocol. Such as applied scenario.
+   - **Note** (required): The description of the protocol. Such as applied scenario.

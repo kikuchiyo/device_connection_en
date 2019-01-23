@@ -20,7 +20,7 @@ This step supposes assumes that you have complete the following tutorials:
 This step is almost the same as what you've done in the aforementioned tutorials with the only difference that you need to enable **Certificate Authentication** when you create the edge gateway product as shown in the following screenshot:
 
 .. image:: media/edge_ssl.png   
-   :width: 450px
+   :width: 400px
 
 The inverter product does not need to have **Certificate Authentication** enabled because the inverter connects to the EnOS Cloud through the edge gateway. You only need to enable the authentication for the connection between the edge and the cloud.
 
@@ -62,7 +62,7 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 - The CSR file is used for requesting certificate from EnOS Cloud
 - The private key is used for decrypting the data that is encrypted by the certificate.
 
-For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](https://docs.envisioniot.com/docs/enos/en/latest/security/x509_ca/creating_csr.html)。
+For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](https://docs.eniot.io/docs/enos/en/latest/security/x509_ca/creating_csr.html)。
 
 ### Step 3: Invoke REST API to Request for Certificate
 

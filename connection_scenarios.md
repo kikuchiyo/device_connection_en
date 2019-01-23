@@ -56,35 +56,104 @@ For more information about the authentication mechanism for device connection se
      - Activation Mode
      - Whether SA is Used
    * - 1.1
+     - Direct Connection
+     - Static Activation via Device Secret
+     - No
+   * - 1.2
+     - Direct Connection
+     - Dynamic Activation via Product Secret
+     - No
+   * - 1.3
+     - Direct Connection
+     - Static Activation via Device Secret
+     - Yes
+   * - 2.1
+     - Connect via Gateway
+     - Static Activation via Device Secret
+     - No
+   * - 2.2
      - Connect via Gateway
      - Static Activation via Device Secret
      - Yes
-   * - 1.2
-     - Connect via Gateway
-     - Static Activation via Device Secret
-     - No      
-   * - 2.1
-     - Direct Connection
-     - Static Activation via Device Secret
-     - Yes      
-   * - 2.2
-     - Direct Connection
-     - Static Activation via Device Secret
-     - No      
-   * - 2.3
-     - Direct Connection
-     - Dynamic Activation via Product Secret
-     - No   
+
 
 The message flow of different connection and activation methods are illustrated in the following sections:
 
-### Connect via Gateway
 
-#### Scenario 1.1: The connected sub-device is not registered and is dynamically registered through the edge
+### Direct Connection
+
+#### Scenario 1.1: The connected device is registered, and the device is burned with a unique device triple before leaving the factory
 
 The following figure illustrates the message flow of connection scenario 1.1.
 
 .. image:: media/connection_scenario_1.1.png
+   :width: 800px
+
+This scenario requires that the device is burned with its unique device triple that is obtained through cloud registration before it leaves the factory. The scenario provides stronger security but lower operability due to the demand of burning unique device triple during manufacturing.
+
+
+#### Scenario 1.2: The connected devices are registered, and devices are burned with the same product information in batch
+
+The following figure illustrates the message flow of connection scenario 1.2.
+
+.. image:: media/connection_scenario_1.2.png
+   :width: 800px
+
+Scenario 1.2 deals with the low operability issue of Scenario 1.1. Which is
+
+1. Devices are burned in batch with the same product credential (i.e., `productKey` and `productSecret`) before leaving the factory.
+
+2. Device registration can be integrated with the manufacturer's device management system. Upon the shipment of a batch of devices, the customer's device management system can register the devices in batch by calling the REST API.
+
+3. After the devices are sent to the site, powered on, and connected to the network, they can automatically connect to the cloud.
+
+#### Scenario 1.3: The connected device is not registered; it is dynamically registered through pluggable data acquisition rod
+
+The following figure illustrates the message flow of connection scenario 1.3.
+
+.. image:: media/connection_scenario_1.3.png
+   :width: 800px
+
+Take the household photovoltaic inverter for example.
+
+Household photovoltaic inverters do not support burning firmware. In this scenario, an acquisition rod is needed to collect and forward data to the cloud. Because the acquisition rod collects only the data of one inverter, we can consider the inverter and the acquisition rod as one smart device; and since the acquisition rod supports burning firmware, the inverter and the acquisition rod as a whole can be regarded as a smart device that supports burning firmware.
+
+1. Create an inverter product in the cloud (under the Client's OU, instead of the developer's OU).
+
+2. The acquisition rod developer creates an acquisition rod app under the developer's OU and obtains the application SA: `accesskey` and `accesssecret`.
+
+3. The acquisition rod developer configures the manufacturer settings of the rod and burns the following credential information into the rod:
+
+   - SA of the acquisition rod app
+   - The `productKey` of the inverter
+   - The `orgId` that the `productKey` belongs to.
+
+4. The IoT engineer performs on-site construction and installation, installing the acquisition rod for the inverter, powering on the device and connecting it to the network. Once the device is connected, the following actions occur:
+
+   - The acquisition rod collects the serial number of the inverter, and uses it as the `deviceKey`; it then calls the REST API using SA, dynamically creates the device using the `productKey`, `deviceKey` (serial number), and `orgId`, and obtains the device's `deviceSecret`.
+   - The acquisition rod records the `deviceSecret`, which will be automatically burned into the firmware of the device.
+   - The acquisition rod collects data from the inverter, and uses the `productKey`, `deviceKey`, and `deviceSecret` to connect to the cloud. Once authenticated, the device goes online and starts to send telemetry.
+
+### Connect via Gateway
+
+#### Scenario 2.1: The connected sub-device is registered and the device triple has been stored in the edge
+
+The following figure illustrates the message flow of connection scenario 2.1.
+
+.. image:: media/connection_scenario_2.1.png
+   :width: 800px
+
+Scenarios 2.1 is similar to 2.2 except that in Scenario 2.2, SA is burned into the edge and thus enables the edge to call the EnOS API to create the sub-device. While in Scenario 2.1, you will need to register the sub-device in the cloud beforehand, obtain the sub-device triple information, and burn the sub-device triple into the edge in advance.
+
+When configuring the device connection in the EnOS Edge Configuration Center, you need to bind the connected device with the pre-burned sub-device triple.
+
+Compared with the more flexible Scenario 2.2, Scenario 2.1 has more complex configuration but provides stronger security. You may choose Scenario 2.2 if convenience is your priority.
+
+#### Scenario 2.2: The connected sub-device is not registered and is dynamically registered through the edge
+
+The following figure illustrates the message flow of connection scenario 2.2.
+
+.. image:: media/connection_scenario_2.2.png
    :width: 800px
 
 1. In the EnOS Console, the edge developer registers an Edge application in the EnOS Cloud, and obtains the service account (SA) of the application: the `accessKey` and `accessSecret`.
@@ -128,69 +197,3 @@ The following figure illustrates the message flow of connection scenario 1.1.
    - The edge is connected directly to the IoT Hub, and the sub-device is connected to the EnOS IoT Hub via the edge proxy.
    - Data is transmitted between the edge and the IoT Hub through the MQTT protocol.
    - If the certificate-based two-way authentication is enabled, the data transmitted between the edge and the IoT Hub is encrypted by the certificate.
-
-#### Scenario 1.2: The connected sub-device is registered and the device triple has been stored in the edge
-
-The following figure illustrates the message flow of connection scenario 1.2.
-
-.. image:: media/connection_scenario_1.2.png
-   :width: 800px
-
-Scenarios 1.2 is similar to 1.1 except that in Scenario 1.1, SA is burned into the edge and thus enables the edge to call the EnOS API to create the sub-device. While in Scenario 1.2, you will need to register the sub-device in the cloud beforehand, obtain the sub-device triple information, and burn the sub-device triple into the edge in advance.
-
-When configuring the device connection in the EnOS Edge Configuration Center, you need to bind the connected device with the pre-burned sub-device triple.
-
-Compared with the more flexible Scenario 1.1, Scenario 1.2 has more complex configuration but provides stronger security. You may choose Scenario 1.1 if convenience is your priority.
-
-### Direct Connection
-
-#### Scenario 2.1: The connected device is not registered; it is dynamically registered through pluggable data acquisition rod
-
-The following figure illustrates the message flow of connection scenario 2.1.
-
-.. image:: media/connection_scenario_2.1.png
-   :width: 800px
-
-Take the household photovoltaic inverter for example.
-
-Household photovoltaic inverters do not support burning firmware. In this scenario, an acquisition rod is needed to collect and forward data to the cloud. Because the acquisition rod collects only the data of one inverter, we can consider the inverter and the acquisition rod as one smart device; and since the acquisition rod supports burning firmware, the inverter and the acquisition rod as a whole can be regarded as a smart device that supports burning firmware.
-
-1. Create an inverter product in the cloud (under the Client's OU, instead of the developer's OU).
-
-2. The acquisition rod developer creates an acquisition rod app under the developer's OU and obtains the application SA: `accesskey` and `accesssecret`.
-
-3. The acquisition rod developer configures the manufacturer settings of the rod and burns the following credential information into the rod:
-
-   - SA of the acquisition rod app
-   - The `productKey` of the inverter
-   - The `orgId` that the `productKey` belongs to.
-
-4. The IoT engineer performs on-site construction and installation, installing the acquisition rod for the inverter, powering on the device and connecting it to the network. Once the device is connected, the following actions occur:
-
-   - The acquisition rod collects the serial number of the inverter, and uses it as the `deviceKey`; it then calls the REST API using SA, dynamically creates the device using the `productKey`, `deviceKey` (serial number), and `orgId`, and obtains the device's `deviceSecret`.
-   - The acquisition rod records the `deviceSecret`, which will be automatically burned into the firmware of the device.
-   - The acquisition rod collects data from the inverter, and uses the `productKey`, `deviceKey`, and `deviceSecret` to connect to the cloud. Once authenticated, the device goes online and starts to send telemetry.
-
-#### Scenario 2.2: The connected device is registered, and the device is burned with a unique device triple before leaving the factory
-
-The following figure illustrates the message flow of connection scenario 2.2.
-
-.. image:: media/connection_scenario_2.2.png
-   :width: 800px
-
-This scenario requires that the device is burned with its unique device triple that is obtained through cloud registration before it leaves the factory. The scenario provides stronger security but lower operability due to the demand of burning unique device triple during manufacturing.
-
-
-#### Scenario 2.3: The connected devices are registered, and devices are burned with the same product information in batch
-
-The following figure illustrates the message flow of connection scenario 2.3.
-
-.. image:: media/connection_scenario_2.3.png
-   :width: 800px
-
-Scenario 2.3 deals with the low operability issue of Scenario 2.2. Which is
-1. Devices are burned in batch with the same product credential (i.e., `productKey` and `productSecret`) before leaving the factory.
-
-2. Device registration can be integrated with the manufacturer's device management system. Upon the shipment of a batch of devices, the customer's device management system can register the devices in batch by calling the REST API.
-
-3. After the devices are sent to the site, powered on, and connected to the network, they can automatically connect to the cloud.

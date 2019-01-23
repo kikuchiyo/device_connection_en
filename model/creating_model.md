@@ -15,7 +15,7 @@ Configure all the features in EnOS according to the defined thing model.
 
 ## Step 1: Creating a Model
 
-1. In the EnOS Console, select **Model** from the **Model and Asset** section to open the Models page.
+1. In the EnOS Console, select **Model** from the **Device and Asset** section to open the Models page.
 
 2. Click the **New Model** button and complete the following settings on the **New Model** pop-up window:
 
@@ -30,6 +30,7 @@ Configure all the features in EnOS according to the defined thing model.
        - The child model can add new features based on the parent model, but it needs to use a different name from the parent model.
        - The child model can be further inherited to support multi-level inheritance.
        - Changes to the features in the parent model will affect the child template.
+   - **Support Passthrough**: indicates whether to support reporting measure point data that is not defined in the model
    - **Source Model**: The model selected for copying or the inherited parent model.
    - **Description**: Detailed description of the model.
 
@@ -43,10 +44,9 @@ Configure all the features in EnOS according to the defined thing model.
 
 ### Adding Attributes
 
-1. On the **Add Feature** page, select **Attribute** from the **Feature Type** dropdown list and complete the following settings:
+1. On the **Add Feature** page, select **Attributes** from the **Feature Type** dropdown list and complete the following settings:
 
    - **Name**: The name of the attribute; duplicate name is not allowed under the same module.
-   - **Name (en)**: if the **Name** is in Chinese, an English name can be set here. You can ignore this setting if the **Name** is in English.
    - **Identifier**: A unique identification code for the attribute; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
    - **Data Type**: The data type of this attribute.
 
@@ -58,6 +58,8 @@ Configure all the features in EnOS according to the defined thing model.
      + date: The format of date is yyyy-MM-dd HH:mm:ss.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
      + array: **Type** shall be defined. Make sure that the same type is used in the same array.
+     + map: it is used to indicate that, whether this model point can be mapped or not.
+     + file:
 
    - **Required**: If set to "Yes", the parameter must be provided when creating a new device under this product.
    - **Description**: A description of the attribute.
@@ -68,15 +70,15 @@ Configure all the features in EnOS according to the defined thing model.
 
 ### Adding Measure Points
 
-1. On the **Add Feature** pop-up window, select **Measure points** from the **Feature Type** drop-down list and complete the following settings:
+1. On the **Add Feature** pop-up window, select **Measure Points** from the **Feature Type** drop-down list and complete the following settings:
 
    - **Name**: The name of the measure point; duplicate name is not allowed under the same module.
-   - **Name (en)**: If the name is in Chinese, an English name can be set here. You can ignore this setting if the **Name** is in English.
    - **Identifier**: A unique identification code for the measure point; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Point Type**: upports 3 types, namely the domain point, control point and pass through point
    - **Quality Indicator**: Whether the measure point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
 
-     + Quality Indicator: Data quality indicator in the form of array that is predefined by the system; cannot be changed. You can click **View** to see the predefined quality indicator parameters as well as their descriptions.
      + Value: Sets the data type of the measure point. Only three types are supported: int, float, and double.
+     + Quality Indicator: Data quality indicator in the form of array that is predefined by the system; cannot be changed. You can click **View** to see the predefined quality indicator parameters as well as their descriptions.
 
    - **Data Type**: If the test is not about quality indicator, the data type of the measure point shall be configured.
      + int, float, double: Information such as the default value and the data unit shall be defined.
@@ -86,6 +88,8 @@ Configure all the features in EnOS according to the defined thing model.
      + timestamp: The timestamp is in the form of a UTC timestamp string (in milliseconds).
      + date: The format of date is yyyy-MM-dd HH:mm:ss.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
+     + array: describe whether this model point is the array type or not, **Type** shall be defined. Make sure that the same type is used in the same array.
+     + file:
 
    - **Tags**: Tags can be used to describe a measure point; depending on the needs, you can flexibly identify a measure point, such as its type, group, and priority.
    - **Description**: A description of the measure point.
@@ -99,11 +103,10 @@ Configure all the features in EnOS according to the defined thing model.
 1. On the **Add Feature** pop-up window, select **Service** from the **Feature Type** drop-down list and complete the following settings:
 
    - **Name**: The name of the service; duplicate name is not allowed under the same module.
-   - **Name (en)**: If the name is in Chinese, an English name can be set here.
    - **Identifier**: A unique identification code for the service; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
    - **Invoke Method**: The way to invoke the service.
-     + Synchronous: The cloud invokes the service and waits for the device to reply. If no reply is received, the invocation times out.
      + Asynchronous: The cloud invokes the service and returns immediately; the reply message from the device is obtained asynchronously.
+     + Synchronous: The cloud invokes the service and waits for the device to reply. If no reply is received, the invocation times out.
    - **Input Parameters**: Click **New Parameter** to configure the name, identifier, data type, and data unit of the input parameter of the service.
    - **Output Parameters**: Click **New Parameter** to configure the name, identifier, data type, and data unit of the output parameter of the service.
    - **Description**: A description of the service.
@@ -117,7 +120,6 @@ Configure all the features in EnOS according to the defined thing model.
 1. On the **Add Feature** pop-up window, select **Event** from the **Feature Type** drop-down list and complete the following settings:
 
    - **Name**: The name of the event; duplicate name is not allowed under the same module.
-   - **Name (en)**: If the name is in Chinese, an English name can be set here.
    - **Identifier**: A unique identification code for the event; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
    - **Severity**:
      + Info: Refers to general notifications reported by devices, such as a notification on job completion.

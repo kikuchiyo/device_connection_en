@@ -2,13 +2,6 @@ Device connection
 --------------------------
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Back to
-
-   EnOS™ Fundamental <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
-
-.. toctree::
     :maxdepth: 1
     :caption: Overview
 
@@ -35,6 +28,20 @@ Device connection
     gettingstarted_edge_connection
     gettingstarted_java_ssl_connection
     asset_tree/gettingstarted_assettree
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Scenarios
+
+   cloud2cloud_dataforwarding
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Tutorial
+
+   tutorial/index
+
 
 .. toctree::
    :maxdepth: 1

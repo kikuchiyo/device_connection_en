@@ -23,10 +23,9 @@ Each node of an asset tree has a unique identifier. An asset can be bound to dif
 
 The relationship between asset trees, nodes, assets, and devices is shown in the following figure:
 
-.. image:: ../media/asset_tree.png   
+.. image:: ../media/asset_tree.png
+   :alt: Fig. Asset Trees Overview
    :width: 500px
-
-*Figure 1: Asset Trees Overview*
 
 - Asset 1 is bound to Tree 1 and Tree 2.
 - Node 5 of Tree 2 is left blank to allow a later binding of asset.

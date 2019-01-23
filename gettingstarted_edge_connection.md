@@ -5,7 +5,7 @@ This article helps you quickly learn how to provision the sub-device and edge to
 
 ## About This Scenario
 
-For information about the connection scenario of this task, see "Scenario 1.2" in [Device Connection Scenarios](connection_scenarios).
+For information about the connection scenario of this task, see "Scenario 2.1" in [Device Connection Scenarios](connection_scenarios).
 
 
 ## About This Task
@@ -56,11 +56,12 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
    - **Model Name**: Edge_Model
    - **Category**: NA
    - **Create From**: No
+   - **Support Passthrough**: Default
    - **Source model**: NA
    - **Description**: Edge Model
 
-   .. image:: media/model_edge.png   
-      :width: 500px
+   .. image:: media/model_edge.png
+      :width: 550px   
 
 3. Click **OK** to complete the operation.
 
@@ -75,7 +76,7 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
    - **String Length**: 20
    - **Required**: Yes
 
-6. Click **Confirm** to complete the operation.
+6. Click **OK** to complete the operation.
 
 For details on device model settings, see [Creating Model](model/creating_model).
 
@@ -84,7 +85,7 @@ For details on device model settings, see [Creating Model](model/creating_model)
 
 In this step, we create a product called **Edge_Product**. We assume that an edge device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
 
-1. In the EnOS Console, select **Device Provisioning > Products**.
+1. In the EnOS Console, select **Device Management > Product**.
 
 2. Click **New Product**, and provide the following settings in the **New Product** window:
 
@@ -95,7 +96,7 @@ In this step, we create a product called **Edge_Product**. We assume that an edg
    - **Certificate-based Two-way Authentication**: Disable
    - **Product Description**: Edge Product
 
-3. Click **Confirm** to complete the operation.
+3. Click **OK** to complete the operation.
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
@@ -104,17 +105,21 @@ For details about product settings, see [Creating Products](cloud/creating_produ
 
 In this step, we create an edge device named **Edge01**, which belongs to the **Edge_Product** product model created in the previous step.
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. Click **New Device**, and provide the following settings in the **New Device** window:
 
    - **Product**: Edge_Product
    - **Device Name**: Edge01
-   - **Version**: Optional, left blank by default
+   - **Use DST**: No
+   - **timezone**: UTC+14:00
    - **Device Key**: Optional, generated automatically by system
+   - **Version**: Optional, left blank by default
+
+3. Click **Confirm** to complete the operation.
 
 .. image:: media/register_edge.png   
-   :width: 700px
+
 
 ## Step 4: Configure Edge Connection
 
@@ -158,11 +163,11 @@ For more information, see [Using the Device SDK](device/using_java_sdk).
 
 ## Step 6: Check the Device Status
 
-In the EnOS Console, click **Device Provisioning > Devices**, locate the Edge01 and INV001 devices and confirm that the devices are online.
+In the EnOS Console, click **Device Management > Device**, locate the Edge01 and INV001 devices and confirm that the devices are online.
 
 
 ## Step 7: Check the Device Data
 
-1. In the **Devices** page, locate the INV001 device and click **View** to show the **Device Details** page.
+1. In the **Device** page, locate the INV001 device and click **View** to show the **Device Details** page.
 
 2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.

@@ -8,7 +8,7 @@ To learn about the activation and running status of a device, see [Secret-based 
 
 ## Viewing Device Status
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. In the table of devices, you can view the device status in the **Status/Enable** column.
 
@@ -20,7 +20,7 @@ When a device is in operation, you can change its status by turning it on or off
 
 If the device is found to be abnormal, it can be disabled in EnOS.
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. In the table of devices, you can specify a device as online or offline by the switch in the **Status/Enable** column.
 
@@ -29,7 +29,7 @@ If the device is found to be abnormal, it can be disabled in EnOS.
 
 The `productKey`, `deviceKey`, and `deviceSecret` are considered as the device triple information.
 
-1. In the EnOS Console, select **Device Provisioning > Devices**.
+1. In the EnOS Console, select **Device Management > Device**.
 
 2. In the table of devices, for the target device, click **View** to open the **Device Details** page.
 
