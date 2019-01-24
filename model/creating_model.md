@@ -59,7 +59,8 @@ Configure all the features in EnOS according to the defined thing model.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
      + array: **Type** shall be defined. Make sure that the same type is used in the same array.
      + map: it is used to indicate that, whether this model point can be mapped or not.
-     + file:
+     + file: File type parameter, value is the file path in URI format. 
+
 
    - **Required**: If set to "Yes", the parameter must be provided when creating a new device under this product.
    - **Description**: A description of the attribute.
@@ -89,7 +90,7 @@ Configure all the features in EnOS according to the defined thing model.
      + date: The format of date is yyyy-MM-dd HH:mm:ss.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
      + array: describe whether this model point is the array type or not, **Type** shall be defined. Make sure that the same type is used in the same array.
-     + file:
+     + file: File type parameter, value is the file path in URI format. 
 
    - **Tags**: Tags can be used to describe a measure point; depending on the needs, you can flexibly identify a measure point, such as its type, group, and priority.
    - **Description**: A description of the measure point.
