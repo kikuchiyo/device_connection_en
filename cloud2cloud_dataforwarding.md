@@ -2,7 +2,7 @@
 
 ## Scenario
 
-In this scenario, the devices are connected a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
+In this scenario, the devices are connected to a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
 
 .. image:: media/cloud2cloud_architecture.png
    :width: 650px
