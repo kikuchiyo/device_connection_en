@@ -191,7 +191,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'EnOSDocumentationCenter', 'EnOS Device Connection 2.0',
-     author, 'EnOS™DocumentationCenter', 'One line description of project.',
+     author, 'EnOSDocumentationCenter', 'One line description of project.',
      'Miscellaneous'),
 ]
 
