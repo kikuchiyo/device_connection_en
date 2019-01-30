@@ -2,10 +2,8 @@
 
 ## Scenario
 
-In this scenario, the devices are connected to a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
+In this scenario, the devices are connected a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
 
-.. image:: media/cloud2cloud_architecture.png
-   :width: 650px
 
 ## Solution 
 
@@ -36,7 +34,7 @@ Part III. New device onboarding
 1. [Create the device model](model/creating_model), note the identifier of the model points. You'll later report measure point data to the model points.
 2. [Create the product](cloud/creating_product). The product configuration defines the how a collection of devices send data to the EnOS Cloud and how to secure the connection between devices and cloud.
 3. [Register the device](cloud/creating_device). You'll get the device identity `deviceKey` that you'll use when mapping the device between 3rd-party cloud and EnOS cloud.
-4. [Register the application](https://docs.eniot.io/docs/app-development/en/latest/managing_apps.html#registering-an-application) to obtain the service account: `accessKey` and `secretKey`, which the application will need to call EnOS APIs.
+4. [Register the application](https://www.envisioniot.com/docs/app-development/en/latest/managing_apps.html#registering-an-application) to obtain the service account: `accessKey` and `secretKey`, which the application will need to call EnOS APIs.
 
 ### Part II. Develop the Data Forwarding App
 
@@ -52,7 +50,7 @@ Part III. New device onboarding
 
 5. The Data Forwarding App uses the `registerDevices API` to register the new device on EnOS.
 
-For how to use EnOS APIs, see [Getting Started with EnOS REST APIs](https://docs.eniot.io/docs/app-development/en/latest/gettingstarted_api.html).
+For how to use EnOS APIs, see [Getting Started with EnOS REST APIs](https://www.envisioniot.com/docs/app-development/en/latest/gettingstarted_api.html).
 
 .. list-table::
 
