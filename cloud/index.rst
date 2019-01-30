@@ -1,5 +1,5 @@
 Cloud Configuration
---------
+======================
 
 .. toctree::
    :maxdepth: 1

@@ -1,5 +1,6 @@
 Device Topology Management
 =============================
+
 After a sub-device is registered to the EnOS Cloud, the edge reports the
 topological relationship of the edge and sub-devices to the EnOS Cloud
 before the sub-device connects to cloud. EnOS Cloud verifies the

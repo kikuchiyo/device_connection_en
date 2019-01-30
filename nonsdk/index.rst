@@ -1,5 +1,5 @@
 Sending Device Telemetry Based on EnOS Device Protocol Standard
-============================================================
+==================================================================
 
 EnOS provides device SDKs for you to configure devices. These device SDKs already encapsulate protocols for data exchange between devices and EnOS Cloud. 
 
@@ -12,7 +12,7 @@ The supported MQTT version:
 
 
 Common Parameter Description
-=============================
+===============================
 
 The following table describes the common parameters used in the request and response messages.
 
@@ -53,7 +53,7 @@ The following table describes the common parameters used in the request and resp
 
 
 Connection Establishment
-===================
+==========================
 Before develop any communication protocol, you should establish the communication with EnOS Cloud.
 
 Please refer to the following section.
@@ -69,7 +69,7 @@ Please refer to the following section.
 
 
 Protocol Standards
-===================
+=====================
 
 From the data transmission direction perspective, the device protocol standards falls into two groups: upstream and downstream.
 
