@@ -87,8 +87,6 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
 
 3. In the pop-up window, select the actual measuring point or enter a keyword in the search bar to search for the measuring point:
 
-   .. |img045| image:: media/image045.png
-
    .. image:: media/image046.png
       :alt: Figure: Mapping Relationship Configuration
       :width: 700px
@@ -106,7 +104,7 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
    :alt: Figure: Notes for Adding the SUM Formula   
    :width: 450px
 
-.. note:: For some formulas, the order of adding the points is important. For example, in the cross product operation, when you select _cross product_ in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
+.. note:: For some formulas, the order of adding the points is important. For example, in the cross product operation, when you select *cross product* in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
 
 .. image:: media/image051.png
    :alt: Figure: Point Selection Order and Operand   
@@ -149,22 +147,20 @@ You can view all the device templates of the current OU on the **Templates** pag
 
 4. Click |img045| after the newly created device template to edit the template according to your requirement.
 
-.. |img045| image:: media/image045.png
-
 ## Modifying and Deleting Device Templates
 
 In the **Template** page:
 
 - To modify a template, click |img045| after the template to be edit to enter the template details page of the target device.
 
-.. |img045| image:: media/image045.png
-
 - To delete a template, click |img0delete| after the template to be delete.
-
-.. |img0delete| image:: media/delete.png
 
 .. note:: When modifying or deleting a template that is in use, as the operation will affect all the device instances that are using the template.
 
+.. |img0delete| image:: media/delete.png
+
 .. |img049| image:: media/image049.png
+
+.. |img045| image:: media/image045.png
 
 <!--end-->

@@ -26,26 +26,26 @@ Application Developer, who develops applications to acquire device telemetry and
 
 ## Key Capabilities
 
-**Device Modelling**
+### Device Modelling
 
 Allows devices of thousands of models from different manufacturers to be unified into a small number of common models and thus facilitates application processing. EnOS™ Cloud has accumulated a large set of device models in its model library to facilitate abstraction of your asset data. [Learn more >>](model/model_overview)
 
-**Device Provisioning**
+### Device Provisioning
 
 Helps you establish connection from the devices to EnOS Cloud, secure the two-way communication between the devices and the cloud, and manage the device lifecycle. [Learn more >>](deviceconnection_overview)
 
-**Asset Alerts**
+### Asset Alerts
 
 Enables you to define, receive, and process alerts for your organization assets. The service also allows you to define alert triggering rules against the asset data, to achieve real-time alarming and troubleshooting. [Learn more >>](https://www.envisioniot.com/docs/event-management/en/latest/alert_overview.html)
 
-**Asset Management**
+### Asset Management
 
 Enables asset owners, who understand the enterprise asset management business, to quickly create the asset topology to manage assets in the cloud in terms of different dimensions. [Learn more >>](asset_tree/assettree_overview)
 
 
 ## Related Services of EnOS Device Management
 
-**Stream Analysis Service**
+### Stream Analysis Service
 
 Stream Analysis enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
 

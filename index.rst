@@ -2,23 +2,23 @@ Device connection
 --------------------------
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Overview
+   :maxdepth: 1
+   :caption: Overview
 
-    device_management_overview
+   device_management_overview
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Learn
+   :maxdepth: 1
+   :caption: Learn
 
-    device_management_concepts
-    deviceconnection_overview
-    model/model_overview
-    asset_tree/assettree_overview
-    deviceconnection_authentication
-    secretbased_authentication
-    certificatebased_authentication
-    connection_scenarios
+   device_management_concepts
+   deviceconnection_overview
+   model/model_overview
+   asset_tree/assettree_overview
+   deviceconnection_authentication
+   secretbased_authentication
+   certificatebased_authentication
+   connection_scenarios
 
 .. toctree::
     :maxdepth: 1
@@ -34,13 +34,6 @@ Device connection
    :caption: Scenarios
 
    cloud2cloud_dataforwarding
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Tutorial
-
-   tutorial/index
 
 
 .. toctree::
