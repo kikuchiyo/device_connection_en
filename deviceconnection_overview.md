@@ -80,7 +80,7 @@ Edge, as software, supports data acquisition, multiple communication conventions
 
 ### Topic
 
-A topic is the theme of messages. A topic takes one connection channel, which a device can subscribe and publish messages to. When you provision a device, you must configure the topic name for the device. When the device successfully establishes connection to the EnOS Cloud, the device can publish or subscribe to this topic.
+A topic is the theme of messages. A topic takes one connection channel, which a device can subscribe and publish messages to. When the device successfully establishes connection to the EnOS Cloud, the device can publish or subscribe to this topic.
 
 ## Connection Scenarios
 

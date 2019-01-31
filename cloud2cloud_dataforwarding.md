@@ -2,10 +2,10 @@
 
 ## Scenario
 
-In this scenario, the devices are connected a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
+In this scenario, the devices are connected to a 3-rd party cloud. To use the services or applications of EnOS, a solution needs to forward the data ingested from the 3-rd party cloud to the EnOS Cloud.
 
 
-## Solution 
+## Solution
 
 The 3-rd party cloud can be seen as an application on EnOS, let’s suppose the application name is Data Forwarding App. This application will abstract the data from the 3rd-party cloud and call the EnOS REST API to report the device telemetry.
 
@@ -65,4 +65,3 @@ For how to use EnOS APIs, see [Getting Started with EnOS REST APIs](https://www.
      - 3kxJLXgg
 
 <!--end-->
-
