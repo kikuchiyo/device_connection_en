@@ -1,4 +1,4 @@
-# Device Provisioning
+# Device Management
 
 The EnOS™ Device Provisioning function helps IoT engineers to manage the device lifecycle, establish connection from the devices to the EnOS Cloud, and secure the two-way communication between the devices and the cloud.
 
@@ -12,7 +12,7 @@ Provides device SDK to allow devices to connect to the IoT Hub.
 - Provides MQTT device SDK to meet the real-time requirements for long connections and low power requirements for short connections.
 - Provides connection schemes such as direct device connection and indirect connection through gateway proxies, providing solutions to meet the requirements of various scenarios for the heterogeneous network devices of enterprises.
 
-### Device Management
+### Device Lifecycle Management
 
 Supports complete device lifecycle management, including:
 - Device registration
@@ -57,7 +57,7 @@ Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engin
 
 - Time series database
 - Alert engine
-- Stream computing engine
+- Stream processing engine
 
 The following functional modules and concepts are involved in the message flow:
 
@@ -68,9 +68,10 @@ IoT Hub is a cloud broker service that EnOS provides for device connection.
 The cloud broker provides the following functions:
 
 - Safe and reliable large-scale bi-directional message transmission from the devices to the cloud.
-- Forwarding the data from the client to corresponding subscribers on EnOS™.
-- Providing license authorization and creation of thing and policy themes.
 - Exposing interface for connections from MQTT clients.
+- Forwarding the data from the client to corresponding subscribers, i.e. services and applications on EnOS™.
+- Providing license authorization and creation of thing and policy themes.
+
 
 ### EnOS Edge
 
@@ -90,13 +91,14 @@ Based on whether and where the edge device is used in the connection. The follow
 
 This method requires the devices to support MQTT protocol and is applicable to most of the new IoT devices.
 
-**Scenario 2: Connect through on-site EnOS Edge**
-
-In this case, the EnOS Edge is deployed on-site with the devices. This method mainly applies to traditional devices and systems that do not support the MQTT protocol.
-
-**Scenario 3: Connect through remote EnOS Edge**
+**Scenario 2: Connect through remote EnOS Edge**
 
 In this case, the EnOS Edge is deployed remotely at the cloud side. This method mainly applies to traditional devices and systems that do not support the MQTT protocol.
+
+
+**Scenario 3: Connect through on-site EnOS Edge**
+
+In this case, the EnOS Edge is deployed on-site with the devices. This method mainly applies to traditional devices and systems that do not support the MQTT protocol. Compared with scenario 2, this connection method can facilitate breakpoint resumption in the case of network interruption between the Edge and cloud. When a network interuption occurs, the Edge can cache data automatically during the interruption and resume data upload starting from the breakpoint when the connection recovers.
 
 **Scenario 4: Connect through EnOS™ Cloud Edge clusters (cloud service)**
 

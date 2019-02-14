@@ -2,23 +2,21 @@
 
 This article introduces the major concepts involved in device management.
 
-.. image:: media/device_management_concepts.png
-   :width: 700px
-
-**Model**
+## Model
 
 A model is the abstraction of the features of an object that is connected to IoT. The model defines the features of the object’s attributes, measure points, services, and events.
 For more information, see [Model overview](model/model_overview). A model can be associated to multiple _products_.
 
-**Product**
+## Product
 
-A product, or product model, is a collection of devices with the same features. On the basis of the model, a product further defines the communication specifications for the device to connect to the internet of things. Such as the secure authentication mechanism and data format.
+A product, is a collection of devices with the same features. The product enables you to manage collection of devices that derive from the same model while differ in terms of deployment. On the basis of the model, a product further defines the communication specifications for the device to connect to the internet of things, such as the secure authentication mechanism and data format. For example, collection A and collection B might be deployed in different network environment, therefore, requires the device telemetry to be transmitted in different format. Binary data can save up to 75% bandwidth than JSON.
 
-**Device**
+
+## Device
 
 A device is the instance of a product. A device is created from a product so that it inherits not only the 4 elements of model, but also the communication features, aka the device key-secret pair and device certificate used for secure communication.
 
-**Asset**
+## Asset
 
 An asset is an instance of a model. An asset is created from a model so that it inherits the 4 elements of model.
 An asset can be:

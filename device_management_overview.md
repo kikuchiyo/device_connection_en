@@ -30,7 +30,7 @@ Application Developer, who develops applications to acquire device telemetry and
 
 Allows devices of thousands of models from different manufacturers to be unified into a small number of common models and thus facilitates application processing. EnOS™ Cloud has accumulated a large set of device models in its model library to facilitate abstraction of your asset data. [Learn more >>](model/model_overview)
 
-### Device Provisioning
+### Device Management
 
 Helps you establish connection from the devices to EnOS Cloud, secure the two-way communication between the devices and the cloud, and manage the device lifecycle. [Learn more >>](deviceconnection_overview)
 
