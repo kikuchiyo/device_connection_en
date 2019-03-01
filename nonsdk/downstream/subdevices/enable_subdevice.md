@@ -4,6 +4,7 @@ This TOPIC notifies the edge that the specific sub-device belongs to this edge h
 the enable devices message to the edge asynchronously.
 
 Downstream
+
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/enable`
 
 - Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/enable_reply`
@@ -23,8 +24,6 @@ Downstream
 ],
 "method": "combine.enable"
 }
-
-
 ```
 
 ## Example Response Message
@@ -35,7 +34,6 @@ Downstream
 	"code": 200,
 	"data": {}
 }
-
 ```
 
 ## Parameter Description​

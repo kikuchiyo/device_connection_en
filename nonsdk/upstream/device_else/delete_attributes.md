@@ -3,6 +3,7 @@
 A device can publish a message to this topic to delete the attributes from the cloud.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/delete`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/delete_reply`

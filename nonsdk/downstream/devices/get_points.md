@@ -4,8 +4,8 @@
 
 After a device receives a get device measure points request, it returns the device measuring point in a reply message to EnOS cloud. You can get the information of the measuring points from the downstream.
 
-
 Downstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/get`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply`

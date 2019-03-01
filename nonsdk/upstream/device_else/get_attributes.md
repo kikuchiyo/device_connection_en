@@ -3,6 +3,7 @@
 A device can publish a message to this topic to retrieve attributes from the cloud.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/query`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/query_reply`

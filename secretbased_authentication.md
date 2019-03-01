@@ -15,7 +15,6 @@ The following operations and states are involved in the connection between the d
 - **Activation**
   The device will be activated upon its first successful login, which updates its status from **Inactive** to **Active**. The **Active** status contains two sub-statuses: **Online** and **Offline**.
 
-
 ## Device Activation Mode and Device Status
 
 Devices created for the first time on the EnOS platform are enabled but not activated by default; they are waiting to be activated. Devices can be activated in the _dynamic_ or _static_ mode.
@@ -47,34 +46,39 @@ Three dimensions are used to describe the overall state of the device: Operation
      - Activation State
      - Communication State
    * - Disable
-     - --
+     - \
      - Offline
    * - Enable
      - Inactive
-     - --
-   * - --
+     - \
+   * - \
      - Activated
      - Online
-   * - --
-     - --
+   * - \
+     - \
      - Offline
 
 ## Authentication Process
 
 The main authentication process for device connection is as follows:
 
-1. Pre-register device in the cloud
-2. On the edge side, configure the device information registered in the cloud, and mainly burn into the device triple
-3. Power-on on edge side, connect to network, and try to log in. Device triple authentication in the cloud
+1. Pre-register device in the cloud.
+
+2. On the edge side, configure the device information registered in the cloud, and mainly burn into the device triple.
+
+3. Power-on on edge side, connect to network, and try to log in. Device triple authentication in the cloud.
+
    - Successful: Returned successfully, the device is instructed to send data
    - Failure: Return failed, connection is interrupted
-4. The device sends data via MQTT protocol
-5. The cloud issues instructions via the MQTT protocol
+
+4. The device sends data via MQTT protocol.
+
+5. The cloud issues instructions via the MQTT protocol.
+
 6. The device side responds to the cloud requests
 
 The specific flow chart is as follows:
 
-.. image:: media/secret_communication.png   
-   :width: 700px
+.. image:: media/secret_communication.png
 
 <!--end-->

@@ -1,6 +1,7 @@
 # Query Tags
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query_reply`

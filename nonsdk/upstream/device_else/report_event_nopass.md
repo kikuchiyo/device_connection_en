@@ -6,13 +6,12 @@ A device can publish a message to this topic to report the newly added event to 
 If non-passthrough mode is used, the device data sent to the cloud is in JSON.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply`
 
 .. note:: `tsl.service.identifier` is the identifier of the event that has been defined in the thing model.
-
-
 
 ## Example Request Message
 

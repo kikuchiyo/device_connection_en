@@ -3,6 +3,7 @@
 An edge can publish a message to this topic to retrieve the topological relationship between the edge and a sub-device.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get_reply`

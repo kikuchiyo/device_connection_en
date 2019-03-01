@@ -1,20 +1,22 @@
 # Device Management
 
-The EnOS™ Device Provisioning function helps IoT engineers to manage the device lifecycle, establish connection from the devices to the EnOS Cloud, and secure the two-way communication between the devices and the cloud.
+The EnOS™ Device Management function helps IoT engineers to manage the device lifecycle, establish connection from the devices to the EnOS Cloud, and secure the two-way communication between the devices and the cloud.
 
 ## Major Functionalities
 
-The EnOS Device Provisioning function provides the following key functionalities:
+The EnOS Device Management function provides the following key functionalities:
 
 ### Device Connection
 
 Provides device SDK to allow devices to connect to the IoT Hub.
+
 - Provides MQTT device SDK to meet the real-time requirements for long connections and low power requirements for short connections.
 - Provides connection schemes such as direct device connection and indirect connection through gateway proxies, providing solutions to meet the requirements of various scenarios for the heterogeneous network devices of enterprises.
 
 ### Device Lifecycle Management
 
 Supports complete device lifecycle management, including:
+
 - Device registration
 - Device configuration
 - Remote control
@@ -28,7 +30,7 @@ Provides device models. The device model allows devices of thousands of models f
 
 ### Device and Cloud Security
 
-**Authentication**
+#### Authentication
 
 - Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches. Each device carries a unique key-secret pair as the device leaves the factory.
 
@@ -36,7 +38,7 @@ Provides device models. The device model allows devices of thousands of models f
 
 For more information, see [Device Authentication Mechanism](deviceconnection_authentication).
 
-**Communication and Data Security**
+#### Communication and Data Security
 
 - Encrypts and decrypts data through the CA certificate mechanism to ensure the security of communication between the device and the cloud.
 
@@ -51,7 +53,10 @@ As shown in the figure below, a device can be connected directly or through the 
 - RRPC
 
 .. image:: media/device_connection_methods.png
-   :width: 700px
+<<<<<<< deviceconnection_overview.md
+
+=======
+>>>>>>> deviceconnection_overview.md
 
 Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage or functional modules for further processing:
 
@@ -87,20 +92,19 @@ A topic is the theme of messages. A topic takes one connection channel, which a 
 
 Based on whether and where the edge device is used in the connection. The following connection scenarios are supported:
 
-**Scenario 1: Connect through EnOS IoT Hub via MQTT protocol (cloud service)**
+### Scenario 1: Connect through EnOS IoT Hub via MQTT protocol (cloud service)
 
 This method requires the devices to support MQTT protocol and is applicable to most of the new IoT devices.
 
-**Scenario 2: Connect through remote EnOS Edge**
+### Scenario 2: Connect through remote EnOS Edge
 
 In this case, the EnOS Edge is deployed remotely at the cloud side. This method mainly applies to traditional devices and systems that do not support the MQTT protocol.
 
-
-**Scenario 3: Connect through on-site EnOS Edge**
+### Scenario 3: Connect through on-site EnOS Edge
 
 In this case, the EnOS Edge is deployed on-site with the devices. This method mainly applies to traditional devices and systems that do not support the MQTT protocol. Compared with scenario 2, this connection method can facilitate breakpoint resumption in the case of network interruption between the Edge and cloud. When a network interuption occurs, the Edge can cache data automatically during the interruption and resume data upload starting from the breakpoint when the connection recovers.
 
-**Scenario 4: Connect through EnOS™ Cloud Edge clusters (cloud service)**
+### Scenario 4: Connect through EnOS™ Cloud Edge clusters (cloud service)
 
 This requires that the device to be connected has a unique ID and can upload data through supported communication protocols. This method is frequently used for the photovoltaic device connection.
 

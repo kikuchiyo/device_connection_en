@@ -3,6 +3,7 @@
 A device can publish a message to this topic to report the newly added attributes to the cloud.
 
 Upstream
+
 - Request TOPIC：`/sys/{productKey}/{deviceKey}/thing/attribute/update`
 
 - Reply TOPIC：`/sys/{productKey}/{deviceKey}/thing/attribute/update_reply`

@@ -4,6 +4,7 @@ This TOPIC notifies the edge that the specific sub-device belongs to this edge h
 the delete devices message to the edge asynchronously.
 
 Downstream
+
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/delete`
 
 - Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/delete_reply`

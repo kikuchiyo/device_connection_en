@@ -9,11 +9,9 @@ Security is critical in an IoT system. When certificate authentication is enable
 
 The following diagram illustrates the process of secure communication between the edge and IoT Hub based on X.509 certificates:
 
-
 ### 1. IoT Hub Acquires X.509 Certificate
 
 .. image:: media/certificate_service_secure_communication_01.png
-   :width: 700px
 
 1a. The IoT Hub creates key pairs and CSR locally, acquires the X.509 certificate with the CSR by using the X.509 Certificate Service API.
 
@@ -24,13 +22,10 @@ The following diagram illustrates the process of secure communication between th
 ### 2. Edge Acquires X.509 Certificate
 
 .. image:: media/certificate_service_secure_communication_02.png
-   :width: 700px
 
 2a. Before leaving the factory, the Edge devices are pre-burned with a product certificate (`ProductKey` and `ProductSecret`) as well as a device serial number (SN). When powered on and connected to the network, the device will report its product certificate and serial number to the cloud for dynamic activation. The cloud will return the `DeviceSecret` to the Edge if the authentication is successful.
 
-
 2b. On the IoT Hub, the serial number of the Edge device is used as the `DeviceKey` to pre-register the Edge device. The device can be registered either via the EnOS Console or by calling the REST API.
-
 
 2c. The Edge receives the responses from the IoT Hub, creates key pairs and CSR, and calls the API to get its X.509 certificate. Meanwhile, the device trigraph is used to log the device in to the cloud, and the device will be activated upon its first login.
 
@@ -46,11 +41,9 @@ The following diagram illustrates the process of secure communication between th
 
 The diagram below illustrates the certificate-based authentication process:
 
-
 ### 3. Edge Communicates with the IoT Hub through Certificate-based Bi-directional Authentication
 
 .. image:: media/certificate_service_secure_communication_03.png
-   :width: 700px
 
 3a. The edge validates the certificate of the IoT Hub.
 
@@ -69,7 +62,6 @@ Under some circumstances, user needs to revoke the X.509 certificate of the edge
 ### 4. The IoT Hub Revokes the X.509 Certificate of the Edge
 
 .. image:: media/certificate_service_secure_communication_04.png
-   :width: 700px
 
 4a. The IoT Hub calls the revocation API to revoke the X.509 certificate with the serial number of the certificate.
 

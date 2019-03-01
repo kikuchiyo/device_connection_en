@@ -1,6 +1,7 @@
 # Report Tags
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update_reply`

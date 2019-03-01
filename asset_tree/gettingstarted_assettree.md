@@ -21,7 +21,6 @@ In this scenario, we have two buildings, each building has the following sensors
   - Temperature
   - Noise
 
-
 ## About the Task
 
 According to the above scenarios, you need to create models for the types of assets listed in the sample and build an asset tree based on the asset hierarchy.
@@ -71,9 +70,7 @@ According to the above scenarios, you need to create models for the types of ass
 
    The asset tree for this scenario is as follows:
 
-   .. image:: ../media/building_tree.png   
-      :width: 800px
-
+   .. image:: ../media/building_tree.png
 
 ## Procedure
 
@@ -87,6 +84,7 @@ See [Creating a Model](../model/creating_model) to create models for each type o
 
    - In the EnOS Console, click **Asset Tree** from the left navigation panel.
    - In the **Asset Tree** page, click **+** in the upper left corner to create the root node of the asset tree.
+   
      - The name of the root node is used as the name of this asset tree.
      - Generally, the root node of the asset tree is generally not a connected device.
      - If the node does not need a model, you can use the built-in model `<None>`, which has four empty elements, for root node.

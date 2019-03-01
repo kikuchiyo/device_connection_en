@@ -2,18 +2,16 @@
 
 This article helps you quickly learn how to provision the sub-device and edge to the EnOS Cloud, allowing the sub-device to connect and send telemetry to the EnOS Cloud through the edge, as well as how to check the communication status and view the data from EnOS Console.
 
-
 ## About This Scenario
 
 For information about the connection scenario of this task, see "Scenario 2.1" in [Device Connection Scenarios](connection_scenarios).
-
 
 ## About This Task
 
 In this example, an inverter will be connected to the EnOS Cloud through an edge gateway. Edge will collect data from the inverter and send them to the EnOS Cloud as a proxy. The overall connection scenario is shown in the figure below:
 
 .. image:: media/edge_connection_task_description.png   
-     :width: 700px
+
 
 As shown in the flowchart above, the procedure falls into the following steps:
 
@@ -61,7 +59,6 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
    - **Description**: Edge Model
 
    .. image:: media/model_edge.png
-      :width: 550px   
 
 3. Click **OK** to complete the operation.
 
@@ -79,7 +76,6 @@ In this step, We will create an Edge device model called **Edge_Model**, and we 
 6. Click **OK** to complete the operation.
 
 For details on device model settings, see [Creating Model](model/creating_model).
-
 
 ## Step 2: Create an Edge Product
 
@@ -100,7 +96,6 @@ In this step, we create a product called **Edge_Product**. We assume that an edg
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
-
 ## Step 3: Register the Edge Gateway
 
 In this step, we create an edge device named **Edge01**, which belongs to the **Edge_Product** product model created in the previous step.
@@ -120,7 +115,6 @@ In this step, we create an edge device named **Edge01**, which belongs to the **
 
 .. image:: media/register_edge.png   
 
-
 ## Step 4: Configure Edge Connection
 
 ### Using EnOS Edge
@@ -136,8 +130,6 @@ Use this procedure if you choose to use the EnOS Edge. When you use the gateway 
 4. Publish the configuration to the edge gateway.
 
 For more information on how to configure the EnOS Edge gateway, see [Adding an EnOS Edge Gateway](edge/managing_edge).
-
-
 
 ## Step 5: Use the Device SDK to Simulate Gateway Sending Data as Proxy of Sub-devices
 
@@ -160,11 +152,9 @@ In this step, we use the device SDK to simulate sending the inverter active powe
 
 For more information, see [Using the Device SDK](device/using_java_sdk).
 
-
 ## Step 6: Check the Device Status
 
 In the EnOS Console, click **Device Management > Device**, locate the Edge01 and INV001 devices and confirm that the devices are online.
-
 
 ## Step 7: Check the Device Data
 

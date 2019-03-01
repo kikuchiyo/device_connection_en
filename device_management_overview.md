@@ -2,27 +2,25 @@
 
 EnOS™ Device Management helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world.
 
-
 ## Key Personas
 
 EnOS Device Management Service primarily serves the following roles:
 
-**IoT Engineer**
+### IoT Engineer
 
 IoT Engineer, who performs the on-site installation, including installing the edge gateway devices and connecting the cables between edge gateways and devices, sets up device connections, and debugs the communication between the devices and the cloud.
 
-**Edge Developer**
+### Edge Developer
 
 Edge Developer, who develops the MQTT client applications of the edge according to the EnOS standard device protocols. The goal of the applications is to collect the telemetry data of the edge and transfer the data through supported protocols to the EnOS Cloud in the supported formats.
 
-**Asset Manager**
+### Asset Manager
 
 Assets Manager, who creates and manages the asset hierarchy (asset tree) based on the business case scenarios.
 
-**Application Developer**
+### Application Developer
 
 Application Developer, who develops applications to acquire device telemetry and configuration information via EnOS APIs and SDKs to fulfill requirements of certain business case scenarios.
-
 
 ## Key Capabilities
 
@@ -42,13 +40,11 @@ Enables you to define, receive, and process alerts for your organization assets.
 
 Enables asset owners, who understand the enterprise asset management business, to quickly create the asset topology to manage assets in the cloud in terms of different dimensions. [Learn more >>](asset_tree/assettree_overview)
 
-
 ## Related Services of EnOS Device Management
 
 ### Stream Analysis Service
 
 Stream Analysis enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
-
 
 ## Next Steps
 

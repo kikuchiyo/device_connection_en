@@ -4,7 +4,6 @@ The thing model is the abstraction and digitization of the physical objects in t
 
 In EnOS, defining thing model means defining the features of the product. The thing model describes what the product is, what it can do, and what services it can provide. On the EnOS platform, the description language of the thing model is in JSON format, and you can assemble and report the device data according to the syntax of the thing model.
 
-
 ## Thing Model Elements
 You can define the following elements to define a thing model according to the actual needs of the product.
 
@@ -31,26 +30,28 @@ You can define the following elements to define a thing model according to the a
 
 A model can be created from a source model through: **Clone** and **Inherit**. The difference of the two creating modes are mainly reflected in the model relationship.
 
-**Clone**
+### Clone
 
 For models created from the **Clone** mode, the new model has exactly the same four elements as the source model. The two models are independent from each other, and changes to one model will not affect the other.
 
-**Inherit**
+### Inherit
 
 For models created from the **Inherit** mode, we define the newly created models as the **Sub Model** and the source model is the **Parent Model**. The sub model has the following main characteristics:
+
 - The sub model inherits all the features of the parent model, and the inherited elements cannot be modified.
 - The sub model can be inherited again, and supports multi-level inheritance relationships.
 - The sub model can have independent elements, but the newly added elements in the sub model shall not have the same name as the elements of all parent models.
 - When the four elements of the parent model are changed, the sub model's four elements inherited from the parent model are changed synchronously to remain consistent with the parent model.
 
 ## Model Permission
+
 The read and write permissions for the model can be divided into two categories: **Public Model** and **Private Model**.
 
-**Public Model**
+### Public Model
 
 The public models are the domain standard models that are accumulated on EnOS and are made public to all organization units by EnOS. All OUs have read permission but no write permission to the public models.
 
-**Private Model**
+### Private Model
 
 The private models are created by the developers in their own OU. Private models are not open to the public and are visible only within the organization. The developers in the organization have read and write permissions to the private models.
 

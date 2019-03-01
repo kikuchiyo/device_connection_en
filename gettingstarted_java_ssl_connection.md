@@ -6,12 +6,12 @@ This article helps you quickly get started with using certificate-based authenti
 
 The preparation work is as shown in the following diagram.
 
-.. image:: media/certificate_preparation.png   
-   :width: 700px
+.. image:: media/certificate_preparation.png
 
 ### Step 0: Create Model, Product, and Device
 
 This step supposes assumes that you have complete the following tutorials:
+
 - [Connect Device into Cloud Directly (Without Edge)](gettingstarted_device_connection)
 - [Connecting Sub-devices to EnOS Cloud via Edge](gettingstarted_edge_connection).
 
@@ -19,20 +19,18 @@ This step supposes assumes that you have complete the following tutorials:
 
 This step is almost the same as what you've done in the aforementioned tutorials with the only difference that you need to enable **Certificate Authentication** when you create the edge gateway product as shown in the following screenshot:
 
-.. image:: media/edge_ssl.png   
-   :width: 400px
+.. image:: media/edge_ssl.png
 
 The inverter product does not need to have **Certificate Authentication** enabled because the inverter connects to the EnOS Cloud through the edge gateway. You only need to enable the authentication for the connection between the edge and the cloud.
-
 
 **Creating edge device**
 
 Create an edge device instance named **Edge01_Certificate** based on the product that you just created.
 
-.. image:: media/edge01_certificate.png   
-   :width: 700px
+.. image:: media/edge01_certificate.png
 
 Take note of the device triple of the **Edge01_Certificate** device, which will be used for creating the CSR. The following device triple is an example for your reference, you'll need to use your own.
+
 - Product Key: Et***YP6
 - Device Key: UB***rOhJD
 - Device Secret: jgWGPE***B7bShf2P5cz
@@ -41,8 +39,7 @@ Take note of the device triple of the **Edge01_Certificate** device, which will 
 
 Follow [Getting Started With Direct Device Connection](gettingstarted_device_connection) to create an inverter device as shown in the following figure:
 
-.. image:: media/INV002.png   
-   :width: 700px
+.. image:: media/INV002.png
 
 ### Step 1: Obtain Root Certificate
 
@@ -68,8 +65,7 @@ For the guidelines of creating CSR file, see [Creating your Certificate Signing 
 
 After the CSR file `edge.csr` is created, invoke the relevant EnOS API to request for certificate. You have obtained the device triple when you create the **Edge01_Certificate** device, you can now call the `applyCertificateByDeviceKey` API to obtain your certificate.
 
-.. image:: media/postman_getcertificate.png   
-   :width: 700px
+.. image:: media/postman_getcertificate.png
 
 After you obtain the certificate, save it as `edge.pem`.
 
@@ -240,8 +236,7 @@ Start the sample program and view the logs.
 
 After you run the sample program, the edge device logs in and adds sub-devices into its topology, proxies the sub-devices to connect to the cloud. The device connection status is as shown in the following figure:
 
-.. image:: media/device_list.png   
-   :width: 700px
+.. image:: media/device_list.png
 
 ### Step 8: Check Device Data
 

@@ -1,38 +1,74 @@
-# Report Device Measure Points
+# Reporting Device Measure Points in Batch
 
-A device can publish a message to this topic to report the newly added measure point to the cloud.
+You may use this protocol in the following scenarios:
+- You want a gateway device to report the measure points of the gateway's sub-devices.
+- You want one device to report measure points with different time stamps in batch at one time.
+- A mix of all previous scenarios.
 
-.. note:: Configure the parameters according to the output and input parameters of the measure points.
+
+
+.. note:: Configure the parameters according to the output and input parameters of the measure points. If part of the data in the request fails to be sent, the entire request fails to be sent. The first error code to appear will be returned.
 
 Upstream
+- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch`
 
-- Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
-
-- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply`
+- Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch_reply`
 
 ## Example Request Message
 
-```
+```json
 {
 	"id": "123",
 	"version": "1.0",
-	"params": {
-		"measurepoints": {
-			"Power": {
-				"value": 1.0,
-				"quality": 9
+	"params": [{
+			"productKey": "product1",
+			"deviceKey": "device1",
+			"measurepoints": {
+				"Power": {
+					"value": 1.0,
+					"quality": 9
+				},
+				"temp": 1.02,
+				"branchCurr": [
+					"1.02", "2.02", "7.93"
+				]
 			},
-			"temp": 1.02,
-			"branchCurr": [
-				"1.02", "2.02", "7.93"
-			]
+			"time": 123456
 		},
-		"time": 123456
-	},
-	"method": "thing.measurepoint.post"
+		{
+			"productKey": "product1",
+			"deviceKey": "device1",
+			"measurepoints": {
+				"Power": {
+					"value": 2.0,
+					"quality": 9
+				},
+				"temp": 2.02,
+				"branchCurr": [
+					"2.02", "3.02", "9.93"
+				]
+			},
+			"time": 123567
+		},
+		{
+			"productKey": "product2",
+			"deviceKey": "device2",
+			"measurepoints": {
+				"Power": {
+					"value": 1.0,
+					"quality": 9
+				},
+				"temp": 1.02,
+				"branchCurr": [
+					"1.02", "2.02", "7.93"
+				]
+			},
+			"time": 123456
+		}
+	],
+	"method": "thing.measurepoint.post.batch"
 }
 ```
-
 ## Example Response Message
 
 ```
@@ -65,6 +101,14 @@ Upstream
      - Object
      - Mandatory
      - Parameters used for reporting device measure points.
+   * - productKey
+     - String
+     - Optional
+     - Product key of the device. If you need to report the data of sub-devices, the product keys and device keys of sub-devices are required. If the product keys and device keys of sub-devices are not provided, the product key and device key in the upstream request topic are used.
+   * - deviceKey
+     - String
+     - Optional
+     - Device key of the device. If you need to report the data of sub-devices, the product keys and device keys of sub-devices are required. If the product keys and device keys of sub-devices are not provided, the product key and device key in the upstream request topic are used.
    * - method
      - String
      - Mandatory
@@ -107,3 +151,5 @@ Upstream
      - Detailed returned information in JSON format.
 
 <!--end-->
+
+

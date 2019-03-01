@@ -5,6 +5,7 @@
 After a device receives a set device measuring point request, it updates the value of the measuring points of the device according to the request.
 
 Downstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/set`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/measurepoint/set_reply`
@@ -20,7 +21,6 @@ Downstream
 	},
 	"method": "thing.service.measurepoint.set"
 }
-
 ```
 
 ## Example Response Message

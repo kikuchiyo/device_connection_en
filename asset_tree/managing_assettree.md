@@ -1,13 +1,14 @@
 # Managing Asset Trees
 
 This article describes the asset tree management operations from two aspects: asset and node.
+
 - The operations of the node only affect the node.
 - The operations of the asset affect all nodes that the asset is attached to.
-
 
 ## Deleting Asset Tree
 
 Deleting an asset tree is accomplished by deleting the root node of the asset tree. You can delete a root node in the following approaches:
+
 - Delete node
 - Delete instance
 
@@ -25,13 +26,12 @@ The deletion of a node only deletes the node itself and does not delete the atta
 
 3. In the pop-up windows, click **Confirm** to complete the deletion.
 
-
 ### Deleting a Instance
 
 The deletion of a instance deletes the asset itself as well as all nodes that this asset is bound to.
 
 .. note:: - You only can delete a instance when all nodes to that this asset is bound are leaf node.  
-         - You cannot delete a instance if this asset is a connected device. You can delete a connected device via **Device Management**.
+   - You cannot delete a instance if this asset is a connected device. You can delete a connected device via **Device Management**.
 
 1. In the EnOS Console, click **Asset Management** form the left navigation panel.
 

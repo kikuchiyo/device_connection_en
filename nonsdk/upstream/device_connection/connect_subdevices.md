@@ -1,6 +1,7 @@
 # Connect Sub-devices to EnOS Cloud
 
 Upstream
+
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login`
 
 - Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login_reply`
@@ -96,7 +97,7 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
      - JSON
      - Optional
      - Detailed returned information in JSON format.
-     
+
 
 .. note:: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any connection requests.
 

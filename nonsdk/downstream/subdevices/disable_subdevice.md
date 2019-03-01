@@ -4,6 +4,7 @@ This TOPIC notifies the edge that the specific sub-device belongs to this edge h
 the disable device message to the edge topic asynchronously.
 
 Downstream
+
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/disable`
 
 - Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/disable_reply`

@@ -29,7 +29,6 @@ After creating the root node, you can add a leaf node under the root node by the
 - Create an asset based on the model
 - Add an existing asset to the asset tree
 
-
 ### Creating an Asset Based on the Model
 
 1. Select a node of the asset tree and right click, then click **Add > Add leaf node > Create asset from model**.
@@ -41,7 +40,6 @@ After creating the root node, you can add a leaf node under the root node by the
    - **Bind device later**: User this option if you are sure that the asset to be created is a connected device, but you need to confirm whether the device is created or not afterwards. In this case, you'll bind the device later.
 
 3. Complete the configuration of the selected approach, and then click **Confirm**.
-
 
 ### Adding an Existing Asset
 

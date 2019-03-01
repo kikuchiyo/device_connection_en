@@ -10,14 +10,13 @@ The supported MQTT version:
 - MQTT v3.1.1 on port 11883 if you use the secret-based one-way authentication.
 - MQTT v3.1.1 over SSL/TLS on port 18883 if you use the certificate-based two-way authentication.
 
-
 Common Parameter Description
-===============================
+------------------------------
 
 The following table describes the common parameters used in the request and response messages.
 
 .. list-table::
-  :header-rows: 1
+   :header-rows: 1
 
   * - Parameter
     - Type
@@ -48,48 +47,42 @@ The following table describes the common parameters used in the request and resp
     - Optional
     - Detailed infomaton, in JSON format. Can be   either int or dict regarded to the returned message.  
 
-
-
-
-
 Connection Establishment
-==========================
+--------------------------
+
 Before develop any communication protocol, you should establish the communication with EnOS Cloud.
 
 Please refer to the following section.
 
 `Establishing communicate with EnOS Cloud using the MQTT protocol <nonsdk_login>`__
 
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-
-  nonsdk_login
-
-
-
 Protocol Standards
-=====================
+-------------------
 
 From the data transmission direction perspective, the device protocol standards falls into two groups: upstream and downstream.
 
 Please refer to the following sections.
 
 .. toctree::
-  :caption: Upstream
-  :maxdepth: 1
+   :maxdepth: 1
+   :hidden:
 
-  upstream/device_registration
-  upstream/topological_mgmt/index
-  upstream/device_connection/index
-  upstream/device_tags/index
-  upstream/device_else/index
+   nonsdk_login
 
+.. toctree::
+   :caption: Upstream
+   :maxdepth: 1
+
+   upstream/device_registration
+   upstream/topological_mgmt/index
+   upstream/device_connection/index
+   upstream/device_tags/index
+   upstream/device_else/index
 
 
 .. toctree::
-  :caption: Downstream
-  :maxdepth: 1
+   :caption: Downstream
+   :maxdepth: 1
 
-  downstream/devices/index
-  downstream/subdevices/index
+   downstream/devices/index
+   downstream/subdevices/index

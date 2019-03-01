@@ -8,6 +8,7 @@ The features that are required for the model have been designed. For information
 ## About This Task
 
 Configure all the features in EnOS according to the defined thing model.
+
 - Attributes
 - Measure points
 - Service
@@ -23,6 +24,7 @@ Configure all the features in EnOS according to the defined thing model.
    - **Model Name**: The name of the model; duplicate name is not allowed in the same organization.
    - **Category**: Static extension info of the product, such as manufacturer and device model.
    - **Create From**:
+
      - No: Do not configure specific attributes for now. Manually define the features after the template is created.
      - Clone: Copy all the information of the source model. There is no association between the source model and the model created by cloning it.
      - Inherit: Copy all the information of the source model. The created model is associated with the source model.    
@@ -30,6 +32,7 @@ Configure all the features in EnOS according to the defined thing model.
        - The child model can add new features based on the parent model, but it needs to use a different name from the parent model.
        - The child model can be further inherited to support multi-level inheritance.
        - Changes to the features in the parent model will affect the child template.
+       
    - **Support Passthrough**: indicates whether to support reporting measure point data that is not defined in the model
    - **Source Model**: The model selected for copying or the inherited parent model.
    - **Description**: Detailed description of the model.
@@ -59,7 +62,7 @@ Configure all the features in EnOS according to the defined thing model.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
      + array: **Type** shall be defined. Make sure that the same type is used in the same array.
      + map: it is used to indicate that, whether this model point can be mapped or not.
-     + file: File type parameter, value is the file path in URI format. 
+     + file: File type parameter, value is the file path in URI format.
 
 
    - **Required**: If set to "Yes", the parameter must be provided when creating a new device under this product.
@@ -90,7 +93,7 @@ Configure all the features in EnOS according to the defined thing model.
      + date: The format of date is yyyy-MM-dd HH:mm:ss.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.
      + array: describe whether this model point is the array type or not, **Type** shall be defined. Make sure that the same type is used in the same array.
-     + file: File type parameter, value is the file path in URI format. 
+     + file: File type parameter, value is the file path in URI format.
 
    - **Tags**: Tags can be used to describe a measure point; depending on the needs, you can flexibly identify a measure point, such as its type, group, and priority.
    - **Description**: A description of the measure point.

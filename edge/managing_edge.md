@@ -8,7 +8,6 @@ The Edge gateway needs to be configured before connect the sub-device to the edg
 
 2. You must have completed the initialization of the Edge gateway. The initialization of the Edge gateway hardware is usually done by the Envision project team. For more information, consult the Envision project manager.
 
-
 ## Step 1: Adding the Edge Gateway
 
 1. In the EnOS console, click **Edge Gateway > Edge Management** from the left navigation panel.    
@@ -22,7 +21,6 @@ The Edge gateway needs to be configured before connect the sub-device to the edg
 After the Edge gateway is successfully added, in the **Edge Management** page, you can view the name, SN, version, the current communication status, and the publish status of each Edge, as shown in below figure:
 
 .. image:: media/imageN001.png
-   :width: 800px
 
 ## Step 2: Connecting the Sub-device to the Edge Gateway
 
@@ -48,7 +46,6 @@ As shown in the following figure, Edge is used as the TCP/IP client, so the conf
 
 .. image:: media/image011.png
    :alt: Figure: Example of Adding Connection
-   :width: 700px
 
 ### Adding Devices
 
@@ -61,7 +58,6 @@ In this step, you'll add the device and configure the basic information.
 
    .. image:: media/image012.png
       :alt: Figure: Add Devices to the Connection
-      :width: 700px
 
 2. In the pop-up window,
 
@@ -82,18 +78,14 @@ If the basic information of the added device needs to be updated, you can modify
 1. Click **Export** next to device connection to export the device connection information table.
 
 2. Update the basic information in device connection information table .
+
 3. Click **Import** to upload the information table.
 
 You can find the **Import** and **Export** button as shown below:
 
 .. image:: media/image014.png
-   :width: 700px
 
-
-
-<!--![](media/image015.png)
-
-*Figure: Device Connection Information Table*-->
+<!--![](media/image015.png)*Figure: Device Connection Information Table*-->
 
 <!--Click the **Delete** button next to the device to remove this device from the connection. To delete devices in batch, check the devices you want to delete under this connection, and click the “Bulk Delete” button.-->
 
@@ -113,7 +105,6 @@ You can configure the device by two ways:
 
    .. image:: media/image020.png
       :alt: Figure: Configure Logical Addresses and Offsets on a Device-by-Device Basis
-      :width: 700px
 
 **You can configure the device in batches in the following approach:**
 
@@ -134,7 +125,6 @@ Click **Publish** to publish the configuration to the corresponding edge gateway
 You can find the **Publish** button and the publish status as shown below:
 
 .. image:: media/image021.png
-   :width: 700px
 
 ## Step 3: Testing Communication
 
@@ -142,7 +132,6 @@ After completing and publishing the configuration to the edge gateway, you need 
 
 .. image:: media/image022.png
    :alt: Figure: Communication Status Indication Icon on Transport Layer
-   :width: 700px
 
 There are several reasons for communication interruption, including but not limited to the following reasons:
 
@@ -164,7 +153,6 @@ Therefore, further debugging is needed to help you locate the problem. EnOS Edge
 
 .. image:: media/image026.png
    :alt: Figure: Bulk Communication Test Overview
-   :width: 700px
 
 Batch testing provides four features: data, datagram, log, and console. Click the corresponding tab to switch among the different features, the operations of each page are described in the below sections:
 
@@ -174,7 +162,6 @@ In the **Data** tab, you can view all the devices under this connection, filter 
 
 .. image:: media/image029.png
    :alt: Figure: Data Feature Overview
-   :width: 700px
 
 **Setting number**
 
@@ -186,7 +173,6 @@ You can set numbers for the telemetry and telecommand points in the following ap
 
 .. image:: media/image030.png
    :alt: Figure: Number Setting Feature
-   :width: 700px
 
 ### Datagram
 
@@ -207,7 +193,6 @@ In the **Console** tab, you can debug through the common communication debugging
 
 .. image:: media/image033.png
    :alt: Figure: Console Feature Overview
-   :width: 700px
 
 ### Testing the Communication of a Single Device
 
@@ -219,7 +204,6 @@ You can test the communication on a single device and view the corresponding dat
 
 .. image:: media/image034.png
    :alt: Figure: Single Device Communication Test Feature
-   :width: 700px
 
 ## Summary
 

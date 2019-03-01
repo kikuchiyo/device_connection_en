@@ -6,13 +6,11 @@ This article helps you quickly learn how to provision a direct-connecting device
 
 For information about the connection scenario of this task, see "Scenario 1.1" in [Device Connection Schemes](connection_scenarios).
 
-
 ## About This Task
 
 Here we take the household PV inverter connection as an example. The inverter device triple is burned into the inverter during manufacturing. After you power on and connect the inverter to the network, the inverter is connected to the IoT Hub based on the device triple authentication. The overall process is shown below:
 
-.. image:: media/device_connection_task_description.png   
-   :width: 700px
+.. image:: media/device_connection_task_description.png
 
 As shown in the flowchart above, the procedure falls into the following steps:
 
@@ -27,7 +25,6 @@ As shown in the flowchart above, the procedure falls into the following steps:
 5. Check device communication status
 
 6. View device data
-
 
 ## Step 1: Create a Device Model
 
@@ -59,13 +56,13 @@ This step assumes that there is no device model to be reused. We create a new mo
    * - Service
      - Control     
      - INV.Control
-     - --  
-     - Invoke Method: Asynchronous      
+     - \
+     - Invoke Method: Asynchronous
    * - Event
-     - Error information     
+     - Error information
      - Error
-     - --  
-     - Event Type: Error      
+     - \
+     - Event Type: Error
 
 The steps to create this model are as follows:
 
@@ -85,11 +82,11 @@ The steps to create this model are as follows:
 3. Click **OK** to complete the operation.
 
    .. image:: media/model_inverter.png
-      :width: 400px
 
 4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
 
 5. Click **Add**, and provide the following settings in the **Add Feature** window:
+
    - **Attribute 1**
 
      - **Name**: Inverter_Type
@@ -165,7 +162,6 @@ In this step, we create a product called **Inverter_Product**. We assume that a 
 3. Click **OK** to complete the operation.
 
    .. image:: media/create_product.png
-      :width: 400px
 
 For details about product settings, see [Creating Products](cloud/creating_product).
 
@@ -189,12 +185,10 @@ In this step, we create a device named **INV001**, which belongs to the **Invert
 3. Click **Confirm** to complete the operation.
 
    .. image:: media/register_device.png   
-      :width: 700px
 
 For details about device settings, see [Creating a Device](cloud/creating_device).
 
 After you complete the device registration, obtain the device triple: `ProductKey`,`DeviceKey`,and `DeviceSecret`, which will be used in the following step.
-
 
 ## Step 4: Use Java SDK to Simulate Device Sending Telemetry
 
@@ -214,8 +208,7 @@ For more information, see [Using the Device SDK](device/using_java_sdk).
 
 In the EnOS Console, click **Device Management > Device**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
 
-.. image:: media/device_status.png   
-   :width: 700px
+.. image:: media/device_status.png
 
 ## Step 6: Check the Device Data
 

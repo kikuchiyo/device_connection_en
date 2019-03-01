@@ -1,6 +1,7 @@
 # Disconnect Sub-devices from EnOS Cloud
 
 Upstream
+
 - Request TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout`
 
 - Reply TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout_reply`

@@ -13,7 +13,6 @@ The following major steps are involved:
 
 .. image:: media/image035.png
    :alt: Figure: Three Steps to Managing Device Templates
-   :width: 700px
 
 A device template can be created mainly in two ways:
 
@@ -50,7 +49,6 @@ In the **Basic Information** section, provide the information of the device, amo
 
 .. image:: media/image040.png
    :alt: Figure: Protocol Details Page
-   :width: 700px
 
 .. note:: If no suitable protocol is found, you can contact the system administrator. You can also re-develop the protocol and upload it to the protocol management center for editing, updating, and more operations. For information on developing new protocols, please refer to [Creating Protocol](creating_protocol).
 
@@ -75,7 +73,6 @@ If you have chosen a communication protocol in the previous step and successfull
 
 .. image:: media/image043.png
    :alt: Figure: Protocol Selection and Point Table Import
-   :width: 700px
 
 ### Selecting Model and Configuring Mapping Relationship
 
@@ -89,7 +86,6 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
 
    .. image:: media/image046.png
       :alt: Figure: Mapping Relationship Configuration
-      :width: 700px
 
 4. Add the mapping relationship:
 
@@ -97,19 +93,17 @@ In the **Model Selection and Mapping** section, you can configure mapping relati
    - For complex mappings, you can click **Add Formula** to configure a mapping formula:
 
      Take the addition formula "SUM" as an example:
+
      + select _SUM_ in the formula algorithm column.
      + In the acquisition point box, click |img049| next to the corresponding point in the order of adding the points. As you can see in the figure below, the added formula is "ai.4999+ai.5001", consistent with the order of clicking.
 
 .. image:: media/image050.png
    :alt: Figure: Notes for Adding the SUM Formula   
-   :width: 450px
 
 .. note:: For some formulas, the order of adding the points is important. For example, in the cross product operation, when you select *cross product* in the formula algorithm column and then select four points in order, the added formula will be "(ai.4999\*ai.5000+ai.5009\*ai.5010)". The operand column in the figure works as a coefficient; if it is set to 0, no operation will be made. The operand in the figure below is 0.01, so the final formula added is "(ai.4999\*ai.5000+ai.5009\*ai.5010)\*0.01".
 
 .. image:: media/image051.png
    :alt: Figure: Point Selection Order and Operand   
-   :width: 450px
-
 
 #### Batch Configuration of Mapping Relationship
 

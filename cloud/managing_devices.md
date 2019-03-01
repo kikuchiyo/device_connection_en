@@ -24,7 +24,6 @@ If the device is found to be abnormal, it can be disabled in EnOS.
 
 2. In the table of devices, you can specify a device as online or offline by the switch in the **Status/Enable** column.
 
-
 ## Retrieving the Device Triple Information
 
 The `productKey`, `deviceKey`, and `deviceSecret` are considered as the device triple information.

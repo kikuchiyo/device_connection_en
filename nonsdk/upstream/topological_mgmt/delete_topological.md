@@ -5,6 +5,7 @@ An edge can publish a message to this topic to delete the topological relationsh
 After you delete the topological relationship of the sub-device, the sub-device can no longer connect to the EnOS Cloud through the edge.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete_reply`

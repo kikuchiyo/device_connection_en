@@ -13,34 +13,37 @@ EnOS mainly provides the following connection schemes:
 The connection scheme is usually selected according to the hardware capabilities of the device and the security requirements for the device connection.
 
 To be connected into the internet of things, an object must be able to be connected, that is, it should at least meet the following requirements:
+
 - Can be connected into the network
 - Supports burning of firmware and running of connection program
 
 According to the above attributes, real-world devices can be divided into two major categories:
+
 - Those support firmware burning, as well as direct connection to the IoT platform via Wi-Fi, GPRS, 3G, or 4G signals.
 - Those do not support firmware burning, and are lack of the ability to connect via Wi-Fi, 3G, or 4G. In this scenario, data of these devices need to be collected by an edge gateway, and the devices are connected to the IoT platform through the edge gateway. Edge needs to support firmware burning and networking.
 
 ### Scenario of Direct Device Connection
 
 The devices can be connected directly to the cloud. Some common devices include:
+
 - Devices with smart acquisition rod, such as household inverters, and household energy storage batteries.
 - Smart home devices, such as surveillance cameras, and smart thermometers and hygrometers.
 
 ### Scenario of Gateway Proxy Connection
 The devices need a gateway proxy to connect to the cloud. Some common devices include:
+
 - Distributed inverters: the gateway collects data directly from multiple inverters and then sends the data to the cloud.
 
   .. image:: media/inverter_gateway.png
-     :width: 500px
 
 - SCADA: the SCADA is connected directly to the wind turbines and collects the data; the gateway is connected to the SCADA to collect its data, and then sends the data to the cloud.
 
   .. image:: media/turbine_scada_gateway.png
-     :width: 500px
 
 ## Security Authentication Options
 
 The EnOS IoT Hub supports two security authentication methods:
+
 - Secret-based one-way authentication: one-way authentication, relatively weak security, enforced by the system by default.
 - Certificate-based two-way authentication: two-way authentication with high security, enabled actively by the user.
 
@@ -76,9 +79,7 @@ For more information about the authentication mechanism for device connection se
      - Static Activation via Device Secret
      - Yes
 
-
 The message flow of different connection and activation methods are illustrated in the following sections:
-
 
 ### Direct Connection
 
@@ -87,17 +88,14 @@ The message flow of different connection and activation methods are illustrated 
 The following figure illustrates the message flow of connection scenario 1.1.
 
 .. image:: media/connection_scenario_1.1.png
-   :width: 800px
 
 This scenario requires that the device is burned with its unique device triple that is obtained through cloud registration before it leaves the factory. The scenario provides stronger security but lower operability due to the demand of burning unique device triple during manufacturing.
-
 
 #### Scenario 1.2: The connected devices are registered, and devices are burned with the same product information in batch
 
 The following figure illustrates the message flow of connection scenario 1.2.
 
 .. image:: media/connection_scenario_1.2.png
-   :width: 800px
 
 Scenario 1.2 deals with the low operability issue of Scenario 1.1. Which is
 
@@ -112,7 +110,6 @@ Scenario 1.2 deals with the low operability issue of Scenario 1.1. Which is
 The following figure illustrates the message flow of connection scenario 1.3.
 
 .. image:: media/connection_scenario_1.3.png
-   :width: 800px
 
 Take the household photovoltaic inverter for example.
 
@@ -141,7 +138,6 @@ Household photovoltaic inverters do not support burning firmware. In this scenar
 The following figure illustrates the message flow of connection scenario 2.1.
 
 .. image:: media/connection_scenario_2.1.png
-   :width: 800px
 
 Scenarios 2.1 is similar to 2.2 except that in Scenario 2.2, SA is burned into the edge and thus enables the edge to call the EnOS API to create the sub-device. While in Scenario 2.1, you will need to register the sub-device in the cloud beforehand, obtain the sub-device triple information, and burn the sub-device triple into the edge in advance.
 
@@ -154,7 +150,6 @@ Compared with the more flexible Scenario 2.2, Scenario 2.1 has more complex conf
 The following figure illustrates the message flow of connection scenario 2.2.
 
 .. image:: media/connection_scenario_2.2.png
-   :width: 800px
 
 1. In the EnOS Console, the edge developer registers an Edge application in the EnOS Cloud, and obtains the service account (SA) of the application: the `accessKey` and `accessSecret`.
 

@@ -3,13 +3,12 @@
 Device receives the invoke services request through the topic. EnOS Cloud publishes a message to the device topic to invoke the device services.
 
 Downstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply`
 
-
 .. note:: `tsl.service.identifier` is the identifier of the service that has been defined in the thing model.
-
 
 ## Example Request Message
 
@@ -23,7 +22,6 @@ Downstream
 	},
 	"method": "thing.service.{tsl.service.identifier}"
 }
-
 ```
 
 ## Example Response Message

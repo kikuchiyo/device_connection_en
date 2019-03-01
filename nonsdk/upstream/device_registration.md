@@ -3,6 +3,7 @@
 ## Register a Device
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/device/register`
 
 - Reply TOPIC: `/sys/{productKey}/{deivceKey}/thing/device/register_reply`
@@ -111,7 +112,7 @@ Upstream
    * - Data
      - JSON
      - Optional
-     - Detailed information of the device. 
+     - Detailed information of the device.
 
 
 <!--end-->

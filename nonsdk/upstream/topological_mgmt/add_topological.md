@@ -3,6 +3,7 @@
 An edge can publish a message to this topic to add the topological relationship between the edge and a sub-device.
 
 Upstream
+
 - Request TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add`
 
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add_reply`

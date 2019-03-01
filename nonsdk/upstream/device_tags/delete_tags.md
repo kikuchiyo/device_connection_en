@@ -1,6 +1,7 @@
 # Delete Tags
 
 Upstream
+
 - Request TOPIC `/sys/{productKey}/{deviceName}/thing/tag/delete`
 
 - Reply TOPIC `/sys/{productKey}/{deviceName}/thing/tag/delete_reply`

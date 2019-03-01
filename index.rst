@@ -1,5 +1,5 @@
 Device connection
---------------------------
+===================
 
 .. toctree::
    :maxdepth: 1
@@ -19,15 +19,17 @@ Device connection
    secretbased_authentication
    certificatebased_authentication
    connection_scenarios
+   ota_overview
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Get Started
+   :maxdepth: 1
+   :caption: Get Started
 
-    gettingstarted_device_connection
-    gettingstarted_edge_connection
-    gettingstarted_java_ssl_connection
-    asset_tree/gettingstarted_assettree
+   gettingstarted_device_connection
+   gettingstarted_edge_connection
+   gettingstarted_java_ssl_connection
+   asset_tree/gettingstarted_assettree
+   gettingstarted_ota
 
 .. toctree::
    :maxdepth: 1
@@ -49,3 +51,10 @@ Device connection
    :caption: Reference
 
    nonsdk/index
+
+Downloads
+""""""""
+    pdf_ htmlzip_ epub_
+.. _pdf: https://www.envisioniot.com/projects/device-connection/downloads/pdf/latest/
+.. _htmlzip: https://www.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
+.. _epub: https://www.envisioniot.com/projects/device-connection/downloads/epub/latest/
