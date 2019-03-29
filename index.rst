@@ -6,55 +6,41 @@ Device connection
    :caption: Overview
 
    device_management_overview
+   device_management_concepts
 
 .. toctree::
    :maxdepth: 1
    :caption: Learn
 
-   device_management_concepts
-   deviceconnection_overview
-   model/model_overview
-   asset_tree/assettree_overview
-   deviceconnection_authentication
-   secretbased_authentication
-   certificatebased_authentication
-   connection_scenarios
-   ota_overview
+   learn/message_flow
+   learn/enos_coap
+   learn/connection_scenarios
+   learn/device_lifecycle_management
+   learn/ingestion/index
+   learn/deviceconnection_authentication
 
 .. toctree::
    :maxdepth: 1
    :caption: Get Started
 
-   gettingstarted_device_connection
-   gettingstarted_edge_connection
-   gettingstarted_java_ssl_connection
-   asset_tree/gettingstarted_assettree
-   gettingstarted_ota
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Scenarios
-
-   cloud2cloud_dataforwarding
-
+   quickstart/gettingstarted_device_connection
+   quickstart/gettingstarted_edge_connection
+   quickstart/gettingstarted_java_ssl_connection
 
 .. toctree::
    :maxdepth: 1
    :caption: How-to's
 
-   cloud/index
-   edge/index
-   device/index
+   howto/model/index
+   howto/device/develop/index
+   howto/device/manage/index
+   howto/alert/index
+   howto/asset_tree/index
+   howto/edge/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
 
-   nonsdk/index
-
-Downloads
-""""""""
-    pdf_ htmlzip_ epub_
-.. _pdf: https://www.envisioniot.com/projects/device-connection/downloads/pdf/latest/
-.. _htmlzip: https://www.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
-.. _epub: https://www.envisioniot.com/projects/device-connection/downloads/epub/latest/
+   reference/mqtt/index
+   reference/coap/index

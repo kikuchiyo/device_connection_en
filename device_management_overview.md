@@ -1,8 +1,44 @@
 # About Device Management
 
-EnOS™ Device Management helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world.
+EnOS™ Device Management Offering helps you quickly and securely connect physical devices to EnOS Cloud and start to transfer data, manage device lifecycle, and map the physical asset structure to the digital world.
 
-## Key Personas
+## Device Connectivity
+
+Supports bi-directional communication between the device and the cloud:
+- Data ingestion from device to cloud
+- Remote control from cloud to device
+
+Provides device SDK to enable devices to transmit messages to the EnOS IoT Hub.
+
+- Provides MQTT device SDK to meet the real-time requirements for long connections.
+- Provides CoAP device SDK to meet the low power requirements for short connections.
+- Support SDKs for Java, C, and Python programing languages.
+
+Supports various connection schemes and provides solutions to meet the requirements of various scenarios for the heterogeneous network devices of enterprises. For more information, see [Device Connectivity](learn/connection_scenarios).
+
+## Device Lifecycle Management
+
+Supports complete device lifecycle management, including:
+
+- Device registration
+- Device configuration
+- Firmware upgrade
+- Real-time monitoring
+- Device decommision
+
+For more information, see [Device Lifecycle Management](learn/device_lifecycle_management).
+
+## Device and Cloud Security
+
+- Supports _secret-per-device_ authentication mechanism, reducing the security risk that the device may be hacked. This machanism is suitable for devices that can be burned with pre-allocated device key into each chip in batches. Each device carries a unique key-secret pair as the device leaves the factory.
+
+- Supports _secret-per-product_ mechanism, where devices of the same product model are pre-burned with key-secret pair (the _product key-secret pair_). The device can dynamically acquire the device secret during authentication. This machanism is suitable for situations where unique key-secret pairs cannot be burned into each device in mass production.
+
+- Supports -certificate-based-authenticate, where data is encrypted and decrypted through the CA certificate to ensure the security of communication between the device and the cloud.
+
+For more information, see [Device and Cloud Security](learn/deviceconnection_authentication).
+
+## Target Personas
 
 EnOS Device Management Service primarily serves the following roles:
 
@@ -22,36 +58,18 @@ Assets Manager, who creates and manages the asset hierarchy (asset tree) based o
 
 Application Developer, who develops applications to acquire device telemetry and configuration information via EnOS APIs and SDKs to fulfill requirements of certain business case scenarios.
 
-## Key Capabilities
-
-### Device Modelling
-
-Allows devices of thousands of models from different manufacturers to be unified into a small number of common models and thus facilitates application processing. EnOS™ Cloud has accumulated a large set of device models in its model library to facilitate abstraction of your asset data. [Learn more >>](model/model_overview)
-
-### Device Management
-
-Helps you establish connection from the devices to EnOS Cloud, secure the two-way communication between the devices and the cloud, and manage the device lifecycle. [Learn more >>](deviceconnection_overview)
-
-### Asset Alerts
-
-Enables you to define, receive, and process alerts for your organization assets. The service also allows you to define alert triggering rules against the asset data, to achieve real-time alarming and troubleshooting. [Learn more >>](https://www.envisioniot.com/docs/event-management/en/latest/alert_overview.html)
-
-### Asset Management
-
-Enables asset owners, who understand the enterprise asset management business, to quickly create the asset topology to manage assets in the cloud in terms of different dimensions. [Learn more >>](asset_tree/assettree_overview)
-
 ## Related Services of EnOS Device Management
 
-### Stream Analysis Service
+### Stream Analytics Service
 
-Stream Analysis enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
+Stream Analytics enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
 
 ## Next Steps
 
 Learn how to quickly provision a typical smart IoT device on EnOS Cloud and start to sending telemetries between the device and the cloud:
 
-- [Getting Started With Direct Device Connection (Without Edge)](gettingstarted_device_connection)
+- [Getting Started to Connect a Smart Device](quickstart/gettingstarted_device_connection)
 
 Learn how to provision a traditional industry equipment that connects through an edge gateway:
 
-- [Getting Started With Connecting Sub-device to EnOS Cloud via Edge](gettingstarted_edge_connection)
+- [Getting Started to Connect a Non-Smart Device](quickstart/gettingstarted_edge_connection)
