@@ -13,7 +13,6 @@ Device connection
    :caption: Learn
 
    learn/message_flow
-   learn/enos_coap
    learn/connection_scenarios
    learn/device_lifecycle_management
    learn/ingestion/index
