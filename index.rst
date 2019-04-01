@@ -15,7 +15,6 @@ Device connection
    learn/message_flow
    learn/connection_scenarios
    learn/device_lifecycle_management
-   learn/ingestion/index
    learn/deviceconnection_authentication
 
 .. toctree::
@@ -42,4 +41,3 @@ Device connection
    :caption: Reference
 
    reference/mqtt/index
-   reference/coap/index
