@@ -20,8 +20,7 @@ In this scenario, EnOS provides the following solutions:
 
 .. toctree::
    :maxdepth: 1
-
-   data_format
+   
    cloud2cloud_dataforwarding
 
    
