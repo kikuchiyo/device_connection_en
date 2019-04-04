@@ -13,6 +13,7 @@ Device connection
    :caption: Learn
 
    learn/message_flow
+   learn/ingestion/index
    learn/connection_scenarios
    learn/device_lifecycle_management
    learn/deviceconnection_authentication
