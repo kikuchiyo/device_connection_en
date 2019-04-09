@@ -62,7 +62,7 @@ Application Developer, who develops applications to acquire device telemetry and
 
 ### Stream Analytics Service
 
-Stream Analytics enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://www.envisioniot.com/docs/online-data/en/latest/streaming_overview.html)
+Stream Analytics enables you to define the asset calculation logic, subscribe to the asset data, and perform data calculations based on the predefined calculation logic for your organization. For example, calculating a 5-minute average of the measurement points or a 10-minute average, and etc. [Learn more >>](https://docs.eniot.io/docs/online-data/en/latest/streaming_overview.html)
 
 ## Next Steps
 
