@@ -2,7 +2,7 @@
 
 The following section introduces how to handle the downstream commands sent from EnOS cloud to device. On the device end, response messages can be configured in the `onMessage` callback function, so that the SDK can respond the messages to the cloud. You can configure the error codes and error messages to indicate failure of commands to the device. You can choose to use 2000 and above numbers for such custom error codes and error messages.
 
-In the following code sample, the setting measurepoint and disabled device events are monitored.
+In the following code sample, the setting measurepoint and disabling device event are monitored.
 
 ```java
  client.setArrivedMsgHandler(MeasurepointSetCommand.class, (MeasurepointSetCommand command, List<String> argList)->{

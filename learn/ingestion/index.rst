@@ -18,9 +18,12 @@ In this scenario, EnOS provides the following solutions:
 
 - Historical data path: Integrating the historical data from the 3rd-party system to EnOS through the same channel as the real-time data, that is to ingest historical data into IoT Hub through MQTT protocol.
 
+Among the above scenarios, regardless of which path you choose for device connection and data ingestion, data can be routed to stream analytics engine, alert agent, and different datastores through rule engine and your configured storage policies. The data can then be used by other services or applications.
+
 .. toctree::
    :maxdepth: 1
-   
+
+   data_format
    cloud2cloud_dataforwarding
 
    

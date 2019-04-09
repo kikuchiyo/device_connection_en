@@ -2,6 +2,10 @@
 
 This article describes how to create an asset tree and attach the asset to the node of the asset tree.
 
+## Before You Start
+
+To create an asset tree, you must have write access to the **Asset Tree Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+
 ## Creating a Root Node
 
 To create a new asset tree, you should start from creating the root node of the asset tree. The name of the root node is used as the name of the asset tree.

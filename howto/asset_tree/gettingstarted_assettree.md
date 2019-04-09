@@ -2,6 +2,10 @@
 
 This article describes how to create an asset tree and attach assets (such as devices) to the node of the asset tree through a sample scenario.
 
+## Before You Start
+
+To create an asset tree, you must have write access to the **Asset Tree Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+
 ## Sample Scenario
 
 A smart building project needs to collect `PM2.5`, `temperature`, `humidity` and `noise` data of the building. Each data has a corresponding sensor and these sensors are connected to a gateway. The gateway is responsible for collecting and forwarding data to EnOS Cloud.

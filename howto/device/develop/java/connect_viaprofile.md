@@ -20,7 +20,7 @@
   "sslAlgorithm": "SunX509",//ssl algorithm
   "sslJksPath": "",//path of jks file
   "sslPassword": "",//password of jks file
-  "subDevices": //if subDevies is config, subdevice will auto login by sdk when mqtt connection build 
+  "subDevices": //if subDevies is config, subdevice will auto login by sdk when mqtt connection build
    [
     {
       "productKey": "subProduct",
@@ -35,10 +35,10 @@
   ]
 }
 ```
-其中regionURL,productKey,deviceKey是必填参数，deviceSecret和productSecret必须提供一个参数，用于完成必要的参数签名校验。
-当配置文件中提供了参数deviceSecret则采用securemode=2进行登录，如果没有提供deviceSecret，而提供了productSecret那么采用securemode=3进行登录。
+其中`regionURL`，`productKey`，`deviceKey`是必填参数，`deviceSecret`和`productSecret`必须提供一个参数，用于完成必要的参数签名校验。
+当配置文件中提供了参数`deviceSecret`则采用securemode=2进行登录，如果没有提供`deviceSecret`，而提供了`productSecret`那么采用securemode=3进行登录。
 用于可以使用如下的代码，使用配置文件的方式完成连接过程。
- 
+
 需要注意的是如果在配置文件中配置了子设备信息，那么SDK会在连接成功之后，自动登录子设备，*这些子设备需要在云端预先配置成该网关设备的子设备*。如果用户需要手动的管理子设备的状态，那么可以不将子设备配置在配置文件中，用户根据SubDeviceLoginRequest手动的管理子设备的上线。
 同样的如果子设备登录方式使用securemode=3动态激活方式登录，那么云端会返回设备对应的设备密钥至设备端，设备端需要持久化保存该设备密钥信息，后续使用设备密钥进行登录签名认证。同样的java sdk已经封装了这一过程。
 

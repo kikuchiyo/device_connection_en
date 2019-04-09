@@ -2,6 +2,10 @@
 
 EnOS Device Management offering allows you to perform end-to-end device lifecycle management from plan and design phase to the decommissioning phase.
 
+The following figure shows the services that the EnOS Device Management offering provides to help you achieve end-to-end lifecycle management:
+
+.. image:: ../media/device_lifecycle_management.png
+
 ## Plan & Design Phase
 
 In the plan and design phase, you'll determine how to abstract your device models and manage your asset hierachy. You'll also determine the connection scheme to use based on the type of devices to connect, the device deployment conditions, and your security requirements.

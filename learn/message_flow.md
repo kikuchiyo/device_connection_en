@@ -8,14 +8,15 @@ As shown in the figure below, a device can be connected directly or through the 
 
 .. image:: ../media/device_connection_methods.png
 
-Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different storage or functional modules for further processing.
+Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engine to different functional modules for further processing.
 
-<!--
-- Redis database: for real-time access of hot data
-- Time series database
-- Alert engine: for real-time monitoring of device alerts
-- Stream processing engine: for stream processing such as to clease the real-time data, to calculate results based on business needs such as to calculate the average data for a batch of devices.
--->
+- Redis, time-series database (TSDB), and archive database
+  - Redis database: always stores the latest device data (which is also called, hot data) for fast access
+  - TSDB: stores data of specified measure points that are relative frequently accessed (which is also called, warm data). The storage duration is as defined by the user-specified storage policies, such as data of the last 1 month, 6 months, or 1 year. By default, EnOS only stores the hot data through redis, you MUST configure storage policy for your data of a certain time span to be stored in TSDB. You can then access the data in TSDB through corresponding APIs. For more information, see [Storage Policy](/docs/data-asset/en/latest/learn/storage_policy_overview).
+  - Archive database: stores data that are relatively less frequently accessed or relatively have longer history, also through the definition of storage policy.
+- Alert engine: for real-time monitoring of device alerts that are generated according to the triggering rules defined in Alert service.
+- Stream processing engine: to be processed according to the define stream processing logic, such as to clease the real-time data, to calculate results based on business needs such as to calculate the average data for a batch of devices, and returns the data back to data hub to be used by other services or APIs. EnOS provides easy-to-use GUI-based stream analytics IDE to improve analytics efficiency. For more information, see [Stream Analytics](/docs/data-asset/en/latest/learn/index).
+
 
 The following functional modules and concepts are involved in the message flow:
 

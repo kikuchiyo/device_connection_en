@@ -5,6 +5,11 @@ This article describes the asset tree management operations from two aspects: as
 - The operations of the node only affect the node.
 - The operations of the asset affect all nodes that the asset is attached to.
 
+
+## Before You Start
+
+To performe the management operations, you must have write access to the **Asset Tree Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+
 ## Deleting Asset Tree
 
 Deleting an asset tree is accomplished by deleting the root node of the asset tree. You can delete a root node in the following approaches:

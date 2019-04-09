@@ -2,6 +2,10 @@
 
 On the **Product** page, you can perform operations such as enabling dynamic registration, viewing device logs, and debugging devices.
 
+## Before You Start
+
+To manage products, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+
 ## Enabling Dynamic Registration
 
 On the **Product Details** page, you can enable dynamic registration to support batch burning for devices of the same product model. With dynamic registration, you can batch burn the same productKey and productSecret to multiple devices, and these devices will be activated dynamically if they go online.

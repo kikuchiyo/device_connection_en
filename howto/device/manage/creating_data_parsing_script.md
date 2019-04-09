@@ -2,6 +2,10 @@
 
 When creating a product, if you select **Custom** for the **Data Type** field, the device can send data in any format (like binary data) to the EnOS Cloud. If this is the case, you will need to create data parsing script to encode and decode the upstream and downstream data. This topic describes how to edit and debug the script in the EnOS Cloud, and how to upload it to the EnOS runtime environment.
 
+## Before You Start
+
+To create and manage data parsing script, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+
 ## About this task
 
 Limited by configuration, resources, or network bandwidth, some devices has to pass data through to EnOS Cloud instead of in JSON. Data that is passed through to EnOS Cloud is transformed into the JSON format that is defined by EnOS by using a data parsing script. Data that goes from EnOS Cloud to devices is also converted from the EnOS-defined JSON to binary data that the devices can understand.

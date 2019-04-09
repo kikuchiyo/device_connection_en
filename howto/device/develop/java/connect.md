@@ -2,9 +2,9 @@
 
 Use the following code to connect the device to EnOS Cloud.
 
-In the above sample:
+In the following sample:
 - `serverUrl` is the address of the server. If using TCP connection, the format of the server URL can be `tcp://{regionUrl}:11883`. 
-- The <`productKey`, `deviceKey`,`deviceSecret`> (or <`productKey`, `deviceKey`,  `productSecret`> when the device is to be dynamically activated) are the device credentials issued by EnOS when you register the device. For more information about device registeration, see [Connecting Smart Device into EnOS Cloud](/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection.html).
+- The <`productKey`, `deviceKey`,`deviceSecret`> (or <`productKey`, `deviceKey`,  `productSecret`> when the device is to be dynamically activated) are the device credentials issued by EnOS when you register the device. For more information about device registeration, see [Connecting Smart Device into EnOS Cloud](/docs/device-connection/en/latest/quickstart/gettingstarted_device_connection).
 
 
 ```java

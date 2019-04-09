@@ -13,10 +13,12 @@ Device connection
    :caption: Learn
 
    learn/message_flow
-   learn/ingestion/index
    learn/connection_scenarios
    learn/device_lifecycle_management
+   learn/ingestion/index
    learn/deviceconnection_authentication
+
+.. learn/enos_coap
 
 .. toctree::
    :maxdepth: 1
@@ -42,3 +44,4 @@ Device connection
    :caption: Reference
 
    reference/mqtt/index
+.. reference/coap/index
