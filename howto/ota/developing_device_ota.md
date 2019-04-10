@@ -63,7 +63,7 @@ Download [enos-mqtt-sdk-java](https://github.com/EnvisionIot/enos-mqtt-sdk-java)
 
    - Through cloud service SDK
      - [Java SDK](https://github.com/EnvisionIot/enos-api-sdk-java)
-     - [python SDK](https://github.com/EnvisionIot/enos-api-sdk-python)
+    
 
 ## Sample codes
 
