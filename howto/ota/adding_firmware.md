@@ -23,9 +23,9 @@ This topic describes how to add the firmware on EnOS. This step is the prerequis
    - Select Firmware: click **Select File**, browse and upload local firmware. Supports `.bin`, `.tar`, `.gz` and `.zip`. The size of firmware should not exceed 100MB.
    - Version Description: no more than 100 characters. Devices can retrieve firmware description through the upgrade interface.
 
-   <!--
+ 
    .. image:: media/ota_add_firmware.png
-   -->
+   
    .. note:: Once any wrong firmware is uploaded, you should delete the current firmware before adding the correct firmware.
 
 3. Select **Confirm** to complete adding firmware.
@@ -33,9 +33,9 @@ This topic describes how to add the firmware on EnOS. This step is the prerequis
 ## Example
 
 As shown in the figure, we created a firmware named as "Sample Firmware":
-<!--
+
 .. image:: media/ota_added_firmware.png
--->
+
 ## Result
 
 You may select **Add Firmware > OTA** to view the added firmware.
