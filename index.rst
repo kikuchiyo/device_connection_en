@@ -33,8 +33,9 @@ Device connection
    :caption: How-to's
 
    howto/model/index
-   howto/device/develop/index
    howto/device/manage/index
+   howto/device/develop/index
+   howto/ota/index
    howto/alert/index
    howto/asset_tree/index
    howto/edge/index

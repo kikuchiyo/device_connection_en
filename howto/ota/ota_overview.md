@@ -1,48 +1,55 @@
-# EnOS Firmware Upgrade
-Upgrade device firmware over-the-air (OTA) to maintain firmware, fix defects, and upgrade functions.
+# Firmware OTA Upgrade Overview
 
-## Major Functionalities
+EnOS provides the firmware OTA (Over-the-Air) upgrade service for devices. This service allows that the cloud pushes the messages for managing and upgrading the firmware versions to meet the bug fixing, capability upgrading and other requirements after devices are deployed.
 
-**Device SDK**
+## Full lifecycle management of firmware versions
 
-Provides an SDK with OTA capacity for devices to report firmware version, request an upgrade, and report upgrade status.
+You can use the EnOS Console to achieve the full lifecycle management of firmware versions, create new firmware versions and set upgrade policies. The cloud automatically pushes the upgrade requests for the selected devices, and records their upgrade progress and results.
 
-**Firmware management**
+The lifecycle management process of firmware versions in EnOS is described as follows:
 
-Manages the lifecycle of devices, such as managing device information and creating, upgrading, verifying, and deleting firmware.
+.. image:: media/ota_lifecycle_management.png
 
-**Firmware log**
+## Device SDK for OTA
 
-Logs the firmware upgrade process from end to end to trace firmware version and debug failed upgrades.
+Provides the device SDK to encapsulate the message interfaces for version escalation and upgrading. The devices should implement by themselves the specific firmware switching logic and escalate the upgraded firmware versions.
 
-**Upgrade statistics**
+## Firmware OTA upgrade process
 
-Records statistics on firmware upgrade.
+EnOS supports the following firmware upgrade modes:
 
-## Concepts
+- **Upgrade pushed actively in cloud**: The cloud pushes the forced upgrade to the device end, where it is required to specify the version number to which the device is upgraded
+- **Upgrade upon request from device end**: The device owners or O&M personnel decide whether to upgrade the firmware; the device sends an upgrade request only after it is decided to upgrade the firmware
 
-**OTA firmware upgrade**
+### Upgrade pushed actively in cloud
 
-Upgrading firmware over the air.
+This process is shown in the figure below:
 
-**Upgrade policy**
+.. image:: media/cloud_pushed_ota_process.png
 
-Maintenance of the device list that meets the upgrade requirements.
+After the batch upgrade task is created in cloud, the scope of the devices to be upgraded is maintained as per the upgrade policies and the cloud pushes the upgrade request to the devices as per the upgrade sequence:
+- If the devices are online, the upgrade process will start once they receive the upgrade request
+- If the devices are offline, they will receive the upgrade request when they connect to the cloud next time 
 
-- **Snapshot**
+The upgrade pushed actively in cloud is forced upgrade request. Generally, the devices will start the upgrade process once they receive the request and escalate their new versions after rebooting. However, whether to perform the forced upgrade depends on the implementation on the device end, and the developer may add a local upgrade confirmation logic for the downloaded OTA firmware so that the new firmware booting area will be switched to only after local confirmation.
 
-  Upgrading only the devices on a closed list that meets the upgrade requirements.
+### Upgrade upon request from device end
 
-- **Increment**
+This process is shown in the figure below:
 
-  Upgrading all the devices on an open list that meets the upgrade requirements where devices later added to the list will also be upgraded.
+.. image:: media/update_upon_request_ota.png
 
-**Upgrade methods**:The procedure along which the devices on the list are upgraded
+After creating the batch upgrade task in cloud, you may select the upgrade mode as **Upon device request**. At this point, the cloud will not push the upgrade request to the devices immediately but only maintain the list of devices to be upgraded. Only after the devices send the upgrade request actively and are qualified within the upgrade scope can the firmware version information for upgradeable devices be returned, and the upgrade process will start after the upgrade task is confirmed at the device end.
 
-- **Cloud forced push**
+The upgrade upon request from device end is an optional upgrade mode, which adds manual intervention and confirmation steps. In some cases, you do not need to force the device to be upgraded but decide whether to upgrade the devices with reference to their actual conditions.
 
-  EnOS Cloud maintains the device list based on upgrade policy, pushing upgrade requests to devices. If the device is connected to EnOS Cloud, it accepts the request and starts upgrading; otherwise it accepts the request the next time it gets connected.
+## Get started
 
-- **Upon device request**
+1. Use SDK to develop the device end OTA capabilities, [Learn More](developing_device_ota)。
+2. Add the device firmware in the cloud, [Learn More](adding_firmware)。
+3. Upgrade the firmware for a small batch of devices and verify whether the firmware can be pushed to the device end normally and whether the firmware can be upgraded normally, [Learn More](verifying_firmware).
+4. Configure the batch upgrade task to upgrade the qualified devices as per the defined upgrade policies and methods within the schedule, [Learn More](batch_upgrading_firmware).
 
-  EnOS Cloud maintains the device list and determines whether a device firmware can be upgraded when the device requests upgrade. If the firmware is upgradable, EnOS Cloud pushes a new firmware version available to the device. The upgrade starts upon confirmation by the device.
+
+
+
