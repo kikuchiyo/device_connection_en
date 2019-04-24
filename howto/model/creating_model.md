@@ -55,6 +55,18 @@ Configure all the features in EnOS according to the defined thing model.
 
      + int, float, double: Information such as the default value and the data unit shall be defined.
      + enum: The parameter value of enum items and parameter description shall be defined.
+
+       .. csv-table::
+          :widths: auto
+
+          "Field", "Description"
+          "Parameter Value", "Supports int and string. No longer than 32 characters. Only if all values are int, will all the parameters be saved as integers.  If one or multiple values are string, all the values are saved as string."
+          "Paramater Description", "Supports Chinese, upper and lower case letters, numbers and special characters that include “-”, “_”, “@”, “.”, and “:”. No more than 128 characters."  
+    
+       .. note:: Whether parameter values are saved as int or string depends on the definition you made when creating those values. 
+           - If all values are saved as int when created, subsequent new or changed values will also be saved as int. A string value would cause an error message "invalid parameter type".
+           - If all values are saved as string when created, subsequent new or changed values will also be saved as string. Even if you change the values later so that all of them are integers, they are still saved as string instead of int. No error message will be displayed in this scenarion.
+
      + bool: Boolean value shall be defined as 0 or 1.
      + string: A default value, the string type and string length shall be defined.
      + timestamp: The timestamp is in the form of a UTC timestamp string (in milliseconds).

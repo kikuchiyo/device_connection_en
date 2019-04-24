@@ -1,12 +1,13 @@
 # Data Format
 
-设备按照模型中定义的属性、测点、事件、服务与云端进行数据传输。EnOS支持数据以EnOS标准JSON数据格式和自定义格式。
+The devices transmit data to the cloud as per the attributes, measurepoints, events and services defined in the model. EnOS supports the data in EnOS standard JSON format and custom format.
 
-## EnOS标准数据格式
+## EnOS standard data format
 
-通常情况下，我们推荐设备以EnOS标准JSON数据格式进行数据传输。
+In general, we recommend to transmit data in EnOS standard JSON format.
 
-该示例为向云端上报数据的标准格式参考：
+The sample codes below show the standard data format used for uploading data into the cloud:
+
 ```json
 {
         "id": "123",
@@ -28,7 +29,8 @@
 }
 ```
 
-该示例为云端向设备下发数据的标准格式参考：
+The sample codes below show the standard data format used for issuing data from the cloud to devices:
+
 ```json
 {
         "id": "123",
@@ -39,24 +41,28 @@
         "method": "thing.service.measurepoint.set"
 }
 ```
-在以上示例中：
-- `id`是message ID
-- `version`是协议版本
-- `params`包裹的JSON数组为传输的数据
-- `method`为请求方法
 
-EnOS设备协议定义了数据以何种格式通过哪个topic与云端进行数据传输，详细信息，参考[设备协议](../../reference/mqtt/index).
+In the above-mentioned sample codes:
 
-## 自定义数据格式
+- `id` refers to the message ID
+- `version` refers to the protocol version
+- the JSON arrays packaged by `params` refer to the data to be transmitted
+- `method` refers to the request method
 
-由于低配置且资源受限或者对网络流量有要求的设备，不适合直接构造JSON数据和云端通信。在该场景下，你可以将数据透传到云端，由云端运行解析脚本将透传的数据转换成EnOS定义的JSON格式数据。云端向设备发送控制指令时，也可通过脚本将EnOS定义的JSON格式数据转换为设备能够理解的二进制数据进行下发。
+The EnOS device protocol defines in which format and by which topic the device transmits the data to the cloud. For more information, see [Device Protocol](../../reference/mqtt/index).
 
-对于使用透传/自定义格式传输数据的设备，你可以在EnOS Cloud编写脚本，解析设备数据。解析脚本支持使用JavaScript进行开发。
+## Custom data format
+
+The JSON format-based data communication with the cloud is not suitable for the devices with lower configuration and limited resources or that have special requirements on networking traffic. In this scenario, you can pass through the data to the cloud, and then the cloud runs the parsing scripts to convert the data into the JSON format defined by EnOS.  When the cloud sends the control commands to the device, the scripts may also be used to convert the JSON format defined by EnOS into the binary data that the device is able to parse for issuing purpose.
+
+For the devices that transmit the data by means of pass-through or in the custom format, you may compile scripts in the EnOS Cloud to parse the data from devices. The parsing scripts support JavaScript-based development.
 
 EnOS parser provides the following capabilities:
 
 1. Editing script online, support the validation of JavaScript syntax.
+
 2. Upstream & downstream messaging simulation and debugging, support the viewing of simulation result.
+
 3. Runtime environment after the publishing of script can be invoked for upstream & downstream messaging.
 
 For more information, see [Creating Data Parsing Script](../../howto/device/manage/creating_data_parsing_script).

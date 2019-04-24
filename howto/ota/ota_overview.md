@@ -45,8 +45,8 @@ Upgrade upon device request is an optional, which adds manual intervention and c
 
 ## Get started
 
-1. To use SDK to develop OTA capabilities on a device, see [Developing OTA Capabilities on Devices](developing_device_ota)。
-2. To add a device firmware in EnOS, see [Adding Firmware](adding_firmware)。
+1. To use SDK to develop OTA capabilities on a device, see [Developing OTA Capabilities on Devices](developing_device_ota).
+2. To add a device firmware in EnOS, see [Adding Firmware](adding_firmware).
 3. To upgrade the firmware of a small batch of devices and verify whether the firmware can be pushed to the devices and whether the firmware can be upgraded, see [Verifying Firmware](verifying_firmware).
 4. To configure a batch upgrade task to upgrade qualified devices as per the upgrade policy and methods within the schedule, see [Batch Upgrading Firmware](batch_upgrading_firmware).
 

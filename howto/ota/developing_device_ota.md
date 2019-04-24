@@ -47,7 +47,7 @@ EnOS provides message topics for firmware upgrade, and the upgrade request suppo
 
 ## Step 1: Installing Device SDK
 
-Download [enos-mqtt-sdk-java](https://github.com/EnvisionIot/enos-mqtt-sdk-java)。 If Maven is sued, its dependencies are given as follows:
+Download [enos-mqtt-sdk-java](https://github.com/EnvisionIot/enos-mqtt-sdk-java). If Maven is sued, its dependencies are given as follows:
 
 ```
 <dependency>
