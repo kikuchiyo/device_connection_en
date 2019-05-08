@@ -26,7 +26,8 @@ In the previous message:
     "Payload", "The data that is reported to EnOS"
     "Sign", "Digital signature used for authentication"
 
-.. note:: `${Sign}` is generated in the following procedure:
+`${Sign}` is generated in the following procedure:
+
  1. Concatenate the following fields in the following order:` token${Token}sequence${Sequence}`
      `${Token}` is the token assigned to the device when it is authenticated by EnOS. `${Sequence}` is positive int which indicates the order of messages a device sends to EnOS in a session. The first message in a session has a sequence value of 1. `${Sequence}` must be larger than the sequence of the last message the device sent to EnOS. If the device loses the sequence of the last message it sends to EnOS, it must re-initiate authentication.
 

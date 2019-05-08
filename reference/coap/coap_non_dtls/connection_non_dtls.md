@@ -56,10 +56,13 @@ The IP address of the CoAP server  is 40.73.26.27. Port: 5683.
    "Lifetime", "Used to determine the online status of device. A device would be determined offline if it doesn't not exchange any message with EnOS within Lifetime. Lifetime is counted in seconds and the value range is 30 to 86400."
    "Sign",	"Digital signature used for authentication."
 
-  .. note:: A digital signature is generated in the following procedure:
-      1. Concatenate the following fields in the following order:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}`
-      2. Attach `${DeviceSecret}` to the end of the concatenated string:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}${DeviceSecret}`
-      3. Calculate the SHA-256 hash of the string generated in the previous step and capitalize all letters.
+ A digital signature is generated in the following procedure:
+
+   1. Concatenate the following fields in the following order:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}`
+   
+    2. Attach `${DeviceSecret}` to the end of the concatenated string:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}${DeviceSecret}`
+   
+    3. Calculate the SHA-256 hash of the string generated in the previous step and capitalize all letters.
 
 2. The device is authenticated. EnOS includes a CoAP return code and a token in the response for authenticating future sessions. The format of the response is as follows:
   ```json

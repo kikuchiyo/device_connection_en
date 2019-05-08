@@ -17,7 +17,6 @@ Payload: {ResponsePayload}
 
 The return codes defined by CoAP protocol are illustrated as follows:
 
-
 .. csv-table::
    :widths: auto
 

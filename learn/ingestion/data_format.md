@@ -6,6 +6,8 @@ The devices transmit data to the cloud as per the attributes, measurepoints, eve
 
 In general, we recommend to transmit data in EnOS standard JSON format.
 
+.. image:: ../../media/data_format_standard.png
+
 The sample codes below show the standard data format used for uploading data into the cloud:
 
 ```json
@@ -54,6 +56,8 @@ The EnOS device protocol defines in which format and by which topic the device t
 ## Custom data format
 
 The JSON format-based data communication with the cloud is not suitable for the devices with lower configuration and limited resources or that have special requirements on networking traffic. In this scenario, you can pass through the data to the cloud, and then the cloud runs the parsing scripts to convert the data into the JSON format defined by EnOS.  When the cloud sends the control commands to the device, the scripts may also be used to convert the JSON format defined by EnOS into the binary data that the device is able to parse for issuing purpose.
+
+.. image:: ../../media/data_format_custom.png
 
 For the devices that transmit the data by means of pass-through or in the custom format, you may compile scripts in the EnOS Cloud to parse the data from devices. The parsing scripts support JavaScript-based development.
 

@@ -45,4 +45,4 @@ The size of a data packet that can be transmitted via CoAP depends on the size o
 
 ## Next step
 
-Refer to [CoAP-based Connection and Communication](/docs/device-connection/zh_CN/dev/reference/coap/index) to connect the device to EnOS and reuse the MQTT topic for data transmission with EnOS Cloud.
+Refer to [CoAP-based Connection and Communication](../reference/coap/index) to connect the device to EnOS and reuse the MQTT topic for data transmission with EnOS Cloud.
