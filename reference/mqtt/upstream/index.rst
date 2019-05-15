@@ -1,5 +1,5 @@
-Upstream
-============
+Reporting Data to Cloud
+========================
 
 .. toctree::
    :maxdepth: 1

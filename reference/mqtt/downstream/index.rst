@@ -1,5 +1,5 @@
-Device Measure points, Service protocols(Downstream)
-======================================================
+Cloud Issuing Control Commands
+========================
 
 Please refer the sections as below:
 

@@ -1,4 +1,4 @@
-Topology managament
+Managing Sub-devices
 =====================
 
 .. toctree::
