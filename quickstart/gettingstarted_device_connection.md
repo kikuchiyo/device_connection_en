@@ -51,7 +51,7 @@ This step assumes that there is no device model to be reused. We create a new mo
    * - Measure Point
      - Active power     
      - INV.GenActivePW
-     - float  
+     - double
      - kW      
    * - Service
      - Control     
@@ -75,7 +75,6 @@ The steps to create this model are as follows:
    - **Model Name (en)**: Inverter_Demo
    - **Category**: NA
    - **Create From**: No
-   - **Support Passthrough**: Default
    - **Source Model**: NA
    - **Description**: Inverter model for demo project
 
@@ -109,7 +108,7 @@ The steps to create this model are as follows:
 
      - **Name**: Active_Power
      - **Identifier**: INV.GenActivePW
-     - **Data Type**: float
+     - **Data Type**: double
      - **Point Type**: AI
      - **Unit**: kW
 
@@ -200,52 +199,83 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
 
 3. Configure the address of the EnOS cloud (`environment_address`) and the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
 
+4. Modify the `initWithCallback` method to establish connection between the device and the cloud.
+
+5. Modify the `postMeasurepoint` method to configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
+
+   The following sample code is for connecting the device to EnOS and simulating posting data to the cloud:
+
    ```java
-   public static void initWithCallback() {
-        System.out.println("start connect with callback ... ");
-
-        try {
-            client = new MqttClient(environment_address, productKey, deviceKey, deviceSecret);
-            client.getProfile().setConnectionTimeout(60).setAutoReconnect(false);
-            client.connect(new IConnectCallback() {
-                public void onConnectSuccess() {
-
-                    System.out.println("connect success");
-                }
-
-                public void onConnectLost() {
-                    System.out.println("onConnectLost");
-                }
-
-                public void onConnectFailed(int reasonCode) {
-                    System.out.println("onConnectFailed : " + reasonCode);
-                }
-            });
-        } catch (EnvisionException var1) {
-        }
-
-        System.out.println("connect result :" + client.isConnected());
+   import com.envisioniot.enos.iot_mqtt_sdk.core.IConnectCallback;
+   import com.envisioniot.enos.iot_mqtt_sdk.core.MqttClient;
+   import com.envisioniot.enos.iot_mqtt_sdk.core.exception.EnvisionException;
+   import com.envisioniot.enos.iot_mqtt_sdk.message.upstream.tsl.MeasurepointPostRequest;
+   import com.envisioniot.enos.iot_mqtt_sdk.sample.SimpleSendReceive;
+   
+   import java.util.Random;
+   
+   public class demo1 {
+       public static final String url = "tcp://{environment_address}";
+       public static final String productKey = "ProductKey";
+       public static final String deviceKey = "{DeviceKey}";
+       public static final String deviceSecret = "{DeviceSecret}";
+       private static MqttClient client;
+       private static volatile boolean subDeviceLogined = false;
+       private static Random random = new Random();
+       private static int idInc = 20;
+       private static final char[] HEX_CHAR = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+   
+       public demo() {
+       }
+   
+       public static void main(String[] args) throws Exception {
+           initWithCallback();
+           postMeasurepoint();
+       }
+   
+       public static void initWithCallback() {
+           System.out.println("start connect with callback ... ");
+   
+           try {
+               client = new MqttClient(url, productKey, deviceKey, deviceSecret);
+               client.getProfile().setConnectionTimeout(60).setAutoReconnect(false);
+               client.connect(new IConnectCallback() {
+                   public void onConnectSuccess() {
+                       SimpleSendReceive.subDeviceLogin();
+                       System.out.println("connect success");
+                   }
+   
+                   public void onConnectLost() {
+                       System.out.println("onConnectLost");
+                   }
+   
+                   public void onConnectFailed(int reasonCode) {
+                       System.out.println("onConnectFailed : " + reasonCode);
+                   }
+               });
+           } catch (EnvisionException var1) {
+           }
+   
+           System.out.println("connect result :" + client.isConnected());
+       }
+   
+       public static void postMeasurepoint() {
+           Random random = new Random();
+           System.out.println("start post measurepoint ...");
+           MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("INV.GenActivePW", random.nextDouble()).build();
+   
+           try {
+               client.fastPublish(request);
+               System.out.println(" post measurepoint success...");
+           } catch (Exception var3) {
+               var3.printStackTrace();
+           }
+       }
+   	
    }
    ```
 
-4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
-
-   ```java
-   public static void postMeasurepoint() {
-        Random random = new Random();
-        System.out.println("start post measurepoint ...");
-        MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("invGenActivePW", random.nextDouble()).build();
-        try {
-            client.fastPublish(request);
-            System.out.println(" post measurepoint success...");
-        } catch (Exception var3) {
-            var3.printStackTrace();
-        }
-
-   }
-   ```
-
-5. Use the `handleServiceInvocation()` method to handle the service invocation request from the cloud.
+6. Use the `handleServiceInvocation()` method to handle the service invocation request from the cloud.
 
    ```java
    public static void handleServiceInvocation() {
@@ -257,7 +287,7 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
         };
         client.setArrivedMsgHandler(ServiceInvocationCommand.class, handler);
     }
-    ```
+   ```
 
 For more information, see [Using the Device SDK](../howto/device/develop/using_java_sdk).
 

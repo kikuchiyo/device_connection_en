@@ -19,12 +19,12 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
 ```
 - For the **mqttClientId** segment:
 
-  - _clientId_: Mandatory. Identifier of the device, `deviceKey`. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. The parameters within  ``||`` are the optional parameters. 
-  - _securemode_: Optional. Indicates the secure mode that has been used. 
+  - _clientId_: Required. Identifier of the device, `deviceKey`. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. The parameters within  ``||`` are the optional parameters. 
+  - _securemode_: Required. Indicates the secure mode that has been used. 
     - For secret-per-device authentication (`productKey`, `deviceKey`, `deviceSecret` is provided to statically activate the device), the value is `2`.
     - For secret-per-product authentication (`productKey`, `productSecret`, `deviceKey` is provided to dynamically activate the device) the value is `3`.
-  - _signmethod_: Optional. Indicates the signing method. Currently, only support `signmethod=hmacsha1`.
-  - _timestamp_: Optional. Indicates the current time in milliseconds.
+  - _signmethod_: Required. Indicates the signing method. Currently, only support `signmethod=hmacsha1`.
+  - _timestamp_: Required. Indicates the current time in milliseconds.
 
 - For the **mqttUsername** segment:
 
@@ -32,14 +32,18 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
 
 - For the **mqttPassword** segment:
 
+  <!-- - You can use the [Password Generation Tool](../../_static/nonsdk_enosmqttsign_index.html) to generate the password quickly.-->
+
   - _content_: The concatenation of _clientID_, _deviceKey_, _productKey_, _timestamp_, and their values. The parameter names must be sorted in alphabetical order and concatenated without concatenation symbols.  
+
   - _deviceSecret_: When the device carries the device secret, append the value of _deviceSecret_ after _content_ without any space or symbol.
-   
-       Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, _deviceSecret_=`deviceSecretxxx`.
+
+    Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, _deviceSecret_=`deviceSecretxxx`.
 
     ```
     mqttPassword = toUpperCase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecretxxx))
     ```
+
   - _productSecret_: When the device carries the product secret, append the value of the _productSecret_ after _content_ without any space or symbol.
 
     Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, productSecret=`productSecretxxx`.

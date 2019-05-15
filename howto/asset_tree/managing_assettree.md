@@ -15,9 +15,9 @@ To performe the management operations, you must have write access to the **Asset
 Deleting an asset tree is accomplished by deleting the root node of the asset tree. You can delete a root node in the following approaches:
 
 - Delete node
-- Delete instance
+- Delete asset
 
-  For a root node, we recommend using **Delete instance**, which will delete both the node and the asset, because the asset attached to the root node is generally not attached to other asset trees.
+  For a root node, we recommend using **Delete asset**, which will delete both the node and the asset, because the asset attached to the root node is generally not attached to other asset trees.
 
 ### Deleting a Node
 
@@ -25,21 +25,21 @@ The deletion of a node only deletes the node itself and does not delete the atta
 
 .. note:: You cannot delete the node that has child node. Only the leaf node can be deleted.
 
-1. In the EnOS Console, click **Asset Management** form the left navigation panel.
+1. In the EnOS Console, click **Asset Tree** form the left navigation panel.
 
-2. Select the root node and right click, then click **Delete node**.
+2. Expand the asset tree, right-click on the root node, and select **Delete node**.
 
 3. In the pop-up windows, click **Confirm** to complete the deletion.
 
-### Deleting a Instance
+### Deleting an Asset
 
-The deletion of a instance deletes the asset itself as well as all nodes that this asset is bound to.
+The deletion of an asset deletes the asset itself as well as all nodes that this asset is bound to.
 
-.. note:: - You only can delete a instance when all nodes to that this asset is bound are leaf node.  
-   - You cannot delete a instance if this asset is a connected device. You can delete a connected device via **Device Management**.
+.. note:: - You only can delete an asset when all nodes bound to the asset are leaf nodes.  
+   - You cannot delete an asset if this asset is a connected device. You can delete a connected device via **Device Management**.
 
-1. In the EnOS Console, click **Asset Management** form the left navigation panel.
+1. In the EnOS Console, click **Asset Tree** form the left navigation panel.
 
-2. Select the root node and right click, then click **Delete instance**.
+2. Expand the asset tree, right-click on the root node, and select **Delete asset**.
 
 3. In the pop-up windows, click **Confirm** to complete the deletion.

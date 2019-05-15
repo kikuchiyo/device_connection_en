@@ -34,16 +34,17 @@ Complete the cloud configuration in the EnOS Console and obtain the following in
    :caption: Upstream
    :maxdepth: 1
 
-   upstream/device_registration
-   upstream/topological_mgmt/index
-   upstream/device_connection/index
-   upstream/device_tags/index
-   upstream/device_else/index
+   upstream/index
 
 
 .. toctree::
    :caption: Downstream
    :maxdepth: 1
 
-   downstream/devices/index
-   downstream/subdevices/index
+   downstream/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Topology managament
+
+   topology_manag/index
