@@ -33,7 +33,7 @@ In the previous message:
 
  2. Generate `${SignKey}` by extracting Byte 9 to Byte 24 from the SHA-256 hash of `${DeviceSecret}`. The lenght of `${SignKey}` is 16 bytes.
 
- 3. Calculate the AES-128 hash of `${SignKey}` and `token${Token}sequence${Sequence}`
+ 3. Calculate `AES-128(${SignKey}`,`token${Token}sequence${Sequence})` in mode CBC.
 
  4. Capitalize the letters in the calculated hash.
 
