@@ -42,7 +42,7 @@ For more information about device authentication, see [Security Authentication](
 
 ## Connecting to the CoAP Server
 
-The IP address of the CoAP server  is 40.73.26.27. Port: 5684.
+The IP address of the CoAP server is `coap-<hostname>`, where `hostname` is where EnOS is located. For example, if EnOS is located on *abc.def.com*, then the CoAP server address would be *coap-abc.def.com*.
 
 ## Establishing the DTLS Secure Channel
 

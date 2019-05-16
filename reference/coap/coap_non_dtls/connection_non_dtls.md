@@ -35,7 +35,7 @@ The process for connecting NB-IoT devices to EnOS via CoAP is shown as follows:
 
 ## Connecting to the CoAP Server
 
-The IP address of the CoAP server  is 40.73.26.27. Port: 5683.
+The IP address of the CoAP server is `coap-<hostname>`, where `hostname` is where EnOS is located. For example, if EnOS is located on *abc.def.com*, then the CoAP server address would be *coap-abc.def.com*.
 
 ## Authentication and Connection
 
