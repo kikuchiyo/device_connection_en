@@ -47,4 +47,4 @@ Complete the cloud configuration in the EnOS Console and obtain the following in
    :maxdepth: 2
    :caption: Topology managament
 
-   topology_manag/index
+   topology_management/index

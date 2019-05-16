@@ -7,4 +7,4 @@ Managing Sub-devices
    device_registration
    topological_mgmt/index
    device_connection/index
-   device_connection/index
+   subdevices/index
