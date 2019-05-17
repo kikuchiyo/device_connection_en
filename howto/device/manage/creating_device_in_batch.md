@@ -66,7 +66,7 @@ View the results:
 
 ## Next Steps
 
-Any devices not connected to EnOS will be tagged as "not activated". If you wish to activate these devices, you need establish connection by using the client SDK. For more information, see [EnOS SDK Quick Start](https://www.envisioniot.com/docs/app-development/zh_CN/latest/gettingstarted_sdk.html)
+Any devices not connected to EnOS will be tagged as "not activated". If you wish to activate these devices, you need establish connection by using the client SDK. For more information, see [EnOS SDK Quick Start](/docs/app-development/en/latest/gettingstarted_sdk.html)
 
 ## Related information
 

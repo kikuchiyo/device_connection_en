@@ -13,9 +13,9 @@ The supported MQTT version:
 You can connect devices to the EnOS Cloud using the MQTT protocol directly. Include the following values in the CONNECT packet of the device:
 
 ```
-  mqttClientId: clientId+"|securemode=<securemode>,signmethod=hmacsha1,timestamp=132323232|"
+  mqttClientId: clientId+"|securemode=<securemode>,signmethod=sha1,timestamp=132323232|"
   mqttUsername: deviceKey+"&"+productKey
-  mqttPassword: toUpperCase(hmacsha1(content+deviceSecret/productSecret))
+  mqttPassword: toUpperCase(sha1(content+deviceSecret/productSecret))
 ```
 - For the **mqttClientId** segment:
 
@@ -23,7 +23,7 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
   - _securemode_: Required. Indicates the secure mode that has been used. 
     - For secret-per-device authentication (`productKey`, `deviceKey`, `deviceSecret` is provided to statically activate the device), the value is `2`.
     - For secret-per-product authentication (`productKey`, `productSecret`, `deviceKey` is provided to dynamically activate the device) the value is `3`.
-  - _signmethod_: Required. Indicates the signing method. Currently, only support `signmethod=hmacsha1`.
+  - _signmethod_: Required. Indicates the signing method. Currently, only support `signmethod=sha1`.
   - _timestamp_: Required. Indicates the current time in milliseconds.
 
 - For the **mqttUsername** segment:
@@ -41,7 +41,7 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
     Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, _deviceSecret_=`deviceSecretxxx`.
 
     ```
-    mqttPassword = toUpperCase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecretxxx))
+    mqttPassword = toUpperCase(sha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecretxxx))
     ```
 
   - _productSecret_: When the device carries the product secret, append the value of the _productSecret_ after _content_ without any space or symbol.
@@ -49,7 +49,7 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
     Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, productSecret=`productSecretxxx`.
 
     ```
-    mqttPassword = toUpperCase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000productSecretxxx))
+    mqttPassword = toUpperCase(sha1(clientId123deviceKeytestproductKey123timestamp1524448722000productSecretxxx))
     ```
 
 Only unactivated device can be authenticated via product secret, the `productKey`, `productSecret`, and `deviceKey` is written into the device to dynamically obtain the `deviceSecret` upon first attempt to connect to EnOS Cloud. The device is then activated through its device triple and starts to transmit data to the cloud. This is called _dynamic activate_ of a device.

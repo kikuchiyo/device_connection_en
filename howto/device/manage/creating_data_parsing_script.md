@@ -59,7 +59,7 @@ Downstream
 - Reply TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw_reply`
 
 
-For more information, see [Report Device Events​ (Passthrough)](https://www.envisioniot.com/docs/device-connection/en/latest/nonsdk/upstream/device_else/report_event_pass.html) and [Invoke Device Services (Passthrough)](https://www.envisioniot.com/docs/device-connection/en/latest/nonsdk/downstream/devices/invoke_services_pass.html).
+For more information, see [Report Device Events​ (Passthrough)](../../../reference/mqtt/upstream/device_else/report_event_pass.html) and [Invoke Device Services (Passthrough)](../../../reference/mqtt/downstream/invoke_services_pass.html).
 
 
 Define the two methods in the parsing script as follows:

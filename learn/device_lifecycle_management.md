@@ -60,7 +60,7 @@ In the servicing phase, you can
 
 In the maintanance phase, you can
 
-- Use the OTA Service to manage the device firmware in the cloud and achieve firmware upgrade over-the-air. For more information, see [Firmware Upgrade Over-the-air](../quickstart/gettingstarted_ota).
+- Use the OTA Service to manage the device firmware in the cloud and achieve firmware upgrade over-the-air. For more information, see [Firmware Upgrade Over-the-air](../howto/ota/batch_upgrading_firmware).
 
 - Renew the device certificate when a certificate expires.
 
