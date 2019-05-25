@@ -40,4 +40,4 @@ For more information, see [Developing OTA Capabilities on Devices](developing_de
 
 ## Next Steps
 
-You can perform [Verifying Firmware](verifying_firmware) again and perform [Batch Upgrading Firmware](batch_upgrade_firmware); for firmware that is no longer needed, you can perform [Deleting Firmware](deleting_firmware)
+You can perform [Verifying Firmware](verifying_firmware) again and perform [Batch Upgrading Firmware](batch_upgrading_firmware); for firmware that is no longer needed, you can perform [Deleting Firmware](deleting_firmware)

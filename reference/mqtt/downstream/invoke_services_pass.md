@@ -1,4 +1,4 @@
-# Invoke Device Services (Passthrough?
+# Invoke Device Services (Passthrough)
 
 If passthrough mode is used, the device sends raw data such as a binary data stream to EnOS Cloud.
 

@@ -67,7 +67,7 @@ In this step, you'll add the device and configure the basic information.
 
      .. note:: You must first select the same kind of devices, then you can select the device template that the devices to be associated with.
 
-   The device template is used as the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, see [Creating and Managing Device Templates](managing_templates)
+   The device template is used as the device communication driver, which includes the device communication point table, communication protocol, protocol configuration file and other information. For more information, see [Creating and Managing Device Templates](managing_template)
 
 3. Click **Save** to add the device.
 

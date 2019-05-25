@@ -20,7 +20,7 @@ The following table describes the common parameters used in the request and resp
   * - params
     - JSON
     - Mandatory in request
-    - Request parameters, in JSON format, Can either be array or dict.
+    - Request parameters, in JSON format, Can either be array or dictionary.
   * - method
     - String
     - Mandatory in request

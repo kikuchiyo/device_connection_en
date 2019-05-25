@@ -25,5 +25,4 @@ Among the above scenarios, regardless of which path you choose for device connec
 
    data_format
    cloud2cloud_dataforwarding
-
-   
+   offline_message_integration

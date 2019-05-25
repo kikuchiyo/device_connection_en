@@ -35,10 +35,10 @@ The process for connecting NB-IoT devices to EnOS via CoAP is shown as follows:
 ## Before You Start
 
 Depending on the authentication method, you need complete appropriate configurations in EnOS and obtain the required keys for authentication:
-- For unique-certificate-per-device authentication, register devices one by one and obtain their `productKey`, `deviceKey` and `deviceSecret`. For information about how to register a device, see [Registering Devices](../../howto/device/manage/creating_device).
-- For unique-certificate-per-product authentication, create a product that the device belongs to and obtain the `productKey` and `productSecret` of the device. For information on how to create a product, see [Creating Products](../../howto/device/manage/creating_device). For the devices authenticated with unique-certificate-per-product authentication, enable **Dynamic Registration** . For details, see [Managing Products](../../howto/device/manage/managing_products).
+- For unique-certificate-per-device authentication, register devices one by one and obtain their `productKey`, `deviceKey` and `deviceSecret`. For information about how to register a device, see [Registering Devices](../../../howto/device/manage/creating_device).
+- For unique-certificate-per-product authentication, create a product that the device belongs to and obtain the `productKey` and `productSecret` of the device. For information on how to create a product, see [Creating Products](../../../howto/device/manage/creating_device). For the devices authenticated with unique-certificate-per-product authentication, enable **Dynamic Registration** . For details, see [Managing Products](../../../howto/device/manage/managing_products).
 
-For more information about device authentication, see [Security Authentication](../../learn/deviceconnection_authentication).
+For more information about device authentication, see [Security Authentication](../../../learn/deviceconnection_authentication).
 
 ## Connecting to the CoAP Server
 

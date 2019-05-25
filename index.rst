@@ -46,3 +46,4 @@ Device connection
 
    reference/mqtt/index
    reference/coap/index
+   reference/mqtt_offline/index

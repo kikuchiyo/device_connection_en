@@ -10,3 +10,4 @@ When the device SDKs provided by EnOS cannot meet your requirements, you can ref
 
    mqtt/index
    coap/index
+   mqtt_offline/index

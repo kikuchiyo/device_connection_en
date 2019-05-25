@@ -4,7 +4,7 @@ Applications can use EnOS open APIs to set measurepoints or invoke services for 
 
 .. image:: ../../../media/coap_downstream_flow.png
 
-For more information about the data formats of the request and response, and parameter description, see [Sending Commands to Devices (Pass-through)](../../mqtt/downstream/devices/invoke_services_pass).
+For more information about the data formats of the request and response, and parameter description, see [Sending Commands to Devices (Pass-through)](../../mqtt/downstream/invoke_services_pass).
 
 When the application calls an API to set measurepoints or invoke services from a device, EnOS caches this request. When a device sends a request to EnOS, EnOS will include the request sent by the application in the response to the device's request, in the form of an Option (2100) that is EnOS-defined.
 
