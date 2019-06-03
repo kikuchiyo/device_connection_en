@@ -141,7 +141,7 @@ In this step, we use the device SDK to simulate sending the inverter active powe
 
 3. Configure the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
 
-4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
+4. Modify the `postSubMeasurepoint` method, configure the name of the measuring point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
 
 5. Invoke sample methods for the following operations:
 
@@ -190,13 +190,13 @@ In this step, we use the device SDK to simulate sending the inverter active powe
      ```
 
 
-   - Gateway sends data of the sub-device as the proxy. The following sample code sends random float data to the `invGenActivePW` measure point.
+   - Gateway sends data of the sub-device as the proxy. The following sample code sends random float data to the `INV.GenActivePW` measuring point.
 
      ```java
      public static void postSubMeasurepoint() {
         Random random = new Random();
         System.out.println("start post sub device measurepoint ...");
-        MeasurepointPostRequest request = (MeasurepointPostRequest)((MeasurepointPostRequest.Builder)((MeasurepointPostRequest.Builder)MeasurepointPostRequest.builder().setProductKey("sub_pk")).setDeviceKey("sub_dk")).addMeasurePoint("invGenActivePW", random.nextFloat()).build();
+        MeasurepointPostRequest request = (MeasurepointPostRequest)((MeasurepointPostRequest.Builder)((MeasurepointPostRequest.Builder)MeasurepointPostRequest.builder().setProductKey("sub_pk")).setDeviceKey("sub_dk")).addMeasurePoint("INV.GenActivePW", random.nextFloat()).build();
 
         try {
             MeasurepointPostResponse rsp = (MeasurepointPostResponse)client.publish(request);
@@ -216,5 +216,5 @@ In the EnOS Console, click **Device Management > Device**, locate the Edge01 and
 ## Step 7: Check the Device Data
 
 1. In the **Device** page, locate the INV001 device and click **View** to show the **Device Details** page.
-
-2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.
+2. Click the **Measuring Points** tab, select the **INV.GenActivePW** measuring point, and click **View data** to open the **Data Insights** page.
+3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/latest/howto/storage/generating_data_chart.html).   

@@ -12,3 +12,4 @@ Managing Devices in the Cloud
    managing_devices
    creating_data_parsing_script
    creating_offline_message_integration_channel
+   using_device_simulator

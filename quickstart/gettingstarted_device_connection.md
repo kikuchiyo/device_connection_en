@@ -48,7 +48,7 @@ This step assumes that there is no device model to be reused. We create a new mo
      - capacity     
      - float
      - kWp      
-   * - Measure Point
+   * - Measuring Point
      - Active power     
      - INV.GenActivePW
      - double
@@ -104,7 +104,7 @@ The steps to create this model are as follows:
      - **Unit**: kWp
      - **Required**: Yes
 
-   - **Measure Point**
+   - **Measuring Point**
 
      - **Name**: Active_Power
      - **Identifier**: INV.GenActivePW
@@ -201,7 +201,7 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
 
 4. Modify the `initWithCallback` method to establish connection between the device and the cloud.
 
-5. Modify the `postMeasurepoint` method to configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
+5. Modify the `postMeasurepoint` method to configure the name of the measuring point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
 
    The following sample code is for connecting the device to EnOS and simulating posting data to the cloud:
 
@@ -211,9 +211,9 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
    import com.envisioniot.enos.iot_mqtt_sdk.core.exception.EnvisionException;
    import com.envisioniot.enos.iot_mqtt_sdk.message.upstream.tsl.MeasurepointPostRequest;
    import com.envisioniot.enos.iot_mqtt_sdk.sample.SimpleSendReceive;
-   
+
    import java.util.Random;
-   
+
    public class demo1 {
        public static final String url = "tcp://{environment_address}";
        public static final String productKey = "ProductKey";
@@ -224,18 +224,18 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
        private static Random random = new Random();
        private static int idInc = 20;
        private static final char[] HEX_CHAR = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-   
+
        public demo() {
        }
-   
+
        public static void main(String[] args) throws Exception {
            initWithCallback();
            postMeasurepoint();
        }
-   
+
        public static void initWithCallback() {
            System.out.println("start connect with callback ... ");
-   
+
            try {
                client = new MqttClient(url, productKey, deviceKey, deviceSecret);
                client.getProfile().setConnectionTimeout(60).setAutoReconnect(false);
@@ -244,26 +244,26 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
                        SimpleSendReceive.subDeviceLogin();
                        System.out.println("connect success");
                    }
-   
+
                    public void onConnectLost() {
                        System.out.println("onConnectLost");
                    }
-   
+
                    public void onConnectFailed(int reasonCode) {
                        System.out.println("onConnectFailed : " + reasonCode);
                    }
                });
            } catch (EnvisionException var1) {
            }
-   
+
            System.out.println("connect result :" + client.isConnected());
        }
-   
+
        public static void postMeasurepoint() {
            Random random = new Random();
            System.out.println("start post measurepoint ...");
            MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("INV.GenActivePW", random.nextDouble()).build();
-   
+
            try {
                client.fastPublish(request);
                System.out.println(" post measurepoint success...");
@@ -271,7 +271,7 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
                var3.printStackTrace();
            }
        }
-   	
+
    }
    ```
 
@@ -299,13 +299,13 @@ In the EnOS Console, click **Device Management > Device**, locate the device and
 
 ## Step 6: Check the Device Data
 
-1. In the **Device** page, locate the device and click **View** to show the **Device Details** page.
+1. From the device list, locate the device and click the **View** icon to show the **Device Details** page.
+2. Click the **Measuring Points** tab, find the **INV.GenActivePW** measuring point, and click **View data** to open the **Data Insights** page.
+3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/latest/howto/storage/generating_data_chart.html).   
 
-2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.
+## Step 7: Use Online Debugging Tool to Set Measuring Point Value
 
-## Step 7: Use Online Debugging Tool to Set Measure Point Value
-
-1. Click **Device Management > Product**, Click **View** for the product that the device belongs to.
+1. Click **Device Management > Product**, Click **View** icon for the product that the device belongs to.
 
 2. In the product details page, click **Debugging**。
 
@@ -315,10 +315,10 @@ In the EnOS Console, click **Device Management > Device**, locate the device and
 
    .. image:: media/debug_postmeasurepoint.png
 
-When the value of the measure point is set successfully, you'll receive response similar to the following from your Java development environment:
+When the value of the measuring point is set successfully, you'll receive response similar to the following from your Java development environment:
 
 ```
-AnswerableMessageBody{id='21', method='thing.service.measurepoint.set', version='1.0', params={invGenActivePW=2.0}}
+AnswerableMessageBody{id='21', method='thing.service.measurepoint.set', version='1.0', params={INV.GenActivePW=2.0}}
 ```
 
 <!--end-->
