@@ -1,55 +1,64 @@
-# Creating an Asset Tree
+# Creating an Asset Tree and Node
 
-This article describes how to create an asset tree and attach the asset to the node of the asset tree.
+This article describes how to create an asset tree and bind an asset to the asset tree.
 
 ## Before You Start
 
-To create an asset tree, you must have write access to the **Asset Tree Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+To create an asset tree, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
 
-## Creating a Root Node
+## Creating an Asset Tree
 
-To create a new asset tree, you should start from creating the root node of the asset tree. The name of the root node is used as the name of the asset tree.
+1. In the EnOS Console, click **Asset Tree** from the left side navigation panel.
 
-1. In the EnOS Console, click **Asset Management** from the left side navigation panel.
+2. Click  **+**  on the upper left corner to create an asset tree.
 
-2. Click  **+**  on the upper left corner to create the root node of the asset tree.
-
-3. In the **Create Root Node** window, provide the following settings:
+3. In the **Create Asset Tree** window, provide the following settings:
 
    - **Name**: Enter the asset tree name.
-   - **Device Model**: Select an associated device model from the drop-down list.
-     You can select a model for the root node of the asset tree. If the node does not need a model, you can use the built-in model `<None>`, which has four empty elements, for root node.
-   - **Is Connected Device**: Choose `Yes` or `No` to indicate whether this device is a connected device or not.
-     + The root node of the asset tree is generally not a connected device.
+   - **Select Model**: Select a model for the tree from the drop-down list.
+     If the asset tree does not need a model, you can use the built-in model `None`, which has four empty elements.
+   - **Timezone/City**: Select the timezone or city for the asset tree.
+   - If you selected a model, provide corresponding attribute values ​​according to the specifications defined in the thing model.
 
-   - If you selected a model, provide corresponding values ​​according to the specifications defined in the thing model.
+   .. image:: ../../media/creating_asset_tree.png
 
 4. Click **Confirm** to complete creation.
 
-## Adding a Leaf Node
+## Binding a Device to Asset Tree
 
-After creating the root node, you can add a leaf node under the root node by the following approaches:
+After creating the asset tree, you can bind an asset to the tree as a node by the following methods:
 
 - Create an asset based on the model
 - Add an existing asset to the asset tree
 
 ### Creating an Asset Based on the Model
 
-1. Select a node of the asset tree and right click, then click **Add > Add leaf node > Create asset from model**.
+1. Click **+** next to the asset tree.
 
-2. Enter the asset name, select the device model from the drop down list, and specify whether the device to bind is a connected device or not. If `Yes`, you can bind this asset by the following approaches:
+   .. image:: ../../media/creating_asset.png
 
-   - **Bind connected device**: Use this option if you have already created the device in the **Device Management > Device**. In this case, you'll bind the device to a node of the asset tree.
-   - **Create connected device now**: Use this option if you haven't created the device in the **Device Management > Device** yet. In this case, you'll create a device and bind this device to a node of the asset tree. For how to create a new device, see [Creating a Device](../device/manage/creating_device)
-   - **Bind device later**: User this option if you are sure that the asset to be created is a connected device, but you need to confirm whether the device is created or not afterwards. In this case, you'll bind the device later.
+2. In the "New Sub-node" pop-up window, select the way you want to add a sub-note. In this scenario, **Create an Asset and Bind** . Click **Next** .
 
-3. Complete the configuration of the selected approach, and then click **Confirm**.
+3. Fill in the basic information for the asset. If the model you selected contains attributes, fill in the attribute values for the asset.
 
-### Adding an Existing Asset
+   .. image:: ../../media/creating_asset_basic_information.png
 
-1. Select a node of the asset tree and right click, then click **Add > Add leaf node > Add existing node**.
+4. Click **Confirm** to finish creating an asset and binding.
 
-2. Select the model for the asset and select the asset based on the model. Then click **Confirm** to complete the creation.
+### Binding an Existing Asset
+
+1. Click **+** next to the asset tree.
+
+2. In the "New Sub-node" pop-up window, select the way you want to add a sub-note. In this scenario, **Bind to existing asset** . Click **Next** .
+
+3. In the asset list, select the asset to be bound to the tree and click **Confirm**. You may also use the filters to help you out.
+   You cannot select the assets already bound to the asset tree.
+
+   .. image:: ../../media/creating_asset_by_importing.png
+
+## Results
+
+You created an asset tree and bound an asset to the tree as a node.
 
 ## Related Information
 

@@ -14,22 +14,28 @@ An asset tree is the hierarchical organization of assets. An asset can be added 
 - Management based on industry domain: wind power, photovoltaic, energy storage, etc.
 - Management based on device type: fan, inverter, combiner box, etc.
 
-For the aforementioned scenarios, you can create three asset trees for the same group of assets.
+For the scenarios above, you can create three asset trees for the same group of assets.
 
-### Node
+### Asset
 
-An asset node is the minimum element that forms an asset tree. A node can be associated with one asset or left blank without binding to any asset.
-Each node of an asset tree has a unique identifier. An asset can be bound to different asset trees and to different nodes of the same asset tree.
+An asset is the minimum element that forms an asset tree. It can be bound to a node on an asset tree.
 
-The relationship between asset trees, nodes, assets, and devices is shown in the following figure:
+Assets can be divided into device assets and logical assets. A device asset is a physical device, for example, a photovoltaic inverter, or a wind turbine. A logical asset can be a place to hold devices or a collection of devices, such as a site, an area, or a floor.
+
+Each asset of an asset tree has a unique identifier. An asset can be bound to different asset trees and must be unique under one asset tree.
+
+The relationship between asset trees, assets, and devices is shown in the following figure:
+
 
 .. image:: ../../media/asset_tree.png
-   :alt: Fig. Asset Trees Overview
+   :width: 300px
 
+If a user deleted a device in **Device Management**, the corresponding asset bound to the asset tree node becomes an invalid node.
 
-- Asset 1 is bound to Tree 1 and Tree 2.
-- Node 5 of Tree 2 is left blank to allow a later binding of asset.
-- Asset 3 is a device and is a child of Asset 2.
+Except for an invalid node, you can continue to bind assets to every node on an asset tree. The maximum layers that an asset tree can have is 7, including the root layer. On each layer except the root layer, a maximum of 10000 peer assets are allowed to exist.
+
+- Asset 1 is bound to Tree 1.
+- Asset 3 is a device and is a child node of Asset 2.
 
 ## Related Information
 

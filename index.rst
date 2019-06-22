@@ -12,13 +12,15 @@ Device connection
    :maxdepth: 1
    :caption: Learn
 
+   howto/model/model_overview
+   learn/connection_scenarios
    learn/message_flow
    learn/enos_coap
-   learn/connection_scenarios
+   howto/asset_tree/assettree_overview
    learn/device_lifecycle_management
    learn/ingestion/index
+   learn/issuing/index
    learn/deviceconnection_authentication
-  
 
 .. toctree::
    :maxdepth: 1
@@ -27,6 +29,14 @@ Device connection
    quickstart/gettingstarted_device_connection
    quickstart/gettingstarted_edge_connection
    quickstart/gettingstarted_java_ssl_connection
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorial
+
+   tutorial/connecting_device_simulated/index
+   tutorial/connecting_device_rasberrypi/index
+   tutorial/upgrading_firmware_ota/index
 
 .. toctree::
    :maxdepth: 1

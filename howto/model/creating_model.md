@@ -10,7 +10,7 @@ The features that are required for the model have been designed. For information
 Configure all the features in EnOS according to the defined thing model.
 
 - Attributes
-- Measure points
+- Measuring points
 - Service
 - Event
 
@@ -33,7 +33,7 @@ Configure all the features in EnOS according to the defined thing model.
        - The child model can be further inherited to support multi-level inheritance.
        - Changes to the features in the parent model will affect the child template.
 
-   - **Support Passthrough**: indicates whether to support reporting measure point data that is not defined in the model
+   - **Support Passthrough**: indicates whether to support reporting measuring point data that is not defined in the model.
    - **Source Model**: The model selected for copying or the inherited parent model.
    - **Description**: Detailed description of the model.
 
@@ -62,7 +62,7 @@ Configure all the features in EnOS according to the defined thing model.
           "Field", "Description"
           "Parameter Value", "Supports int and string. No longer than 32 characters. Only if all values are int, will all the parameters be saved as integers.  If one or multiple values are string, all the values are saved as string."
           "Paramater Description", "Supports Chinese, upper and lower case letters, numbers and special characters that include “-”, “_”, “@”, “.”, and “:”. No more than 128 characters."  
-    
+   
        .. note:: Whether parameter values are saved as int or string depends on the definition you made when creating those values. 
            - If all values are saved as int when created, subsequent new or changed values will also be saved as int. A string value would cause an error message "invalid parameter type".
            - If all values are saved as string when created, subsequent new or changed values will also be saved as string. Even if you change the values later so that all of them are integers, they are still saved as string instead of int. No error message will be displayed in this scenarion.
@@ -83,19 +83,29 @@ Configure all the features in EnOS according to the defined thing model.
 
 3. To create more attributes, repeat the above steps.
 
-### Adding Measure Points
+### Adding Measuring Points
 
-1. On the **Add Feature** pop-up window, select **Measure Points** from the **Feature Type** drop-down list and complete the following settings:
+1. On the **Add Feature** pop-up window, select **Measuring Points** from the **Feature Type** drop-down list and complete the following settings:
 
-   - **Name**: The name of the measure point; duplicate name is not allowed under the same module.
-   - **Identifier**: A unique identification code for the measure point; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
-   - **Point Type**: upports 3 types, namely the domain point, control point and pass through point
-   - **Quality Indicator**: Whether the measure point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
+   - **Name**: The name of the measuring point; duplicate name is not allowed under the same module.
 
-     + Value: Sets the data type of the measure point. Only three types are supported: int, float, and double.
+   - **Identifier**: A unique identification code for the measuring point; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+
+   - **Point Type**: Select the type of the measuring point, which usually distinguishes the features of data ingested by measuring points. When storing data, different types of measurement data can be stored separately. When reading data, different types of measurement data can also be processed differently. Description of each point type is as follows:
+
+     - AI: AI type measuring point usually ingests time series data of numerical type. When reading data, you can choose to aggregate data with specific algorithms.
+     - DI: DI type measuring point usually ingests device status data. When reading data, you can choose to query the device status change data only.
+     - PI: PI type measuring point is usually used for calculating electric power data. When reading data, you can choose to aggregate data with specific algorithms.
+     - Generic: Measuring point for all other types of data, especially data of non-numerical type.
+
+     .. note:: If measurement point data has been stored in TSDB, the point type cannot be modified. Change of the point type may result in failure of querying stored historical data. For more information, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
+
+   - **Quality Indicator**: Whether the measuring point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
+
+     + Value: Sets the data type of the measuring point. Only three types are supported: int, float, and double.
      + Quality Indicator: Data quality indicator in the form of array that is predefined by the system; cannot be changed. You can click **View** to see the predefined quality indicator parameters as well as their descriptions.
 
-   - **Data Type**: If the test is not about quality indicator, the data type of the measure point shall be configured.
+   - **Data Type**: If the test is not about quality indicator, the data type of the measuring point shall be configured.
      + int, float, double: Information such as the default value and the data unit shall be defined.
      + enum: The parameter value of enum items and parameter description shall be defined.
      + bool: Boolean value shall be defined as 0 or 1.
@@ -106,12 +116,15 @@ Configure all the features in EnOS according to the defined thing model.
      + array: describe whether this model point is the array type or not, **Type** shall be defined. Make sure that the same type is used in the same array.
      + file: File type parameter, value is the file path in URI format.
 
-   - **Tags**: Tags can be used to describe a measure point; depending on the needs, you can flexibly identify a measure point, such as its type, group, and priority.
-   - **Description**: A description of the measure point.
+   - **Unit**: Select the unit of measuring point data.
 
-2. Click **OK** to create the measure point.
+   - **Tags**: Tags can be used to describe a measuring point; depending on the needs, you can flexibly identify a measuring point, such as its type, group, and priority.
 
-3. To create more measure points, repeat the above steps.
+   - **Description**: A description of the measuring point.
+
+2. Click **OK** to create the measuring point.
+
+3. To create more measuring points, repeat the above steps.
 
 ### Adding Service
 
