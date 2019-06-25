@@ -10,6 +10,7 @@ Managing Devices in the Cloud
    creating_device
    creating_device_in_batch
    managing_devices
+   viewing_command_status
    creating_data_parsing_script
    creating_offline_message_integration_channel
    using_device_simulator

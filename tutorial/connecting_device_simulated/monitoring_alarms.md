@@ -24,8 +24,11 @@ When the alert rule is saved, it will start running to monitor the temperature o
 
 .. image:: media/alert_records.png
 
-You can also use the event service APIs to query alert records. For example, using the `listActiveAlerts` API to query active alerts by organization ID and other filtering conditions. For more information about EnOS API, see [Calling EnOS REST APIs](/docs/app-development/en/latest/call_enos_api.html).
+You can also use the event service APIs to query alert records. For example, using the `listActiveAlerts` API to query active alerts by organization ID and other filtering conditions. For more information about EnOS API, see [About EnOS APIs](/docs/api/en/latest/overview.html).
 
+## Next Unit
 
+[Monitoring Device State and Data](viewing_data)
 
 <!-- end -->
+

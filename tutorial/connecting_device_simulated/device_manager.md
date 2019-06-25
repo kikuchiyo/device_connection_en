@@ -27,26 +27,26 @@ This tutorial walks you through registering a smart battery device on the EnOS C
 
 This tutorial includes the following units:
 
-> [Registering Device on the EnOS Console](registering_device)
+> [Unit 1. Registering Device on the EnOS Console](registering_device)
 >
 > 10 minutes
 
-> [Connecting Device into EnOS Cloud](connecting_device)
+> [Unit 2. Connecting Device into EnOS Cloud](connecting_device)
 >
 > 20 minutes
 
-> [Reporting Device Measuring Point Data](simulating_data)
+> [Unit 3. Reporting Device Measuring Point Data](simulating_data)
 >
 > 20 minutes
 
-> [Controlling Device State](controlling_device)
+> [Unit 4. Controlling Device State](controlling_device)
 >
 > 10 minutes
 
-> [Monitoring Device Alerts](monitoring_alarms)
+> [Unit 5. Monitoring Device Alerts](monitoring_alarms)
 >
 > 10 minutes
 
-> [Monitoring Device State and Data](viewing_data)
+> [Unit 6. Monitoring Device State and Data](viewing_data)
 >
 > 10 minutes

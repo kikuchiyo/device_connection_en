@@ -28,22 +28,22 @@ You have signed up to EnOS for an individual account or an enterprise account to
 
 This tutorial includes the following units:
 
-> [Setting up the Raspberry Pi](setting_up)
+> [Unit 1. Setting up the Raspberry Pi](setting_up)
 >
 > 30 minutes
 
-> [Registering the Raspberry Pi on EnOS Console](registering_devices)
+> [Unit 2. Registering the Raspberry Pi on EnOS Console](registering_devices)
 >
 > 10 minutes
 
-> [Configuring Alerts](configuring_alerts)
+> [Unit 3. Configuring Alerts](configuring_alerts)
 >
 > 10 minutes
 
-> [Developing Python Program to Enable RPi to Connect](connecting_devices)
+> [Unit 4. Developing Python Program to Enable RPi to Connect](connecting_devices)
 >
 > 30 minutes
 
-> [Viewing Uploaded Device Data on EnOS Console](viewing_data)
+> [Unit 5. Viewing Uploaded Device Data on EnOS Console](viewing_data)
 >
 > 10 minutes

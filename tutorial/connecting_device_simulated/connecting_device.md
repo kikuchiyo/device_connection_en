@@ -96,7 +96,7 @@ After the EnOS Device SDK for MQTT for Java is installed, take the following ste
    connect result :true
    ```
 
-6. Check the status change of the battery device in the **Device List** on the EnOS Console. The status of the device will change from `inactive` to `online`.
+6. Check the status change of the battery device in the **Device List** on the EnOS Console. The status of the device will change from `Inactive` to `Online`.
 
    .. image:: media/device_state.png
 

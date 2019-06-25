@@ -26,22 +26,22 @@ You have completed connecting an RPi with an LED light to EnOS. For more informa
 
 This tutorial includes the following units:
 
-> [Developing OTA Capabilities on the Raspberry Pi](developing_ota_capability)
+> [Unit 1. Developing OTA Capabilities on the Raspberry Pi](developing_ota_capability)
 >
 > 30 minutes
 
-> [Preparing the New Firmware File](preparing_firmware)
+> [Unit 2. Preparing the New Firmware File](preparing_firmware)
 >
 > 30 minutes
 
-> [Uploading the Firmware File](uploading_firmware)
+> [Unit 3. Uploading the Firmware File](uploading_firmware)
 >
 > 15 minutes
 
-> [Verifying the Firmware and Device Performance](verifying_firmware)
+> [Unit 4. Verifying the Firmware and Device Performance](verifying_firmware)
 >
 > 15 minutes
 
-> [Considering for Batch Upgrade](considering_batch_upgrade)
+> [Unit 5. Considering for Batch Upgrade](considering_batch_upgrade)
 >
 > 15 minutes

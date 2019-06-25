@@ -28,4 +28,5 @@ With storage policy configured, the uploaded device data can be stored for furth
 
 1. In the EnOS Console, select **Alert > Alert Record**.
 2. Search for active alerts and history alerts reported for the RPi by the asset ID or model ID.
-3. Optionally, you can configure alert subscription topics for the alerts, so that any alerts reported will be pushed to your application. For details, see the [Subscribing to Device Real-time Data and Alert Data](/docs/data-asset/en/latest/tutorial/subscribing_to_device_data/index.html) tutorial.
+3. Optionally, you can configure alert subscription topics for the alerts, so that any alerts reported will be pushed to your application. For details, see the [Subscribing to Device Real-time Data and Alert Records](/docs/data-asset/en/latest/tutorial/subscribing_to_device_data/index.html) tutorial.
+

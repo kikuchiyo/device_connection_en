@@ -98,7 +98,7 @@ Configure all the features in EnOS according to the defined thing model.
      - PI: PI type measuring point is usually used for calculating electric power data. When reading data, you can choose to aggregate data with specific algorithms.
      - Generic: Measuring point for all other types of data, especially data of non-numerical type.
 
-     .. note:: If measurement point data has been stored in TSDB, the point type cannot be modified. Change of the point type may result in failure of querying stored historical data. For more information, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
+     .. note:: If measuring point data has been stored in TSDB, the point type cannot be modified. Change of the point type may result in failure of querying stored historical data. For more information, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
 
    - **Quality Indicator**: Whether the measuring point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
 
