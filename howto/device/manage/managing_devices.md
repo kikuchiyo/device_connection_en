@@ -4,7 +4,7 @@ This topic describes the device management operations such as how to view and ch
 
 ## Before You Start
 
-- To manage devices, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+- To manage devices, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
 
 - To learn about the activation and running status of a device, see [Secret-based One-way Authentication](../../../learn/deviceconnection_authentication).
 

@@ -4,7 +4,7 @@ A device is an instance of a model. It belongs to a certain product. A DeviceKey
 
 ## Before You Start
 
-- To register a device, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/dev/access_policy).
+- To register a device, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
 
 - The product to which the device belongs has been created. For information about how to create a product, see [Creating a Product](creating_product).
 

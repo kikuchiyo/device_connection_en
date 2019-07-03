@@ -11,7 +11,7 @@ When there are lots of devices that need to be created, you can use the followin
 ##  Before You Start
 
 - Created The product that the device belongs to. For information about how to create a product, see [Creating a Device Collection (Product)](creating_product)。
-- Obtained the permissions for device management; if not, contact your OU administrator to obtain such permissions. See [Policies, Roles and Permissions](/docs/iam/en/dev/access_policy).
+- Obtained the permissions for device management; if not, contact your OU administrator to obtain such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
 
 ## Procedure
 
