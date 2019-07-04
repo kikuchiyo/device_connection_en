@@ -63,7 +63,7 @@ from message.upstream.status.SubDeviceLoginRequest import SubDeviceLoginRequest
 from core.MqttClient import MqttClient
 from message.upstream.topo.TopoAddRequest import TopoAddRequest
 from message.upstream.topo.SubDeviceInfo import SubDeviceInfo
-from message.upstream.tsl.measuringpointPostRequest import MeasurepointPostRequest
+from message.upstream.tsl.MeasurepointPostRequest import MeasurepointPostRequest
 from message.upstream.topo.TopoGetRequest import TopoGetRequest
 from message.upstream.topo.TopoDeleteRequest import TopoDeleteRequest
 from led import set_light, get_light
