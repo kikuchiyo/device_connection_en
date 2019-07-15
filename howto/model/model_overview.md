@@ -24,7 +24,7 @@ You can define the following elements to define a thing model according to the a
      - Command to issue, job to perform, etc.
    * - Event
      - The event that can occur when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.
-     - Alerts, state changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. 
+     - State changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. 
 
 ## Model Relationship
 
