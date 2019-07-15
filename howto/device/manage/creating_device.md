@@ -1,4 +1,4 @@
-# Registering a Device
+# Creating a Device
 
 A device is an instance of a model. It belongs to a certain product. A DeviceKey, a unique certificate within the organization, will be issued by the platform for the device. The device can be connected directly to the platform or connected to the IoT platform as a sub-device via edge. This topic describes how to create a device.
 
