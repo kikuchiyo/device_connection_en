@@ -9,20 +9,20 @@ To be connected into the internet of things, an object must be able to be connec
 
 According to the above attributes, real-world devices can be divided into two major categories:
 
-- **Smart devices**: Those support firmware burning, as well as direct connection to the IoT platform via Wi-Fi, GPRS, 3G, or 4G signals. A smart device can directly connect to and communicate with the IoT Hub to complete authentication and data transmission.
-- **Non-smart devices**: Those do not support firmware burning, and are lack of the ability to connect via Wi-Fi, 3G, or 4G. In this scenario, data of these devices need to be collected by an edge gateway, and the devices are connected to the IoT platform through the edge gateway. Edge needs to support firmware burning and networking. The device connected via this solution is also called _sub device_. The gateway serves as a proxy of the sub devices to help them complete operations such as authentication, login, and data transmission.
+- **Smart devices**: These support firmware burning, as well as direct connection to the IoT platform via Wi-Fi, GPRS, 3G, or 4G signals. A smart device can directly connect to and communicate with the IoT Hub to complete authentication and data transmission.
+- **Non-smart devices**: These do not support firmware burning, and lack the ability to connect via Wi-Fi, 3G, or 4G. In this scenario, data of these devices need to be collected by an edge gateway, and the devices are connected to the IoT platform through the edge gateway. Edge needs to support firmware burning and networking. The device connected via this solution is also called _sub device_. The gateway serves as a proxy of the sub devices to help them complete operations such as authentication, login, and data transmission.
 
 .. image:: ../media/device_types.png
 
 ## Smart Device Connection
 
-The devices can be connected directly to the cloud. Some common devices include:
+These devices can be connected directly to the cloud. Some common devices include:
 
 - Devices with smart acquisition rod, such as household inverters, and household energy storage batteries.
 - Smart home devices, such as surveillance cameras, and smart thermometers and hygrometers.
 
 ## Non-Smart Device Connection
-The devices need a gateway proxy to connect to the cloud. Some common devices include:
+These devices need a gateway proxy to connect to the cloud. Some common devices include:
 
 - Distributed inverters: the gateway collects data directly from multiple inverters and then sends the data to the cloud.
 
@@ -87,7 +87,7 @@ This scenario requires that the device is burned with its unique device triple t
 
 ### Scenario 1.2: Smart devices pre-registered in batch
 
-The connected devices are registered, and devices are burned with the same product information in batch
+The connected devices are registered, and devices are burned with the same product information in batch.
 
 The following figure illustrates the message flow of connection scenario 1.2.
 
